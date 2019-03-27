@@ -13,7 +13,7 @@ Juan Fiol
 Version
 -------
 
-IB - 2019
+IB
 
 
 Licencia
@@ -55,6 +55,8 @@ Libros
 ------
 - `The Python Standard Library by Example <https://doughellmann.com/blog/the-python-3-standard-library-by-example/>`__ de Doug Hellman, Addison-Wesley, 2017
 - `Python Cookbook <https://www.amazon.com/Python-Cookbook-Third-David-Beazley/dp/1449340377>`__ de David Beazley, Brian K. Jones, O'Reilly Pub., 2013.
+- `Python Data Science Handbook <http://shop.oreilly.com/product/0636920034919.do>`__ de Jake VanderPlas, O'Reilly Media Pub., 2016.
+- `Learning Scientific Programming with Python <https://www.cambridge.org/fr/academic/subjects/physics/computational-science-and-modelling/learning-scientific-programming-python>`__de Christian Hill, Cambridge University Press, 2016.
 - `Elegant Scipy <https://www.oreilly.com/library/view/elegant-scipy/9781491922927/>`__ de Harriet Dashnow, Stéfan van der Walt, Juan Nunez-Iglesias, O'Reilly Pub., 2017.
 - `Scientific Computing with Python 3 <https://www.packtpub.com/big-data-and-business-intelligence/scientific-computing-python-3>`__ de Claus Führer, Jan Erik Solem, Olivier Verdier, Packt Pub., 2016.
 - `Interactive Applications Using Matplotlib <https://www.packtpub.com/application-development/interactive-applications-using-matplotlib>`__ de Benjamin V Root, Packt Pub., 2015.
@@ -88,7 +90,7 @@ Programa
 Clase 1: `Introducción (e instalación). Conceptos básicos de Python`
 --------------------------------------------------------------------
 
-Esta clase se encuentra en los *notebooks* cuyos nombres empiezan con 01
+Esta clase se encuentra en los *notebooks* cuyos nombres empiezan con 01 y 02
 
 *  Introducción a la materia, objetivos, metodología
 *  Distintos usos de Python (Terminales, notebook, scripts)
