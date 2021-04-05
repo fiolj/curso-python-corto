@@ -97,7 +97,7 @@ Primer uso
 ----------
 
 Si instaló Anaconda, busque en el menú de inicio el “Navegador de
-Anaconda” y ejecúelo. Puede tardar algunos segundos en iniciarse, tenga
+Anaconda” y ejecútelo. Puede tardar algunos segundos en iniciarse, tenga
 paciencia. Se encontrará con una pantalla con un menú de varias opciones
 como la siguiente:
 
