@@ -118,7 +118,7 @@ inicialmente está vacía
 
 
 En la celda puede escribir sus comandos y ejecutarlo con [Ctrl]+[Enter]
-(o simplemente el botón “Cell”). Por ejemplo
+(o simplemente el botón “Run”). Por ejemplo
 
 
 
