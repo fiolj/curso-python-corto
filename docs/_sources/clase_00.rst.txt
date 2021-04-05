@@ -1,20 +1,16 @@
 .. _clase_00:
 
-Clase 0: Introducción al lenguaje
-==================================
+Clase 0: Introducción al lenguaje: Instalación y uso
+=====================================================
 
 
-Cómo empezar: Instalación y uso
--------------------------------
-
-**Python** es un lenguaje de programación interpretado que se puede
-ejecutar sobre distintos sistemas operativos; esto se conoce como
-multiplataforma (suele usarse el término *cross-platform*). Además, la
-mayoría de los programas que existen (y posiblemente todos los que
-nosotros escribamos) pueden ejecutarse tanto en Linux, como en Windows y
-en Mac sin realizar ningún cambio.
-
-**Versiones:** Hay dos versiones activas del lenguaje Python.
+`Python <https://www.python.org>`__ es un lenguaje de programación
+interpretado que se puede ejecutar sobre distintos sistemas operativos;
+esto se conoce como multiplataforma (suele usarse el término
+*cross-platform*). Además, la mayoría de los programas que existen (y
+posiblemente todos los que nosotros escribamos) pueden ejecutarse tanto
+en Linux, como en Windows y en Mac sin realizar ningún cambio. Hay dos
+versiones activas del lenguaje Python.
 
 -  **Python2.X** (Python 2) es una versión madura, estable, y con muchas
    aplicaciones, y utilidades disponibles. No se sigue desarrollando
@@ -28,16 +24,48 @@ en Mac sin realizar ningún cambio.
    que, salvo muy contadas excepciones, no hay razones para seguir
    utilizando Python 2.
 
-Instalación
-~~~~~~~~~~~
-
 En este curso utilizaremos **Python 3**
+
+Documentación y ayuda
+---------------------
+
+-  `Un curso más
+   comprensivo <https://fiolj.github.io/intro-python-IB/>`__, dictado en
+   los últimos años en el Instituto Balseiro.
+
+Algunas fuentes de ayuda *constante* son:
+
+-  `La documentación oficial de Python <https://docs.python.org/3/>`__
+
+-  En particular el `Tutorial <https://docs.python.org/3/tutorial/>`__,
+   también `en español <http://docs.python.org.ar/tutorial/3/>`__ y la
+   `referencia de
+   bibliotecas <https://docs.python.org/3/reference/index.html>`__
+
+-  En una terminal, puede obtener información sobre un paquete con
+   ``pydoc <comando>``
+
+-  En una consola interactiva de **Python**, mediante
+   ``help(<comando>)``
+
+-  La documentación de los paquetes:
+
+   -  `Numpy <http://docs.scipy.org/doc/numpy/user/>`__
+   -  `Matplotlib <http://matplotlib.org>`__, en particular la
+      `galería <https://matplotlib.org/stable/gallery/index.html>`__
+   -  `Scipy <http://docs.scipy.org/doc/scipy/reference/>`__
+
+-  Buscar “palabras clave + python” en un buscador. Es particularmente
+   útil el sitio `stackoverflow <http://stackoverflow.com/>`__
+
+Instalación
+-----------
 
 Para una instalación fácil de Python y los paquetes para uso científico
 se pueden usar alguna de las distribuciones disponibles
 (`Anaconda <https://www.anaconda.com/distribution>`__,
 `Canopy <http://www.enthought.com/product/canopy/>`__,
-`Winpython <https://github.com/winpython/winpython>`__)
+`Winpython <https://github.com/winpython/winpython>`__).
 
 En linux se podría instalar alguna de estas distribuciones pero puede
 ser más fácil instalar directamente todo lo necesario desde los
@@ -65,36 +93,44 @@ funciona en Linux, Windows y MacOs. Para ello:
    utilizar *Python* de Anaconda como predeterminado (importante en caso
    de que tenga otro!).
 
-Documentación y ayudas
-~~~~~~~~~~~~~~~~~~~~~~
+Primer uso
+----------
 
--  `Un curso más
-   comprensivo <https://fiolj.github.io/intro-python-IB/>`__ dictado en
-   los últimos años
+Si instaló Anaconda, busque en el menú de inicio el “Navegador de
+Anaconda” y ejecúelo. Puede tardar algunos segundos en iniciarse, tenga
+paciencia. Se encontrará con una pantalla con un menú de varias opciones
+como la siguiente:
 
-Algunas fuentes de ayuda *constante* son:
+.. image:: figuras/anaconda-start.png
 
--  `La documentación oficial de Python <https://docs.python.org/3/>`__
 
--  En particular el `Tutorial <https://docs.python.org/3/tutorial/>`__,
-   también `en español <http://docs.python.org.ar/tutorial/3/>`__ y la
-   `referencia de
-   bibliotecas <https://docs.python.org/3/reference/index.html>`__
 
--  En una terminal, puede obtener información sobre un paquete con
-   ``pydoc <comando>``
 
--  En una consola interactiva de **Python**, mediante
-   ``help(<comando>)``
 
--  La documentación de los paquetes:
+En esta pantalla elija la opción “JupyterLab” (preferentemente) o
+“Jupyter Notebook” para iniciar una nueva *notebook* de Python3, que
+inicialmente está vacía
 
-   -  `Numpy <http://docs.scipy.org/doc/numpy/user/>`__
-   -  `Matplotlib <http://matplotlib.org>`__, en particular la
-      `galería <https://matplotlib.org/stable/gallery/index.html>`__
-   -  `Scipy <http://docs.scipy.org/doc/scipy/reference/>`__
+.. image:: figuras/notebook-empty.png
 
--  Buscar “palabras clave + python” en un buscador. Es particularmente
-   útil el sitio `stackoverflow <http://stackoverflow.com/>`__
+
+
+En la celda puede escribir sus comandos y ejecutarlo con [Ctrl]+[Enter]
+(o desde el menú “Cell”). Por ejemplo
+
+
+
+.. code:: python
+
+    2+1
+
+
+
+
+.. parsed-literal::
+
+    3
+
+
 
 

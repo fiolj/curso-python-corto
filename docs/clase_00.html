@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Clase 0: Introducción al lenguaje &mdash; documentación de Curso corto de Python - </title>
+  <title>Clase 0: Introducción al lenguaje: Instalación y uso &mdash; documentación de Curso corto de Python - </title>
   
 
   
@@ -89,12 +89,10 @@
             
               <p class="caption"><span class="caption-text">Dictado de las clases</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Clase 0: Introducción al lenguaje</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#como-empezar-instalacion-y-uso">Cómo empezar: Instalación y uso</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#instalacion">Instalación</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#documentacion-y-ayudas">Documentación y ayudas</a></li>
-</ul>
-</li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Clase 0: Introducción al lenguaje: Instalación y uso</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#documentacion-y-ayuda">Documentación y ayuda</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#instalacion">Instalación</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#primer-uso">Primer uso</a></li>
 </ul>
 </li>
 </ul>
@@ -142,7 +140,7 @@
     
       <li><a href="index.html">Docs</a> &raquo;</li>
         
-      <li>Clase 0: Introducción al lenguaje</li>
+      <li>Clase 0: Introducción al lenguaje: Instalación y uso</li>
     
     
       <li class="wy-breadcrumbs-aside">
@@ -161,17 +159,15 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="clase-0-introduccion-al-lenguaje">
-<span id="clase-00"></span><h1>Clase 0: Introducción al lenguaje<a class="headerlink" href="#clase-0-introduccion-al-lenguaje" title="Enlazar permanentemente con este título">¶</a></h1>
-<div class="section" id="como-empezar-instalacion-y-uso">
-<h2>Cómo empezar: Instalación y uso<a class="headerlink" href="#como-empezar-instalacion-y-uso" title="Enlazar permanentemente con este título">¶</a></h2>
-<p><strong>Python</strong> es un lenguaje de programación interpretado que se puede
-ejecutar sobre distintos sistemas operativos; esto se conoce como
-multiplataforma (suele usarse el término <em>cross-platform</em>). Además, la
-mayoría de los programas que existen (y posiblemente todos los que
-nosotros escribamos) pueden ejecutarse tanto en Linux, como en Windows y
-en Mac sin realizar ningún cambio.</p>
-<p><strong>Versiones:</strong> Hay dos versiones activas del lenguaje Python.</p>
+  <div class="section" id="clase-0-introduccion-al-lenguaje-instalacion-y-uso">
+<span id="clase-00"></span><h1>Clase 0: Introducción al lenguaje: Instalación y uso<a class="headerlink" href="#clase-0-introduccion-al-lenguaje-instalacion-y-uso" title="Enlazar permanentemente con este título">¶</a></h1>
+<p><a class="reference external" href="https://www.python.org">Python</a> es un lenguaje de programación
+interpretado que se puede ejecutar sobre distintos sistemas operativos;
+esto se conoce como multiplataforma (suele usarse el término
+<em>cross-platform</em>). Además, la mayoría de los programas que existen (y
+posiblemente todos los que nosotros escribamos) pueden ejecutarse tanto
+en Linux, como en Windows y en Mac sin realizar ningún cambio. Hay dos
+versiones activas del lenguaje Python.</p>
 <ul class="simple">
 <li><p><strong>Python2.X</strong> (Python 2) es una versión madura, estable, y con muchas
 aplicaciones, y utilidades disponibles. No se sigue desarrollando
@@ -184,42 +180,13 @@ la gran mayoría de los paquetes y utilidades utilizan Python 3 por lo
 que, salvo muy contadas excepciones, no hay razones para seguir
 utilizando Python 2.</p></li>
 </ul>
-<div class="section" id="instalacion">
-<h3>Instalación<a class="headerlink" href="#instalacion" title="Enlazar permanentemente con este título">¶</a></h3>
 <p>En este curso utilizaremos <strong>Python 3</strong></p>
-<p>Para una instalación fácil de Python y los paquetes para uso científico
-se pueden usar alguna de las distribuciones disponibles
-(<a class="reference external" href="https://www.anaconda.com/distribution">Anaconda</a>,
-<a class="reference external" href="http://www.enthought.com/product/canopy/">Canopy</a>,
-<a class="reference external" href="https://github.com/winpython/winpython">Winpython</a>)</p>
-<p>En linux se podría instalar alguna de estas distribuciones pero puede
-ser más fácil instalar directamente todo lo necesario desde los
-repositorios. Por ejemplo en Ubuntu:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`sudo apt-get install ipython3 ipython3-notebook spyder python3-matplotlib python3-numpy python3-scipy`
-</pre></div>
-</div>
-<p>o, en Fedora 28, en adelante:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`sudo dnf install python3-ipython python3-notebook python3-matplotlib python3-numpy python3-scipy`
-</pre></div>
-</div>
-<p>Si no tiene instaladas las herramientas, una buena opción es instalar la
-distribución <a class="reference external" href="https://www.anaconda.com/distribution">Anaconda</a> que
-funciona en Linux, Windows y MacOs. Para ello:</p>
-<ul class="simple">
-<li><p>Descargue el
-<a class="reference external" href="https://www.anaconda.com/products/individual#Downloads">instalador</a>
-para su plataforma.</p></li>
-<li><p>Ejecútelo, y asegúrese de decir que sí cuando pregunte si quiere
-utilizar <em>Python</em> de Anaconda como predeterminado (importante en caso
-de que tenga otro!).</p></li>
-</ul>
-</div>
-<div class="section" id="documentacion-y-ayudas">
-<h3>Documentación y ayudas<a class="headerlink" href="#documentacion-y-ayudas" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="section" id="documentacion-y-ayuda">
+<h2>Documentación y ayuda<a class="headerlink" href="#documentacion-y-ayuda" title="Enlazar permanentemente con este título">¶</a></h2>
 <ul class="simple">
 <li><p><a class="reference external" href="https://fiolj.github.io/intro-python-IB/">Un curso más
-comprensivo</a> dictado en
-los últimos años</p></li>
+comprensivo</a>, dictado en
+los últimos años en el Instituto Balseiro.</p></li>
 </ul>
 <p>Algunas fuentes de ayuda <em>constante</em> son:</p>
 <ul class="simple">
@@ -243,6 +210,54 @@ bibliotecas</a></p></li>
 <li><p>Buscar “palabras clave + python” en un buscador. Es particularmente
 útil el sitio <a class="reference external" href="http://stackoverflow.com/">stackoverflow</a></p></li>
 </ul>
+</div>
+<div class="section" id="instalacion">
+<h2>Instalación<a class="headerlink" href="#instalacion" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para una instalación fácil de Python y los paquetes para uso científico
+se pueden usar alguna de las distribuciones disponibles
+(<a class="reference external" href="https://www.anaconda.com/distribution">Anaconda</a>,
+<a class="reference external" href="http://www.enthought.com/product/canopy/">Canopy</a>,
+<a class="reference external" href="https://github.com/winpython/winpython">Winpython</a>).</p>
+<p>En linux se podría instalar alguna de estas distribuciones pero puede
+ser más fácil instalar directamente todo lo necesario desde los
+repositorios. Por ejemplo en Ubuntu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`sudo apt-get install ipython3 ipython3-notebook spyder python3-matplotlib python3-numpy python3-scipy`
+</pre></div>
+</div>
+<p>o, en Fedora 28, en adelante:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`sudo dnf install python3-ipython python3-notebook python3-matplotlib python3-numpy python3-scipy`
+</pre></div>
+</div>
+<p>Si no tiene instaladas las herramientas, una buena opción es instalar la
+distribución <a class="reference external" href="https://www.anaconda.com/distribution">Anaconda</a> que
+funciona en Linux, Windows y MacOs. Para ello:</p>
+<ul class="simple">
+<li><p>Descargue el
+<a class="reference external" href="https://www.anaconda.com/products/individual#Downloads">instalador</a>
+para su plataforma.</p></li>
+<li><p>Ejecútelo, y asegúrese de decir que sí cuando pregunte si quiere
+utilizar <em>Python</em> de Anaconda como predeterminado (importante en caso
+de que tenga otro!).</p></li>
+</ul>
+</div>
+<div class="section" id="primer-uso">
+<h2>Primer uso<a class="headerlink" href="#primer-uso" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Si instaló Anaconda, busque en el menú de inicio el “Navegador de
+Anaconda” y ejecúelo. Puede tardar algunos segundos en iniciarse, tenga
+paciencia. Se encontrará con una pantalla con un menú de varias opciones
+como la siguiente:</p>
+<img alt="_images/anaconda-start.png" src="_images/anaconda-start.png" />
+<p>En esta pantalla elija la opción “JupyterLab” (preferentemente) o
+“Jupyter Notebook” para iniciar una nueva <em>notebook</em> de Python3, que
+inicialmente está vacía</p>
+<img alt="_images/notebook-empty.png" src="_images/notebook-empty.png" />
+<p>En la celda puede escribir sus comandos y ejecutarlo con [Ctrl]+[Enter]
+(o desde el menú “Cell”). Por ejemplo</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span>
+</pre></div>
 </div>
 </div>
 </div>
