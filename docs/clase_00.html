@@ -188,17 +188,14 @@ utilizando Python 2.</p></li>
 comprensivo</a>, dictado en
 los últimos años en el Instituto Balseiro.</p></li>
 </ul>
-<p>Algunas fuentes de ayuda <em>constante</em> son:</p>
+<p>Algunas fuentes <em>permanentes</em> de ayuda son:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.python.org/3/">La documentación oficial de Python</a></p></li>
-<li><p>En particular el <a class="reference external" href="https://docs.python.org/3/tutorial/">Tutorial</a>,
-también <a class="reference external" href="http://docs.python.org.ar/tutorial/3/">en español</a> y la
-<a class="reference external" href="https://docs.python.org/3/reference/index.html">referencia de
-bibliotecas</a></p></li>
-<li><p>En una terminal, puede obtener información sobre un paquete con
-<code class="docutils literal notranslate"><span class="pre">pydoc</span> <span class="pre">&lt;comando&gt;</span></code></p></li>
-<li><p>En una consola interactiva de <strong>Python</strong>, mediante
-<code class="docutils literal notranslate"><span class="pre">help(&lt;comando&gt;)</span></code></p></li>
+<li><p>El <a class="reference external" href="https://docs.python.org/3/tutorial/">Tutorial</a>, también <a class="reference external" href="http://docs.python.org.ar/tutorial/3/">en
+español</a> y la <a class="reference external" href="https://docs.python.org/3/reference/index.html">referencia
+de bibliotecas</a></p></li>
+<li><p>En una <em>notebook</em> o en una consola interactiva de <strong>Python</strong>,
+mediante <code class="docutils literal notranslate"><span class="pre">help(&lt;comando&gt;)</span></code></p></li>
 <li><p>La documentación de los paquetes:</p>
 <ul>
 <li><p><a class="reference external" href="http://docs.scipy.org/doc/numpy/user/">Numpy</a></p></li>
@@ -218,16 +215,6 @@ se pueden usar alguna de las distribuciones disponibles
 (<a class="reference external" href="https://www.anaconda.com/distribution">Anaconda</a>,
 <a class="reference external" href="http://www.enthought.com/product/canopy/">Canopy</a>,
 <a class="reference external" href="https://github.com/winpython/winpython">Winpython</a>).</p>
-<p>En linux se podría instalar alguna de estas distribuciones pero puede
-ser más fácil instalar directamente todo lo necesario desde los
-repositorios. Por ejemplo en Ubuntu:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`sudo apt-get install ipython3 ipython3-notebook spyder python3-matplotlib python3-numpy python3-scipy`
-</pre></div>
-</div>
-<p>o, en Fedora 28, en adelante:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`sudo dnf install python3-ipython python3-notebook python3-matplotlib python3-numpy python3-scipy`
-</pre></div>
-</div>
 <p>Si no tiene instaladas las herramientas, una buena opción es instalar la
 distribución <a class="reference external" href="https://www.anaconda.com/distribution">Anaconda</a> que
 funciona en Linux, Windows y MacOs. Para ello:</p>
@@ -239,6 +226,20 @@ para su plataforma.</p></li>
 utilizar <em>Python</em> de Anaconda como predeterminado (importante en caso
 de que tenga otro!).</p></li>
 </ul>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Si bien Anaconda funciona perfectamente en Linux, puede ser más fácil
+instalar directamente todo lo necesario desde los repositorios de su
+distribución en la forma susual.</p>
+<p>Por ejemplo en Ubuntu:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`sudo apt-get install ipython3 ipython3-notebook spyder python3-matplotlib python3-numpy python3-scipy`
+</pre></div>
+</div>
+<p>o, en Fedora 28, en adelante:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`sudo dnf install python3-ipython python3-notebook python3-matplotlib python3-numpy python3-scipy`
+</pre></div>
+</div>
+</div>
 </div>
 <div class="section" id="primer-uso">
 <h2>Primer uso<a class="headerlink" href="#primer-uso" title="Enlazar permanentemente con este título">¶</a></h2>
@@ -252,7 +253,7 @@ como la siguiente:</p>
 inicialmente está vacía</p>
 <img alt="_images/notebook-empty.png" src="_images/notebook-empty.png" />
 <p>En la celda puede escribir sus comandos y ejecutarlo con [Ctrl]+[Enter]
-(o desde el menú “Cell”). Por ejemplo</p>
+(o simplemente apretando el botón “Run”). Por ejemplo:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span><span class="o">+</span><span class="mi">1</span>
 </pre></div>
 </div>
