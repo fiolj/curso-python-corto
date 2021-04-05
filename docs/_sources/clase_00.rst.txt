@@ -7,11 +7,11 @@ Clase 0: Introducción al lenguaje
 Cómo empezar: Instalación y uso
 -------------------------------
 
-**Python** es un lenguaje de programación interpretado, que se puede
-ejecutar sobre distintos sistemas operativos, esto se conoce como
+**Python** es un lenguaje de programación interpretado que se puede
+ejecutar sobre distintos sistemas operativos; esto se conoce como
 multiplataforma (suele usarse el término *cross-platform*). Además, la
 mayoría de los programas que existen (y posiblemente todos los que
-nosotros escribamos) pueden ejecutarse tanto en Linux, como en windows y
+nosotros escribamos) pueden ejecutarse tanto en Linux, como en Windows y
 en Mac sin realizar ningún cambio.
 
 **Versiones:** Hay dos versiones activas del lenguaje Python.
@@ -55,31 +55,43 @@ o, en Fedora 28, en adelante:
 
 Si no tiene instaladas las herramientas, una buena opción es instalar la
 distribución `Anaconda <https://www.anaconda.com/distribution>`__ que
-funciona en Linux, Windowsy MacOs. Para ello: - Descargue el
-`instalador <https://www.anaconda.com/products/individual#Downloads>`__
-para su plataforma. - Ejecútelo, y asegúrese de decir que sí cuando
-pregunte si quiere que Anaconda sea su programa de Python
-predeterminado.
+funciona en Linux, Windows y MacOs. Para ello:
+
+-  Descargue el
+   `instalador <https://www.anaconda.com/products/individual#Downloads>`__
+   para su plataforma.
+
+-  Ejecútelo, y asegúrese de decir que sí cuando pregunte si quiere
+   utilizar *Python* de Anaconda como predeterminado (importante en caso
+   de que tenga otro!).
 
 Documentación y ayudas
 ~~~~~~~~~~~~~~~~~~~~~~
 
+-  `Un curso más
+   comprensivo <https://fiolj.github.io/intro-python-IB/>`__ dictado en
+   los últimos años
+
 Algunas fuentes de ayuda *constante* son:
 
 -  `La documentación oficial de Python <https://docs.python.org/3/>`__
+
 -  En particular el `Tutorial <https://docs.python.org/3/tutorial/>`__,
    también `en español <http://docs.python.org.ar/tutorial/3/>`__ y la
    `referencia de
    bibliotecas <https://docs.python.org/3/reference/index.html>`__
+
 -  En una terminal, puede obtener información sobre un paquete con
    ``pydoc <comando>``
+
 -  En una consola interactiva de **Python**, mediante
    ``help(<comando>)``
+
 -  La documentación de los paquetes:
 
    -  `Numpy <http://docs.scipy.org/doc/numpy/user/>`__
    -  `Matplotlib <http://matplotlib.org>`__, en particular la
-      `galería <http://matplotlib.org/gallery.html>`__
+      `galería <https://matplotlib.org/stable/gallery/index.html>`__
    -  `Scipy <http://docs.scipy.org/doc/scipy/reference/>`__
 
 -  Buscar “palabras clave + python” en un buscador. Es particularmente
