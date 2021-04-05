@@ -1,9 +1,9 @@
 .. Curso de Python, created by sphinx-quickstart
    It should at least contain the root `toctree` directive.
 
-##########################################################
-Curso de Introducción a Python para Ciencias e Ingenierías
-##########################################################
+####################################
+Curso corto de Introducción a Python
+####################################
 
 :Institución: UNRN
 :Fecha: Abril de |today|
