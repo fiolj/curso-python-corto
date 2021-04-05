@@ -93,18 +93,6 @@
 <li class="toctree-l2"><a class="reference internal" href="#como-empezar-instalacion-y-uso">Cómo empezar: Instalación y uso</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#instalacion">Instalación</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#documentacion-y-ayudas">Documentación y ayudas</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#uso-de-python-interactivo-o-no">Uso de Python: Interactivo o no</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#interfaces-interactivas-consolas-terminales-notebooks">Interfaces interactivas (consolas/terminales, notebooks)</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#programas-scripts">Programas/scripts</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#notebooks-de-jupyter">Notebooks de Jupyter</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#comandos-de-ipython">Comandos de Ipython</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#comandos-de-navegacion">Comandos de Navegación</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#algunos-de-los-comandos-magicos">Algunos de los comandos mágicos</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#comandos-de-shell">Comandos de Shell</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
@@ -208,10 +196,10 @@ se pueden usar alguna de las distribuciones disponibles
 ser más fácil instalar directamente todo lo necesario desde los
 repositorios. Por ejemplo en Ubuntu:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`sudo apt-get install ipython3 ipython3-notebook spyder python3-matplotlib python3-numpy python3-scipy`
-
-o, en Fedora 28, en adelante:
-
-`sudo dnf install python3-ipython python3-notebook python3-matplotlib python3-numpy python3-scipy`
+</pre></div>
+</div>
+<p>o, en Fedora 28, en adelante:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>`sudo dnf install python3-ipython python3-notebook python3-matplotlib python3-numpy python3-scipy`
 </pre></div>
 </div>
 <p>Si no tiene instaladas las herramientas, una buena opción es instalar la
@@ -246,179 +234,6 @@ bibliotecas</a></p></li>
 <li><p>Buscar “palabras clave + python” en un buscador. Es particularmente
 útil el sitio <a class="reference external" href="http://stackoverflow.com/">stackoverflow</a></p></li>
 </ul>
-</div>
-<div class="section" id="uso-de-python-interactivo-o-no">
-<h3>Uso de Python: Interactivo o no<a class="headerlink" href="#uso-de-python-interactivo-o-no" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="section" id="interfaces-interactivas-consolas-terminales-notebooks">
-<h4>Interfaces interactivas (consolas/terminales, notebooks)<a class="headerlink" href="#interfaces-interactivas-consolas-terminales-notebooks" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>Hay muchas maneras de usar el lenguaje Python. Es un lenguaje
-<strong>interpretado</strong> e <strong>interactivo</strong>. Si ejecutamos la consola
-(<code class="docutils literal notranslate"><span class="pre">cmd.exe</span></code> en windows) y luego <code class="docutils literal notranslate"><span class="pre">python</span></code>, se abrirá la consola
-interactiva</p>
-<img alt="_images/console.png" src="_images/console.png" />
-<p>En la consola interactiva podemos escribir sentencias o pequeños bloques
-de código que son ejecutados inmediatamente. Pero <em>la consola
-interactiva</em> estándar no tiene tantas características de conveniencia
-como otras, por ejemplo <strong>IPython</strong> que viene con “accesorios de
-<em>comfort</em>”.</p>
-<img alt="_images/ipython.png" src="_images/ipython.png" />
-<p>La consola IPython supera a la estándar en muchos sentidos. Podemos
-autocompletar (<code class="docutils literal notranslate"><span class="pre">&lt;TAB&gt;</span></code>), ver ayuda rápida de cualquier objeto (<code class="docutils literal notranslate"><span class="pre">?</span></code>),
-etc.</p>
-</div>
-<div class="section" id="programas-scripts">
-<h4>Programas/scripts<a class="headerlink" href="#programas-scripts" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>Una forma muy común/poderosa de usar Python es en forma <em>no
-interactiva</em>, escribiendo <em>programas</em> o <em>scripts</em>. Esto es, escribir
-nuestro código en un archivo con extensión <em>.py</em> para luego ejecutarlo
-con el intérprete. Por ejemplo, podemos crear un archivo <em>hello.py</em> (al
-que se le llama <em>módulo</em>) con este contenido:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hola Mundo!&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Si ejecutamos <code class="docutils literal notranslate"><span class="pre">python</span> <span class="pre">hello.py</span></code> o <code class="docutils literal notranslate"><span class="pre">ipython</span> <span class="pre">hello.py</span></code> se ejecutará el
-interprete Python y obtendremos el resultado esperado (impresión por
-pantalla de “Hola Mundo!”, sin las comillas)</p>
-<p><strong>Python</strong> no exige un editor específico y hay muchos modos y maneras de
-programar. Lo que es importante al programar en <strong>Python</strong> es que la
-<em>indentación</em> define los bloques (definición de loops, if/else,
-funciones, clases, etc). Por esa razón es importante que el tabulado no
-mezcle espacios con caracteres específicos de tabulación. La manera que
-recomendaría es usar siempre espacios (uno usa la tecla [TAB] pero el
-editor lo traduce a un número determinado de espacios). La indentación
-recomendada es de <strong>4</strong> espacios (pero van a notar que yo uso <strong>2</strong>).</p>
-<p>Un buen editor es <strong>Spyder</strong> que tiene características de IDE (entorno
-integrado: editor + ayuda + consola interactiva).</p>
-<img alt="_images/spyder.png" src="_images/spyder.png" />
-<p>Otro entorno integrado, que funciona muy bien, viene instalado con
-<strong>Canopy</strong>.</p>
-<img alt="_images/canopy-cluster.png" src="_images/canopy-cluster.png" />
-<p>En ambos casos se puede ejecutar todo el módulo en la consola
-interactiva que incluye. Alternativamente, también se puede seleccionar
-<strong>sólo</strong> una porción del código para ejecutar.</p>
-</div>
-<div class="section" id="notebooks-de-jupyter">
-<h4>Notebooks de Jupyter<a class="headerlink" href="#notebooks-de-jupyter" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>Para trabajar en forma interactiva es muy útil usar los <em>Notebooks</em> de
-Jupyter. El notebook es un entorno interactivo enriquecido. Podemos
-crear y editar “celdas” código Python que se pueden editar y volver a
-ejecutar, se pueden intercalar celdas de texto, fórmulas matemáticas, y
-hacer que los gráficos se muestren inscrutados en la misma pantalla o en
-ventanas separadas. Además se puede escribir texto con formato (como
-este que estamos viendo) con secciones, títulos. Estos archivos se
-guardan con extensión <em>.ipynb</em>, que pueden exportarse en distintos
-formatos tales como html (estáticos), en formato PDF, LaTeX, o como
-código python puro. (.py)</p>
-</div>
-</div>
-<div class="section" id="comandos-de-ipython">
-<h3>Comandos de Ipython<a class="headerlink" href="#comandos-de-ipython" title="Enlazar permanentemente con este título">¶</a></h3>
-<div class="section" id="comandos-de-navegacion">
-<h4>Comandos de Navegación<a class="headerlink" href="#comandos-de-navegacion" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>IPython conoce varios de los comandos más comunes en Linux. En la
-terminal de IPython estos comandos funcionan independientemente del
-sistema operativo (sí, incluso en windows). Estos se conocen con el
-nombre de <strong>comandos mágicos</strong> y comienzan con el signo porcentaje
-<code class="docutils literal notranslate"><span class="pre">%</span></code>. Para obtener una lista de los comandos usamos <code class="docutils literal notranslate"><span class="pre">%lsmagic</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">lsmagic</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="algunos-de-los-comandos-magicos">
-<h4>Algunos de los comandos mágicos<a class="headerlink" href="#algunos-de-los-comandos-magicos" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>Algunos de los comandos mágicos más importantes son:</p>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">%cd</span></code> <em>direct</em> (Nos ubica en la carpeta direct)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">%ls</span></code> (muestra un listado del directorio)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">%pwd</span></code> (muestra el directorio donde estamos trabajando)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">%run</span></code> <em>filename</em> (corre un dado programa)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">%hist</span></code> (muestra la historia de comandos utilizados)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">%mkdir</span></code> <em>dname</em> (crea un directorio llamado dname)</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">%cat</span></code> <em>fname</em> (Muestra por pantalla el contenido del archivo
-fname)</p></li>
-<li><p>Tab completion: Apretando [TAB] completa los comandos o nombres de
-archivos.</p></li>
-</ul>
-<p>En la consola de IPython tipee <code class="docutils literal notranslate"><span class="pre">%cd</span> <span class="pre">~</span></code> (<em>i.e.</em> “<code class="docutils literal notranslate"><span class="pre">%cd</span></code>” – “espacio” –
-“tilde”, y luego presione [RETURN]. Esto nos pone en el directorio HOME
-(default).</p>
-<p>Después tipee <code class="docutils literal notranslate"><span class="pre">%pwd</span></code> (print working directory) y presione [RETURN]
-para ver en qué directorio estamos:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">cd</span> <span class="o">~</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">pwd</span>
-</pre></div>
-</div>
-<p>En windows, el comando <code class="docutils literal notranslate"><span class="pre">pwd</span></code> va a dar algo así como:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">In</span> <span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">pwd</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="n">C</span><span class="p">:</span>\\<span class="n">Users</span>\\<span class="n">usuario</span>
-</pre></div>
-</div>
-<p>Vamos a crear un directorio donde guardar ahora los programas de ejemplo
-que escribamos. Lo vamos a llamar <code class="docutils literal notranslate"><span class="pre">scripts</span></code>.</p>
-<p>Primero vamos a ir al directorio que queremos, y crearlo. En mi caso lo
-voy a crear en mi HOME.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">cd</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">mkdir</span> <span class="n">scripts</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">cd</span> <span class="n">scripts</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">hist</span>
-</pre></div>
-</div>
-<p>Hay varios otros comandos mágicos en IPython. Para leer información
-sobre el sistema de comandos mágicos utilice:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">magic</span>
-</pre></div>
-</div>
-<p>Finalmente, para obtener un resumen de comandos con una explicación
-breve, utilice:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">quickref</span>
-</pre></div>
-</div>
-</div>
-<div class="section" id="comandos-de-shell">
-<h4>Comandos de Shell<a class="headerlink" href="#comandos-de-shell" title="Enlazar permanentemente con este título">¶</a></h4>
-<p>Se pueden correr comandos del sistema operativo (más útil en linux)
-tipeando <code class="docutils literal notranslate"><span class="pre">!</span></code> seguido por el comando que se quiere ejecutar. Por
-ejemplo:</p>
-<div class="section" id="comandos">
-<h5>comandos<a class="headerlink" href="#comandos" title="Enlazar permanentemente con este título">¶</a></h5>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!echo &quot; &quot; &gt;&gt; prog1.py
-!echo &quot;print(&#39;hola otra vez&#39;)&quot; &gt;&gt; prog1.py
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">ls</span> <span class="n">prog</span><span class="o">*</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">prog1</span><span class="o">.</span><span class="n">py</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">cat</span> <span class="n">prog1</span><span class="o">.</span><span class="n">py</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hola otra vez&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="n">run</span> <span class="n">prog1</span><span class="o">.</span><span class="n">py</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hola</span> <span class="n">otra</span> <span class="n">vez</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>!date
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Tue</span> <span class="n">Mar</span> <span class="mi">26</span> <span class="mi">19</span><span class="p">:</span><span class="mi">34</span><span class="p">:</span><span class="mi">17</span> <span class="o">-</span><span class="mi">03</span> <span class="mi">2019</span>
-</pre></div>
-</div>
-</div>
-</div>
 </div>
 </div>
 </div>
