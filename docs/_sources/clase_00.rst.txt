@@ -38,7 +38,7 @@ Algunas fuentes *permanentes* de ayuda son:
 -  `La documentación oficial de Python <https://docs.python.org/3/>`__
 
 -  El `Tutorial <https://docs.python.org/3/tutorial/>`__, también `en
-   español <http://docs.python.org.ar/tutorial/3/>`__ y la `referencia
+   español <https://docs.python.org/es/3/tutorial/>`__ y la `referencia
    de bibliotecas <https://docs.python.org/3/reference/index.html>`__
 
 -  En una *notebook* o en una consola interactiva de **Python**,
@@ -133,6 +133,16 @@ En la celda puede escribir sus comandos y ejecutarlo con [Ctrl]+[Enter]
 
     3
 
+
+
+.. raw:: html
+
+    Algo así:
+    
+   
+    <video  style="display:block; width:100%; height:auto;" autoplay controls loop="loop">
+    <source src="_images/celdas-jupyter.webm" type="video/webm"/>
+    </video>
 
 
 
