@@ -139,6 +139,9 @@ pre {
   margin-bottom: 0.75rem;
 }
 
+.card-list {
+    text-align: left;
+}
 .intro-card .card-text {
   margin: 20px 0px;
   /*min-height: 150px; */

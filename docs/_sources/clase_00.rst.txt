@@ -139,7 +139,7 @@ Como se ve en el siguiente (corto) video:
 Ejercicios
 ----------
 
-1. Habra un *Notebook* nuevo y utilícelo como una calculadora para
+1. Abra un *Notebook* nuevo y utilícelo como una calculadora para
    realizar las siguientes acciones:
 
    -  Suponiendo que, de las cuatro horas de clases, tomamos un descanso
