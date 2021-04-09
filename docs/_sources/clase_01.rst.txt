@@ -1,0 +1,848 @@
+.. _clase_01:
+
+Clase 1: Conceptos básicos de Python 
+======================================
+
+
+Características generales del lenguaje
+--------------------------------------
+
+Python presenta características modernas. Posiblemente su característica
+más visible/notable es que la estructuración del código está fuertemente
+relacionada con su legibilidad:
+
+-  Es un lenguaje interpretado (no se compila separadamente)
+
+-  Provee tanto un entorno interactivo como de programas separados
+
+-  Las funciones, bloques, ámbitos están definidos por la indentación
+
+-  Tiene una estructura altamente modular, permitiendo su reusabilidad
+
+-  Es un lenguaje de *tipeado dinámico*, no tenemos que declarar el tipo
+   de variable antes de usarla.
+
+Python es un lenguaje altamente modular con una biblioteca standard que
+provee de funciones y tipos para un amplio rango de aplicaciones, y que
+se distribuye junto con el lenguaje. Además hay un conjunto muy
+importante de utilidades que pueden instalarse e incorporarse muy
+fácilmente. El núcleo del lenguaje es pequeño, existiendo sólo unas
+pocas palabras reservadas:
+
+====== ======== ======= ======== ======
+False  class    finally is       return
+====== ======== ======= ======== ======
+None   continue for     lambda   try
+True   def      from    nonlocal while
+and    del      global  not      with
+as     elif     if      or       yield
+assert else     import  pass     
+break  except   in      raise    
+====== ======== ======= ======== ======
+
+Además de las palabras reservadas, es relevante el caracter ``#``,
+porque inicia un comentario que se continúa hasta el final de la línea.
+Los comentarios son fragmentos que se ignoran completamente en la
+ejecución del código.
+
+.. code:: python
+
+    1+1
+    # 3+3
+
+Como vemos, la segunda línea es ignorada completamente.
+
+Tipos simples de variables
+--------------------------
+
+Python es un lenguaje de muy alto nivel y por lo tanto trae muchos
+*tipos* de datos ya definidos:
+
+-  Números: enteros, reales, complejos
+-  Tipos lógicos (booleanos)
+-  Cadenas de caracteres (strings) y bytes
+-  Listas: una lista es una colección de cosas, ordenadas, que pueden
+   ser todas distintas entre sí
+-  Diccionarios: También son colecciones de cosas, pero no están
+   ordenadas y son identificadas con una etiqueta
+-  Conjuntos, tuples, …
+
+Números
+~~~~~~~
+
+Hay varios tipos de números en Python. Aquí definimos y asignamos valor
+a distintas variables:
+
+.. code:: python
+
+    a = 13
+    b = 1.235
+    c = a + b
+
+.. code:: python
+
+    print(a, type(a))
+
+
+.. parsed-literal::
+
+    13 <class 'int'>
+
+
+.. code:: python
+
+    print(b, type(b))
+    print(c, type(c))
+
+
+.. parsed-literal::
+
+    1.235 <class 'float'>
+    14.235 <class 'float'>
+
+
+Esta es una de las características de Python. Se define el tipo de
+variable en forma dinámica, al asignarle un valor.
+
+De la misma manera se cambia el tipo de una variable en forma dinámica,
+para poder operar. Por ejemplo en el último caso, la variable ``a`` es
+de tipo ``int``, pero para poder sumarla con la variable ``b`` debe
+convertirse su valor a otra de tipo ``float``.
+
+.. code:: python
+
+    print (a, type(a))
+    a = 1.5 * a
+    print (a, type(a))
+
+
+.. parsed-literal::
+
+    19.5 <class 'float'>
+    29.25 <class 'float'>
+
+
+Ahora, la variable ``a`` es del tipo ``float``.
+
+.. note::  La función ``print``
+  
+  Estuvimos usando, sin hacer ningún comentario, la función
+  
+  ::
+  
+     print(arg1, arg2, arg3, ..., sep=' ', end='\n', file=sys.stdout, flush=False)` 
+  
+  acepta un número variable de argumentos. Imprime por pantalla todos los
+  argumentos que se le pasan separados por el string ``sep`` (cuyo valor
+  por defecto es un espacio), y termina con el string ``end`` (con valor
+  por defecto *newline*).
+  
+  .. code:: python
+  
+      print?
+  
+  .. code:: python
+  
+      print(3,2,'hola')
+      print(4,1,'chau')
+  
+  
+  .. parsed-literal::
+  
+      3 2 hola
+      4 1 chau
+  
+  
+  .. code:: python
+  
+      print(3,2,'hola',sep='++++',end=' -> ')
+      print(4,1,'chau',sep='++++')
+  
+  
+  .. parsed-literal::
+  
+      3++++2++++hola -> 4++++1++++chau
+  
+  
+  .. code:: python
+  
+      print(3,2,'hola',sep=',')
+  
+  
+  .. parsed-literal::
+  
+      3,2,hola
+  
+  
+  
+
+Números complejos
+^^^^^^^^^^^^^^^^^
+
+Los números complejos son parte standard del lenguaje, y las operaciones
+básicas que están incorporadas en forma nativa pueden utilizarse
+normalmente
+
+.. code:: python
+
+    z1 = 3 + 1j
+    z2 = 2 + 2.124j
+    print ('z1 =', z1, ', z2 =', z2)
+
+
+.. parsed-literal::
+
+    z1 = (3+1j) , z2 = (2+2.124j)
+
+
+.. code:: python
+
+    type(z1)
+
+
+
+
+.. parsed-literal::
+
+    complex
+
+
+
+.. code:: python
+
+    print('1.5j * z2 + z1 = ', 1.5j * z2 + z1)  # sumas, multiplicaciones de números complejos
+    print('z2² = ', z2**2)  # potencia de números complejos
+    print('conj(z1) = ',  z1.conjugate()  )
+
+
+.. parsed-literal::
+
+    1.5j * z2 + z1 =  (-0.18599999999999994+4j)
+    z2² =  (-0.5113760000000003+8.496j)
+    conj(z1) =  (3-1j)
+
+
+.. code:: python
+
+    print ('Im(z1) = ', z1.imag)
+    print ('Re(z1) = ', z1.real)
+    print ('abs(z1) = ', abs(z1))
+
+
+.. parsed-literal::
+
+    Im(z1) =  1.0
+    Re(z1) =  3.0
+    abs(z1) =  3.1622776601683795
+
+
+Operaciones
+^^^^^^^^^^^
+
+Las operaciones aritméticas básicas son:
+
+-  adición: ``+``
+-  sustracción: ``-``
+-  multiplicación: ``*``
+-  división: ``/``
+-  potencia: ``**``
+-  módulo: ``%``
+-  división entera: ``//``
+
+Las operaciones se pueden agrupar con parentesis y tienen precedencia
+estándar.
+
+División entera (//) significa quedarse con la parte entera de la
+división (sin redondear).
+
+.. note::  Las operaciones matemáticas están incluidas en el lenguaje,
+  pero las funciones no.
+  
+  En particular las funciones elementales: trigonométricas, hiperbólicas,
+  logaritmos no están incluidas. En todos los casos es fácil utilizarlas
+  porque las proveen módulos. Lo veremos pronto.
+  
+  
+
+.. code:: python
+
+    print('división de 20/3:         ', 20/3)
+    print('parte entera de 20/3:     ', 20//3)
+    print('fracción restante de 20/3:', 20/3 - 20//3)
+    print('Resto de 20/3:            ', 20%3)
+
+
+.. parsed-literal::
+
+    división de 20/3:          6.666666666666667
+    parte entera de 20/3:      6
+    fracción restante de 20/3: 0.666666666666667
+    Resto de 20/3:             2
+
+
+En Python 3 la división entre números enteros da como resultado un
+número flotante
+
+.. code:: python
+
+    print(20/5)
+    print(type(20/5))
+    print(20/3)
+
+
+.. parsed-literal::
+
+    4.0
+    <class 'float'>
+    6.666666666666667
+
+
+.. warning::  En *Python 2.x* la división entre números enteros es
+  entera
+  
+  .. code:: python
+  
+      %%python2
+      print 1/2,  20/3
+  
+  
+  .. parsed-literal::
+  
+      0 6
+  
+  
+  .. code:: python
+  
+      print( 1//2,  20//3)  # División entera 
+      print( 1/2,  20/3)    # División
+  
+  
+  .. parsed-literal::
+  
+      0 6
+      0.5 6.666666666666667
+  
+  
+  
+
+Tipos simples: Booleanos
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Los tipos lógicos o *booleanos*, pueden tomar los valores *Verdadero* o
+*Falso* (``True`` o ``False``). También hay un tipo *especial*, el
+elemento ``None``.
+
+.. code:: python
+
+    t = False
+    print('¿t is True?', t == True)
+    print('¿t is False?', t == False)
+
+
+.. parsed-literal::
+
+    ¿t is True? False
+    ¿t is False? True
+
+
+Los valores se pueden asignar a variables, como se hace con números
+
+.. code:: python
+
+    c = (t == True)
+    print('¿t is True?', c)
+    print (type(c))
+
+
+.. parsed-literal::
+
+    ¿t is True? False
+    <class 'bool'>
+
+
+El tipo ``None`` no es un número, pero tampoco es Verdadero o Falso
+
+.. code:: python
+
+    print ('True == None: ',True == None)
+    print ('False == None: ', False == None)
+
+
+.. parsed-literal::
+
+    True == None:  False
+    False == None:  False
+
+
+.. code:: python
+
+    a = None
+    print ('type(a): ',type(a))
+    print (bool(None))
+
+
+.. parsed-literal::
+
+    type(a):  <class 'NoneType'>
+    False
+
+
+Aquí hemos estado preguntando si dos cosas eran iguales o no (igualdad).
+También podemos preguntar si una **es** la otra (identidad). En el
+siguiente ejemplo vemos que dos variables pueden tener el mismo valor
+pero ser diferentes
+
+.. code:: python
+
+    d = 1.5
+    a = d
+    print(d == a)
+    print(d is a)
+
+
+.. parsed-literal::
+
+    True
+    True
+
+
+.. code:: python
+
+    d = 1.5
+    a = 1.5
+    print(d == a)
+    print(d is a)
+
+
+.. parsed-literal::
+
+    True
+    False
+
+
+Sin embargo, dos variables que tienen valores ``True`` son efectivamente
+“la misma” (son idénticas). Lo mismo ocurre con ``False`` y ``None``
+
+.. code:: python
+
+    a = True
+    b = True
+    c = None
+    d = None
+    print ('a is True: ', a is True)
+    print ('c is None: ', c is None)
+    print("¿Son idénticas las variables?")
+    print ('b is a: ', b is a)
+    print ('d is c: ', d is c)
+
+
+.. parsed-literal::
+
+    a is True:  True
+    c is None:  True
+    ¿Son idénticas las variables?
+    b is a:  True
+    d is c:  True
+
+
+Operadores lógicos
+^^^^^^^^^^^^^^^^^^
+
+Los operadores lógicos en Python son muy explicitos:
+
+::
+
+   A == B  (A igual que B)
+   A > B   (A mayor que B)
+   A < B   (A menor que B)
+   A >= B  (A igual o mayor que B)
+   A <= B  (A igual o menor que B)
+   A != B  (A diferente que B)
+   A in B  (A incluido en B)
+   A is B  (Identidad: A es el mismo elemento que B)
+
+y a todos los podemos combinar con ``not``, que niega la condición
+
+.. code:: python
+
+    print ('¿20/3 == 6?  ->', 20/3 == 6)
+    print ('¿20//3 == 6? ->', 20//3 == 6)
+    print ('¿20//3 >= 6? ->', 20//3 >= 6)
+    print ('¿20//3 > 6?  ->', 20//3 > 6)
+
+
+.. parsed-literal::
+
+    ¿20/3 == 6?  -> False
+    ¿20//3 == 6? -> True
+    ¿20//3 >= 6? -> True
+    ¿20//3 > 6?  -> False
+
+
+.. code:: python
+
+    a = 1001
+    b = 1001
+    print ('a == b     ->', a == b)
+    print ('a is b     ->', a is b)
+    print ('a is not b ->', a is not b)
+
+
+.. parsed-literal::
+
+    a == b     -> True
+    a is b     -> False
+    a is not b -> True
+
+
+Note que en las últimas dos líneas estamos fijándonos si las dos
+variables son la misma (identidad), y no ocurre aunque sus valores son
+iguales.
+
+Modularización y reuso
+----------------------
+
+Los módulos son el mecanismo de Python para reusar código. Una gran
+ventaja del lenguaje es que ya existen muchos módulos que son parte de
+la biblioteca *standard*. Además, existen numerosas bibliotecas y
+módulos para ayudarnos en cualquier tarea.
+
+El uso de los módulos es muy simple, para poder aprovecharlo
+necesitaremos saber dos cosas:
+
+-  Qué funciones están ya definidas y listas para usar
+-  Cómo acceder a ellas
+
+La primera pregunta: cómo saber cuáles son los posibles módulos que ya
+están definidos, su nombre, y que funciones están disponibles tiene una
+respuesta muy general que es “buscar” (en internet). La primera
+respuesta que podemos (deberíamos) intentar es: la
+`documentación <https://docs.python.org/es/3/index.html>`__, y en
+particular la `biblioteca
+standard <https://docs.python.org/es/3/library/index.html>`__.
+
+La segunda cuestión: una vez que sabemos qué existe (y no necesitamos
+reinventar), cómo podemos usarlo:
+
+Para utilizar todas las funcionalidades que están definidas en un
+*modulo* debemos primero hacerle saber a nuestro programa que existen.
+Eso se hace *importando* el módulo con el simple comando
+``import modulo``, donde modulo es el nombre que queremos importar.
+
+Una vez importado, podemos utilizar constantes y funciones definidas en
+el módulo con la notación “de punto”: ``modulo.funcion()``.
+
+Ejemplos: Módulos math y cmath
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+El módulo `math <https://docs.python.org/es/3/library/math.html>`__
+contiene funciones y utilidades para trabajar con números reales
+(enteros y punto flotante). Es parte de la biblioteca standard de Python
+por lo que no tenemos que instalar nada nuevo. Contiene todas las
+funciones más comunes (trigonométricas, exponenciales, logaritmos, etc)
+y algunas constantes importantes (:math:`\pi`, e, etc). En realidad es
+una interface para dar acceso a la biblioteca ``math`` en C.
+
+Veamos como utilizarlo:
+
+.. code:: python
+
+    import math
+
+Después de este comando, tenemos disponible todos los objetos definidos
+(por algún amable programador) en el módulo
+`math <https://docs.python.org/es/3/library/math.html>`__
+
+.. code:: python
+
+    # Veamos el valor de Pi:
+    math.pi
+
+
+
+
+.. parsed-literal::
+
+    3.141592653589793
+
+
+
+.. code:: python
+
+    # algunas constantes y funciones elementales
+    raiz5pi = math.sqrt(5*math.pi)
+
+.. code:: python
+
+    raiz5pi
+
+
+
+
+.. parsed-literal::
+
+    3.963327297606011
+
+
+
+Otras funciones disponibles son ``floor`` y ``ceil``:
+
+.. code:: python
+
+    print (raiz5pi, math.floor(raiz5pi), math.ceil(raiz5pi))
+    print (math.e, math.floor(math.e), math.ceil(math.e))
+
+
+.. parsed-literal::
+
+    3.963327297606011 3 4
+    2.718281828459045 2 3
+
+
+Como puede leerse en la documentación del módulo, se definen también
+funciones elementales:
+
+.. code:: python
+
+    # algunas funciones elementales
+    print (math.log(1024,2), math.log(27,3))
+    print (math.factorial(7), math.factorial(9), math.factorial(10))
+    print ('Combinatorio: C(6,2):',math.factorial(6)/(math.factorial(4)*math.factorial(2)))
+
+
+.. parsed-literal::
+
+    10.0 3.0
+    5040 362880 3628800
+    Combinatorio: C(6,2): 15.0
+
+
+A veces, sólo necesitamos unas pocas funciones de un módulo. Entonces
+para abreviar la notación combiene importar sólo lo que vamos a usar,
+usando la notación:
+
+``from xxx import yyy``
+
+.. code:: python
+
+    from math import sqrt, pi, log, floor
+
+.. code:: python
+
+    raiz5pi = sqrt(5*pi)
+    print (log(1024, 2))
+    print (raiz5pi, floor(raiz5pi))
+
+
+.. parsed-literal::
+
+    10.0
+    3.963327297606011 3
+
+
+.. note::  Para importar todas las definiciones de un módulo pueden
+  encontrar la (perfectamente válida) notación:
+  
+  ``from xxx import *``
+  
+  donde el asterisco indica “todo”. Este uso no está recomendado porque
+  varios módulos pueden usar los mismos nombres y no sabríamos cuál
+  estamos usando. También puede traer inconvenientes si después queremos
+  reusar el código que estamos escribiendo.
+  
+  
+
+Otra opción es utilizar un “alias” para el módulo. Esto permite mantener
+información del origen de los objetos sin tener que escribir el nombre
+completo
+
+.. code:: python
+
+    import math as m
+    m.sqrt(3.2)
+
+
+
+
+.. parsed-literal::
+
+    1.7888543819998317
+
+
+
+El módulo ``math`` contiene funciones para trabajar con números reales
+
+.. code:: python
+
+    import math
+    try:
+        math.sqrt(-1)
+
+
+::
+
+
+      File "<ipython-input-45-dcf65d789be2>", line 3
+        math.sqrt(-1)
+                     ^
+    SyntaxError: unexpected EOF while parsing
+
+
+
+y falla con números complejos, para ello existe el módulo
+`cmath <https://docs.python.org/es/3/library/cmath.html>`__
+
+.. code:: python
+
+    import cmath as c
+
+Ahora tenemos a nuestra disposición todas las utilidades definidas en el
+módulo:
+
+.. code:: python
+
+    print('Usando cmath (-1)^0.5: ', c.sqrt(-1))
+
+
+.. parsed-literal::
+
+    Usando cmath (-1)^0.5:  1j
+
+
+.. code:: python
+
+    print(c.cos(c.pi/3 + 2j))
+
+
+.. parsed-literal::
+
+    (1.8810978455418161-3.1409532491755083j)
+
+
+Si queremos calcular la fase (el ángulo que forma con el eje x) podemos
+usar la función phase
+
+.. code:: python
+
+    z = 1 + 1j
+    c.phase(z)                  # Resultado en radianes
+
+
+
+
+.. parsed-literal::
+
+    0.7853981633974483
+
+
+
+.. code:: python
+
+    math.degrees(c.phase(z))    # Resultado en grados
+
+
+
+
+.. parsed-literal::
+
+    45.0
+
+
+
+Disgresión: Objetos
+-------------------
+
+En python, cualquier elemento es un *objeto*. Todos los objetos tienen,
+al menos:
+
+-  un tipo,
+-  un valor,
+-  una identidad.
+
+Además, pueden tener *métodos*, es decir funciones asociadas que,
+habitualmente, actúan sobre el objeto que la posee. Veamos algunos
+ejemplos cotidianos:
+
+.. code:: python
+
+    z = 1 + 1j
+    print(z, type(z))
+    print( z.real )
+    print( z.imag )
+    print( z.conjugate )
+    print( z.conjugate() )
+
+
+.. parsed-literal::
+
+    (1+1j) <class 'complex'>
+    1.0
+    1.0
+    <built-in method conjugate of complex object at 0x7f2873f0bd50>
+    (1-1j)
+
+
+Los números complejos tienen un valor (en este caso :math:`1 + i`), pero
+además tienen más información (su parte real, imaginaria) y una función
+que nos da su conjugado.
+
+Los números enteros, más simples, también son objetos, con propiedades y
+métodos:
+
+.. code:: python
+
+    a = 3                           # Números enteros
+    print(type(a))
+    a.bit_length()
+
+
+.. parsed-literal::
+
+    <class 'int'>
+
+
+
+
+.. parsed-literal::
+
+    2
+
+
+
+.. code:: python
+
+    a = 12312
+    print(type(a))
+    a.bit_length()
+
+
+.. parsed-literal::
+
+    <class 'int'>
+
+
+
+
+.. parsed-literal::
+
+    14
+
+
+
+En estos casos, usamos el método ``bit_length`` de los enteros, que nos
+dice cuántos bits son necesarios para representar el número.
+
+Ejercicios
+----------
+
+1. Para el número complejo :math:`z= 1 + 0.5 i`
+
+   -  Calcular :math:`z^2, z^3, z^4, z^5.`
+   -  Calcular los complejos conjugados de :math:`z`, :math:`z^2` y
+      :math:`z^3`.
+   -  Escribir :math:`z`, :math:`z^2` y :math:`z^3` en coordenadas
+      polares.
+
+   (Recuerde que puede utilizar los módulos ``math`` y/o ``cmath``)
+
+

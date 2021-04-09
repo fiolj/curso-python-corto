@@ -1,0 +1,852 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Clase 1: Conceptos básicos de Python &mdash; documentación de Curso corto de Python - </title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/rtd_overrides.css" type="text/css" />
+    <link rel="search" title="Búsqueda" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Curso corto de Python
+          
+
+          
+            
+            <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2021
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Dictado de las clases</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="clase_00.html">Clase 0: Introducción al lenguaje: Instalación y uso</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Curso corto de Python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Clase 1: Conceptos básicos de Python</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/clase_01.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="clase-1-conceptos-basicos-de-python">
+<span id="clase-01"></span><h1>Clase 1: Conceptos básicos de Python<a class="headerlink" href="#clase-1-conceptos-basicos-de-python" title="Enlazar permanentemente con este título">¶</a></h1>
+<div class="section" id="caracteristicas-generales-del-lenguaje">
+<h2>Características generales del lenguaje<a class="headerlink" href="#caracteristicas-generales-del-lenguaje" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Python presenta características modernas. Posiblemente su característica
+más visible/notable es que la estructuración del código está fuertemente
+relacionada con su legibilidad:</p>
+<ul class="simple">
+<li><p>Es un lenguaje interpretado (no se compila separadamente)</p></li>
+<li><p>Provee tanto un entorno interactivo como de programas separados</p></li>
+<li><p>Las funciones, bloques, ámbitos están definidos por la indentación</p></li>
+<li><p>Tiene una estructura altamente modular, permitiendo su reusabilidad</p></li>
+<li><p>Es un lenguaje de <em>tipeado dinámico</em>, no tenemos que declarar el tipo
+de variable antes de usarla.</p></li>
+</ul>
+<p>Python es un lenguaje altamente modular con una biblioteca standard que
+provee de funciones y tipos para un amplio rango de aplicaciones, y que
+se distribuye junto con el lenguaje. Además hay un conjunto muy
+importante de utilidades que pueden instalarse e incorporarse muy
+fácilmente. El núcleo del lenguaje es pequeño, existiendo sólo unas
+pocas palabras reservadas:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 17%" />
+<col style="width: 23%" />
+<col style="width: 20%" />
+<col style="width: 23%" />
+<col style="width: 17%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>False</p></th>
+<th class="head"><p>class</p></th>
+<th class="head"><p>finally</p></th>
+<th class="head"><p>is</p></th>
+<th class="head"><p>return</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>None</p></td>
+<td><p>continue</p></td>
+<td><p>for</p></td>
+<td><p>lambda</p></td>
+<td><p>try</p></td>
+</tr>
+<tr class="row-odd"><td><p>True</p></td>
+<td><p>def</p></td>
+<td><p>from</p></td>
+<td><p>nonlocal</p></td>
+<td><p>while</p></td>
+</tr>
+<tr class="row-even"><td><p>and</p></td>
+<td><p>del</p></td>
+<td><p>global</p></td>
+<td><p>not</p></td>
+<td><p>with</p></td>
+</tr>
+<tr class="row-odd"><td><p>as</p></td>
+<td><p>elif</p></td>
+<td><p>if</p></td>
+<td><p>or</p></td>
+<td><p>yield</p></td>
+</tr>
+<tr class="row-even"><td><p>assert</p></td>
+<td><p>else</p></td>
+<td><p>import</p></td>
+<td><p>pass</p></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>break</p></td>
+<td><p>except</p></td>
+<td><p>in</p></td>
+<td><p>raise</p></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Además de las palabras reservadas, es relevante el caracter <code class="docutils literal notranslate"><span class="pre">#</span></code>,
+porque inicia un comentario que se continúa hasta el final de la línea.
+Los comentarios son fragmentos que se ignoran completamente en la
+ejecución del código.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span>
+<span class="c1"># 3+3</span>
+</pre></div>
+</div>
+<p>Como vemos, la segunda línea es ignorada completamente.</p>
+</div>
+<div class="section" id="tipos-simples-de-variables">
+<h2>Tipos simples de variables<a class="headerlink" href="#tipos-simples-de-variables" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Python es un lenguaje de muy alto nivel y por lo tanto trae muchos
+<em>tipos</em> de datos ya definidos:</p>
+<ul class="simple">
+<li><p>Números: enteros, reales, complejos</p></li>
+<li><p>Tipos lógicos (booleanos)</p></li>
+<li><p>Cadenas de caracteres (strings) y bytes</p></li>
+<li><p>Listas: una lista es una colección de cosas, ordenadas, que pueden
+ser todas distintas entre sí</p></li>
+<li><p>Diccionarios: También son colecciones de cosas, pero no están
+ordenadas y son identificadas con una etiqueta</p></li>
+<li><p>Conjuntos, tuples, …</p></li>
+</ul>
+<div class="section" id="numeros">
+<h3>Números<a class="headerlink" href="#numeros" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Hay varios tipos de números en Python. Aquí definimos y asignamos valor
+a distintas variables:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">13</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">1.235</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>13 &lt;class &#39;int&#39;&gt;
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1.235 &lt;class &#39;float&#39;&gt;
+14.235 &lt;class &#39;float&#39;&gt;
+</pre></div>
+</div>
+<p>Esta es una de las características de Python. Se define el tipo de
+variable en forma dinámica, al asignarle un valor.</p>
+<p>De la misma manera se cambia el tipo de una variable en forma dinámica,
+para poder operar. Por ejemplo en el último caso, la variable <code class="docutils literal notranslate"><span class="pre">a</span></code> es
+de tipo <code class="docutils literal notranslate"><span class="pre">int</span></code>, pero para poder sumarla con la variable <code class="docutils literal notranslate"><span class="pre">b</span></code> debe
+convertirse su valor a otra de tipo <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">a</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>19.5 &lt;class &#39;float&#39;&gt;
+29.25 &lt;class &#39;float&#39;&gt;
+</pre></div>
+</div>
+<p>Ahora, la variable <code class="docutils literal notranslate"><span class="pre">a</span></code> es del tipo <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>La función <code class="docutils literal notranslate"><span class="pre">print</span></code></p>
+<p>Estuvimos usando, sin hacer ningún comentario, la función</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>print(arg1, arg2, arg3, ..., sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=False)`
+</pre></div>
+</div>
+<p>acepta un número variable de argumentos. Imprime por pantalla todos los
+argumentos que se le pasan separados por el string <code class="docutils literal notranslate"><span class="pre">sep</span></code> (cuyo valor
+por defecto es un espacio), y termina con el string <code class="docutils literal notranslate"><span class="pre">end</span></code> (con valor
+por defecto <em>newline</em>).</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>print?
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;hola&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;chau&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="mi">2</span> <span class="n">hola</span>
+<span class="mi">4</span> <span class="mi">1</span> <span class="n">chau</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;hola&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;++++&#39;</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s1">&#39; -&gt; &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;chau&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;++++&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="o">++++</span><span class="mi">2</span><span class="o">++++</span><span class="n">hola</span> <span class="o">-&gt;</span> <span class="mi">4</span><span class="o">++++</span><span class="mi">1</span><span class="o">++++</span><span class="n">chau</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;hola&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="n">hola</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="numeros-complejos">
+<h4>Números complejos<a class="headerlink" href="#numeros-complejos" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Los números complejos son parte standard del lenguaje, y las operaciones
+básicas que están incorporadas en forma nativa pueden utilizarse
+normalmente</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z1</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span>
+<span class="n">z2</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">2.124</span><span class="n">j</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;z1 =&#39;</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="s1">&#39;, z2 =&#39;</span><span class="p">,</span> <span class="n">z2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="n">j</span><span class="p">)</span> <span class="p">,</span> <span class="n">z2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mf">2.124</span><span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">z1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">complex</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;1.5j * z2 + z1 = &#39;</span><span class="p">,</span> <span class="mf">1.5</span><span class="n">j</span> <span class="o">*</span> <span class="n">z2</span> <span class="o">+</span> <span class="n">z1</span><span class="p">)</span>  <span class="c1"># sumas, multiplicaciones de números complejos</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;z2² = &#39;</span><span class="p">,</span> <span class="n">z2</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>  <span class="c1"># potencia de números complejos</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;conj(z1) = &#39;</span><span class="p">,</span>  <span class="n">z1</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span>  <span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>1.5j * z2 + z1 =  (-0.18599999999999994+4j)
+z2² =  (-0.5113760000000003+8.496j)
+conj(z1) =  (3-1j)
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Im(z1) = &#39;</span><span class="p">,</span> <span class="n">z1</span><span class="o">.</span><span class="n">imag</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Re(z1) = &#39;</span><span class="p">,</span> <span class="n">z1</span><span class="o">.</span><span class="n">real</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;abs(z1) = &#39;</span><span class="p">,</span> <span class="nb">abs</span><span class="p">(</span><span class="n">z1</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Im</span><span class="p">(</span><span class="n">z1</span><span class="p">)</span> <span class="o">=</span>  <span class="mf">1.0</span>
+<span class="n">Re</span><span class="p">(</span><span class="n">z1</span><span class="p">)</span> <span class="o">=</span>  <span class="mf">3.0</span>
+<span class="nb">abs</span><span class="p">(</span><span class="n">z1</span><span class="p">)</span> <span class="o">=</span>  <span class="mf">3.1622776601683795</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="operaciones">
+<h4>Operaciones<a class="headerlink" href="#operaciones" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Las operaciones aritméticas básicas son:</p>
+<ul class="simple">
+<li><p>adición: <code class="docutils literal notranslate"><span class="pre">+</span></code></p></li>
+<li><p>sustracción: <code class="docutils literal notranslate"><span class="pre">-</span></code></p></li>
+<li><p>multiplicación: <code class="docutils literal notranslate"><span class="pre">*</span></code></p></li>
+<li><p>división: <code class="docutils literal notranslate"><span class="pre">/</span></code></p></li>
+<li><p>potencia: <code class="docutils literal notranslate"><span class="pre">**</span></code></p></li>
+<li><p>módulo: <code class="docutils literal notranslate"><span class="pre">%</span></code></p></li>
+<li><p>división entera: <code class="docutils literal notranslate"><span class="pre">//</span></code></p></li>
+</ul>
+<p>Las operaciones se pueden agrupar con parentesis y tienen precedencia
+estándar.</p>
+<p>División entera (//) significa quedarse con la parte entera de la
+división (sin redondear).</p>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Las operaciones matemáticas están incluidas en el lenguaje,
+pero las funciones no.</p>
+<p>En particular las funciones elementales: trigonométricas, hiperbólicas,
+logaritmos no están incluidas. En todos los casos es fácil utilizarlas
+porque las proveen módulos. Lo veremos pronto.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;división de 20/3:         &#39;</span><span class="p">,</span> <span class="mi">20</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;parte entera de 20/3:     &#39;</span><span class="p">,</span> <span class="mi">20</span><span class="o">//</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;fracción restante de 20/3:&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="o">/</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">20</span><span class="o">//</span><span class="mi">3</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Resto de 20/3:            &#39;</span><span class="p">,</span> <span class="mi">20</span><span class="o">%</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">división</span> <span class="n">de</span> <span class="mi">20</span><span class="o">/</span><span class="mi">3</span><span class="p">:</span>          <span class="mf">6.666666666666667</span>
+<span class="n">parte</span> <span class="n">entera</span> <span class="n">de</span> <span class="mi">20</span><span class="o">/</span><span class="mi">3</span><span class="p">:</span>      <span class="mi">6</span>
+<span class="n">fracción</span> <span class="n">restante</span> <span class="n">de</span> <span class="mi">20</span><span class="o">/</span><span class="mi">3</span><span class="p">:</span> <span class="mf">0.666666666666667</span>
+<span class="n">Resto</span> <span class="n">de</span> <span class="mi">20</span><span class="o">/</span><span class="mi">3</span><span class="p">:</span>             <span class="mi">2</span>
+</pre></div>
+</div>
+<p>En Python 3 la división entre números enteros da como resultado un
+número flotante</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">20</span><span class="o">/</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="mi">20</span><span class="o">/</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">20</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>4.0
+&lt;class &#39;float&#39;&gt;
+6.666666666666667
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Advertencia</p>
+<p>En <em>Python 2.x</em> la división entre números enteros es
+entera</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="o">%%</span><span class="n">python2</span>
+<span class="nb">print</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>  <span class="mi">20</span><span class="o">/</span><span class="mi">3</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="mi">6</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="mi">1</span><span class="o">//</span><span class="mi">2</span><span class="p">,</span>  <span class="mi">20</span><span class="o">//</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># División entera</span>
+<span class="nb">print</span><span class="p">(</span> <span class="mi">1</span><span class="o">/</span><span class="mi">2</span><span class="p">,</span>  <span class="mi">20</span><span class="o">/</span><span class="mi">3</span><span class="p">)</span>    <span class="c1"># División</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span> <span class="mi">6</span>
+<span class="mf">0.5</span> <span class="mf">6.666666666666667</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="tipos-simples-booleanos">
+<h3>Tipos simples: Booleanos<a class="headerlink" href="#tipos-simples-booleanos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Los tipos lógicos o <em>booleanos</em>, pueden tomar los valores <em>Verdadero</em> o
+<em>Falso</em> (<code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code>). También hay un tipo <em>especial</em>, el
+elemento <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;¿t is True?&#39;</span><span class="p">,</span> <span class="n">t</span> <span class="o">==</span> <span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;¿t is False?&#39;</span><span class="p">,</span> <span class="n">t</span> <span class="o">==</span> <span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>¿t is True? False
+¿t is False? True
+</pre></div>
+</div>
+<p>Los valores se pueden asignar a variables, como se hace con números</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="n">t</span> <span class="o">==</span> <span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;¿t is True?&#39;</span><span class="p">,</span> <span class="n">c</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">c</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>¿t is True? False
+&lt;class &#39;bool&#39;&gt;
+</pre></div>
+</div>
+<p>El tipo <code class="docutils literal notranslate"><span class="pre">None</span></code> no es un número, pero tampoco es Verdadero o Falso</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;True == None: &#39;</span><span class="p">,</span><span class="kc">True</span> <span class="o">==</span> <span class="kc">None</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;False == None: &#39;</span><span class="p">,</span> <span class="kc">False</span> <span class="o">==</span> <span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>  <span class="kc">False</span>
+<span class="kc">False</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span>  <span class="kc">False</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;type(a): &#39;</span><span class="p">,</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="nb">bool</span><span class="p">(</span><span class="kc">None</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>type(a):  &lt;class &#39;NoneType&#39;&gt;
+False
+</pre></div>
+</div>
+<p>Aquí hemos estado preguntando si dos cosas eran iguales o no (igualdad).
+También podemos preguntar si una <strong>es</strong> la otra (identidad). En el
+siguiente ejemplo vemos que dos variables pueden tener el mismo valor
+pero ser diferentes</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">d</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">==</span> <span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="ow">is</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span>
+<span class="kc">True</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mf">1.5</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="o">==</span> <span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">d</span> <span class="ow">is</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span>
+<span class="kc">False</span>
+</pre></div>
+</div>
+<p>Sin embargo, dos variables que tienen valores <code class="docutils literal notranslate"><span class="pre">True</span></code> son efectivamente
+“la misma” (son idénticas). Lo mismo ocurre con <code class="docutils literal notranslate"><span class="pre">False</span></code> y <code class="docutils literal notranslate"><span class="pre">None</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">b</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">c</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="n">d</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;a is True: &#39;</span><span class="p">,</span> <span class="n">a</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;c is None: &#39;</span><span class="p">,</span> <span class="n">c</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;¿Son idénticas las variables?&quot;</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;b is a: &#39;</span><span class="p">,</span> <span class="n">b</span> <span class="ow">is</span> <span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;d is c: &#39;</span><span class="p">,</span> <span class="n">d</span> <span class="ow">is</span> <span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>a is True:  True
+c is None:  True
+¿Son idénticas las variables?
+b is a:  True
+d is c:  True
+</pre></div>
+</div>
+<div class="section" id="operadores-logicos">
+<h4>Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Enlazar permanentemente con este título">¶</a></h4>
+<p>Los operadores lógicos en Python son muy explicitos:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">==</span> <span class="n">B</span>  <span class="p">(</span><span class="n">A</span> <span class="n">igual</span> <span class="n">que</span> <span class="n">B</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">&gt;</span> <span class="n">B</span>   <span class="p">(</span><span class="n">A</span> <span class="n">mayor</span> <span class="n">que</span> <span class="n">B</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">&lt;</span> <span class="n">B</span>   <span class="p">(</span><span class="n">A</span> <span class="n">menor</span> <span class="n">que</span> <span class="n">B</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">&gt;=</span> <span class="n">B</span>  <span class="p">(</span><span class="n">A</span> <span class="n">igual</span> <span class="n">o</span> <span class="n">mayor</span> <span class="n">que</span> <span class="n">B</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">&lt;=</span> <span class="n">B</span>  <span class="p">(</span><span class="n">A</span> <span class="n">igual</span> <span class="n">o</span> <span class="n">menor</span> <span class="n">que</span> <span class="n">B</span><span class="p">)</span>
+<span class="n">A</span> <span class="o">!=</span> <span class="n">B</span>  <span class="p">(</span><span class="n">A</span> <span class="n">diferente</span> <span class="n">que</span> <span class="n">B</span><span class="p">)</span>
+<span class="n">A</span> <span class="ow">in</span> <span class="n">B</span>  <span class="p">(</span><span class="n">A</span> <span class="n">incluido</span> <span class="n">en</span> <span class="n">B</span><span class="p">)</span>
+<span class="n">A</span> <span class="ow">is</span> <span class="n">B</span>  <span class="p">(</span><span class="n">Identidad</span><span class="p">:</span> <span class="n">A</span> <span class="n">es</span> <span class="n">el</span> <span class="n">mismo</span> <span class="n">elemento</span> <span class="n">que</span> <span class="n">B</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>y a todos los podemos combinar con <code class="docutils literal notranslate"><span class="pre">not</span></code>, que niega la condición</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;¿20/3 == 6?  -&gt;&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="o">/</span><span class="mi">3</span> <span class="o">==</span> <span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;¿20//3 == 6? -&gt;&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="o">//</span><span class="mi">3</span> <span class="o">==</span> <span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;¿20//3 &gt;= 6? -&gt;&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="o">//</span><span class="mi">3</span> <span class="o">&gt;=</span> <span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;¿20//3 &gt; 6?  -&gt;&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="o">//</span><span class="mi">3</span> <span class="o">&gt;</span> <span class="mi">6</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>¿20/3 == 6?  -&gt; False
+¿20//3 == 6? -&gt; True
+¿20//3 &gt;= 6? -&gt; True
+¿20//3 &gt; 6?  -&gt; False
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1001</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">1001</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;a == b     -&gt;&#39;</span><span class="p">,</span> <span class="n">a</span> <span class="o">==</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;a is b     -&gt;&#39;</span><span class="p">,</span> <span class="n">a</span> <span class="ow">is</span> <span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;a is not b -&gt;&#39;</span><span class="p">,</span> <span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">==</span> <span class="n">b</span>     <span class="o">-&gt;</span> <span class="kc">True</span>
+<span class="n">a</span> <span class="ow">is</span> <span class="n">b</span>     <span class="o">-&gt;</span> <span class="kc">False</span>
+<span class="n">a</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">b</span> <span class="o">-&gt;</span> <span class="kc">True</span>
+</pre></div>
+</div>
+<p>Note que en las últimas dos líneas estamos fijándonos si las dos
+variables son la misma (identidad), y no ocurre aunque sus valores son
+iguales.</p>
+</div>
+</div>
+</div>
+<div class="section" id="modularizacion-y-reuso">
+<h2>Modularización y reuso<a class="headerlink" href="#modularizacion-y-reuso" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Los módulos son el mecanismo de Python para reusar código. Una gran
+ventaja del lenguaje es que ya existen muchos módulos que son parte de
+la biblioteca <em>standard</em>. Además, existen numerosas bibliotecas y
+módulos para ayudarnos en cualquier tarea.</p>
+<p>El uso de los módulos es muy simple, para poder aprovecharlo
+necesitaremos saber dos cosas:</p>
+<ul class="simple">
+<li><p>Qué funciones están ya definidas y listas para usar</p></li>
+<li><p>Cómo acceder a ellas</p></li>
+</ul>
+<p>La primera pregunta: cómo saber cuáles son los posibles módulos que ya
+están definidos, su nombre, y que funciones están disponibles tiene una
+respuesta muy general que es “buscar” (en internet). La primera
+respuesta que podemos (deberíamos) intentar es: la
+<a class="reference external" href="https://docs.python.org/es/3/index.html">documentación</a>, y en
+particular la <a class="reference external" href="https://docs.python.org/es/3/library/index.html">biblioteca
+standard</a>.</p>
+<p>La segunda cuestión: una vez que sabemos qué existe (y no necesitamos
+reinventar), cómo podemos usarlo:</p>
+<p>Para utilizar todas las funcionalidades que están definidas en un
+<em>modulo</em> debemos primero hacerle saber a nuestro programa que existen.
+Eso se hace <em>importando</em> el módulo con el simple comando
+<code class="docutils literal notranslate"><span class="pre">import</span> <span class="pre">modulo</span></code>, donde modulo es el nombre que queremos importar.</p>
+<p>Una vez importado, podemos utilizar constantes y funciones definidas en
+el módulo con la notación “de punto”: <code class="docutils literal notranslate"><span class="pre">modulo.funcion()</span></code>.</p>
+<div class="section" id="ejemplos-modulos-math-y-cmath">
+<h3>Ejemplos: Módulos math y cmath<a class="headerlink" href="#ejemplos-modulos-math-y-cmath" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>El módulo <a class="reference external" href="https://docs.python.org/es/3/library/math.html">math</a>
+contiene funciones y utilidades para trabajar con números reales
+(enteros y punto flotante). Es parte de la biblioteca standard de Python
+por lo que no tenemos que instalar nada nuevo. Contiene todas las
+funciones más comunes (trigonométricas, exponenciales, logaritmos, etc)
+y algunas constantes importantes (<span class="math notranslate nohighlight">\(\pi\)</span>, e, etc). En realidad es
+una interface para dar acceso a la biblioteca <code class="docutils literal notranslate"><span class="pre">math</span></code> en C.</p>
+<p>Veamos como utilizarlo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+</pre></div>
+</div>
+<p>Después de este comando, tenemos disponible todos los objetos definidos
+(por algún amable programador) en el módulo
+<a class="reference external" href="https://docs.python.org/es/3/library/math.html">math</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Veamos el valor de Pi:</span>
+<span class="n">math</span><span class="o">.</span><span class="n">pi</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">3.141592653589793</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># algunas constantes y funciones elementales</span>
+<span class="n">raiz5pi</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">raiz5pi</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">3.963327297606011</span>
+</pre></div>
+</div>
+<p>Otras funciones disponibles son <code class="docutils literal notranslate"><span class="pre">floor</span></code> y <code class="docutils literal notranslate"><span class="pre">ceil</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">raiz5pi</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">raiz5pi</span><span class="p">),</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">raiz5pi</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">floor</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="p">),</span> <span class="n">math</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">e</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">3.963327297606011</span> <span class="mi">3</span> <span class="mi">4</span>
+<span class="mf">2.718281828459045</span> <span class="mi">2</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<p>Como puede leerse en la documentación del módulo, se definen también
+funciones elementales:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># algunas funciones elementales</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">math</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">27</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">7</span><span class="p">),</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">9</span><span class="p">),</span> <span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Combinatorio: C(6,2):&#39;</span><span class="p">,</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span><span class="o">*</span><span class="n">math</span><span class="o">.</span><span class="n">factorial</span><span class="p">(</span><span class="mi">2</span><span class="p">)))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">10.0</span> <span class="mf">3.0</span>
+<span class="mi">5040</span> <span class="mi">362880</span> <span class="mi">3628800</span>
+<span class="n">Combinatorio</span><span class="p">:</span> <span class="n">C</span><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="mi">2</span><span class="p">):</span> <span class="mf">15.0</span>
+</pre></div>
+</div>
+<p>A veces, sólo necesitamos unas pocas funciones de un módulo. Entonces
+para abreviar la notación combiene importar sólo lo que vamos a usar,
+usando la notación:</p>
+<p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">xxx</span> <span class="pre">import</span> <span class="pre">yyy</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">sqrt</span><span class="p">,</span> <span class="n">pi</span><span class="p">,</span> <span class="n">log</span><span class="p">,</span> <span class="n">floor</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">raiz5pi</span> <span class="o">=</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">5</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">log</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">raiz5pi</span><span class="p">,</span> <span class="n">floor</span><span class="p">(</span><span class="n">raiz5pi</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">10.0</span>
+<span class="mf">3.963327297606011</span> <span class="mi">3</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Nota</p>
+<p>Para importar todas las definiciones de un módulo pueden
+encontrar la (perfectamente válida) notación:</p>
+<p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">xxx</span> <span class="pre">import</span> <span class="pre">*</span></code></p>
+<p>donde el asterisco indica “todo”. Este uso no está recomendado porque
+varios módulos pueden usar los mismos nombres y no sabríamos cuál
+estamos usando. También puede traer inconvenientes si después queremos
+reusar el código que estamos escribiendo.</p>
+</div>
+<p>Otra opción es utilizar un “alias” para el módulo. Esto permite mantener
+información del origen de los objetos sin tener que escribir el nombre
+completo</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span> <span class="k">as</span> <span class="nn">m</span>
+<span class="n">m</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="mf">3.2</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.7888543819998317</span>
+</pre></div>
+</div>
+<p>El módulo <code class="docutils literal notranslate"><span class="pre">math</span></code> contiene funciones para trabajar con números reales</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">try</span><span class="p">:</span>
+    <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">File</span> <span class="s2">&quot;&lt;ipython-input-45-dcf65d789be2&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+                 <span class="o">^</span>
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">unexpected</span> <span class="n">EOF</span> <span class="k">while</span> <span class="n">parsing</span>
+</pre></div>
+</div>
+<p>y falla con números complejos, para ello existe el módulo
+<a class="reference external" href="https://docs.python.org/es/3/library/cmath.html">cmath</a></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">cmath</span> <span class="k">as</span> <span class="nn">c</span>
+</pre></div>
+</div>
+<p>Ahora tenemos a nuestra disposición todas las utilidades definidas en el
+módulo:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Usando cmath (-1)^0.5: &#39;</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Usando</span> <span class="n">cmath</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">^</span><span class="mf">0.5</span><span class="p">:</span>  <span class="mi">1</span><span class="n">j</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">3</span> <span class="o">+</span> <span class="mi">2</span><span class="n">j</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mf">1.8810978455418161</span><span class="o">-</span><span class="mf">3.1409532491755083</span><span class="n">j</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Si queremos calcular la fase (el ángulo que forma con el eje x) podemos
+usar la función phase</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span>
+<span class="n">c</span><span class="o">.</span><span class="n">phase</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>                  <span class="c1"># Resultado en radianes</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.7853981633974483</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">phase</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>    <span class="c1"># Resultado en grados</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">45.0</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="disgresion-objetos">
+<h2>Disgresión: Objetos<a class="headerlink" href="#disgresion-objetos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En python, cualquier elemento es un <em>objeto</em>. Todos los objetos tienen,
+al menos:</p>
+<ul class="simple">
+<li><p>un tipo,</p></li>
+<li><p>un valor,</p></li>
+<li><p>una identidad.</p></li>
+</ul>
+<p>Además, pueden tener <em>métodos</em>, es decir funciones asociadas que,
+habitualmente, actúan sobre el objeto que la posee. Veamos algunos
+ejemplos cotidianos:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">z</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">z</span><span class="o">.</span><span class="n">real</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">z</span><span class="o">.</span><span class="n">imag</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">z</span><span class="o">.</span><span class="n">conjugate</span> <span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span> <span class="n">z</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span> <span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(1+1j) &lt;class &#39;complex&#39;&gt;
+1.0
+1.0
+&lt;built-in method conjugate of complex object at 0x7f2873f0bd50&gt;
+(1-1j)
+</pre></div>
+</div>
+<p>Los números complejos tienen un valor (en este caso <span class="math notranslate nohighlight">\(1 + i\)</span>), pero
+además tienen más información (su parte real, imaginaria) y una función
+que nos da su conjugado.</p>
+<p>Los números enteros, más simples, también son objetos, con propiedades y
+métodos:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">3</span>                           <span class="c1"># Números enteros</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="n">a</span><span class="o">.</span><span class="n">bit_length</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">12312</span>
+<span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="n">a</span><span class="o">.</span><span class="n">bit_length</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&lt;class &#39;int&#39;&gt;
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">14</span>
+</pre></div>
+</div>
+<p>En estos casos, usamos el método <code class="docutils literal notranslate"><span class="pre">bit_length</span></code> de los enteros, que nos
+dice cuántos bits son necesarios para representar el número.</p>
+</div>
+<div class="section" id="ejercicios">
+<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Enlazar permanentemente con este título">¶</a></h2>
+<ol class="arabic">
+<li><p>Para el número complejo <span class="math notranslate nohighlight">\(z= 1 + 0.5 i\)</span></p>
+<ul class="simple">
+<li><p>Calcular <span class="math notranslate nohighlight">\(z^2, z^3, z^4, z^5.\)</span></p></li>
+<li><p>Calcular los complejos conjugados de <span class="math notranslate nohighlight">\(z\)</span>, <span class="math notranslate nohighlight">\(z^2\)</span> y
+<span class="math notranslate nohighlight">\(z^3\)</span>.</p></li>
+<li><p>Escribir <span class="math notranslate nohighlight">\(z\)</span>, <span class="math notranslate nohighlight">\(z^2\)</span> y <span class="math notranslate nohighlight">\(z^3\)</span> en coordenadas
+polares.</p></li>
+</ul>
+<p>(Recuerde que puede utilizar los módulos <code class="docutils literal notranslate"><span class="pre">math</span></code> y/o <code class="docutils literal notranslate"><span class="pre">cmath</span></code>)</p>
+</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Juan Fiol
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
