@@ -63,5 +63,6 @@ Curso corto de Introducción a Python
    :hidden:
 
    clase_00
+   clase_01
 
    

@@ -845,4 +845,1298 @@ Ejercicios
 
    (Recuerde que puede utilizar los módulos ``math`` y/o ``cmath``)
 
+Tipos compuestos
+----------------
+
+En Python, además de los tipos simples (números y booleanos, entre
+ellos) existen tipos compuestos, que pueden contener más de un valor de
+algún tipo. Entre los tipos compuestos más importantes vamos a
+referirnos a:
+
+-  | `Strings <https://docs.python.org/es/3/library/stdtypes.html#text-sequence-type-str>`__
+   | Se pueden definir con comillas dobles ( " ), comillas simples ( ’
+     ), o tres comillas (simples o dobles). Comillas (dobles) y comillas
+     simples producen el mismo resultado. Sólo debe asegurarse que se
+     utiliza el mismo tipo para abrir y para cerrar el *string*
+   | Ejemplo: ``s = "abc"`` (el elemento ``s[0]`` tiene el valor
+     ``"a"``).
+
+-  | `Listas <https://docs.python.org/es/3/library/stdtypes.html#sequence-types-list-tuple-range>`__
+   | Las listas son tipos que pueden contener más de un elemento de
+     cualquier tipo. Los tipos de los elementos pueden ser diferentes.
+     Las listas se definen separando los diferentes valores con comas,
+     encerrados entre corchetes. Se puede referir a un elemento por su
+     índice.
+   | Ejemplo: ``L = ["a",1, 0.5 + 1j]`` (el elemento ``L[0]`` es igual
+     al *string* ``"a"``).
+
+-  | `Tuplas <https://docs.python.org/es/3/library/stdtypes.html#sequence-types-list-tuple-range>`__
+   | Las tuplas se definen de la misma manera que las listas pero con
+     paréntesis en lugar de corchetes. Ejemplo:
+     ``T = ("a",1, 0.5 + 1j).``
+
+-  | `Diccionarios <https://docs.python.org/es/3/library/stdtypes.html#mapping-types-dict>`__
+   | Los diccionarios son contenedores a cuyos elementos se los
+     identifica con un nombre (*key*) en lugar de un índice. Se los
+     puede definir dando los pares ``key:value`` entre llaves
+   | Ejemplo: ``D = {'a': 1, 'b': 2, 1: 'hola', 2: 3.14}`` (el elemento
+     ``D['a']`` es igual al número 1).
+
+-  | `Numpy
+     Arrays <https://numpy.org/doc/stable/user/absolute_beginners.html#what-is-an-array>`__
+   | Los *arrays* de
+     `Numpy <https://numpy.org/doc/stable/user/whatisnumpy.html>`__ son
+     vectores (multidimensionales) que están optimizados para cálculos.
+     Sus elementos deben ser todos del mismo tipoy pueden accederse por
+     índice en una misma similar que a los *strings*, *listas* y
+     *tuples*
+   | Ejemplo: ``A = numpy.array([1., 2., 3.])`` (el elemento ``A[0]`` es
+     igual al número 1).
+
+Strings: Secuencias de caracteres
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Una cadena o *string* es una **secuencia** de caracteres (letras,
+“números”, símbolos).
+
+Se pueden definir con comillas, comillas simples, o tres comillas
+(simples o dobles). Comillas (normales) y comillas simples producen el
+mismo resultado. Sólo debe asegurarse que se utiliza el mismo tipo para
+abrir y para cerrar el *string*
+
+.. code:: python
+
+    saludo = 'Hola Mundo'
+    otro= "that's all"
+    dijo = 'Él dijo: "hola" y yo no dije nada'
+
+.. code:: python
+
+    print(saludo)
+
+
+.. parsed-literal::
+
+    Hola Mundo
+
+
+.. code:: python
+
+    print(otro)
+
+
+.. parsed-literal::
+
+    that's all
+
+
+.. code:: python
+
+    print(dijo)
+
+
+.. parsed-literal::
+
+    Él dijo: "hola" y yo no dije nada
+
+
+.. note::  Python trabaja con una codificación (*UTF-8*) por lo que
+  reconoce nativamente un amplio rango de caracteres
+  
+  .. code:: python
+  
+      label = "σ = λ T/ µ + π · δξ"
+      print('tipo de label: ', type(label))
+      print ('Resultados corresponden a:', label, ' (en m²)')
+  
+  
+  .. parsed-literal::
+  
+      tipo de label:  <class 'str'>
+      Resultados corresponden a: σ = λ T/ µ + π · δξ  (en m²)
+  
+  
+  
+
+Tres comillas (simples o dobles) sirven para incluir una cadena de
+caracteres en forma textual, incluyendo saltos de líneas.
+
+.. code:: python
+
+    Texto_largo = '''Aquí me pongo a cantar
+    Al compás de la vigüela,
+    Que el hombre que lo desvela
+    Una pena estraordinaria
+    Como la ave solitaria
+    Con el cantar se consuela.'''
+
+.. code:: python
+
+    print(Texto_largo)
+
+
+.. parsed-literal::
+
+    Aquí me pongo a cantar
+    Al compás de la vigüela,
+    Que el hombre que lo desvela
+    Una pena estraordinaria
+    Como la ave solitaria
+    Con el cantar se consuela.
+
+
+Operaciones
+^^^^^^^^^^^
+
+En **Python** ya hay definidas algunas operaciones como suma
+(composición o concatenación), producto por enteros (repetición).
+
+Suma de *strings*
+'''''''''''''''''
+
+La suma entre dos cadenas de caracteres está definida y el resultado es
+una nueva cadena, conteniendo la concatenación de los dos sumandos
+
+.. code:: python
+
+    s = saludo + " ----> [" + dijo + "] <---- chau"
+    print(s)
+
+
+.. parsed-literal::
+
+    Hola Mundo ----> [Él dijo: "hola" y yo no dije nada] <---- chau
+
+
+Multiplicación por un entero
+''''''''''''''''''''''''''''
+
+La multiplicación de un número entero ``n`` por un string ``s`` está
+definida como “n veces s”
+
+.. code:: python
+
+    print( saludo )
+    print( 2*saludo )
+    print( 10*"+" + 2* ( saludo + "," ) + 10*"+" + 2*"\n" + "Chau" )
+
+
+.. parsed-literal::
+
+    Hola Mundo
+    Hola MundoHola Mundo
+    ++++++++++Hola Mundo,Hola Mundo,++++++++++
+    
+    Chau
+
+
+Notar que (obviamente) hay una diferencia entre un número y un string
+cuyo valor podemos interpretar como el número. Acá, la variable ``a`` es
+un *string* y ``b`` en un número entero
+
+.. code:: python
+
+    a = '1'
+    b = 1
+    print(a, type(a))
+    print(b, type(b))
+
+
+.. parsed-literal::
+
+    1 <class 'str'>
+    1 <class 'int'>
+
+
+En consecuencia, las operaciones tienen distinto significado:
+
+.. code:: python
+
+    print ( a + a )
+    print ( 3*a )
+    print ( a*3 )
+
+
+.. parsed-literal::
+
+    11
+    111
+    111
+
+
+.. code:: python
+
+    print ( b + b )
+    print ( 3*b )
+    print ( b*3 )
+
+
+.. parsed-literal::
+
+    2
+    3
+    3
+
+
+También podemos calcular la longitud de un *string* con la función
+``len()``
+
+.. code:: python
+
+    len(saludo)
+
+
+
+
+.. parsed-literal::
+
+    10
+
+
+
+Utilizando esta función podemos hacer un centrado de texto “manual”
+
+.. code:: python
+
+    n = int((30-len(saludo)//2)) 
+    print (n*'*', saludo, n*'*')
+
+
+.. parsed-literal::
+
+    ************************* Hola Mundo *************************
+
+
+.. code:: python
+
+    ntext = "Nuevo texto que queremos centrar"
+    n = int((30-len(ntext)//2)) 
+    print (n*'<', ntext,n*'>')
+
+
+.. parsed-literal::
+
+    <<<<<<<<<<<<<< Nuevo texto que queremos centrar >>>>>>>>>>>>>>
+
+
+Indexado de *strings*
+^^^^^^^^^^^^^^^^^^^^^
+
+Los *strings* poseen varias cualidades y funcionalidades. Por ejemplo:
+
+-  Se puede iterar sobre ellos, o quedarse con una parte (slicing)
+-  Tienen métodos (funciones que se aplican a su *dueño*)
+
+Podemos referirnos a un caracter o una parte de una cadena de caracteres
+mediante su índice. Los índices en **Python** empiezan en 0.
+
+.. code:: python
+
+    s = "0123456789"
+    print ('Primer caracter  :', s[0])
+    print ("Segundo caracter :", s[1])
+    print ("El último caracter :", s[-1])
+    print ("El anteúltimo caracter :", s[-2])
+
+
+.. parsed-literal::
+
+    Primer caracter  : 0
+    Segundo caracter : 1
+    El último caracter : 9
+    El anteúltimo caracter : 8
+
+
+También podemos elegir un subconjunto de caracteres:
+
+.. code:: python
+
+    print ('Los tres primeros:          ', s[:3])
+    print ('Todos a partir del tercero: ', s[3:])
+    print ('Los últimos dos:            ', s[-2:])
+    print ('Todos menos los últimos dos:', s[:-2])
+
+
+.. parsed-literal::
+
+    Los tres primeros:           012
+    Todos a partir del tercero:  3456789
+    Los últimos dos:             89
+    Todos menos los últimos dos: 01234567
+
+
+Estas “subcadenas” son cadenas de caracteres, y por lo tanto pueden
+utilizarse de la misma manera que cualquier otra cadena:
+
+.. code:: python
+
+    print (s[:3] + s[-2:])
+
+
+.. parsed-literal::
+
+    01289
+
+
+La selección de elementos y subcadenas de una cadena ``s`` tiene la
+forma ``s[i:f:p]`` donde ``i, f, p`` son enteros. La notación se refiere
+a la subcadena empezando en el índice ``i``, hasta el índice ``f``
+recorriendo con paso ``p``. Casos particulares de esta notación son:
+
+-  Un índice simple. Por ejemplo ``s[3]`` se refiere al tercer elemento
+-  Un índice negativo se cuenta desde el final, empezando desde ``-1``
+-  Si el paso ``p`` no está presente el valor por defecto es 1. Ejemplo:
+   ``s[2:4] = s[2:4:1]``
+-  Si se omite el primer índice, el valor asumido es 0. Ejemplo:
+   ``s[:2:1] = s[0:2:1]``
+-  Si se omite el segundo índice, el valor asumido es -1. Ejemplo:
+   ``s[1::1] = s[1:-1:1]``
+-  Notar que puede omitirse más de un índice. Ejemplo:
+   ``s[::2] = s[0:-1:2]``
+
+.. code:: python
+
+    print (s[2:4])
+    print (s[:2:1])
+    print (s[::-1])
+    s1 = s[:1:-3]
+
+
+.. parsed-literal::
+
+    23
+    01
+    9876543210
+
+
+.. code:: python
+
+    s1
+
+
+
+
+.. parsed-literal::
+
+    '963'
+
+
+
+Formato de *strings*
+^^^^^^^^^^^^^^^^^^^^
+
+Existen varias maneras de aplicar formato a una cadena de caracteres.
+Vamos a ver dos opciones: - Uso del método ``format`` - Uso de
+“f-strings”
+
+.. code:: python
+
+    from math import pi
+    s1 = "El valor de π es {}"
+
+.. code:: python
+
+    s1
+
+
+
+
+.. parsed-literal::
+
+    'El valor de π es {}'
+
+
+
+.. code:: python
+
+    s1 = "El valor de π es {}".format(pi)
+
+.. code:: python
+
+    s1
+
+
+
+
+.. parsed-literal::
+
+    'El valor de π es 3.141592653589793'
+
+
+
+.. code:: python
+
+    h = 7    # Hora
+    T = 5.2  # Temperatura en grados
+    s2 = "La temperatura a las {} horas era {} grados".format(h, T)
+
+.. code:: python
+
+    print(s2)
+
+
+.. parsed-literal::
+
+    La temperatura a las 7 horas era 5.2 grados
+
+
+Aquí definimos un *string* llamado ``s1``, donde utilizamos el valor de
+la variable pi (definida en el módulo math) para completar el valor.
+
+.. code:: python
+
+    print(s1)
+
+
+.. parsed-literal::
+
+    El valor de π es 3.141592653589793
+
+
+En su versión más simple la función ``format`` reemplaza el lugar entre
+llaves por el valor dado, en este caso un número. Esta función permite
+más de un argumento, y reemplaza operaciones por su resultado, como en
+el siguiente ejemplo:
+
+.. code:: python
+
+    s2 = "El valor de π es {} y su doble es {}".format(pi, 2*pi)
+    print(s2)
+
+
+.. parsed-literal::
+
+    El valor de π es 3.141592653589793 y su doble es 6.283185307179586
+
+
+El mismo efecto se puede obtener utilizando interpolación literal
+(“f-strings”)
+
+.. code:: python
+
+    s1 = f"El valor de π es {pi}"
+    s2 = f"El valor de π es {pi} y su doble es {2*pi}"
+
+.. code:: python
+
+    print(s1)
+    print(s2)
+
+
+.. parsed-literal::
+
+    El valor de π es 3.141592653589793
+    El valor de π es 3.141592653589793 y su doble es 6.283185307179586
+
+
+Notar que no es necesario definir una variable previamente para imprimir
+un string. Los ejemplos anteriores pueden escribirse:
+
+.. code:: python
+
+    print( f"El valor de π es {pi} y su doble es {2*pi}" )
+    print( "El valor de π es {} y su doble es {}".format(pi, 2*pi) )
+
+Para controlar el formato de los strings existe una notación específica
+que se puede indicar dentro de las llaves tanto para el `método
+format <https://docs.python.org/es/3/library/string.html#formatstrings>`__
+como para los
+`“f-strings” <https://docs.python.org/es/3/reference/lexical_analysis.html#f-strings>`__.
+En su versión más simple se agregan “:” (dos puntos) seguidos del
+formato deseado. Por ejemplo para imprimir con sólo cuatro decimales
+podemos escribir:
+
+.. code:: python
+
+    print("El valor de π con cuatro decimales es {:.4f}".format(pi))
+    print(f"El valor de π con cuatro decimales es {pi:.4f}")
+
+
+.. parsed-literal::
+
+    El valor de π con cuatro decimales es 3.1416
+    El valor de π con cuatro decimales es 3.1416
+
+
+Métodos de Strings
+^^^^^^^^^^^^^^^^^^
+
+Métodos son “funciones” que actúan sobre el mismo objeto y son parte de
+su definición.
+
+Por ejemplo, cuando uno define un *string*, ya está en la definición
+incluida la información sobre como realizar algunas operaciones.
+
+Veamos algunos de los métodos definidos sobre *strings*:
+
+.. code:: python
+
+    a = "La mar estaba serena!"
+    print(a)
+
+
+.. parsed-literal::
+
+    La mar estaba serena!
+
+
+En python existe un método ``replace()`` que hace que sea muy fácil
+reemplazar una subcadena por otra:
+
+.. code:: python
+
+    b = a.replace('e','a')
+    print(b)
+
+
+.. parsed-literal::
+
+    La mar astaba sarana!
+
+
+Separar las palabras:
+
+.. code:: python
+
+    b.split()
+
+
+
+
+.. parsed-literal::
+
+    ['La', 'mar', 'astaba', 'sarana!']
+
+
+
+.. code:: python
+
+    b.split('a')
+
+
+
+
+.. parsed-literal::
+
+    ['L', ' m', 'r ', 'st', 'b', ' s', 'r', 'n', '!']
+
+
+
+Estos son métodos que tienen definidos **todos** los *strings*.
+
+Un método es una función que está definida junto con el objeto. En este
+caso el string. Hay más información sobre los métodos de las cadenas de
+caracteres en: `String
+Methods <https://docs.python.org/3/library/stdtypes.html#string-methods>`__
+
+Veamos algunos ejemplos más:
+
+.. code:: python
+
+    # Definimos dos strings
+    a = 'Hola Mundo!'
+    b = "Somos los colectiveros que cumplimos nuestro deber!"
+
+Buscar y reemplazar cosas en un string:
+
+.. code:: python
+
+    # find nos da el índice del lugar en el string donde se encuentra el substring dado
+    b.find('le')
+
+
+
+
+.. parsed-literal::
+
+    12
+
+
+
+.. code:: python
+
+    print (b)
+    print (b.replace('que','y')) # Reemplazamos un substring
+
+
+.. parsed-literal::
+
+    Somos los colectiveros que cumplimos nuestro deber!
+    Somos los colectiveros y cumplimos nuestro deber!
+
+
+.. code:: python
+
+    b.center(70,' ')
+
+
+
+
+.. parsed-literal::
+
+    '         Somos los colectiveros que cumplimos nuestro deber!          '
+
+
+
+Para encontrar información sobre un ``comando`` en las *notebooks*
+podemos usar la notación ``comando?``. Por ejemplo, si queremos saber
+como funciona el método ``find`` de los strings, usamos (recordar que
+definimos antes ``b`` como un *string*):
+
+.. code:: python
+
+    b.find?
+
+
+
+.. parsed-literal::
+
+    [0;31mDocstring:[0m
+    S.find(sub[, start[, end]]) -> int
+    
+    Return the lowest index in S where substring sub is found,
+    such that sub is contained within S[start:end].  Optional
+    arguments start and end are interpreted as in slice notation.
+    
+    Return -1 on failure.
+    [0;31mType:[0m      builtin_function_or_method
+
+
+
+Ejercicios
+~~~~~~~~~~
+
+1. Escribir un programa, utilizando formateo de strings, que escriba las
+   frases:
+
+   -  “El conjugado de z=1+0.5j es 1-0.5j”
+   -  “El conjugado de z=(1+0.5j)^2 es …” (con el valor correspondiente)
+   -  “El conjugado de z=(1+0.5j) :math:`\pi` es …” (con el valor
+      correspondiente sólo hasta el tercer decimal incluido)
+
+Conversión de tipos
+~~~~~~~~~~~~~~~~~~~
+
+Como comentamos anteriormente, y se ve en los ejemplos anteriores, uno
+no define el tipo de variable *a-priori* sino que queda definido al
+asignársele un valor (por ejemplo ``a=3`` define a como una variable del
+tipo entero).
+
+Si bien **Python** hace la conversión de tipos de variables en algunos
+casos, **no hace magia**, no puede adivinar nuestra intención si no la
+explicitamos.
+
+.. code:: python
+
+    a = 3                           # a es entero
+    b = 3.1                         # b es real
+    c = 3 + 0j                      # c es complejo
+    print (f"a es de tipo {type(a)}\nb es de tipo {type(b)}\nc es de tipo {type(c)}")
+    print (f"'a + b' es de tipo {type(a+b)} y 'a + c' es de tipo {type(a+c)}")
+
+.. code:: python
+
+    try:
+        print (1+'1')
+
+Sin embargo, si le decimos explícitamente qué conversión queremos, todo
+funciona bien
+
+.. code:: python
+
+    print (str(1) + '1')
+    print (1 + int('1'))
+    print (1 + float('1.e5'))
+    print ("x=" + str(1.e5))
+    print ('x=' + str(1.e-5))
+
+.. code:: python
+
+    # a menos que nosotros **nos equivoquemos explícitamente**
+    try:
+        print (1 + int('z'))
+
+Listas
+~~~~~~
+
+Las listas son tipos compuestos, donde todos sus elementos pueden ser
+del mismo tipo o no. Algunas características de las listas son:
+
+-  Los elementos no son necesariamente homogéneos en tipo
+
+-  Elementos ordenados
+
+-  Acceso mediante un índice
+
+-  El valor de sus elementos pueden modificarse (esto no es cierto para
+   *strings* ni *tuplas*)
+
+-  Están definidas operaciones entre Listas, así como algunos métodos
+
+   -  ``x in L`` (¿x es un elemento de L?)
+   -  ``x not in L`` (¿x no es un elemento de L?)
+   -  ``L1 + L2`` (concatenar L1 y L2)
+   -  ``n*L1`` (n veces L1)
+   -  ``L1*n`` (n veces L1)
+   -  ``L[i]`` (Elemento i-ésimo)
+   -  ``L[i:j]`` (Elementos i a j)
+   -  ``L[i:j:k]`` (Elementos i a j, elegidos uno de cada k)
+   -  ``len(L)`` (longitud de L)
+   -  ``min(L)`` (Mínimo de L)
+   -  ``max(L)`` (Máximo de L)
+   -  ``L.index(x, [i])`` (Índice de x, iniciando en i)
+   -  ``L.count(x)`` (Número de veces que aparece x en L)
+   -  ``L.append(x)`` (Agrega el elemento x al final)
+
+Veamos algunos ejemplos:
+
+.. code:: python
+
+    cuadrados = [1, 9, 16, 25]
+
+En esta línea hemos declarado una variable llamada ``cuadrados``, y le
+hemos asignado una lista de cuatro elementos. En algunos aspectos las
+listas son muy similares a los *strings*. Se pueden realizar muchas de
+las mismas operaciones en strings, listas y otros objetos sobre los que
+se pueden iterar (*iterables*).
+
+Las listas pueden accederse por posición y también pueden rebanarse
+(*slicing*)
+
+Los índices pueden ser positivos (empezando desde cero) o negativos
+empezando desde -1.
+
+================== == == == ==
+cuadrados:         1  9  16 25
+================== == == == ==
+índices:           0  1  2  3
+índices negativos: -4 -3 -2 -1
+================== == == == ==
+
+Operaciones sobre listas
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Veamos algunas operaciones que se pueden realizar sobre listas. Por
+ejemplo, se puede fácilmente:
+
+-  concatenar dos listas,
+-  buscar un valor dado,
+-  agregar elementos,
+-  borrar elementos,
+-  calcular su longitud,
+-  invertirla
+
+Empecemos concatenando dos listas, usando el operador “suma”
+
+.. code:: python
+
+    L = [0,1,2,3,4,5]
+
+.. code:: python
+
+    L1 = L+L
+
+.. code:: python
+
+    L1
+
+La multiplicación por un entero actúa igual que en el caso de *strings*
+
+.. code:: python
+
+    2*L == L + L                     # Igualdad de cada uno de los elementos
+
+.. code:: python
+
+    L1.index(3)                      # Índice del elemento de valor 3
+
+.. code:: python
+
+    L1.count(3)                      # Cuenta las veces que aparece el valor "3"
+
+Las listas tienen definidos métodos, que podemos ver con la ayuda
+incluida, por ejemplo haciendo ``help(list)``
+
+Si queremos agregar un elemento al final utilizamos el método
+``append``:
+
+.. code:: python
+
+    print(L)
+
+.. code:: python
+
+    L.append(8)
+
+.. code:: python
+
+    print(L)
+
+Notar que, como las listas pueden contener cualquier cosa (incluso otras
+listas), tratar de agregar una lista al final de otra con el método
+``append`` puede dar resultados inesperados
+
+.. code:: python
+
+    L.append([9, 8, 7])
+    print(L)
+
+.. code:: python
+
+    L.pop(-1)  # pop() devuelve el elemento correspondiente y lo saca de la lista 
+
+.. code:: python
+
+    L
+
+Si queremos agregar más de un elemento a una lista podemos usar
+``extend``
+
+.. code:: python
+
+    L.extend([9,8,7])
+    print(L)
+
+o sumar la nueva lista y asignarla a la misma variable
+
+.. code:: python
+
+    L += [3,2,1]         # equivalente a L = L + [3,2,1]
+    print(L)
+
+Si queremos insertar un elemento en una posición que no es el final de
+la lista, usamos el método ``insert()``. Por ejemplo para insertar el
+valor 6 en la primera posición:
+
+.. code:: python
+
+    L.insert(3,99)
+    print(L)
+
+En las listas podemos sobreescribir uno o más elementos
+
+.. code:: python
+
+    print(L)
+    L[0:3] = [-2,-3,-4]
+    print(L)
+
+.. code:: python
+
+    L[0] = -9
+    L[-2:]=[0,1]
+    print(L)
+
+.. code:: python
+
+    print(L)
+    L.remove(3)                     # Remueve la primera ocurrencia de 3
+    print(L)
+
+Tuplas
+~~~~~~
+
+Las tuplas son objetos similares a las listas, sobre las que se puede
+iterar y seleccionar partes según su índice. La principal diferencia es
+que son inmutables mientras que las listas pueden modificarse. Los
+ejemplos anteriores del tipo ``L[0] = -9`` resulta en un error si lo
+intentamos con tuplas
+
+.. code:: python
+
+    L1 = [0,1,2,3,4,5] # Las listas se definen con corchetes
+    T1 = (0,1,2,3,4,5) # Las tuplas se definen con paréntesis
+    print(L1[2], L1[-3:])
+    print(T1[2], T1[-3:])
+
+
+.. code:: python
+
+    L1[0] =- 1
+
+.. code:: python
+
+    try:
+        T1[0] =- 1
+
+Las tuplas se usan cuando uno quiere crear una “variable” que no va a
+ser modificada. Además códigos similares con tuplas pueden ser un poco
+más rápidos que si usan listas.
+
+Un uso común de las tuplas es el de asignación a múltiples variables
+
+.. code:: python
+
+    a, b, c = (1, 3, 5)
+
+.. code:: python
+
+    print(a,b,c)
+
+.. code:: python
+
+    # Los paréntesis son opcionales en este caso
+    a, b, c = 4, 5, 6
+    print(a,b,c)
+
+Un uso muy común es el de intercambiar el valor de dos variables
+
+.. code:: python
+
+    print(a,b)
+    a, b = b, a                     # swap 
+    print(a,b)
+
+Rangos
+~~~~~~
+
+Los objetos de tipo
+`range <https://docs.python.org/es/3/library/stdtypes.html#ranges>`__
+representan una secuencia inmutable de números y se usan habitualmente
+para ejecutar un bucle
+`for <https://docs.python.org/es/3/reference/compound_stmts.html#for>`__
+un número determinado de veces.
+
+.. code:: python
+
+    range(5)
+
+Es un tipo que permite fácilmente iterar sobre un “contador”. Veremos
+más adelante su uso. Notar que podemos crear una lista (o una tupla) a
+partir del tipo ``range``
+
+.. code:: python
+
+    list(range(5))
+
+Ejercicios
+~~~~~~~~~~
+
+1. Manejos de listas utilizando indexado:
+
+   -  Cree la lista **N** de longitud 50, donde cada elemento es un
+      número entero de 1 a 50 inclusive (Ayuda: vea la expresión
+      ``range``).
+   -  Invierta la lista.
+   -  Extraiga una lista **N2** que contenga sólo los elementos pares de
+      **N**. (Resultado ``[2, 4, ..., 50]``)
+   -  Cree una nueva lista (a partir de **N**) que contenga sólo los
+      primeros cinco y los últimos cinco elementos impares de **N** (el
+      resultado esperado es: ``[1,3,5,7,9,41,43,45,47,49]``)
+
+Diccionarios
+~~~~~~~~~~~~
+
+Los diccionarios son colecciones de objetos *en principio heterogéneos*
+que no están ordenados y no se refieren por índice (como ``L1[3]``) sino
+por una etiqueta o clave (**key**). Las claves pueden ser cualquier
+objeto inmutable (cadenas de caracteres, numeros, tuplas) y los valores
+pueden ser cualquier tipo de objeto. Las claves no se pueden repetir
+pero los valores sí.
+
+.. code:: python
+
+    d0 = {'a': 123}                 # Un diccionario con un sólo elemento
+
+.. code:: python
+
+    d0['a']
+
+Definimos dos diccionarios, con varios elementos
+
+.. code:: python
+
+    d1 = {'nombre':'Juan', 
+          'apellido': 'García', 
+          'edad': 10, 
+          'dirección': ['Av Bustillo','9500'], 
+          'cod':8400,  
+          'ciudad': "Bariloche"}
+    d2 = {'nombre':'Pepe', 
+          'apellido': 'García', 
+          'edad': 109, 
+          'dirección': ['Av Bustillo','9500'], 
+          'cod':8400,
+          'ciudad': "Bariloche"}
+
+.. code:: python
+
+    len(d1)
+
+Vemos que estos diccionarios tienen algunos valores que son *strings*,
+otros son números enteros, y la dirección tiene como valor una lista.
+
+De la misma manera, podemos crear una lista cuyos elementos son
+diccionarios:
+
+.. code:: python
+
+    L1 = [d1, d2]
+    L1[0]['nombre']
+
+Acá, hemos creado una lista de dos elementos, donde cada uno es un
+diccionario. Similarmente, podemos crear un diccionario donde cada
+elemento es a su vez un diccionario:
+
+.. code:: python
+
+    integrantes = {d1['nombre']: d1, d2['nombre']: d2}
+
+.. code:: python
+
+    integrantes['Pepe']
+
+.. code:: python
+
+    # Agregamos un nuevo elemento al diccionario (que es otro diccionario)
+    d1['tel'] = {'cel':1213, 'fijo':23848}
+
+.. code:: python
+
+    d1
+
+Como las componentes del diccionario ``integrantes`` eran ``d1`` y
+``d2``, al modificar ``d1`` también estamos modificando ``integrantes``
+
+.. code:: python
+
+    integrantes['Juan']
+
+Los diccionarios pueden pensarse como pares *key*, *valor*. Para obtener
+todas las claves (*keys*), valores, o pares (clave, valor) usamos:
+
+.. code:: python
+
+    print ('\n' + 70*'+' + '\n\tkeys:')
+    print (list(d1.keys()))
+    print ('\n' + 70*'+'+ '\n\tvalues:')
+    print (list(d1.values()))
+    print ('\n' + 0*'+'+ '\n\titems:')
+    print (list(d1.items()))
+
+Arrays de Numpy
+~~~~~~~~~~~~~~~
+
+Un paquete (incluyendo varios módulos) que es muy importante en el uso
+de Python para ciencias e ingenierías es `Numpy <http://numpy.org>`__.
+Como con todos los módulos, se carga utilizando la palabra ``import``.
+
+Existen variantes en la manera de importar los módulos que son
+“equivalentes”. En este caso le vamos a dar un alias que sea más corto
+de tipear, este es el procedimiento habitual y es la manera en que van a
+encontrarlo usualmente en ejemplos si buscan ayuda *online*.
+
+.. code:: python
+
+    # Esta es la manera más usada de importar este módulo. 
+    import numpy as np
+
+.. code:: python
+
+    L = list(range(0,6))
+    x = np.array(range(6))
+
+.. code:: python
+
+    type(L), type(x)
+
+.. code:: python
+
+    L
+
+.. code:: python
+
+    x
+
+Como vemos, - ``L`` es una **lista** con los números naturales de 0 a 5
+- ``x`` es un **array** con los mismos números.
+
+Nos referiremos al tipo de ``x`` como **array**, **numpy.array** o
+**numpy.ndarray** (o np.array, np.ndarray)
+
+Veamos cómo se comparan los *arrays* y las *listas*:
+
+.. code:: python
+
+    # Multiplicación de arrays y listas por un entero
+    print( 3*x )
+    print( 3*L )
+
+.. code:: python
+
+    # Suma de dos arrays o dos listas
+    print( x + x )
+    print( L + L )
+
+Mientras que la suma entre listas está definida (igual que para strings)
+como la concatenación, para arrays la suma (y todas las operaciones) se
+definen elemento a elemento.
+
+Control de flujo
+----------------
+
+if/elif/else
+~~~~~~~~~~~~
+
+En todo lenguaje necesitamos controlar el flujo de una ejecución segun
+una condición Verdadero/Falso (booleana). *Si (condicion) es verdadero
+hacé (bloque A); Sino hacé (Bloque B)*. En pseudo código:
+
+::
+
+       Si condición 1:
+           bloque A
+       sino y condición 2:
+           bloque B
+       sino:
+           bloque C
+
+y en Python es muy parecido!
+
+.. code:: python
+
+      if condición_1:
+        bloque A
+      elif condicion_2:
+        bloque B
+      elif condicion_3:
+        bloque C
+      else:
+        Bloque final
+
+En un ``if``, la conversión a tipo *boolean* es implícita. El tipo
+``None`` (vacío), el ``0``, una secuencia (lista, tupla, string) (o
+conjunto o diccionario, que ya veremos) vacía siempre evalua a
+``False``. Cualquier otro objeto evalua a ``True``.
+
+Podemos tener multiples condiciones. Se ejecutará el primer bloque cuya
+condición sea verdadera, o en su defecto el bloque ``else``. Esto es
+equivalente a la sentencia ``switch`` de otros lenguajes.
+
+.. code:: python
+
+    Nota = 7
+    if Nota >= 8:
+        print ("Aprobó cómodo, felicidades!")
+    elif 6 <= Nota < 8:
+        print ("Bueno, al menos aprobó!")
+    elif (4 <= Nota) and (Nota < 6) :
+        print ("Bastante bien, pero no le alcanzó")
+    else:
+        print("Debe esforzarse más!")
+
+Iteraciones
+~~~~~~~~~~~
+
+Sentencia for
+^^^^^^^^^^^^^
+
+Otro elemento de control es el que permite *iterar* sobre una secuencia
+(o *“iterador”*). Obtener cada elemento para hacer algo. En Python se
+logra con la sentencia ``for``. En lugar de iterar sobre una condición
+aritmética hasta que se cumpla una condición (como en C o en Fortran) en
+Python la sentencia ``for`` itera sobre los ítems de una secuencia en
+forma ordenada
+
+.. code:: python
+
+    Lista = ['auto', 'casa', "perro", "gato", "árbol", "lechuza", "banana"]
+    for L in Lista:
+      print(L)
+
+Iterando sobre una lista podemos actuar de la manera que necesitemos
+
+.. code:: python
+
+    for L in Lista:
+        print(f'En la palabra {L} hay {L.count("a")} letras "a"')
+    print(f'\nLa palabra más larga es {max(Lista, key=len)}')
+
+En estos ejemplos, en cada iteración ``L`` toma sucesivamente los
+valores de ``Lista``. La primera vez es ``L='auto'``, la segunda
+``L='casa'``, … El cuerpo del *loop* ``for``, como todos los bloques en
+**Python** está definido por la **indentación**. La última línea está
+fuera del loop y se ejecuta al terminar todas las iteraciones del
+``for``.
+
+Veamos otro ejemplo, donde iteramos sobre un ``range`` actuando como
+“contador”:
+
+.. code:: python
+
+    for elemento in range(10):
+        print(elemento, end=', ')
+
+
+En este ejemplo la función range devuelve en cada iteración un contador
+que se inicia en 0 y termina en 10. Si bien esto nos permite trabajar de
+la manera usual en otros lenguajes iterando sobre un contador y
+eligiendo el elemento por su índice en la forma ``Lista[i]``, en Python
+es mucho más simple, claro y eficiente hacerlo como lo hicimos
+anteriormente. Compare la forma “equivocada” con el ejemplo anterior:
+
+.. code:: python
+
+    # ESTE BLOQUE NOOOOOO!
+    m = 0
+    indice=0
+    for i in range(len(Lista)):
+        print(f'En la palabra {Lista[i]} hay {Lista[i].count("a")} letras "a"')
+        if len(Lista[i]) > m: 
+            m = len(Lista[i])
+            indice = i
+        
+    print(f'\nLa palabra más larga es {Lista[indice]}')    
+
+
+Esta no es la manera “correcta” en Python, ya que estamos usando la
+lista para determinar el contador, que a su vez se usa como índice para
+determinar el elemento de la lista. En la primera versión
+(``for L in Lista:``) directamente tenemos el elemento.
+
+Ejercicios
+----------
+
+1. Cree una lista de la forma ``L = [1,3,5,...,17,19,19,17,...,3,1]``
+
+2. Utilizando el string:
+
+.. code:: python
+
+   s1='En un lugar de la Mancha de cuyo nombre no quiero acordarme'
+
+y utilizando funciones y `métodos de
+strings <https://docs.python.org/es/3/library/stdtypes.html#string-methods>`__:
+
+-  Obtenga la cantidad de caracteres.
+
+-  Imprima la frase anterior pero con cada palabra empezando en
+   mayúsculas.
+
+-  Cuente cuantas letras ‘a’ tiene la frase, ¿cuántas vocales tiene?
+
+-  Imprima el string ``s1`` centrado en una línea de 80 caracteres,
+   rodeado de guiones en la forma:
+
+   ``----------En un lugar de la Mancha de cuyo nombre no quiero acordarme-----------``
+
+-  Obtenga una lista **L1** donde cada elemento sea una palabra.
+
+   -  Cuente la cantidad de elementos en ``L1`` (utilizando python).
+   -  Ordene la lista **L1** en orden alfabético.
+   -  Ordene la lista **L1** tal que las palabras más cortas estén
+      primero.
+   -  Ordene la lista **L1** tal que las palabras más largas estén
+      primero.
+   -  Construya un string **s2** con la lista del resultado del punto
+      anterior.
+   -  Encuentre la palabra más larga y la más corta de la frase.
+
+3. Usando estructuras de control, calcule la suma:
+
+   .. math::  s_{1} = \frac{1}{2} \left(\sum_{k=1}^{100}k^{-1} \right)
+
+   1. Incluyendo todos los valores de ``k``
+   2. Incluyendo únicamente los valores pares de ``k``.
+
 
