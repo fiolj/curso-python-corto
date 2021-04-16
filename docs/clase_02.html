@@ -1,0 +1,1047 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Clase 2: Introducción a Python Científico &mdash; documentación de Curso corto de Python - </title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+        <script src="_static/translations.js"></script>
+        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/rtd_overrides.css" type="text/css" />
+    <link rel="search" title="Búsqueda" href="search.html" />
+    <link rel="prev" title="Clase 1: Conceptos básicos de Python" href="clase_01.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> Curso corto de Python
+          
+
+          
+            
+            <img src="_static/logo.svg" class="logo" alt="Logo"/>
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2021
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Dictado de las clases</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="clase_00.html">Clase 0: Introducción al lenguaje: Instalación y uso</a></li>
+<li class="toctree-l1"><a class="reference internal" href="clase_01.html">Clase 1: Conceptos básicos de Python</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Clase 2: Introducción a Python Científico</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#visualizacion-usando-matplotlib">Visualización usando <strong>Matplotlib</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#creacion-de-arrays">Creación de <strong>arrays</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#constructor-array">Constructor <code class="docutils literal notranslate"><span class="pre">array()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#creacion-de-datos-equiespaciados">Creación de datos equiespaciados</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#otras-maneras-de-crear-arrays">Otras maneras de crear <em>arrays</em></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#acceso-a-elementos-de-arrays">Acceso a elementos de <strong>arrays</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#operaciones-entre-arrays">Operaciones entre <strong>arrays</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#funciones-aplicadas-a-arrays">Funciones aplicadas a <em>arrays</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#intervalo-1-con-ejercicio">Intervalo 1 con ejercicio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#funciones">Funciones</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#definicion-de-funciones">Definición de funciones</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#las-funciones-son-objetos">Las funciones son objetos</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#funciones-con-argumentos-opcionales">Funciones con argumentos opcionales</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#intervalo-2-con-ejercicio">Intervalo 2 con ejercicio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lectura-y-escritura-de-datos-a-archivos">Lectura y escritura de datos a archivos</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Curso corto de Python</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>Clase 2: Introducción a Python Científico</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/clase_02.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="clase-2-introduccion-a-python-cientifico">
+<span id="clase-02"></span><h1>Clase 2: Introducción a Python Científico<a class="headerlink" href="#clase-2-introduccion-a-python-cientifico" title="Enlazar permanentemente con este título">¶</a></h1>
+<p>Dos paquetes que vamos a utilizar en el curso son <strong>Numpy</strong> y
+<strong>Matplotlib</strong>. Estos módulos definen objetos y funciones útiles para el
+trabajo científico-tecnológico:</p>
+<ul class="simple">
+<li><p><strong>Numpy</strong> define el tipo <strong>array</strong> y toda la estructura para trabajar
+con ellos (entre muchas otras cosas)</p></li>
+<li><p><strong>Matplotlib</strong> define la maquinaria para hacer gráficos,
+principalmente bidimensionales, con utilidades también para algunos
+tipos de gráficos en tres dimensiones.</p></li>
+</ul>
+<p>De las posibles variantes en la manera de importar los módulos, en este
+caso vamos a utilizar un alias que es la convención utilizada mayormente
+en la literatura:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Esta es la manera más usada de importar estos dos módulos.</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># importamos el submódulo pyplot del paquete matplotlib</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">12</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Acá <code class="docutils literal notranslate"><span class="pre">x</span></code> es un <strong>array</strong> con los números entre 0 y 11 inclusive. El
+tipo de variable <em>array</em> tiene definidas todas las operaciones “elemento
+a elemento”:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multiplicación de un array por un número</span>
+<span class="mi">3</span><span class="o">*</span><span class="n">x</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span> <span class="mi">0</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">21</span><span class="p">,</span> <span class="mi">24</span><span class="p">,</span> <span class="mi">27</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">33</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Suma con otro array o un escalar</span>
+<span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">-</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">1</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="section" id="visualizacion-usando-matplotlib">
+<h2>Visualización usando <strong>Matplotlib</strong><a class="headerlink" href="#visualizacion-usando-matplotlib" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para graficar, utilizamos el comando <code class="docutils literal notranslate"><span class="pre">plot</span></code> definido en el módulo
+<code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="s1">&#39;-o&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Índice&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;Valores de lista&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<img alt="_images/02_introd_cientif_8_0.png" src="_images/02_introd_cientif_8_0.png" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span><span class="mf">0.</span> <span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mf">1.</span> <span class="p">,</span> <span class="mf">1.5</span><span class="p">,</span> <span class="mf">2.</span> <span class="p">,</span> <span class="mf">2.5</span><span class="p">,</span> <span class="mf">3.</span> <span class="p">,</span> <span class="mf">3.5</span><span class="p">,</span> <span class="mf">4.</span> <span class="p">,</span> <span class="mf">4.5</span><span class="p">,</span> <span class="mf">5.</span> <span class="p">])</span>
+</pre></div>
+</div>
+<p>En esta figura graficamos sólo una cantidad, el arreglo <code class="docutils literal notranslate"><span class="pre">x</span></code> que se
+pasó como primer argumento a la función <code class="docutils literal notranslate"><span class="pre">plot</span></code>. Notar:</p>
+<ul class="simple">
+<li><p>Los valores de <code class="docutils literal notranslate"><span class="pre">x</span></code> están sobre el eje vertical, y automáticamente
+la función <code class="docutils literal notranslate"><span class="pre">plot</span></code> pone en el eje horizontal los índices del
+<em>array</em>.</p></li>
+<li><p>El segundo argumento en <code class="docutils literal notranslate"><span class="pre">plot</span></code> en este caso es un <em>string</em> que
+indica los símbolos y líneas que queremos utilizar:</p>
+<ul>
+<li><p>‘o’ significa utilizar círculos</p></li>
+<li><p>‘-’ significa utilizar líneas continuas</p></li>
+</ul>
+</li>
+<li><p>Las dos líneas siguientes determinan los textos que se muestran como
+título para cada eje.</p></li>
+</ul>
+<p>En este segundo ejemplo graficamos dos cantidades (<code class="docutils literal notranslate"><span class="pre">y</span></code> como función de
+<code class="docutils literal notranslate"><span class="pre">x</span></code>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="n">x</span><span class="o">**</span><span class="p">(</span><span class="mi">2</span><span class="o">/</span><span class="mi">3</span><span class="p">))</span><span class="o">/</span><span class="mi">2</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span><span class="s1">&#39;s--r&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;x-large&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;$sen(x) + x^{2/3}/2$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="s1">&#39;x-large&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<img alt="_images/02_introd_cientif_12_0.png" src="_images/02_introd_cientif_12_0.png" />
+<p>Comentarios:</p>
+<ul class="simple">
+<li><p>Si damos dos <em>arrays</em> (o listas) como los primeros argumentos a la
+función <code class="docutils literal notranslate"><span class="pre">plot</span></code>, los interpreta como los valores de los ejes
+<span class="math notranslate nohighlight">\(x\)</span> e <span class="math notranslate nohighlight">\(y\)</span>, respectivamente.</p></li>
+<li><p>El tercer argumento corresponde al formato. En este caso:</p>
+<ul>
+<li><p>‘s’ significa utilizar cuadrados</p></li>
+<li><p>‘–’ significa utilizar líneas cortadas</p></li>
+<li><p>‘r’ significa utilizar el color ‘rojo’ (‘red’)</p></li>
+</ul>
+</li>
+<li><p>Se puede agregar texto con formato. Para ello debe se escribe la
+expresión entre símbolos <code class="docutils literal notranslate"><span class="pre">$</span></code>, utilizando la <a class="reference external" href="https://www.learnlatex.org/es/lesson-10">notación de
+LaTeX</a></p></li>
+</ul>
+</div>
+<div class="section" id="creacion-de-arrays">
+<h2>Creación de <strong>arrays</strong><a class="headerlink" href="#creacion-de-arrays" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para crear arrays tenemos varias funciones definidas en el módulo
+<strong>Numpy</strong>. El principal es el constructor <code class="docutils literal notranslate"><span class="pre">array</span></code>, pero existen otros.
+Veamos algunos ejemplos:</p>
+<div class="section" id="constructor-array">
+<h3>Constructor <code class="docutils literal notranslate"><span class="pre">array()</span></code><a class="headerlink" href="#constructor-array" title="Enlazar permanentemente con este título">¶</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">34.4</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="o">-</span><span class="mi">8</span><span class="p">]</span>
+<span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+<span class="n">a</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span> <span class="mf">1.</span> <span class="p">,</span> <span class="mf">34.4</span><span class="p">,</span>  <span class="mf">5.1</span><span class="p">,</span>  <span class="mf">2.</span> <span class="p">,</span> <span class="o">-</span><span class="mf">3.</span> <span class="p">,</span>  <span class="mf">4.</span> <span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># No es necesario definir una lista previamente</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mf">34.4</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="o">-</span><span class="mi">8</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">==</span> <span class="n">a</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span> <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">])</span>
+</pre></div>
+</div>
+<p>Como vemos, podemos crear un array a partir de una lista (u otros
+iterables), usando el constructor <code class="docutils literal notranslate"><span class="pre">array()</span></code>. Una característica
+importante de los <em>array</em> es que todos sus elementos son del mismo tipo
+(en las listas pueden ser diferentes).</p>
+<p>De la misma manera podemos crear <em>arrays</em> de más de una dimensión. Por
+ejemplo para dos dimensiones:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">L1</span> <span class="o">=</span> <span class="p">[</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="o">.</span><span class="mi">2</span><span class="p">,</span> <span class="o">-.</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">9</span><span class="p">],</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span> <span class="p">]</span>
+
+<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">L1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">A</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span> <span class="mf">1.</span>   <span class="mf">2.</span>   <span class="mf">3.</span> <span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.2</span> <span class="o">-</span><span class="mf">0.2</span> <span class="o">-</span><span class="mf">1.</span> <span class="p">]</span>
+ <span class="p">[</span><span class="o">-</span><span class="mf">1.</span>   <span class="mf">2.</span>   <span class="mf">9.</span> <span class="p">]</span>
+ <span class="p">[</span> <span class="mf">0.</span>   <span class="mf">0.5</span>  <span class="mf">0.</span> <span class="p">]]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Array unidimensional:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dimensiones de a:&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Forma de a      :&#39;</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Longitud de a   :&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Array</span> <span class="n">unidimensional</span><span class="p">:</span>
+<span class="n">Dimensiones</span> <span class="n">de</span> <span class="n">a</span><span class="p">:</span> <span class="mi">1</span>
+<span class="n">Forma</span> <span class="n">de</span> <span class="n">a</span>      <span class="p">:</span> <span class="p">(</span><span class="mi">6</span><span class="p">,)</span>
+<span class="n">Longitud</span> <span class="n">de</span> <span class="n">a</span>   <span class="p">:</span> <span class="mi">6</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Array bidimensional:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Dimensiones de A:&#39;</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">ndim</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Forma de A      :&#39;</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tamaño de A      :&#39;</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Longitud de A   :&#39;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">A</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Array</span> <span class="n">bidimensional</span><span class="p">:</span>
+<span class="n">Dimensiones</span> <span class="n">de</span> <span class="n">A</span><span class="p">:</span> <span class="mi">2</span>
+<span class="n">Forma</span> <span class="n">de</span> <span class="n">A</span>      <span class="p">:</span> <span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">Tamaño</span> <span class="n">de</span> <span class="n">A</span>      <span class="p">:</span> <span class="mi">12</span>
+<span class="n">Longitud</span> <span class="n">de</span> <span class="n">A</span>   <span class="p">:</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="creacion-de-datos-equiespaciados">
+<h3>Creación de datos equiespaciados<a class="headerlink" href="#creacion-de-datos-equiespaciados" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Para obtener datos equiespaciados hay dos funciones complementarias</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">190</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">19</span><span class="p">)</span>
+<span class="n">a1</span> <span class="o">==</span> <span class="n">a2</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span> <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>
+        <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>  <span class="kc">True</span><span class="p">,</span>
+        <span class="kc">True</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span>
+</pre></div>
+</div>
+<p>Como vemos, ambos pueden dar resultados similares, y es una cuestión de
+conveniencia cual utilizar. El uso es:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">([</span><span class="n">start</span><span class="p">,]</span> <span class="n">stop</span><span class="p">[,</span> <span class="n">step</span><span class="p">,],</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">retstep</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ambos toman como argumentos los límites inferior y superior. Mientras
+que a <code class="docutils literal notranslate"><span class="pre">arange()</span></code> le decimos cuál es el paso a utilizar, a
+<code class="docutils literal notranslate"><span class="pre">linspace()</span></code> debemos (podemos) darle como tercer argumento el número
+de valores que queremos.</p>
+<p>Existen también funciones para crear <em>arrays</em> de datos logarítmicamente
+equiespaciados:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">base</span><span class="o">=</span><span class="mf">10.0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
+<span class="n">np</span><span class="o">.</span><span class="n">geomspace</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">stop</span><span class="p">,</span> <span class="n">num</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">endpoint</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>La función <code class="docutils literal notranslate"><span class="pre">logspace</span></code> toma como <code class="docutils literal notranslate"><span class="pre">start</span></code> y <code class="docutils literal notranslate"><span class="pre">stop</span></code> el exponente, tal
+que el primer elemento será <span class="math notranslate nohighlight">\(10^{start}\)</span> y el último
+<span class="math notranslate nohighlight">\(10^{stop}\)</span>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span>  <span class="mf">1.</span>        <span class="p">,</span>   <span class="mf">1.66810054</span><span class="p">,</span>   <span class="mf">2.7825594</span> <span class="p">,</span>   <span class="mf">4.64158883</span><span class="p">,</span>
+         <span class="mf">7.74263683</span><span class="p">,</span>  <span class="mf">12.91549665</span><span class="p">,</span>  <span class="mf">21.5443469</span> <span class="p">,</span>  <span class="mf">35.93813664</span><span class="p">,</span>
+        <span class="mf">59.94842503</span><span class="p">,</span> <span class="mf">100.</span>        <span class="p">])</span>
+</pre></div>
+</div>
+<p>La función <code class="docutils literal notranslate"><span class="pre">geomspace</span></code> toma como <code class="docutils literal notranslate"><span class="pre">start</span></code> y <code class="docutils literal notranslate"><span class="pre">stop</span></code> directamente los
+valores, tal que el primer elemento será <code class="docutils literal notranslate"><span class="pre">start</span></code> y el último <code class="docutils literal notranslate"><span class="pre">stop</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">geomspace</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">100</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span>  <span class="mf">1.</span>        <span class="p">,</span>   <span class="mf">1.66810054</span><span class="p">,</span>   <span class="mf">2.7825594</span> <span class="p">,</span>   <span class="mf">4.64158883</span><span class="p">,</span>
+         <span class="mf">7.74263683</span><span class="p">,</span>  <span class="mf">12.91549665</span><span class="p">,</span>  <span class="mf">21.5443469</span> <span class="p">,</span>  <span class="mf">35.93813664</span><span class="p">,</span>
+        <span class="mf">59.94842503</span><span class="p">,</span> <span class="mf">100.</span>        <span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="otras-maneras-de-crear-arrays">
+<h3>Otras maneras de crear <em>arrays</em><a class="headerlink" href="#otras-maneras-de-crear-arrays" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Existen otras funciones para crear arrays en forma conveniente:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">e1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>                <span class="c1"># empty, 1D</span>
+<span class="n">e2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>            <span class="c1"># empty, 2D</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;vacío 1d:</span><span class="se">\n</span><span class="si">{</span><span class="n">e1</span><span class="si">}</span><span class="s1"> </span><span class="se">\n\n</span><span class="s1">vacío 2d:</span><span class="se">\n</span><span class="si">{</span><span class="n">e2</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vacío</span> <span class="mi">1</span><span class="n">d</span><span class="p">:</span>
+<span class="p">[</span><span class="mf">103.</span>  <span class="mf">13.</span>   <span class="mf">2.</span><span class="p">]</span>
+
+<span class="n">vacío</span> <span class="mi">2</span><span class="n">d</span><span class="p">:</span>
+<span class="p">[[</span> <span class="mf">1.</span>  <span class="mf">34.4</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mf">5.1</span>  <span class="mf">2.</span> <span class="p">]</span>
+ <span class="p">[</span><span class="o">-</span><span class="mf">3.</span>   <span class="mf">4.</span> <span class="p">]]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>                <span class="c1"># ceros, 1D</span>
+<span class="n">z2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>            <span class="c1"># ceros, 2D</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ceros 1d:</span><span class="se">\n</span><span class="si">{</span><span class="n">z1</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">ceros 2d:</span><span class="se">\n</span><span class="si">{</span><span class="n">z2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ceros</span> <span class="mi">1</span><span class="n">d</span><span class="p">:</span>
+<span class="p">[</span><span class="mf">0.</span> <span class="mf">0.</span> <span class="mf">0.</span><span class="p">]</span>
+
+<span class="n">ceros</span> <span class="mi">2</span><span class="n">d</span><span class="p">:</span>
+<span class="p">[[</span><span class="mf">0.</span> <span class="mf">0.</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.</span> <span class="mf">0.</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.</span> <span class="mf">0.</span><span class="p">]]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">o1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>                 <span class="c1"># unos, 1D</span>
+<span class="n">o2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>             <span class="c1"># unos, 2D</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;unos 1d:</span><span class="se">\n</span><span class="si">{</span><span class="n">o1</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">unos 2d:</span><span class="se">\n</span><span class="si">{</span><span class="n">o2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">unos</span> <span class="mi">1</span><span class="n">d</span><span class="p">:</span>
+<span class="p">[</span><span class="mf">1.</span> <span class="mf">1.</span> <span class="mf">1.</span><span class="p">]</span>
+
+<span class="n">unos</span> <span class="mi">2</span><span class="n">d</span><span class="p">:</span>
+<span class="p">[[</span><span class="mf">1.</span> <span class="mf">1.</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">1.</span> <span class="mf">1.</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">1.</span> <span class="mf">1.</span><span class="p">]]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">r1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>        <span class="c1"># random, 1D</span>
+<span class="n">r2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>    <span class="c1"># random, 2D</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;random 1d:</span><span class="se">\n</span><span class="si">{</span><span class="n">r1</span><span class="si">}</span><span class="se">\n\n</span><span class="s2">random 2d:</span><span class="se">\n</span><span class="si">{</span><span class="n">r2</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">random</span> <span class="mi">1</span><span class="n">d</span><span class="p">:</span>
+<span class="p">[</span><span class="mf">0.95534872</span> <span class="mf">0.15012416</span> <span class="mf">0.61450016</span><span class="p">]</span>
+
+<span class="n">random</span> <span class="mi">2</span><span class="n">d</span><span class="p">:</span>
+<span class="p">[[</span><span class="mf">0.56766495</span> <span class="mf">0.48012686</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.61281735</span> <span class="mf">0.95175144</span><span class="p">]</span>
+ <span class="p">[</span><span class="mf">0.43686846</span> <span class="mf">0.86850566</span><span class="p">]]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="acceso-a-elementos-de-arrays">
+<h2>Acceso a elementos de <strong>arrays</strong><a class="headerlink" href="#acceso-a-elementos-de-arrays" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Para acceder a elementos individuales o <em>subarrays</em> usamos la misma
+notación que para listas o strings:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vec</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;vec =&#39;</span><span class="p">,</span> <span class="n">vec</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Primer elemento de vec  =&#39;</span><span class="p">,</span> <span class="n">vec</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Segundo elemento de vec =&#39;</span><span class="p">,</span> <span class="n">vec</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tercer elemento de vec  =&#39;</span><span class="p">,</span> <span class="n">vec</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Último elemento de vec  =&#39;</span><span class="p">,</span> <span class="n">vec</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">vec</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">0</span>  <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span>  <span class="mi">7</span>  <span class="mi">8</span>  <span class="mi">9</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">Primer</span> <span class="n">elemento</span> <span class="n">de</span> <span class="n">vec</span>  <span class="o">=</span> <span class="mi">0</span>
+<span class="n">Segundo</span> <span class="n">elemento</span> <span class="n">de</span> <span class="n">vec</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">Tercer</span> <span class="n">elemento</span> <span class="n">de</span> <span class="n">vec</span>  <span class="o">=</span> <span class="mi">2</span>
+<span class="n">Último</span> <span class="n">elemento</span> <span class="n">de</span> <span class="n">vec</span>  <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Para un array bidimensional</span>
+<span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">55</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[[</span> <span class="mi">0</span>  <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span>  <span class="mi">7</span>  <span class="mi">8</span>  <span class="mi">9</span> <span class="mi">10</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">11</span> <span class="mi">12</span> <span class="mi">13</span> <span class="mi">14</span> <span class="mi">15</span> <span class="mi">16</span> <span class="mi">17</span> <span class="mi">18</span> <span class="mi">19</span> <span class="mi">20</span> <span class="mi">21</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">22</span> <span class="mi">23</span> <span class="mi">24</span> <span class="mi">25</span> <span class="mi">26</span> <span class="mi">27</span> <span class="mi">28</span> <span class="mi">29</span> <span class="mi">30</span> <span class="mi">31</span> <span class="mi">32</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">33</span> <span class="mi">34</span> <span class="mi">35</span> <span class="mi">36</span> <span class="mi">37</span> <span class="mi">38</span> <span class="mi">39</span> <span class="mi">40</span> <span class="mi">41</span> <span class="mi">42</span> <span class="mi">43</span><span class="p">]</span>
+ <span class="p">[</span><span class="mi">44</span> <span class="mi">45</span> <span class="mi">46</span> <span class="mi">47</span> <span class="mi">48</span> <span class="mi">49</span> <span class="mi">50</span> <span class="mi">51</span> <span class="mi">52</span> <span class="mi">53</span> <span class="mi">54</span><span class="p">]]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Primer elemento de X =&#39;</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fila 0, Columna 3 de X =&#39;</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Primera fila de X =&#39;</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Última fila de X =&#39;</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Segunda Columna de X&quot;</span><span class="p">,</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Primer</span> <span class="n">elemento</span> <span class="n">de</span> <span class="n">X</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">Fila</span> <span class="mi">0</span><span class="p">,</span> <span class="n">Columna</span> <span class="mi">3</span> <span class="n">de</span> <span class="n">X</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="n">Primera</span> <span class="n">fila</span> <span class="n">de</span> <span class="n">X</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">0</span>  <span class="mi">1</span>  <span class="mi">2</span>  <span class="mi">3</span>  <span class="mi">4</span>  <span class="mi">5</span>  <span class="mi">6</span>  <span class="mi">7</span>  <span class="mi">8</span>  <span class="mi">9</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">Última</span> <span class="n">fila</span> <span class="n">de</span> <span class="n">X</span> <span class="o">=</span> <span class="p">[</span><span class="mi">44</span> <span class="mi">45</span> <span class="mi">46</span> <span class="mi">47</span> <span class="mi">48</span> <span class="mi">49</span> <span class="mi">50</span> <span class="mi">51</span> <span class="mi">52</span> <span class="mi">53</span> <span class="mi">54</span><span class="p">]</span>
+<span class="n">Segunda</span> <span class="n">Columna</span> <span class="n">de</span> <span class="n">X</span> <span class="p">[</span> <span class="mi">1</span> <span class="mi">12</span> <span class="mi">23</span> <span class="mi">34</span> <span class="mi">45</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Para seleccionar partes de un array se usa la notación <code class="docutils literal notranslate"><span class="pre">[i:f:p]</span></code>.
+Entre corchetes se indican <code class="docutils literal notranslate"><span class="pre">i</span></code>nicio, <code class="docutils literal notranslate"><span class="pre">f</span></code>inal, <code class="docutils literal notranslate"><span class="pre">p</span></code>aso,
+separadas por <code class="docutils literal notranslate"><span class="pre">:</span></code>. Las tres partes son opcionales, veamos que
+significa:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Primeros tres elementos de vec =&#39;</span><span class="p">,</span> <span class="n">vec</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">:</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Primeros tres elementos de vec =&#39;</span><span class="p">,</span> <span class="n">vec</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Primeros tres elementos de vec =&#39;</span><span class="p">,</span> <span class="n">vec</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Elementos 4 a 7 de vec =&#39;</span><span class="p">,</span> <span class="n">vec</span><span class="p">[</span><span class="mi">4</span><span class="p">:</span><span class="mi">7</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Elemento por medio de vec =&#39;</span><span class="p">,</span> <span class="n">vec</span><span class="p">[::</span><span class="mi">2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Elemento por medio de vec, desde atrás =&#39;</span><span class="p">,</span> <span class="n">vec</span><span class="p">[::</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Primeros</span> <span class="n">tres</span> <span class="n">elementos</span> <span class="n">de</span> <span class="n">vec</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">Primeros</span> <span class="n">tres</span> <span class="n">elementos</span> <span class="n">de</span> <span class="n">vec</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">Primeros</span> <span class="n">tres</span> <span class="n">elementos</span> <span class="n">de</span> <span class="n">vec</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span> <span class="mi">1</span> <span class="mi">2</span><span class="p">]</span>
+<span class="n">Elementos</span> <span class="mi">4</span> <span class="n">a</span> <span class="mi">7</span> <span class="n">de</span> <span class="n">vec</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span> <span class="mi">5</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">Elemento</span> <span class="n">por</span> <span class="n">medio</span> <span class="n">de</span> <span class="n">vec</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">0</span>  <span class="mi">2</span>  <span class="mi">4</span>  <span class="mi">6</span>  <span class="mi">8</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">Elemento</span> <span class="n">por</span> <span class="n">medio</span> <span class="n">de</span> <span class="n">vec</span><span class="p">,</span> <span class="n">desde</span> <span class="n">atrás</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span>  <span class="mi">8</span>  <span class="mi">6</span>  <span class="mi">4</span>  <span class="mi">2</span>  <span class="mi">0</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Segunda columna de X =&#39;</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Segunda columna de X =&#39;</span><span class="p">,</span> <span class="n">X</span><span class="p">[</span><span class="mi">0</span><span class="p">:,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Segunda columna de X =&#39;</span><span class="p">,</span> <span class="n">X</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Última  columna de X =&#39;</span><span class="p">,</span> <span class="n">X</span><span class="p">[:,</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Segunda</span> <span class="n">columna</span> <span class="n">de</span> <span class="n">X</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="mi">12</span> <span class="mi">23</span> <span class="mi">34</span> <span class="mi">45</span><span class="p">]</span>
+<span class="n">Segunda</span> <span class="n">columna</span> <span class="n">de</span> <span class="n">X</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="mi">12</span> <span class="mi">23</span> <span class="mi">34</span> <span class="mi">45</span><span class="p">]</span>
+<span class="n">Segunda</span> <span class="n">columna</span> <span class="n">de</span> <span class="n">X</span> <span class="o">=</span> <span class="p">[</span> <span class="mi">1</span> <span class="mi">12</span> <span class="mi">23</span> <span class="mi">34</span> <span class="mi">45</span><span class="p">]</span>
+<span class="n">Última</span>  <span class="n">columna</span> <span class="n">de</span> <span class="n">X</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span> <span class="mi">21</span> <span class="mi">32</span> <span class="mi">43</span> <span class="mi">54</span><span class="p">]</span>
+</pre></div>
+</div>
+<img alt="_images/numpy_indexing.png" src="_images/numpy_indexing.png" />
+</div>
+<div class="section" id="operaciones-entre-arrays">
+<h2>Operaciones entre <strong>arrays</strong><a class="headerlink" href="#operaciones-entre-arrays" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Todas las operaciones entre arrays (sumas, multiplicaciones, divisiones,
+etc), así como con números se realizan “elemento a elemento”</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>          <span class="c1"># Equiespaciado entre 0 y 1</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x=&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y=&#39;</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="o">=</span> <span class="p">[</span><span class="mf">0.</span>   <span class="mf">0.25</span> <span class="mf">0.5</span>  <span class="mf">0.75</span> <span class="mf">1.</span>  <span class="p">]</span>
+<span class="n">y</span><span class="o">=</span> <span class="p">[</span><span class="mf">1.</span> <span class="mf">1.</span> <span class="mf">1.</span> <span class="mf">1.</span> <span class="mf">1.</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multiplicación, división y suma con escalares</span>
+<span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="o">/</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;y = 2*y/3 - 1/3 =&quot;</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">y</span><span class="o">/</span><span class="mi">3</span> <span class="o">-</span> <span class="mi">1</span><span class="o">/</span><span class="mi">3</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.33333333</span> <span class="mf">0.33333333</span> <span class="mf">0.33333333</span> <span class="mf">0.33333333</span> <span class="mf">0.33333333</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Combinación lineal</span>
+<span class="n">z</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;z = 2*x + y  =&#39;</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span> <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">x</span> <span class="o">+</span> <span class="n">y</span>  <span class="o">=</span> <span class="p">[</span><span class="mf">0.33333333</span> <span class="mf">0.83333333</span> <span class="mf">1.33333333</span> <span class="mf">1.83333333</span> <span class="mf">2.33333333</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multiplicación de dos arrays</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y * z =&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">*</span> <span class="n">z</span> <span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">*</span> <span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.11111111</span> <span class="mf">0.27777778</span> <span class="mf">0.44444444</span> <span class="mf">0.61111111</span> <span class="mf">0.77777778</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># División de dos arrays</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y / z =&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">/</span> <span class="n">z</span> <span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">y</span> <span class="o">/</span> <span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.</span>         <span class="mf">0.4</span>        <span class="mf">0.25</span>       <span class="mf">0.18181818</span> <span class="mf">0.14285714</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Elevación a potencia</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;(x+2)^z =&#39;</span><span class="p">,</span> <span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">**</span><span class="n">z</span> <span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">x</span><span class="o">+</span><span class="mi">2</span><span class="p">)</span><span class="o">^</span><span class="n">z</span> <span class="o">=</span> <span class="p">[</span> <span class="mf">1.25992105</span>  <span class="mf">1.96555605</span>  <span class="mf">3.39302202</span>  <span class="mf">6.38915276</span> <span class="mf">12.98024613</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comparación entre arrays</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y=&#39;</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;z=&#39;</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x=&#39;</span><span class="p">,</span><span class="n">x</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;y &lt; x =&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">)</span>        <span class="c1"># menor</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;y &lt; z =&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">z</span><span class="p">)</span>        <span class="c1"># menor</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;y &gt; x =&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="n">x</span><span class="p">)</span>        <span class="c1"># mayor</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;y &gt; z =&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">&gt;</span> <span class="n">z</span><span class="p">)</span>        <span class="c1"># mayor</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;y &gt;= z =&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">&gt;=</span> <span class="n">z</span><span class="p">)</span>      <span class="c1"># mayor o igual</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;y == z =&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">==</span> <span class="n">z</span><span class="p">)</span>      <span class="c1"># igual</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;y != z =&#39;</span><span class="p">,</span> <span class="n">y</span> <span class="o">!=</span> <span class="n">z</span><span class="p">)</span>      <span class="c1"># diferente</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">y</span><span class="o">=</span> <span class="p">[</span><span class="mf">0.33333333</span> <span class="mf">0.33333333</span> <span class="mf">0.33333333</span> <span class="mf">0.33333333</span> <span class="mf">0.33333333</span><span class="p">]</span>
+<span class="n">z</span><span class="o">=</span> <span class="p">[</span><span class="mf">0.33333333</span> <span class="mf">0.83333333</span> <span class="mf">1.33333333</span> <span class="mf">1.83333333</span> <span class="mf">2.33333333</span><span class="p">]</span>
+<span class="n">x</span><span class="o">=</span> <span class="p">[</span><span class="mf">0.</span>   <span class="mf">0.25</span> <span class="mf">0.5</span>  <span class="mf">0.75</span> <span class="mf">1.</span>  <span class="p">]</span>
+<span class="n">y</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span> <span class="kc">False</span>  <span class="kc">True</span>  <span class="kc">True</span>  <span class="kc">True</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">&lt;</span> <span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span>  <span class="kc">True</span>  <span class="kc">True</span>  <span class="kc">True</span>  <span class="kc">True</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">&gt;</span> <span class="n">x</span> <span class="o">=</span> <span class="p">[</span> <span class="kc">True</span>  <span class="kc">True</span> <span class="kc">False</span> <span class="kc">False</span> <span class="kc">False</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">&gt;</span> <span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span> <span class="kc">False</span> <span class="kc">False</span> <span class="kc">False</span> <span class="kc">False</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">&gt;=</span> <span class="n">z</span> <span class="o">=</span> <span class="p">[</span> <span class="kc">True</span> <span class="kc">False</span> <span class="kc">False</span> <span class="kc">False</span> <span class="kc">False</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">==</span> <span class="n">z</span> <span class="o">=</span> <span class="p">[</span> <span class="kc">True</span> <span class="kc">False</span> <span class="kc">False</span> <span class="kc">False</span> <span class="kc">False</span><span class="p">]</span>
+<span class="n">y</span> <span class="o">!=</span> <span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span>  <span class="kc">True</span>  <span class="kc">True</span>  <span class="kc">True</span>  <span class="kc">True</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="funciones-aplicadas-a-arrays">
+<h2>Funciones aplicadas a <em>arrays</em><a class="headerlink" href="#funciones-aplicadas-a-arrays" title="Enlazar permanentemente con este título">¶</a></h2>
+<p><strong>Numpy</strong> tiene funciones que están definidas para actuar tanto sobre
+números escalares como sobre <em>arrays</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;z=&#39;</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sin(pi/4) =&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sin(z) =&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cos(z) =&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;log(z) =&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;log10(z) =&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;arctan(z) =&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">arctan</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;arctan2(z,x) =&#39;</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">arctan2</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">x</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;tanh(z) =&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cosh(z) =&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cosh</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span><span class="o">=</span> <span class="p">[</span><span class="mf">0.33333333</span> <span class="mf">0.83333333</span> <span class="mf">1.33333333</span> <span class="mf">1.83333333</span> <span class="mf">2.33333333</span><span class="p">]</span>
+<span class="n">sin</span><span class="p">(</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span> <span class="o">=</span> <span class="mf">0.7071067811865475</span>
+<span class="n">sin</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.3271947</span>  <span class="mf">0.74017685</span> <span class="mf">0.9719379</span>  <span class="mf">0.96573465</span> <span class="mf">0.72308588</span><span class="p">]</span>
+<span class="n">cos</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">=</span> <span class="p">[</span> <span class="mf">0.94495695</span>  <span class="mf">0.67241224</span>  <span class="mf">0.23523757</span> <span class="o">-</span><span class="mf">0.25953146</span> <span class="o">-</span><span class="mf">0.69075814</span><span class="p">]</span>
+<span class="n">log</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">1.09861229</span> <span class="o">-</span><span class="mf">0.18232156</span>  <span class="mf">0.28768207</span>  <span class="mf">0.6061358</span>   <span class="mf">0.84729786</span><span class="p">]</span>
+<span class="n">log10</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.47712125</span> <span class="o">-</span><span class="mf">0.07918125</span>  <span class="mf">0.12493874</span>  <span class="mf">0.26324143</span>  <span class="mf">0.36797679</span><span class="p">]</span>
+<span class="n">arctan</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.32175055</span> <span class="mf">0.69473828</span> <span class="mf">0.92729522</span> <span class="mf">1.07144961</span> <span class="mf">1.16590454</span><span class="p">]</span>
+<span class="n">arctan2</span><span class="p">(</span><span class="n">z</span><span class="p">,</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.57079633</span> <span class="mf">1.27933953</span> <span class="mf">1.21202566</span> <span class="mf">1.18247761</span> <span class="mf">1.16590454</span><span class="p">]</span>
+<span class="n">tanh</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.32151274</span> <span class="mf">0.68226179</span> <span class="mf">0.87006166</span> <span class="mf">0.95015115</span> <span class="mf">0.98136808</span><span class="p">]</span>
+<span class="n">cosh</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.05607187</span> <span class="mf">1.36778705</span> <span class="mf">2.02863252</span> <span class="mf">3.20729035</span> <span class="mf">5.20461523</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Hay funciones que devuelven un valor computado a partir del <em>array</em>.
+Veamos como funciona con un <em>array</em> unidimensional</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;z=&#39;</span><span class="p">,</span> <span class="n">z</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sum(z)  =&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>   <span class="c1"># Suma de todos</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;prod(z) =&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>  <span class="c1"># Producto de todos</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;min(z)  =&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>   <span class="c1"># Mínimo</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;max(z)  =&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>   <span class="c1"># Máximo</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;argmin(z) =&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">z</span><span class="p">))</span> <span class="c1"># Índice del mínimo</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;argmax(z) =&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">z</span><span class="p">))</span> <span class="c1"># Índice del máximo</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean(z) =&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>  <span class="c1"># Valor medio</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;std(z)  =&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>   <span class="c1"># Desviación standard</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z</span><span class="o">=</span> <span class="p">[</span><span class="mf">0.33333333</span> <span class="mf">0.83333333</span> <span class="mf">1.33333333</span> <span class="mf">1.83333333</span> <span class="mf">2.33333333</span><span class="p">]</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>  <span class="o">=</span> <span class="mf">6.666666666666666</span>
+<span class="n">prod</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">=</span> <span class="mf">1.584362139917695</span>
+<span class="nb">min</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>  <span class="o">=</span> <span class="mf">0.3333333333333333</span>
+<span class="nb">max</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>  <span class="o">=</span> <span class="mf">2.3333333333333335</span>
+<span class="n">argmin</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">argmax</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">=</span> <span class="mi">4</span>
+<span class="n">mean</span><span class="p">(</span><span class="n">z</span><span class="p">)</span> <span class="o">=</span> <span class="mf">1.3333333333333333</span>
+<span class="n">std</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>  <span class="o">=</span> <span class="mf">0.7071067811865476</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">posicion</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">concentracion</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">posicion</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span> <span class="mf">0.</span>        <span class="p">,</span>  <span class="mf">0.52631579</span><span class="p">,</span>  <span class="mf">1.05263158</span><span class="p">,</span>  <span class="mf">1.57894737</span><span class="p">,</span>  <span class="mf">2.10526316</span><span class="p">,</span>
+        <span class="mf">2.63157895</span><span class="p">,</span>  <span class="mf">3.15789474</span><span class="p">,</span>  <span class="mf">3.68421053</span><span class="p">,</span>  <span class="mf">4.21052632</span><span class="p">,</span>  <span class="mf">4.73684211</span><span class="p">,</span>
+        <span class="mf">5.26315789</span><span class="p">,</span>  <span class="mf">5.78947368</span><span class="p">,</span>  <span class="mf">6.31578947</span><span class="p">,</span>  <span class="mf">6.84210526</span><span class="p">,</span>  <span class="mf">7.36842105</span><span class="p">,</span>
+        <span class="mf">7.89473684</span><span class="p">,</span>  <span class="mf">8.42105263</span><span class="p">,</span>  <span class="mf">8.94736842</span><span class="p">,</span>  <span class="mf">9.47368421</span><span class="p">,</span> <span class="mf">10.</span>        <span class="p">])</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">concentracion</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span><span class="mf">0.760931</span>  <span class="p">,</span> <span class="mf">0.00674471</span><span class="p">,</span> <span class="mf">0.64383201</span><span class="p">,</span> <span class="mf">0.94901168</span><span class="p">,</span> <span class="mf">0.03682643</span><span class="p">,</span>
+       <span class="mf">0.78804384</span><span class="p">,</span> <span class="mf">0.25510833</span><span class="p">,</span> <span class="mf">0.60835672</span><span class="p">,</span> <span class="mf">0.08339204</span><span class="p">,</span> <span class="mf">0.86399355</span><span class="p">,</span>
+       <span class="mf">0.36696352</span><span class="p">,</span> <span class="mf">0.35821287</span><span class="p">,</span> <span class="mf">0.67096236</span><span class="p">,</span> <span class="mf">0.31196338</span><span class="p">,</span> <span class="mf">0.84304627</span><span class="p">,</span>
+       <span class="mf">0.05868327</span><span class="p">,</span> <span class="mf">0.35222632</span><span class="p">,</span> <span class="mf">0.5948961</span> <span class="p">,</span> <span class="mf">0.51561748</span><span class="p">,</span> <span class="mf">0.82939155</span><span class="p">])</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p><strong>Ejemplo:</strong> Queremos calcular la posición del máximo de concentración</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">posmax</span> <span class="o">=</span> <span class="n">posicion</span><span class="p">[</span><span class="n">concentracion</span><span class="o">.</span><span class="n">argmax</span><span class="p">()]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">indmax</span> <span class="o">=</span> <span class="n">concentracion</span><span class="o">.</span><span class="n">argmax</span><span class="p">()</span>   <span class="c1"># es igual a:   indmax = np.argmax(concentracion)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">indmax</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">posicion</span><span class="p">[</span><span class="n">indmax</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1.5789473684210527</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Funciona con arrays de más dimensiones (y también se puede elegir el eje a usar)</span>
+<span class="n">X</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">X</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">,:]</span> <span class="o">-</span> <span class="mi">1</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;X=&#39;</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sum(X)  =&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="s2">&quot;=&quot;</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>   <span class="c1"># Suma de todos</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;prod(X) =&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>  <span class="c1"># Producto de todos</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;min(X)  =&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>   <span class="c1"># Mínimo</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;max(X)  =&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>   <span class="c1"># Máximo</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;mean(X) =&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>  <span class="c1"># Valor medio</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;std(X)  =&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">std</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>   <span class="c1"># Desviación standard</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;argmin(X) =&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmin</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;argmax(X) =&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">X</span><span class="o">=</span> <span class="p">[[</span> <span class="mf">3.75</span>   <span class="mf">3.875</span>  <span class="mf">4.</span>     <span class="mf">4.125</span>  <span class="mf">4.25</span>   <span class="mf">4.375</span>  <span class="mf">4.5</span>    <span class="mf">4.625</span>  <span class="mf">4.75</span>   <span class="mf">4.875</span>
+   <span class="mf">5.</span>   <span class="p">]</span>
+ <span class="p">[</span> <span class="mf">2.375</span>  <span class="mf">2.5</span>    <span class="mf">2.625</span>  <span class="mf">2.75</span>   <span class="mf">2.875</span>  <span class="mf">3.</span>     <span class="mf">3.125</span>  <span class="mf">3.25</span>   <span class="mf">3.375</span>  <span class="mf">3.5</span>
+   <span class="mf">3.625</span><span class="p">]</span>
+ <span class="p">[</span> <span class="mf">1.</span>     <span class="mf">1.125</span>  <span class="mf">1.25</span>   <span class="mf">1.375</span>  <span class="mf">1.5</span>    <span class="mf">1.625</span>  <span class="mf">1.75</span>   <span class="mf">1.875</span>  <span class="mf">2.</span>     <span class="mf">2.125</span>
+   <span class="mf">2.25</span> <span class="p">]</span>
+ <span class="p">[</span><span class="o">-</span><span class="mf">0.375</span> <span class="o">-</span><span class="mf">0.25</span>  <span class="o">-</span><span class="mf">0.125</span>  <span class="mf">0.</span>     <span class="mf">0.125</span>  <span class="mf">0.25</span>   <span class="mf">0.375</span>  <span class="mf">0.5</span>    <span class="mf">0.625</span>  <span class="mf">0.75</span>
+   <span class="mf">0.875</span><span class="p">]</span>
+ <span class="p">[</span><span class="o">-</span><span class="mf">1.75</span>  <span class="o">-</span><span class="mf">1.625</span> <span class="o">-</span><span class="mf">1.5</span>   <span class="o">-</span><span class="mf">1.375</span> <span class="o">-</span><span class="mf">1.25</span>  <span class="o">-</span><span class="mf">1.125</span> <span class="o">-</span><span class="mf">1.</span>    <span class="o">-</span><span class="mf">0.875</span> <span class="o">-</span><span class="mf">0.75</span>  <span class="o">-</span><span class="mf">0.625</span>
+  <span class="o">-</span><span class="mf">0.5</span>  <span class="p">]]</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>  <span class="o">=</span> <span class="mf">89.375</span> <span class="o">=</span> <span class="mf">89.375</span>
+<span class="n">prod</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">=</span> <span class="mf">0.0</span>
+<span class="nb">min</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>  <span class="o">=</span> <span class="o">-</span><span class="mf">1.75</span>
+<span class="nb">max</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>  <span class="o">=</span> <span class="mf">5.0</span>
+<span class="n">mean</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">=</span> <span class="mf">1.625</span>
+<span class="n">std</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>  <span class="o">=</span> <span class="mf">1.984313483298443</span>
+<span class="n">argmin</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">=</span> <span class="mi">44</span>
+<span class="n">argmax</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">=</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">prod</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span> <span class="mf">1.07427728e+07</span><span class="p">,</span>  <span class="mf">1.60771085e+05</span><span class="p">,</span>  <span class="mf">1.47883809e+02</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.00000000e+00</span><span class="p">,</span>
+       <span class="o">-</span><span class="mf">1.69148147e+00</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="intervalo-1-con-ejercicio">
+<h2>Intervalo 1 con ejercicio<a class="headerlink" href="#intervalo-1-con-ejercicio" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Teniendo en cuenta que las ecuaciones de movimiento con aceleración
+constante son:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{align}
+v &amp;= v_0 - g t \,  \\
+z &amp;= z_0 + v_0 t - g t^2/2.
+\end{align}\end{split}\]</div>
+<p>Considere los valores de condición inicial: <span class="math notranslate nohighlight">\(v_0=10\)</span> (en m/s),
+<span class="math notranslate nohighlight">\(g=-9.8\)</span> (en m/s²) y <span class="math notranslate nohighlight">\(z_0=10\)</span> m.</p>
+<ul class="simple">
+<li><p>Cree un array <code class="docutils literal notranslate"><span class="pre">t</span></code> de 100 valores equiespaciados entre 0 y 2
+segundos, correspondiente al tiempo de caída.</p></li>
+<li><p>Aplique las fórmulas para obtener dos arrays:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">v</span></code> tendrá los valores de velocidad como función del tiempo</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">z</span></code> tendrá los valores de altura como función del tiempo</p></li>
+</ul>
+</li>
+<li><p>Grafique separadamente la velocidad y la posición como función del
+tiempo (dos gráficos)</p></li>
+<li><p>Grafique la velocidad como función de la posición</p></li>
+<li><p>Calcular (no alcanza con ver en el gráfico) un valor aproximado de la
+altura máxima alcanzada, y en que instante ocurre.</p></li>
+</ul>
+</div>
+<div class="section" id="funciones">
+<h2>Funciones<a class="headerlink" href="#funciones" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="definicion-de-funciones">
+<h3>Definición de funciones<a class="headerlink" href="#definicion-de-funciones" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Las funciones en <strong>Python</strong>, como en la mayoría de los lenguajes, usan
+una notación matemática, con un nombre y uno o más argumentos entre
+paréntesis. Por ejemplo, ya usamos varias funciones matemáticas, que
+toman como argumento un número o un <em>array</em> de números, y devuelven un
+número o un array (dependiendo del argumento, y de la función). Lo que
+podemos decir es que toman uno o más argumentos y devuelven uno o más
+resultados.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sin(1.54) =&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mf">1.54</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;sin(vec) =&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">vec</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;max(vec) =&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">vec</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Para mostrar como definir nuestras propias funciones, vamos a tomar el
+ejercicio de caída libre y encapsulemos el cálculo en una función:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z_0</span> <span class="o">=</span> <span class="mi">10</span>                       <span class="c1"># altura inicial en m</span>
+<span class="n">v_0</span> <span class="o">=</span> <span class="mi">10</span>                         <span class="c1"># velocidad inicial en m/s</span>
+<span class="n">g</span> <span class="o">=</span> <span class="o">-</span><span class="mf">9.8</span>                         <span class="c1"># aceleración de la gravedad en m/s^2</span>
+<span class="k">def</span> <span class="nf">caida</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Cálculo de velocidad y posición para una partícula en caída libre como función del tiempo</span>
+<span class="sd">  El tiempo `t` está en segundos</span>
+<span class="sd">  Devuelve:</span>
+<span class="sd">  v,h</span>
+<span class="sd">  donde:</span>
+<span class="sd">  `v` es la velocidad en m/s</span>
+<span class="sd">  `h` es la altura en m</span>
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="n">v</span> <span class="o">=</span> <span class="n">v_0</span> <span class="o">+</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span>
+  <span class="n">h</span> <span class="o">=</span> <span class="n">z_0</span> <span class="o">+</span> <span class="n">v_0</span> <span class="o">*</span> <span class="n">t</span> <span class="o">+</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mf">2.</span>
+  <span class="k">return</span> <span class="n">v</span><span class="p">,</span><span class="n">h</span>
+</pre></div>
+</div>
+<p>Elementos de la definición de funciones:</p>
+<ul class="simple">
+<li><p>La primera línea:</p>
+<ul>
+<li><p>Se define empezando con la palabra <code class="docutils literal notranslate"><span class="pre">def</span></code></p></li>
+<li><p>Luego se escribe el nombre de la función</p></li>
+<li><p>A continuación, entre paréntesis se escriben los argumentos
+separados por comas. Si no hay argumentos se dejan los paréntesis
+vacíos</p></li>
+<li><p>Se finaliza con los dos puntos (<code class="docutils literal notranslate"><span class="pre">:</span></code>)</p></li>
+</ul>
+</li>
+<li><p>En la segunda línea empieza un string de documentación (opcional pero
+<strong>muy</strong> recomendado)</p></li>
+<li><p>Luego del string de documentación viene el cuerpo de la función (los
+cálculos en este caso)</p></li>
+<li><p>Devuelve lo que viene a continuación de la palabra <code class="docutils literal notranslate"><span class="pre">return</span></code> (en
+este caso dos valores)</p></li>
+</ul>
+<p>Si no se escribe explícitamente que devuelve una función, va a devolver
+automáticamente <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>Por ejemplo, la función <code class="docutils literal notranslate"><span class="pre">print()</span></code> no devuelve nada, sólo imprime por
+pantalla</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hola&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Con esa definición de la función <code class="docutils literal notranslate"><span class="pre">caida</span></code> podemos obtener los dos
+valores de velocidad y posición simultáneamente</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">v1</span><span class="p">,</span><span class="n">h1</span> <span class="o">=</span> <span class="n">caida</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;A tiempo </span><span class="si">{:.1f}</span><span class="s2"> s, la veloc. es </span><span class="si">{:.2f}</span><span class="s2"> m/s y la altura es es </span><span class="si">{:.2f}</span><span class="s2"> m&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="n">v1</span><span class="p">,</span> <span class="n">h1</span> <span class="p">)</span> <span class="p">)</span>
+</pre></div>
+</div>
+<p>Como todas las operaciones son simples, si le pasamos a esta función un
+<em>array</em>, no tendrá problemas</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="n">v</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">caida</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">v</span><span class="p">,</span><span class="n">h</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;velocidad (m/s)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;altura (m)&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#### Documentación (doc strings)</span>
+
+<span class="n">Cuando</span> <span class="n">definimos</span> <span class="n">la</span> <span class="n">función</span> <span class="n">le</span> <span class="n">agregamos</span> <span class="n">un</span> <span class="n">string</span> <span class="n">con</span> <span class="n">una</span> <span class="n">descripción</span><span class="o">.</span> <span class="n">Esta</span> <span class="n">puede</span> <span class="n">utilizarse</span> <span class="n">luego</span> <span class="n">como</span> <span class="n">documentación</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">caida</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="las-funciones-son-objetos">
+<h3>Las funciones son objetos<a class="headerlink" href="#las-funciones-son-objetos" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Las funciones en <strong>Python</strong>, como en la mayoría de los lenguajes, usan
+una notación similar a la de las funciones matemáticas, con un nombre y
+uno o más argumentos entre paréntesis. Por ejemplo, ya usamos la función
+<code class="docutils literal notranslate"><span class="pre">sum</span></code> cuyo argumento puede ser un array o lista de números</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">vec</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="n">vec</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f1</span> <span class="o">=</span> <span class="n">caida</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">caida</span><span class="p">(</span><span class="mf">1.5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f1</span><span class="p">(</span><span class="mf">1.5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="funciones-con-argumentos-opcionales">
+<h3>Funciones con argumentos opcionales<a class="headerlink" href="#funciones-con-argumentos-opcionales" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Las funciones pueden tener muchos argumentos. En <strong>Python</strong> pueden tener
+un número variable de argumentos y pueden tener valores por <em>default</em>
+para algunos de ellos. En el caso de la función de caída libre, vamos a
+extenderlo de manera que podamos usarlo fuera de la tierra (o en otras
+latitudes) permitiendo cambiar el valor de la gravedad y asumiendo que,
+a menos que lo pidamos explícitamente se trata de una simple caída
+libre:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">caida_libre</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">z_0</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">v_0</span> <span class="o">=</span> <span class="mf">0.</span><span class="p">,</span> <span class="n">g</span><span class="o">=-</span><span class="mf">9.8</span><span class="p">):</span>
+  <span class="sd">&quot;&quot;&quot;Devuelve la velocidad y la posición de una partícula en</span>
+<span class="sd">  caída libre para condiciones iniciales dadas</span>
+
+<span class="sd">  Parameters</span>
+<span class="sd">  ----------</span>
+<span class="sd">  t : float</span>
+<span class="sd">      el tiempo al que queremos realizar el cálculo (default = 10.)</span>
+<span class="sd">  z_0: float</span>
+<span class="sd">      la altura inicial</span>
+<span class="sd">  v_0: float (opcional)</span>
+<span class="sd">      la velocidad inicial (default = 0.0)</span>
+<span class="sd">   g: float (opcional)</span>
+<span class="sd">      valor de la aceleración de la gravedad (default = -9.8)</span>
+
+<span class="sd">  Returns</span>
+<span class="sd">  -------</span>
+<span class="sd">  (v,h):  tuple of floats</span>
+<span class="sd">       v= v0 + g*t</span>
+<span class="sd">       h= h0 + v0*t + g*t^2/2</span>
+
+<span class="sd">  &quot;&quot;&quot;</span>
+  <span class="n">v</span> <span class="o">=</span> <span class="n">v_0</span> <span class="o">+</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span>
+  <span class="n">h</span> <span class="o">=</span> <span class="n">z_0</span> <span class="o">+</span> <span class="n">v_0</span> <span class="o">*</span> <span class="n">t</span> <span class="o">+</span> <span class="n">g</span><span class="o">*</span><span class="n">t</span><span class="o">**</span><span class="mi">2</span><span class="o">/</span><span class="mf">2.</span>
+  <span class="k">return</span> <span class="n">v</span><span class="p">,</span><span class="n">h</span>
+</pre></div>
+</div>
+<p>Ahora podemos utilizar la función con más flexibilidad</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Estas son todas equivalentes</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">caida_libre</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">caida_libre</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">caida_libre</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">caida_libre</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">9.8</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">caida_libre</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">z_0</span><span class="o">=</span><span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">caida_libre</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">v_0</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">z_0</span><span class="o">=</span><span class="mi">100</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">caida_libre</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">v_0</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">z_0</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">g</span><span class="o">=-</span><span class="mf">1.4</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="intervalo-2-con-ejercicio">
+<h2>Intervalo 2 con ejercicio<a class="headerlink" href="#intervalo-2-con-ejercicio" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>En un archivo llamado <em>gaussiana.py</em> definir una función llamada
+<code class="docutils literal notranslate"><span class="pre">pdf_norm</span></code> que permita calcular una gaussiana normalizada, según la
+fórmula:</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{\sqrt{2 \pi \sigma^2}} e^{(x - \mu)^2/(2 \sigma^2)}\]</div>
+<p>La función tiene que tener los siguientes argumentos - <code class="docutils literal notranslate"><span class="pre">x</span></code>: Un array
+donde se calcula la función (los valores de <span class="math notranslate nohighlight">\(x\)</span>). - <code class="docutils literal notranslate"><span class="pre">loc</span></code>: La
+posición del centro (<span class="math notranslate nohighlight">\(\mu\)</span>) (valor por defecto igual a cero). -
+<code class="docutils literal notranslate"><span class="pre">scale</span></code>: el ancho (<span class="math notranslate nohighlight">\(\sigma\)</span>). (valor por defecto igual a 1).</p>
+<ul class="simple">
+<li><p>En un segundo archivo, utilizando esta función, graficar tres
+gaussianas localizadas en <span class="math notranslate nohighlight">\(x=-1\)</span>, <span class="math notranslate nohighlight">\(x=0\)</span>, y <span class="math notranslate nohighlight">\(x=1\)</span>,
+con anchos 0.05, 0,1 y 0.2 respectivamente.</p></li>
+<li><p>Graficar en la misma figura, la suma de las tres funciones
+anteriores.</p></li>
+</ul>
+</div>
+<div class="section" id="lectura-y-escritura-de-datos-a-archivos">
+<h2>Lectura y escritura de datos a archivos<a class="headerlink" href="#lectura-y-escritura-de-datos-a-archivos" title="Enlazar permanentemente con este título">¶</a></h2>
+<p>Numpy tiene funciones que permiten escribir y leer datos de varias
+maneras, tanto en formato <em>texto</em> como en <em>binario</em>. En general el modo
+<em>texto</em> ocupa más espacio pero puede ser leído y modificado con un
+editor.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
+<span class="n">v</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">caida_libre</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v_0</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">z_0</span><span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">t</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="n">v</span><span class="p">])</span>
+<span class="n">Y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">transpose</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">Y</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="s1">&#39;caida.txt&#39;</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%.3g</span><span class="s1">&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">YY</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s1">&#39;caida.txt&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Y</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">YY</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">Y</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">YY</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">YY</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;--&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="clase_01.html" class="btn btn-neutral float-left" title="Clase 1: Conceptos básicos de Python" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2021, Juan Fiol
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

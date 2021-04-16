@@ -64,5 +64,6 @@ Curso corto de Introducción a Python
 
    clase_00
    clase_01
+   clase_02
 
    

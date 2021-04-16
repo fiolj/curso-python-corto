@@ -1,0 +1,1083 @@
+.. _clase_02:
+
+Clase 2: Introducción a Python Científico 
+===========================================
+
+
+Dos paquetes que vamos a utilizar en el curso son **Numpy** y
+**Matplotlib**. Estos módulos definen objetos y funciones útiles para el
+trabajo científico-tecnológico:
+
+-  **Numpy** define el tipo **array** y toda la estructura para trabajar
+   con ellos (entre muchas otras cosas)
+-  **Matplotlib** define la maquinaria para hacer gráficos,
+   principalmente bidimensionales, con utilidades también para algunos
+   tipos de gráficos en tres dimensiones.
+
+De las posibles variantes en la manera de importar los módulos, en este
+caso vamos a utilizar un alias que es la convención utilizada mayormente
+en la literatura:
+
+.. code:: python
+
+    # Esta es la manera más usada de importar estos dos módulos. 
+    import numpy as np
+    import matplotlib.pyplot as plt # importamos el submódulo pyplot del paquete matplotlib
+
+.. code:: python
+
+    x = np.arange(0,12)
+
+Acá ``x`` es un **array** con los números entre 0 y 11 inclusive. El
+tipo de variable *array* tiene definidas todas las operaciones “elemento
+a elemento”:
+
+.. code:: python
+
+    # Multiplicación de un array por un número
+    3*x
+
+
+
+
+.. parsed-literal::
+
+    array([ 0,  3,  6,  9, 12, 15, 18, 21, 24, 27, 30, 33])
+
+
+
+.. code:: python
+
+    # Suma con otro array o un escalar
+    2*x - x + 1
+
+
+
+
+.. parsed-literal::
+
+    array([ 1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12])
+
+
+
+Visualización usando **Matplotlib**
+-----------------------------------
+
+Para graficar, utilizamos el comando ``plot`` definido en el módulo
+``matplotlib.pyplot``
+
+.. code:: python
+
+    x = 0.5*np.arange(11)
+    plt.plot(x,'-o')
+    plt.xlabel('Índice')
+    plt.ylabel('Valores de lista');
+
+
+
+.. image:: figuras/02_introd_cientif_8_0.png
+
+
+.. code:: python
+
+    x
+
+
+
+
+.. parsed-literal::
+
+    array([0. , 0.5, 1. , 1.5, 2. , 2.5, 3. , 3.5, 4. , 4.5, 5. ])
+
+
+
+En esta figura graficamos sólo una cantidad, el arreglo ``x`` que se
+pasó como primer argumento a la función ``plot``. Notar:
+
+-  Los valores de ``x`` están sobre el eje vertical, y automáticamente
+   la función ``plot`` pone en el eje horizontal los índices del
+   *array*.
+-  El segundo argumento en ``plot`` en este caso es un *string* que
+   indica los símbolos y líneas que queremos utilizar:
+
+   -  ‘o’ significa utilizar círculos
+   -  ‘-’ significa utilizar líneas continuas
+
+-  Las dos líneas siguientes determinan los textos que se muestran como
+   título para cada eje.
+
+En este segundo ejemplo graficamos dos cantidades (``y`` como función de
+``x``):
+
+.. code:: python
+
+    y = np.sin(x) + (x**(2/3))/2
+    plt.plot(x, y,'s--r')
+    plt.xlabel('x', fontsize='x-large')
+    plt.ylabel('$sen(x) + x^{2/3}/2$', fontsize='x-large');
+
+
+
+.. image:: figuras/02_introd_cientif_12_0.png
+
+
+Comentarios:
+
+-  Si damos dos *arrays* (o listas) como los primeros argumentos a la
+   función ``plot``, los interpreta como los valores de los ejes
+   :math:`x` e :math:`y`, respectivamente.
+-  El tercer argumento corresponde al formato. En este caso:
+
+   -  ‘s’ significa utilizar cuadrados
+   -  ‘–’ significa utilizar líneas cortadas
+   -  ‘r’ significa utilizar el color ‘rojo’ (‘red’)
+
+-  Se puede agregar texto con formato. Para ello debe se escribe la
+   expresión entre símbolos ``$``, utilizando la `notación de
+   LaTeX <https://www.learnlatex.org/es/lesson-10>`__
+
+Creación de **arrays**
+----------------------
+
+Para crear arrays tenemos varias funciones definidas en el módulo
+**Numpy**. El principal es el constructor ``array``, pero existen otros.
+Veamos algunos ejemplos:
+
+Constructor ``array()``
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: python
+
+    L = [1, 34.4, 5.1, 2, -3, 12-8]
+    a = np.array(L)
+    a
+
+
+
+
+.. parsed-literal::
+
+    array([ 1. , 34.4,  5.1,  2. , -3. ,  4. ])
+
+
+
+.. code:: python
+
+    # No es necesario definir una lista previamente
+    b = np.array([1, 34.4, 5.1, 2, -3, 12-8])
+
+.. code:: python
+
+    b == a
+
+
+
+
+.. parsed-literal::
+
+    array([ True,  True,  True,  True,  True,  True])
+
+
+
+Como vemos, podemos crear un array a partir de una lista (u otros
+iterables), usando el constructor ``array()``. Una característica
+importante de los *array* es que todos sus elementos son del mismo tipo
+(en las listas pueden ser diferentes).
+
+De la misma manera podemos crear *arrays* de más de una dimensión. Por
+ejemplo para dos dimensiones:
+
+.. code:: python
+
+    L1 = [ [1, 2, 3], [.2, -.2, -1], [-1, 2, 9], [0, 0.5, 0] ]
+    
+    A = np.array(L1)
+    print(A)
+
+
+.. parsed-literal::
+
+    [[ 1.   2.   3. ]
+     [ 0.2 -0.2 -1. ]
+     [-1.   2.   9. ]
+     [ 0.   0.5  0. ]]
+
+
+.. code:: python
+
+    print("Array unidimensional:")
+    print('Dimensiones de a:', a.ndim)
+    print('Forma de a      :', a.shape)
+    print('Longitud de a   :', len(a))
+
+
+.. parsed-literal::
+
+    Array unidimensional:
+    Dimensiones de a: 1
+    Forma de a      : (6,)
+    Longitud de a   : 6
+
+
+.. code:: python
+
+    print("\nArray bidimensional:")
+    print('Dimensiones de A:', A.ndim)
+    print('Forma de A      :', A.shape)
+    print('Tamaño de A      :', A.size)
+    print('Longitud de A   :', len(A))
+
+
+.. parsed-literal::
+
+    
+    Array bidimensional:
+    Dimensiones de A: 2
+    Forma de A      : (4, 3)
+    Tamaño de A      : 12
+    Longitud de A   : 4
+
+
+Creación de datos equiespaciados
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Para obtener datos equiespaciados hay dos funciones complementarias
+
+.. code:: python
+
+    a1 = np.arange(0,190,10)
+    a2 = np.linspace(0,180,19)
+    a1 == a2
+
+
+
+
+.. parsed-literal::
+
+    array([ True,  True,  True,  True,  True,  True,  True,  True,  True,
+            True,  True,  True,  True,  True,  True,  True,  True,  True,
+            True])
+
+
+
+.. code:: python
+
+    a1
+
+Como vemos, ambos pueden dar resultados similares, y es una cuestión de
+conveniencia cual utilizar. El uso es:
+
+.. code:: python
+
+   np.arange([start,] stop[, step,], dtype=None)
+   np.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)
+
+Ambos toman como argumentos los límites inferior y superior. Mientras
+que a ``arange()`` le decimos cuál es el paso a utilizar, a
+``linspace()`` debemos (podemos) darle como tercer argumento el número
+de valores que queremos.
+
+Existen también funciones para crear *arrays* de datos logarítmicamente
+equiespaciados:
+
+.. code:: python
+
+   np.logspace(start, stop, num=50, endpoint=True, base=10.0, dtype=None)
+   np.geomspace(start, stop, num=50, endpoint=True, dtype=None, axis=0)
+
+La función ``logspace`` toma como ``start`` y ``stop`` el exponente, tal
+que el primer elemento será :math:`10^{start}` y el último
+:math:`10^{stop}`.
+
+.. code:: python
+
+    np.logspace(0,2,10)
+
+
+
+
+.. parsed-literal::
+
+    array([  1.        ,   1.66810054,   2.7825594 ,   4.64158883,
+             7.74263683,  12.91549665,  21.5443469 ,  35.93813664,
+            59.94842503, 100.        ])
+
+
+
+La función ``geomspace`` toma como ``start`` y ``stop`` directamente los
+valores, tal que el primer elemento será ``start`` y el último ``stop``
+
+.. code:: python
+
+    np.geomspace(1,100,10)
+
+
+
+
+.. parsed-literal::
+
+    array([  1.        ,   1.66810054,   2.7825594 ,   4.64158883,
+             7.74263683,  12.91549665,  21.5443469 ,  35.93813664,
+            59.94842503, 100.        ])
+
+
+
+Otras maneras de crear *arrays*
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Existen otras funciones para crear arrays en forma conveniente:
+
+.. code:: python
+
+    e1 = np.empty(3)                # empty, 1D
+    e2 = np.empty((3,2))            # empty, 2D
+    print(f'vacío 1d:\n{e1} \n\nvacío 2d:\n{e2}')
+
+
+.. parsed-literal::
+
+    vacío 1d:
+    [103.  13.   2.] 
+    
+    vacío 2d:
+    [[ 1.  34.4]
+     [ 5.1  2. ]
+     [-3.   4. ]]
+
+
+.. code:: python
+
+    z1 = np.zeros(3)                # ceros, 1D
+    z2 = np.zeros((3,2))            # ceros, 2D
+    
+    print(f"ceros 1d:\n{z1}\n\nceros 2d:\n{z2}")
+
+
+.. parsed-literal::
+
+    ceros 1d:
+    [0. 0. 0.]
+    
+    ceros 2d:
+    [[0. 0.]
+     [0. 0.]
+     [0. 0.]]
+
+
+.. code:: python
+
+    o1 = np.ones(3)                 # unos, 1D
+    o2 = np.ones((3,2))             # unos, 2D
+    
+    print(f"unos 1d:\n{o1}\n\nunos 2d:\n{o2}")
+
+
+.. parsed-literal::
+
+    unos 1d:
+    [1. 1. 1.]
+    
+    unos 2d:
+    [[1. 1.]
+     [1. 1.]
+     [1. 1.]]
+
+
+.. code:: python
+
+    r1 = np.random.random(3)        # random, 1D
+    r2 = np.random.random((3,2))    # random, 2D
+    
+    print(f"random 1d:\n{r1}\n\nrandom 2d:\n{r2}")
+
+
+.. parsed-literal::
+
+    random 1d:
+    [0.95534872 0.15012416 0.61450016]
+    
+    random 2d:
+    [[0.56766495 0.48012686]
+     [0.61281735 0.95175144]
+     [0.43686846 0.86850566]]
+
+
+Acceso a elementos de **arrays**
+--------------------------------
+
+Para acceder a elementos individuales o *subarrays* usamos la misma
+notación que para listas o strings:
+
+.. code:: python
+
+    vec  = np.arange(11)
+    print('vec =', vec)
+    print('Primer elemento de vec  =', vec[0])
+    print('Segundo elemento de vec =', vec[1])
+    print('Tercer elemento de vec  =', vec[2])
+    print('Último elemento de vec  =', vec[-1])
+
+
+.. parsed-literal::
+
+    vec = [ 0  1  2  3  4  5  6  7  8  9 10]
+    Primer elemento de vec  = 0
+    Segundo elemento de vec = 1
+    Tercer elemento de vec  = 2
+    Último elemento de vec  = 10
+
+
+.. code:: python
+
+    # Para un array bidimensional
+    X = np.arange(55).reshape((5,-1))
+    print(X)
+
+
+.. parsed-literal::
+
+    [[ 0  1  2  3  4  5  6  7  8  9 10]
+     [11 12 13 14 15 16 17 18 19 20 21]
+     [22 23 24 25 26 27 28 29 30 31 32]
+     [33 34 35 36 37 38 39 40 41 42 43]
+     [44 45 46 47 48 49 50 51 52 53 54]]
+
+
+.. code:: python
+
+    print('Primer elemento de X =', X[0,0])
+    print('Fila 0, Columna 3 de X =', X[0,3])
+    print('Primera fila de X =', X[0])
+    print('Última fila de X =', X[-1])
+    print("Segunda Columna de X", X[:,1])
+
+
+.. parsed-literal::
+
+    Primer elemento de X = 0
+    Fila 0, Columna 3 de X = 3
+    Primera fila de X = [ 0  1  2  3  4  5  6  7  8  9 10]
+    Última fila de X = [44 45 46 47 48 49 50 51 52 53 54]
+    Segunda Columna de X [ 1 12 23 34 45]
+
+
+Para seleccionar partes de un array se usa la notación ``[i:f:p]``.
+Entre corchetes se indican ``i``\ nicio, ``f``\ inal, ``p``\ aso,
+separadas por ``:``. Las tres partes son opcionales, veamos que
+significa:
+
+.. code:: python
+
+    print('Primeros tres elementos de vec =', vec[0:3:1])
+    print('Primeros tres elementos de vec =', vec[0:3])
+    print('Primeros tres elementos de vec =', vec[:3])
+    print('Elementos 4 a 7 de vec =', vec[4:7])
+    print('Elemento por medio de vec =', vec[::2])
+    print('Elemento por medio de vec, desde atrás =', vec[::-2])
+
+
+.. parsed-literal::
+
+    Primeros tres elementos de vec = [0 1 2]
+    Primeros tres elementos de vec = [0 1 2]
+    Primeros tres elementos de vec = [0 1 2]
+    Elementos 4 a 7 de vec = [4 5 6]
+    Elemento por medio de vec = [ 0  2  4  6  8 10]
+    Elemento por medio de vec, desde atrás = [10  8  6  4  2  0]
+
+
+.. code:: python
+
+    print('Segunda columna de X =', X[0:5,1])
+    print('Segunda columna de X =', X[0:,1])
+    print('Segunda columna de X =', X[:,1])
+    print('Última  columna de X =', X[:,-1])
+
+
+.. parsed-literal::
+
+    Segunda columna de X = [ 1 12 23 34 45]
+    Segunda columna de X = [ 1 12 23 34 45]
+    Segunda columna de X = [ 1 12 23 34 45]
+    Última  columna de X = [10 21 32 43 54]
+
+
+.. image:: figuras/numpy_indexing.png
+
+
+
+
+
+Operaciones entre **arrays**
+----------------------------
+
+Todas las operaciones entre arrays (sumas, multiplicaciones, divisiones,
+etc), así como con números se realizan “elemento a elemento”
+
+.. code:: python
+
+    x = np.linspace(0,1,5)          # Equiespaciado entre 0 y 1
+    y = np.ones(5)
+    print('x=',x)
+    print('y=',y)
+
+
+.. parsed-literal::
+
+    x= [0.   0.25 0.5  0.75 1.  ]
+    y= [1. 1. 1. 1. 1.]
+
+
+.. code:: python
+
+    # Multiplicación, división y suma con escalares
+    y = 2*y/3 - 1/3
+    print("y = 2*y/3 - 1/3 =", y)
+
+
+.. parsed-literal::
+
+    y = 2*y/3 - 1/3 = [0.33333333 0.33333333 0.33333333 0.33333333 0.33333333]
+
+
+.. code:: python
+
+    # Combinación lineal
+    z = 2*x + y               
+    print('z = 2*x + y  =', z)
+
+
+.. parsed-literal::
+
+    z = 2*x + y  = [0.33333333 0.83333333 1.33333333 1.83333333 2.33333333]
+
+
+.. code:: python
+
+    # Multiplicación de dos arrays
+    print('y * z =', y * z )
+
+
+.. parsed-literal::
+
+    y * z = [0.11111111 0.27777778 0.44444444 0.61111111 0.77777778]
+
+
+.. code:: python
+
+    # División de dos arrays
+    print('y / z =', y / z )
+
+
+.. parsed-literal::
+
+    y / z = [1.         0.4        0.25       0.18181818 0.14285714]
+
+
+.. code:: python
+
+    # Elevación a potencia
+    print('(x+2)^z =', (x+2)**z )
+
+
+.. parsed-literal::
+
+    (x+2)^z = [ 1.25992105  1.96555605  3.39302202  6.38915276 12.98024613]
+
+
+.. code:: python
+
+    # Comparación entre arrays
+    print('y=',y)
+    print('z=',z)
+    print('x=',x)
+    print ('y < x =', y < x)        # menor
+    print ('y < z =', y < z)        # menor
+    print ('y > x =', y > x)        # mayor
+    print ('y > z =', y > z)        # mayor
+    print ('y >= z =', y >= z)      # mayor o igual
+    print ('y == z =', y == z)      # igual
+    print ('y != z =', y != z)      # diferente
+
+
+.. parsed-literal::
+
+    y= [0.33333333 0.33333333 0.33333333 0.33333333 0.33333333]
+    z= [0.33333333 0.83333333 1.33333333 1.83333333 2.33333333]
+    x= [0.   0.25 0.5  0.75 1.  ]
+    y < x = [False False  True  True  True]
+    y < z = [False  True  True  True  True]
+    y > x = [ True  True False False False]
+    y > z = [False False False False False]
+    y >= z = [ True False False False False]
+    y == z = [ True False False False False]
+    y != z = [False  True  True  True  True]
+
+
+Funciones aplicadas a *arrays*
+------------------------------
+
+**Numpy** tiene funciones que están definidas para actuar tanto sobre
+números escalares como sobre *arrays*
+
+.. code:: python
+
+    print('z=',z)
+    print('sin(pi/4) =',np.sin(np.pi/4))
+    print('sin(z) =',np.sin(z))
+    print('cos(z) =',np.cos(z))
+    print('log(z) =',np.log(z))
+    print('log10(z) =',np.log10(z))
+    print('arctan(z) =',np.arctan(z))
+    print('arctan2(z,x) =',np.arctan2(z,x))
+    print('tanh(z) =', np.tanh(z))
+    print('cosh(z) =', np.cosh(z))
+
+
+.. parsed-literal::
+
+    z= [0.33333333 0.83333333 1.33333333 1.83333333 2.33333333]
+    sin(pi/4) = 0.7071067811865475
+    sin(z) = [0.3271947  0.74017685 0.9719379  0.96573465 0.72308588]
+    cos(z) = [ 0.94495695  0.67241224  0.23523757 -0.25953146 -0.69075814]
+    log(z) = [-1.09861229 -0.18232156  0.28768207  0.6061358   0.84729786]
+    log10(z) = [-0.47712125 -0.07918125  0.12493874  0.26324143  0.36797679]
+    arctan(z) = [0.32175055 0.69473828 0.92729522 1.07144961 1.16590454]
+    arctan2(z,x) = [1.57079633 1.27933953 1.21202566 1.18247761 1.16590454]
+    tanh(z) = [0.32151274 0.68226179 0.87006166 0.95015115 0.98136808]
+    cosh(z) = [1.05607187 1.36778705 2.02863252 3.20729035 5.20461523]
+
+
+Hay funciones que devuelven un valor computado a partir del *array*.
+Veamos como funciona con un *array* unidimensional
+
+.. code:: python
+
+    print('z=', z)
+    print('sum(z)  =', np.sum(z))   # Suma de todos
+    print('prod(z) =', np.prod(z))  # Producto de todos
+    print('min(z)  =', np.min(z))   # Mínimo
+    print('max(z)  =', np.max(z))   # Máximo
+    print('argmin(z) =', np.argmin(z)) # Índice del mínimo
+    print('argmax(z) =', np.argmax(z)) # Índice del máximo
+    print('mean(z) =', np.mean(z))  # Valor medio
+    print('std(z)  =', np.std(z))   # Desviación standard
+
+
+.. parsed-literal::
+
+    z= [0.33333333 0.83333333 1.33333333 1.83333333 2.33333333]
+    sum(z)  = 6.666666666666666
+    prod(z) = 1.584362139917695
+    min(z)  = 0.3333333333333333
+    max(z)  = 2.3333333333333335
+    argmin(z) = 0
+    argmax(z) = 4
+    mean(z) = 1.3333333333333333
+    std(z)  = 0.7071067811865476
+
+
+.. code:: python
+
+    posicion = np.linspace(0,10,20)
+    concentracion = np.random.random(20)
+
+.. code:: python
+
+    posicion
+
+
+
+
+.. parsed-literal::
+
+    array([ 0.        ,  0.52631579,  1.05263158,  1.57894737,  2.10526316,
+            2.63157895,  3.15789474,  3.68421053,  4.21052632,  4.73684211,
+            5.26315789,  5.78947368,  6.31578947,  6.84210526,  7.36842105,
+            7.89473684,  8.42105263,  8.94736842,  9.47368421, 10.        ])
+
+
+
+.. code:: python
+
+    concentracion
+
+
+
+
+.. parsed-literal::
+
+    array([0.760931  , 0.00674471, 0.64383201, 0.94901168, 0.03682643,
+           0.78804384, 0.25510833, 0.60835672, 0.08339204, 0.86399355,
+           0.36696352, 0.35821287, 0.67096236, 0.31196338, 0.84304627,
+           0.05868327, 0.35222632, 0.5948961 , 0.51561748, 0.82939155])
+
+
+
+--------------
+
+**Ejemplo:** Queremos calcular la posición del máximo de concentración
+
+.. code:: python
+
+    posmax = posicion[concentracion.argmax()]
+
+.. code:: python
+
+    indmax = concentracion.argmax()   # es igual a:   indmax = np.argmax(concentracion)
+
+.. code:: python
+
+    indmax
+
+
+
+
+.. parsed-literal::
+
+    3
+
+
+
+.. code:: python
+
+    posicion[indmax]
+
+
+
+
+.. parsed-literal::
+
+    1.5789473684210527
+
+
+
+--------------
+
+.. code:: python
+
+    # Funciona con arrays de más dimensiones (y también se puede elegir el eje a usar)
+    X = 0.5*X[::-1,:] - 1
+    print('X=', X)
+    print('sum(X)  =', np.sum(X), "=", X.sum())   # Suma de todos
+    print('prod(X) =', np.prod(X))  # Producto de todos
+    print('min(X)  =', np.min(X))   # Mínimo
+    print('max(X)  =', np.max(X))   # Máximo
+    print('mean(X) =', np.mean(X))  # Valor medio
+    print('std(X)  =', np.std(X))   # Desviación standard
+    print('argmin(X) =', np.argmin(X))
+    print('argmax(X) =', np.argmax(X))
+
+
+.. parsed-literal::
+
+    X= [[ 3.75   3.875  4.     4.125  4.25   4.375  4.5    4.625  4.75   4.875
+       5.   ]
+     [ 2.375  2.5    2.625  2.75   2.875  3.     3.125  3.25   3.375  3.5
+       3.625]
+     [ 1.     1.125  1.25   1.375  1.5    1.625  1.75   1.875  2.     2.125
+       2.25 ]
+     [-0.375 -0.25  -0.125  0.     0.125  0.25   0.375  0.5    0.625  0.75
+       0.875]
+     [-1.75  -1.625 -1.5   -1.375 -1.25  -1.125 -1.    -0.875 -0.75  -0.625
+      -0.5  ]]
+    sum(X)  = 89.375 = 89.375
+    prod(X) = 0.0
+    min(X)  = -1.75
+    max(X)  = 5.0
+    mean(X) = 1.625
+    std(X)  = 1.984313483298443
+    argmin(X) = 44
+    argmax(X) = 10
+
+
+.. code:: python
+
+    np.prod(X, axis=1)
+
+
+
+
+.. parsed-literal::
+
+    array([ 1.07427728e+07,  1.60771085e+05,  1.47883809e+02, -0.00000000e+00,
+           -1.69148147e+00])
+
+
+
+Intervalo 1 con ejercicio
+-------------------------
+
+Teniendo en cuenta que las ecuaciones de movimiento con aceleración
+constante son:
+
+.. math::
+   \begin{align}
+   v &= v_0 - g t \,  \\
+   z &= z_0 + v_0 t - g t^2/2.
+   \end{align}
+
+
+Considere los valores de condición inicial: :math:`v_0=10` (en m/s),
+:math:`g=-9.8` (en m/s²) y :math:`z_0=10` m.
+
+-  Cree un array ``t`` de 100 valores equiespaciados entre 0 y 2
+   segundos, correspondiente al tiempo de caída.
+-  Aplique las fórmulas para obtener dos arrays:
+
+   -  ``v`` tendrá los valores de velocidad como función del tiempo
+   -  ``z`` tendrá los valores de altura como función del tiempo
+
+-  Grafique separadamente la velocidad y la posición como función del
+   tiempo (dos gráficos)
+-  Grafique la velocidad como función de la posición
+-  Calcular (no alcanza con ver en el gráfico) un valor aproximado de la
+   altura máxima alcanzada, y en que instante ocurre.
+
+Funciones
+---------
+
+Definición de funciones
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Las funciones en **Python**, como en la mayoría de los lenguajes, usan
+una notación matemática, con un nombre y uno o más argumentos entre
+paréntesis. Por ejemplo, ya usamos varias funciones matemáticas, que
+toman como argumento un número o un *array* de números, y devuelven un
+número o un array (dependiendo del argumento, y de la función). Lo que
+podemos decir es que toman uno o más argumentos y devuelven uno o más
+resultados.
+
+.. code:: python
+
+    print('sin(1.54) =', np.sin(1.54))
+    print('sin(vec) =', np.sin(vec))
+    print('max(vec) =', np.max(vec))
+
+Para mostrar como definir nuestras propias funciones, vamos a tomar el
+ejercicio de caída libre y encapsulemos el cálculo en una función:
+
+.. code:: python
+
+    z_0 = 10                       # altura inicial en m
+    v_0 = 10                         # velocidad inicial en m/s
+    g = -9.8                         # aceleración de la gravedad en m/s^2
+    def caida(t):
+      """Cálculo de velocidad y posición para una partícula en caída libre como función del tiempo
+      El tiempo `t` está en segundos
+      Devuelve:
+      v,h
+      donde:
+      `v` es la velocidad en m/s
+      `h` es la altura en m
+      """
+      v = v_0 + g * t
+      h = z_0 + v_0 * t + g * t**2 / 2.
+      return v,h
+
+Elementos de la definición de funciones:
+
+-  La primera línea:
+
+   -  Se define empezando con la palabra ``def``
+   -  Luego se escribe el nombre de la función
+   -  A continuación, entre paréntesis se escriben los argumentos
+      separados por comas. Si no hay argumentos se dejan los paréntesis
+      vacíos
+   -  Se finaliza con los dos puntos (``:``)
+
+-  En la segunda línea empieza un string de documentación (opcional pero
+   **muy** recomendado)
+-  Luego del string de documentación viene el cuerpo de la función (los
+   cálculos en este caso)
+-  Devuelve lo que viene a continuación de la palabra ``return`` (en
+   este caso dos valores)
+
+Si no se escribe explícitamente que devuelve una función, va a devolver
+automáticamente ``None``.
+
+Por ejemplo, la función ``print()`` no devuelve nada, sólo imprime por
+pantalla
+
+.. code:: python
+
+    a = print('hola')
+
+.. code:: python
+
+    print(a)
+
+Con esa definición de la función ``caida`` podemos obtener los dos
+valores de velocidad y posición simultáneamente
+
+.. code:: python
+
+    t1 = 1
+    v1,h1 = caida(t1)
+    print("A tiempo {:.1f} s, la veloc. es {:.2f} m/s y la altura es es {:.2f} m".format(t1, v1, h1 ) )
+
+Como todas las operaciones son simples, si le pasamos a esta función un
+*array*, no tendrá problemas
+
+.. code:: python
+
+    t = np.linspace(0, 2, 100)
+    v, h = caida(t)
+    plt.plot(v,h)
+    plt.xlabel('velocidad (m/s)')
+    plt.ylabel('altura (m)')
+
+.. code:: python
+
+    #### Documentación (doc strings)
+    
+    Cuando definimos la función le agregamos un string con una descripción. Esta puede utilizarse luego como documentación
+
+.. code:: python
+
+    help(caida)
+
+Las funciones son objetos
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Las funciones en **Python**, como en la mayoría de los lenguajes, usan
+una notación similar a la de las funciones matemáticas, con un nombre y
+uno o más argumentos entre paréntesis. Por ejemplo, ya usamos la función
+``sum`` cuyo argumento puede ser un array o lista de números
+
+.. code:: python
+
+    print(np.sum)
+
+.. code:: python
+
+    f = np.sum
+    print(f)
+
+.. code:: python
+
+    print(np.sum(vec), f(vec))
+
+.. code:: python
+
+    f1 = caida
+    print(caida(1.5))
+    print(f1(1.5))
+
+Funciones con argumentos opcionales
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Las funciones pueden tener muchos argumentos. En **Python** pueden tener
+un número variable de argumentos y pueden tener valores por *default*
+para algunos de ellos. En el caso de la función de caída libre, vamos a
+extenderlo de manera que podamos usarlo fuera de la tierra (o en otras
+latitudes) permitiendo cambiar el valor de la gravedad y asumiendo que,
+a menos que lo pidamos explícitamente se trata de una simple caída
+libre:
+
+.. code:: python
+
+    def caida_libre(t, z_0=10, v_0 = 0., g=-9.8):
+      """Devuelve la velocidad y la posición de una partícula en
+      caída libre para condiciones iniciales dadas
+    
+      Parameters
+      ----------
+      t : float
+          el tiempo al que queremos realizar el cálculo (default = 10.)
+      z_0: float 
+          la altura inicial
+      v_0: float (opcional)
+          la velocidad inicial (default = 0.0)
+       g: float (opcional)
+          valor de la aceleración de la gravedad (default = -9.8)
+    
+      Returns
+      -------
+      (v,h):  tuple of floats
+           v= v0 + g*t
+           h= h0 + v0*t + g*t^2/2
+      
+      """
+      v = v_0 + g * t
+      h = z_0 + v_0 * t + g*t**2/2.
+      return v,h
+    
+
+
+Ahora podemos utilizar la función con más flexibilidad
+
+.. code:: python
+
+    # Estas son todas equivalentes
+    print(caida_libre(3))
+    print(caida_libre(3, 10))
+    print(caida_libre(3, 10, 0))
+    print(caida_libre(3, 10, 0, 9.8))
+
+.. code:: python
+
+    print(caida_libre(3, z_0=100))
+    print(caida_libre(3, v_0=10, z_0=100))
+    print(caida_libre(3, v_0=10, z_0=100, g=-1.4))
+
+Intervalo 2 con ejercicio
+-------------------------
+
+En un archivo llamado *gaussiana.py* definir una función llamada
+``pdf_norm`` que permita calcular una gaussiana normalizada, según la
+fórmula:
+
+.. math::  \frac{1}{\sqrt{2 \pi \sigma^2}} e^{(x - \mu)^2/(2 \sigma^2)} 
+
+La función tiene que tener los siguientes argumentos - ``x``: Un array
+donde se calcula la función (los valores de :math:`x`). - ``loc``: La
+posición del centro (:math:`\mu`) (valor por defecto igual a cero). -
+``scale``: el ancho (:math:`\sigma`). (valor por defecto igual a 1).
+
+-  En un segundo archivo, utilizando esta función, graficar tres
+   gaussianas localizadas en :math:`x=-1`, :math:`x=0`, y :math:`x=1`,
+   con anchos 0.05, 0,1 y 0.2 respectivamente.
+-  Graficar en la misma figura, la suma de las tres funciones
+   anteriores.
+
+Lectura y escritura de datos a archivos
+---------------------------------------
+
+Numpy tiene funciones que permiten escribir y leer datos de varias
+maneras, tanto en formato *texto* como en *binario*. En general el modo
+*texto* ocupa más espacio pero puede ser leído y modificado con un
+editor.
+
+.. code:: python
+
+    t = np.linspace(0,3,500)
+    v, h = caida_libre(t, v_0=20, z_0= 100)
+
+
+.. code:: python
+
+    X = np.vstack([t,h,v])
+    Y = np.transpose(X)
+
+.. code:: python
+
+    t.shape, X.shape, Y.shape
+
+.. code:: python
+
+    np.savetxt('caida.txt', Y, fmt='%.3g')
+
+.. code:: python
+
+    YY = np.loadtxt('caida.txt')
+
+.. code:: python
+
+    print(Y.shape, YY.shape)
+
+.. code:: python
+
+    plt.plot(Y[:,0], Y[:,1], '-', YY[:,0], YY[:,1], '--');
+
+
