@@ -714,45 +714,43 @@ Veamos como funciona con un *array* unidimensional
 
 
 
---------------
-
-**Ejemplo:** Queremos calcular la posición del máximo de concentración
-
-.. code:: python
-
-    posmax = posicion[concentracion.argmax()]
-
-.. code:: python
-
-    indmax = concentracion.argmax()   # es igual a:   indmax = np.argmax(concentracion)
-
-.. code:: python
-
-    indmax
-
-
-
-
-.. parsed-literal::
-
-    3
-
-
-
-.. code:: python
-
-    posicion[indmax]
-
-
-
-
-.. parsed-literal::
-
-    1.5789473684210527
-
-
-
---------------
+.. hint::  Queremos calcular la posición del máximo de concentración
+  
+  .. code:: python
+  
+      posmax = posicion[concentracion.argmax()]
+  
+  .. code:: python
+  
+      indmax = concentracion.argmax()   # es igual a:   indmax = np.argmax(concentracion)
+  
+  .. code:: python
+  
+      indmax
+  
+  
+  
+  
+  .. parsed-literal::
+  
+      3
+  
+  
+  
+  .. code:: python
+  
+      posicion[indmax]
+  
+  
+  
+  
+  .. parsed-literal::
+  
+      1.5789473684210527
+  
+  
+  
+  
 
 .. code:: python
 
@@ -812,10 +810,10 @@ Teniendo en cuenta que las ecuaciones de movimiento con aceleración
 constante son:
 
 .. math::
-   \begin{align}
-   v &= v_0 - g t \,  \\
-   z &= z_0 + v_0 t - g t^2/2.
-   \end{align}
+  \begin{align}
+  v &= v_0 - g t \,  \\
+  z &= z_0 + v_0 t - g t^2/2.
+  \end{align}
 
 
 Considere los valores de condición inicial: :math:`v_0=10` (en m/s),
