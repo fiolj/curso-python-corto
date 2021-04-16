@@ -810,11 +810,10 @@ Teniendo en cuenta que las ecuaciones de movimiento con aceleración
 constante son:
 
 .. math::
-  \begin{align}
-  v &= v_0 - g t \,  \\
-  z &= z_0 + v_0 t - g t^2/2.
-  \end{align}
-
+   \begin{align}
+   v &= v_0 - g t \,  \\
+   z &= z_0 + v_0 t - g t^2/2.
+   \end{align}
 
 Considere los valores de condición inicial: :math:`v_0=10` (en m/s),
 :math:`g=-9.8` (en m/s²) y :math:`z_0=10` m.
@@ -831,6 +830,73 @@ Considere los valores de condición inicial: :math:`v_0=10` (en m/s),
 -  Grafique la velocidad como función de la posición
 -  Calcular (no alcanza con ver en el gráfico) un valor aproximado de la
    altura máxima alcanzada, y en que instante ocurre.
+
+.. code:: python
+
+    t = np.linspace(0, 2, 100)
+
+.. code:: python
+
+    v0 = 10   # en m/s
+    g = -9.8  # en m/s^2
+    z0 = 10   # en m
+
+.. code:: python
+
+    v = v0 - g*t
+
+.. code:: python
+
+    import matplotlib.pyplot as plt # Si ya la hice no es necesaria
+    
+    plt.plot(t, v, '-')
+    plt.xlabel('tiempo (s)')
+    plt.ylabel('velocidad (m/s)')
+
+
+
+
+.. parsed-literal::
+
+    Text(0, 0.5, 'velocidad (m/s)')
+
+
+
+
+.. image:: figuras/02_introd_cientif_71_1.png
+
+
+.. code:: python
+
+    v[:10]
+
+
+
+
+.. parsed-literal::
+
+    array([10.        , 10.1979798 , 10.3959596 , 10.59393939, 10.79191919,
+           10.98989899, 11.18787879, 11.38585859, 11.58383838, 11.78181818])
+
+
+
+.. code:: python
+
+    np.set_printoptions(precision=4)
+
+.. code:: python
+
+    v[:10]
+
+
+
+
+.. parsed-literal::
+
+    array([10.    , 10.198 , 10.396 , 10.5939, 10.7919, 10.9899, 11.1879,
+           11.3859, 11.5838, 11.7818])
+
+
 
 Funciones
 ---------
@@ -851,6 +917,15 @@ resultados.
     print('sin(1.54) =', np.sin(1.54))
     print('sin(vec) =', np.sin(vec))
     print('max(vec) =', np.max(vec))
+
+
+.. parsed-literal::
+
+    sin(1.54) = 0.9995258306054791
+    sin(vec) = [ 0.      0.8415  0.9093  0.1411 -0.7568 -0.9589 -0.2794  0.657   0.9894
+      0.4121 -0.544 ]
+    max(vec) = 10
+
 
 Para mostrar como definir nuestras propias funciones, vamos a tomar el
 ejercicio de caída libre y encapsulemos el cálculo en una función:
@@ -901,9 +976,21 @@ pantalla
 
     a = print('hola')
 
+
+.. parsed-literal::
+
+    hola
+
+
 .. code:: python
 
     print(a)
+
+
+.. parsed-literal::
+
+    None
+
 
 Con esa definición de la función ``caida`` podemos obtener los dos
 valores de velocidad y posición simultáneamente
@@ -911,8 +998,14 @@ valores de velocidad y posición simultáneamente
 .. code:: python
 
     t1 = 1
-    v1,h1 = caida(t1)
-    print("A tiempo {:.1f} s, la veloc. es {:.2f} m/s y la altura es es {:.2f} m".format(t1, v1, h1 ) )
+    v1, h1 = caida(t1)
+    print(f"A tiempo {t1:.1f} s, la veloc. es {v1:.2f} m/s y la altura es {h1:.2f} m")
+
+
+.. parsed-literal::
+
+    A tiempo 1.0 s, la veloc. es 0.20 m/s y la altura es 15.10 m
+
 
 Como todas las operaciones son simples, si le pasamos a esta función un
 *array*, no tendrá problemas
@@ -925,15 +1018,44 @@ Como todas las operaciones son simples, si le pasamos a esta función un
     plt.xlabel('velocidad (m/s)')
     plt.ylabel('altura (m)')
 
-.. code:: python
 
-    #### Documentación (doc strings)
-    
-    Cuando definimos la función le agregamos un string con una descripción. Esta puede utilizarse luego como documentación
+
+
+.. parsed-literal::
+
+    Text(0, 0.5, 'altura (m)')
+
+
+
+
+.. image:: figuras/02_introd_cientif_85_1.png
+
+
+Documentación (doc strings)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Cuando definimos la función le agregamos un string con una descripción.
+Esta puede utilizarse luego como documentación
 
 .. code:: python
 
     help(caida)
+
+
+.. parsed-literal::
+
+    Help on function caida in module __main__:
+    
+    caida(t)
+        Cálculo de velocidad y posición para una partícula en caída libre como función del tiempo
+        El tiempo `t` está en segundos
+        Devuelve:
+        v,h
+        donde:
+        `v` es la velocidad en m/s
+        `h` es la altura en m
+    
+
 
 Las funciones son objetos
 ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -947,20 +1069,45 @@ uno o más argumentos entre paréntesis. Por ejemplo, ya usamos la función
 
     print(np.sum)
 
+
+.. parsed-literal::
+
+    <function sum at 0x7f669c05b3a0>
+
+
 .. code:: python
 
     f = np.sum
     print(f)
 
+
+.. parsed-literal::
+
+    <function sum at 0x7f669c05b3a0>
+
+
 .. code:: python
 
     print(np.sum(vec), f(vec))
+
+
+.. parsed-literal::
+
+    55 55
+
 
 .. code:: python
 
     f1 = caida
     print(caida(1.5))
     print(f1(1.5))
+
+
+.. parsed-literal::
+
+    (-4.700000000000001, 13.975)
+    (-4.700000000000001, 13.975)
+
 
 Funciones con argumentos opcionales
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -975,7 +1122,7 @@ libre:
 
 .. code:: python
 
-    def caida_libre(t, z_0=10, v_0 = 0., g=-9.8):
+    def caida_libre(t, z_0=10, v_0= 0., g=-9.8):
       """Devuelve la velocidad y la posición de una partícula en
       caída libre para condiciones iniciales dadas
     
@@ -1000,8 +1147,6 @@ libre:
       v = v_0 + g * t
       h = z_0 + v_0 * t + g*t**2/2.
       return v,h
-    
-
 
 Ahora podemos utilizar la función con más flexibilidad
 
@@ -1011,7 +1156,16 @@ Ahora podemos utilizar la función con más flexibilidad
     print(caida_libre(3))
     print(caida_libre(3, 10))
     print(caida_libre(3, 10, 0))
-    print(caida_libre(3, 10, 0, 9.8))
+    print(caida_libre(3, 10, 0, -9.8))
+
+
+.. parsed-literal::
+
+    (-29.400000000000002, -34.1)
+    (-29.400000000000002, -34.1)
+    (-29.400000000000002, -34.1)
+    (-29.400000000000002, -34.1)
+
 
 .. code:: python
 
@@ -1019,12 +1173,19 @@ Ahora podemos utilizar la función con más flexibilidad
     print(caida_libre(3, v_0=10, z_0=100))
     print(caida_libre(3, v_0=10, z_0=100, g=-1.4))
 
+
+.. parsed-literal::
+
+    (-29.400000000000002, 55.9)
+    (-19.400000000000002, 85.9)
+    (5.800000000000001, 123.7)
+
+
 Intervalo 2 con ejercicio
 -------------------------
 
-En un archivo llamado *gaussiana.py* definir una función llamada
-``pdf_norm`` que permita calcular una gaussiana normalizada, según la
-fórmula:
+1. Definir una función llamada ``pdf_norm`` que permita calcular una
+   gaussiana normalizada, según la fórmula:
 
 .. math::  \frac{1}{\sqrt{2 \pi \sigma^2}} e^{(x - \mu)^2/(2 \sigma^2)} 
 
@@ -1033,10 +1194,10 @@ donde se calcula la función (los valores de :math:`x`). - ``loc``: La
 posición del centro (:math:`\mu`) (valor por defecto igual a cero). -
 ``scale``: el ancho (:math:`\sigma`). (valor por defecto igual a 1).
 
--  En un segundo archivo, utilizando esta función, graficar tres
-   gaussianas localizadas en :math:`x=-1`, :math:`x=0`, y :math:`x=1`,
-   con anchos 0.05, 0,1 y 0.2 respectivamente.
--  Graficar en la misma figura, la suma de las tres funciones
+2. Utilizando esta función, graficar tres gaussianas localizadas en
+   :math:`x=-1`, :math:`x=0`, y :math:`x=1`, con anchos 0.05, 0,1 y 0.2
+   respectivamente.
+3. Graficar en la misma figura, la suma de las tres funciones
    anteriores.
 
 Lectura y escritura de datos a archivos
