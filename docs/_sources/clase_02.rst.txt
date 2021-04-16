@@ -810,10 +810,10 @@ Teniendo en cuenta que las ecuaciones de movimiento con aceleración
 constante son:
 
 .. math::
-   \begin{align}
-   v &= v_0 - g t \,  \\
-   z &= z_0 + v_0 t - g t^2/2.
-   \end{align}
+
+
+   v = v_0 - g t \\ 
+   z = z_0 + v_0 t - g t^2/2. 
 
 Considere los valores de condición inicial: :math:`v_0=10` (en m/s),
 :math:`g=-9.8` (en m/s²) y :math:`z_0=10` m.
@@ -1226,6 +1226,15 @@ editor.
 
     t.shape, X.shape, Y.shape
 
+
+
+
+.. parsed-literal::
+
+    ((500,), (3, 500), (500, 3))
+
+
+
 .. code:: python
 
     np.savetxt('caida.txt', Y, fmt='%.3g')
@@ -1238,8 +1247,234 @@ editor.
 
     print(Y.shape, YY.shape)
 
+
+.. parsed-literal::
+
+    (500, 3) (500, 3)
+
+
 .. code:: python
 
     plt.plot(Y[:,0], Y[:,1], '-', YY[:,0], YY[:,1], '--');
+
+
+
+.. image:: figuras/02_introd_cientif_106_0.png
+
+
+Ejemplos de graficación
+-----------------------
+
+.. code:: python
+
+    fdatos = 'data/ej_oscil_aten_err.dat'
+
+.. code:: python
+
+    # Cargamos los datos
+    x, y, yexp = np.loadtxt(fdatos, unpack=True)
+
+.. code:: python
+
+    # Graficación de las dos curvas
+    plt.plot(x,yexp, x,y)
+
+
+
+
+.. parsed-literal::
+
+    [<matplotlib.lines.Line2D at 0x7f665bb8b700>,
+     <matplotlib.lines.Line2D at 0x7f665bb8b730>]
+
+
+
+
+.. image:: figuras/02_introd_cientif_110_1.png
+
+
+Como ``yexp`` corresponde a datos experimentales, preferimos graficarlos
+con símbolos sin líneas:
+
+.. code:: python
+
+    plt.plot(x,yexp,'o', x,y, '-')
+
+
+
+
+.. parsed-literal::
+
+    [<matplotlib.lines.Line2D at 0x7f665bae2d90>,
+     <matplotlib.lines.Line2D at 0x7f665bae2dc0>]
+
+
+
+
+.. image:: figuras/02_introd_cientif_112_1.png
+
+
+Formato de las curvas
+~~~~~~~~~~~~~~~~~~~~~
+
+Para graficar más de una curva, en este formato simple, podemos ponerlo
+todo en la misma función ``plot()`` en la forma
+``plot(x1, y1, [formato], x2, y2, [formato2])`` pero muchas veces es más
+legible separar los llamados a la función, una para cada curva.
+
+.. code:: python
+
+    plt.plot(x,yexp, 'or')
+    plt.plot(x,y, '-g')
+
+
+
+
+.. parsed-literal::
+
+    [<matplotlib.lines.Line2D at 0x7f665b95fac0>]
+
+
+
+
+.. image:: figuras/02_introd_cientif_114_1.png
+
+
+Los siguientes caracteres pueden utilizarse para controlar el símbolo de
+graficación:
+
+======= =====================
+Símbolo Descripción
+======= =====================
+‘-’     solid line style
+‘–’     dashed line style
+‘-.’    dash-dot line style
+‘:’     dotted line style
+‘.’     point marker
+‘,’     pixel marker
+‘o’     circle marker
+‘v’     triangle down marker
+‘^’     triangle up marker
+‘<’     triangle left marker
+‘>’     triangle right marker
+‘1’     tri down marker
+‘2’     tri up marker
+‘3’     tri left marker
+‘4’     tri right marker
+‘s’     square marker
+‘p’     pentagon marker
+‘\*’    star marker
+‘h’     hexagon1 marker
+‘H’     hexagon2 marker
+‘+’     plus marker
+‘x’     x marker
+‘D’     diamond marker
+‘d’     thin diamond marker
+‘\|’    vline marker
+‘\_’    hline marker
+======= =====================
+
+Los colores también pueden elegirse usando los siguientes caracteres:
+
+===== =======
+Letra Color
+===== =======
+‘b’   blue
+‘g’   green
+‘r’   red
+‘c’   cyan
+‘m’   magenta
+‘y’   yellow
+‘k’   black
+‘w’   white
+===== =======
+
+La función ``plot()`` acepta un número variable de argumentos. Veamos lo
+que dice la documentación
+
+.. code:: python
+
+
+   Signature: plt.plot(*args, **kwargs)
+   Docstring:
+   Plot y versus x as lines and/or markers.
+
+   Call signatures::
+
+       plot([x], y, [fmt], data=None, **kwargs)
+       plot([x], y, [fmt], [x2], y2, [fmt2], ..., **kwargs)
+
+En particular, podemos usar los argumentos *keywords* (pares
+nombre-valor) para cambiar el modo en que se grafican los datos. Algunos
+de los más comunes son:
+
+=============== ============================
+Argumento       Valor
+=============== ============================
+linestyle       {‘-’, ‘–’, ‘-.’, ‘:’, ’’, …}
+linewidth       número real
+color           un color
+marker          {‘o’, ‘s’, ‘d’, ….}
+markersize      número real
+markeredgecolor color
+markerfacecolor color
+markevery       número entero
+=============== ============================
+
+.. code:: python
+
+    plt.plot(x,y,linewidth=4)
+    plt.plot(x,yexp, 'o', color='red', markersize=2, markevery=3)
+
+
+
+
+.. parsed-literal::
+
+    [<matplotlib.lines.Line2D at 0x7f665ba12e50>]
+
+
+
+
+.. image:: figuras/02_introd_cientif_117_1.png
+
+
+Leyendas y texto
+~~~~~~~~~~~~~~~~
+
+Vamos ahora a agregar nombres a los ejes y a las curvas.
+
+Para agregar nombres a las curvas, tenemos que agregar un ``label``, en
+este caso en el mismo comando ``plot()``, y luego mostrarlo con
+\`legend()
+
+.. code:: python
+
+    plt.plot(x,y, '-', lw=4, label="teoría")
+    plt.plot(x,yexp, 'o', label="medición")
+    plt.legend(loc="lower right", title="Mis datos")
+    plt.xlabel('Tiempo ($\mu$s o micro-segundos)')
+    plt.ylabel("Voltaje (mV)")
+    plt.title("Medición de ayer")
+    plt.axvline(x=1, color='gray')
+    plt.axhline(color='gray')
+    plt.grid();
+
+
+
+.. image:: figuras/02_introd_cientif_120_0.png
+
+
+Puntos a notar:
+
+-  Agregamos un argumento ``label`` a cada curva, que asocia el formato
+   de la curva (linea y símbolo) con el texto dado
+-  Para mostrar el cartel con la información usamos el comando
+   ``legend()``
+-  ``xlabel`` e ``ylabel`` configuran el texto de los ejes horizontal y
+   vertical, respectivamente
+-  ``title`` agrega un título a toda la figura
+-  ``axhline`` y ``axvline`` agregan líneas horizontal y vertical al
+   gráfico.
 
 

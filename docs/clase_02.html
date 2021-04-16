@@ -115,6 +115,11 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#intervalo-2-con-ejercicio">Intervalo 2 con ejercicio</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lectura-y-escritura-de-datos-a-archivos">Lectura y escritura de datos a archivos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejemplos-de-graficacion">Ejemplos de graficación</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#formato-de-las-curvas">Formato de las curvas</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#leyendas-y-texto">Leyendas y texto</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -766,10 +771,8 @@ Veamos como funciona con un <em>array</em> unidimensional</p>
 <p>Teniendo en cuenta que las ecuaciones de movimiento con aceleración
 constante son:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{align}
-v &amp;= v_0 - g t \,  \\
-z &amp;= z_0 + v_0 t - g t^2/2.
-\end{align}\end{split}\]</div>
+\[\begin{split}v = v_0 - g t \\
+z = z_0 + v_0 t - g t^2/2.\end{split}\]</div>
 <p>Considere los valores de condición inicial: <span class="math notranslate nohighlight">\(v_0=10\)</span> (en m/s),
 <span class="math notranslate nohighlight">\(g=-9.8\)</span> (en m/s²) y <span class="math notranslate nohighlight">\(z_0=10\)</span> m.</p>
 <ul class="simple">
@@ -1083,6 +1086,9 @@ editor.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">X</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">Y</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">((</span><span class="mi">500</span><span class="p">,),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">500</span><span class="p">),</span> <span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="s1">&#39;caida.txt&#39;</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%.3g</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1092,8 +1098,278 @@ editor.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">Y</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">YY</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">Y</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">YY</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">YY</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;--&#39;</span><span class="p">);</span>
 </pre></div>
+</div>
+<img alt="_images/02_introd_cientif_106_0.png" src="_images/02_introd_cientif_106_0.png" />
+</div>
+<div class="section" id="ejemplos-de-graficacion">
+<h2>Ejemplos de graficación<a class="headerlink" href="#ejemplos-de-graficacion" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fdatos</span> <span class="o">=</span> <span class="s1">&#39;data/ej_oscil_aten_err.dat&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cargamos los datos</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">yexp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="n">fdatos</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Graficación de las dos curvas</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">yexp</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">Line2D</span> <span class="n">at</span> <span class="mh">0x7f665bb8b700</span><span class="o">&gt;</span><span class="p">,</span>
+ <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">Line2D</span> <span class="n">at</span> <span class="mh">0x7f665bb8b730</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+<img alt="_images/02_introd_cientif_110_1.png" src="_images/02_introd_cientif_110_1.png" />
+<p>Como <code class="docutils literal notranslate"><span class="pre">yexp</span></code> corresponde a datos experimentales, preferimos graficarlos
+con símbolos sin líneas:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">yexp</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">Line2D</span> <span class="n">at</span> <span class="mh">0x7f665bae2d90</span><span class="o">&gt;</span><span class="p">,</span>
+ <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">Line2D</span> <span class="n">at</span> <span class="mh">0x7f665bae2dc0</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+<img alt="_images/02_introd_cientif_112_1.png" src="_images/02_introd_cientif_112_1.png" />
+<div class="section" id="formato-de-las-curvas">
+<h3>Formato de las curvas<a class="headerlink" href="#formato-de-las-curvas" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Para graficar más de una curva, en este formato simple, podemos ponerlo
+todo en la misma función <code class="docutils literal notranslate"><span class="pre">plot()</span></code> en la forma
+<code class="docutils literal notranslate"><span class="pre">plot(x1,</span> <span class="pre">y1,</span> <span class="pre">[formato],</span> <span class="pre">x2,</span> <span class="pre">y2,</span> <span class="pre">[formato2])</span></code> pero muchas veces es más
+legible separar los llamados a la función, una para cada curva.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">yexp</span><span class="p">,</span> <span class="s1">&#39;or&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39;-g&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">Line2D</span> <span class="n">at</span> <span class="mh">0x7f665b95fac0</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+<img alt="_images/02_introd_cientif_114_1.png" src="_images/02_introd_cientif_114_1.png" />
+<p>Los siguientes caracteres pueden utilizarse para controlar el símbolo de
+graficación:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 25%" />
+<col style="width: 75%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Símbolo</p></th>
+<th class="head"><p>Descripción</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>‘-’</p></td>
+<td><p>solid line style</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘–’</p></td>
+<td><p>dashed line style</p></td>
+</tr>
+<tr class="row-even"><td><p>‘-.’</p></td>
+<td><p>dash-dot line style</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘:’</p></td>
+<td><p>dotted line style</p></td>
+</tr>
+<tr class="row-even"><td><p>‘.’</p></td>
+<td><p>point marker</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘,’</p></td>
+<td><p>pixel marker</p></td>
+</tr>
+<tr class="row-even"><td><p>‘o’</p></td>
+<td><p>circle marker</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘v’</p></td>
+<td><p>triangle down marker</p></td>
+</tr>
+<tr class="row-even"><td><p>‘^’</p></td>
+<td><p>triangle up marker</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘&lt;’</p></td>
+<td><p>triangle left marker</p></td>
+</tr>
+<tr class="row-even"><td><p>‘&gt;’</p></td>
+<td><p>triangle right marker</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘1’</p></td>
+<td><p>tri down marker</p></td>
+</tr>
+<tr class="row-even"><td><p>‘2’</p></td>
+<td><p>tri up marker</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘3’</p></td>
+<td><p>tri left marker</p></td>
+</tr>
+<tr class="row-even"><td><p>‘4’</p></td>
+<td><p>tri right marker</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘s’</p></td>
+<td><p>square marker</p></td>
+</tr>
+<tr class="row-even"><td><p>‘p’</p></td>
+<td><p>pentagon marker</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘*’</p></td>
+<td><p>star marker</p></td>
+</tr>
+<tr class="row-even"><td><p>‘h’</p></td>
+<td><p>hexagon1 marker</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘H’</p></td>
+<td><p>hexagon2 marker</p></td>
+</tr>
+<tr class="row-even"><td><p>‘+’</p></td>
+<td><p>plus marker</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘x’</p></td>
+<td><p>x marker</p></td>
+</tr>
+<tr class="row-even"><td><p>‘D’</p></td>
+<td><p>diamond marker</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘d’</p></td>
+<td><p>thin diamond marker</p></td>
+</tr>
+<tr class="row-even"><td><p>‘|’</p></td>
+<td><p>vline marker</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘_’</p></td>
+<td><p>hline marker</p></td>
+</tr>
+</tbody>
+</table>
+<p>Los colores también pueden elegirse usando los siguientes caracteres:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 42%" />
+<col style="width: 58%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Letra</p></th>
+<th class="head"><p>Color</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>‘b’</p></td>
+<td><p>blue</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘g’</p></td>
+<td><p>green</p></td>
+</tr>
+<tr class="row-even"><td><p>‘r’</p></td>
+<td><p>red</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘c’</p></td>
+<td><p>cyan</p></td>
+</tr>
+<tr class="row-even"><td><p>‘m’</p></td>
+<td><p>magenta</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘y’</p></td>
+<td><p>yellow</p></td>
+</tr>
+<tr class="row-even"><td><p>‘k’</p></td>
+<td><p>black</p></td>
+</tr>
+<tr class="row-odd"><td><p>‘w’</p></td>
+<td><p>white</p></td>
+</tr>
+</tbody>
+</table>
+<p>La función <code class="docutils literal notranslate"><span class="pre">plot()</span></code> acepta un número variable de argumentos. Veamos lo
+que dice la documentación</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Signature</span><span class="p">:</span> <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="n">Docstring</span><span class="p">:</span>
+<span class="n">Plot</span> <span class="n">y</span> <span class="n">versus</span> <span class="n">x</span> <span class="k">as</span> <span class="n">lines</span> <span class="ow">and</span><span class="o">/</span><span class="ow">or</span> <span class="n">markers</span><span class="o">.</span>
+
+<span class="n">Call</span> <span class="n">signatures</span><span class="p">::</span>
+
+    <span class="n">plot</span><span class="p">([</span><span class="n">x</span><span class="p">],</span> <span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="n">fmt</span><span class="p">],</span> <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="n">plot</span><span class="p">([</span><span class="n">x</span><span class="p">],</span> <span class="n">y</span><span class="p">,</span> <span class="p">[</span><span class="n">fmt</span><span class="p">],</span> <span class="p">[</span><span class="n">x2</span><span class="p">],</span> <span class="n">y2</span><span class="p">,</span> <span class="p">[</span><span class="n">fmt2</span><span class="p">],</span> <span class="o">...</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>En particular, podemos usar los argumentos <em>keywords</em> (pares
+nombre-valor) para cambiar el modo en que se grafican los datos. Algunos
+de los más comunes son:</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 35%" />
+<col style="width: 65%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Argumento</p></th>
+<th class="head"><p>Valor</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>linestyle</p></td>
+<td><p>{‘-’, ‘–’, ‘-.’, ‘:’, ’’, …}</p></td>
+</tr>
+<tr class="row-odd"><td><p>linewidth</p></td>
+<td><p>número real</p></td>
+</tr>
+<tr class="row-even"><td><p>color</p></td>
+<td><p>un color</p></td>
+</tr>
+<tr class="row-odd"><td><p>marker</p></td>
+<td><p>{‘o’, ‘s’, ‘d’, ….}</p></td>
+</tr>
+<tr class="row-even"><td><p>markersize</p></td>
+<td><p>número real</p></td>
+</tr>
+<tr class="row-odd"><td><p>markeredgecolor</p></td>
+<td><p>color</p></td>
+</tr>
+<tr class="row-even"><td><p>markerfacecolor</p></td>
+<td><p>color</p></td>
+</tr>
+<tr class="row-odd"><td><p>markevery</p></td>
+<td><p>número entero</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">yexp</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">markersize</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">markevery</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">Line2D</span> <span class="n">at</span> <span class="mh">0x7f665ba12e50</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+<img alt="_images/02_introd_cientif_117_1.png" src="_images/02_introd_cientif_117_1.png" />
+</div>
+<div class="section" id="leyendas-y-texto">
+<h3>Leyendas y texto<a class="headerlink" href="#leyendas-y-texto" title="Enlazar permanentemente con este título">¶</a></h3>
+<p>Vamos ahora a agregar nombres a los ejes y a las curvas.</p>
+<p>Para agregar nombres a las curvas, tenemos que agregar un <code class="docutils literal notranslate"><span class="pre">label</span></code>, en
+este caso en el mismo comando <code class="docutils literal notranslate"><span class="pre">plot()</span></code>, y luego mostrarlo con
+`legend()</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;teoría&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">yexp</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;medición&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;lower right&quot;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Mis datos&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;Tiempo ($\mu$s o micro-segundos)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Voltaje (mV)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Medición de ayer&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">color</span><span class="o">=</span><span class="s1">&#39;gray&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">();</span>
+</pre></div>
+</div>
+<img alt="_images/02_introd_cientif_120_0.png" src="_images/02_introd_cientif_120_0.png" />
+<p>Puntos a notar:</p>
+<ul class="simple">
+<li><p>Agregamos un argumento <code class="docutils literal notranslate"><span class="pre">label</span></code> a cada curva, que asocia el formato
+de la curva (linea y símbolo) con el texto dado</p></li>
+<li><p>Para mostrar el cartel con la información usamos el comando
+<code class="docutils literal notranslate"><span class="pre">legend()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">xlabel</span></code> e <code class="docutils literal notranslate"><span class="pre">ylabel</span></code> configuran el texto de los ejes horizontal y
+vertical, respectivamente</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">title</span></code> agrega un título a toda la figura</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">axhline</span></code> y <code class="docutils literal notranslate"><span class="pre">axvline</span></code> agregan líneas horizontal y vertical al
+gráfico.</p></li>
+</ul>
 </div>
 </div>
 </div>

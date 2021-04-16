@@ -1,0 +1,69 @@
+.. Curso de Python, created by sphinx-quickstart
+   It should at least contain the root `toctree` directive.
+
+####################################
+Curso corto de Introducción a Python
+####################################
+
+:Institución: UNRN
+:Fecha: Abril de |today|
+:Docente: Juan Fiol
+
+
+.. raw:: html
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 d-flex">
+          <a class="reference internal" href="clase_00.html"><span class="std std-ref">
+              <div class="card text-center intro-card shadow">
+                <img src="_static/running.svg" class="card-img-top" alt="fas book-reader icon" width="52">
+                <div class="card-body flex-fill">
+                  <h5 class="card-title">Como empezar</h5>
+                  <p class="card-text">
+		  <ul class="card-list">
+		  <li> Instalación del ecosistema</li>
+		  <li> Descripción breve del entorno de programación</li>
+		  <li> Primeros pasos con <em>JupyerLab</em>.</li>
+		  </ul>
+		  </p>
+                </div>
+          </span></a>
+          </div>
+        </div>
+    
+        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 d-flex">
+          <a class="reference internal" href="clase_01.html"><span class="std std-ref">
+              <div class="card text-center intro-card shadow">
+                <img src="_static/book-reader.svg" class="card-img-top" alt="fas chart-bar icon" width="52">
+                <div class="card-body flex-fill">
+                  <h5 class="card-title">Clases dictadas</h5>
+                  <p class="card-text">
+		  <ol class="card-list">
+		  <li> Primera Clase:
+		    <ul>
+		    <li>Características generales del lenguaje</li>
+		    <li>Tipos simples y compuestos de datos</li> 
+		    <li>Estructuras de control</li> 
+		  </ul></li>
+		  <li> Segunda Clase</li>
+		  </ol>
+		  </p>
+                </div>
+          </span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+.. toctree::
+   :caption: Dictado de las clases
+   :maxdepth: 1
+   :hidden:
+
+   clase_00
+   clase_01
+   clase_02
+
+   
