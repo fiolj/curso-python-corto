@@ -1189,10 +1189,13 @@ Intervalo 2 con ejercicio
 
 .. math::  \frac{1}{\sqrt{2 \pi \sigma^2}} e^{(x - \mu)^2/(2 \sigma^2)} 
 
-La función tiene que tener los siguientes argumentos - ``x``: Un array
-donde se calcula la función (los valores de :math:`x`). - ``loc``: La
-posición del centro (:math:`\mu`) (valor por defecto igual a cero). -
-``scale``: el ancho (:math:`\sigma`). (valor por defecto igual a 1).
+La función tiene que tener los siguientes argumentos
+
+-  ``x``: Un array donde se calcula la función (los valores de
+   :math:`x`).
+-  ``loc``: La posición del centro (:math:`\mu`) (valor por defecto
+   igual a cero).
+-  ``scale``: el ancho (:math:`\sigma`). (valor por defecto igual a 1).
 
 2. Utilizando esta función, graficar tres gaussianas localizadas en
    :math:`x=-1`, :math:`x=0`, y :math:`x=1`, con anchos 0.05, 0,1 y 0.2
