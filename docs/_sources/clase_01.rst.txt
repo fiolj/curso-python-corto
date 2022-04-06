@@ -47,8 +47,17 @@ ejecución del código.
 
 .. code:: python
 
-    1+1
+    1+1  # Esto es un comentario
     # 3+3
+
+
+
+
+.. parsed-literal::
+
+    2
+
+
 
 Como vemos, la segunda línea es ignorada completamente.
 
@@ -111,15 +120,25 @@ convertirse su valor a otra de tipo ``float``.
 
 .. code:: python
 
-    print (a, type(a))
+    print(a, type(a))
     a = 1.5 * a
     print (a, type(a))
 
 
 .. parsed-literal::
 
+    13 <class 'int'>
     19.5 <class 'float'>
-    29.25 <class 'float'>
+
+
+.. code:: python
+
+    print(a, b,c)
+
+
+.. parsed-literal::
+
+    19.5 1.235 14.235
 
 
 Ahora, la variable ``a`` es del tipo ``float``.
@@ -136,10 +155,6 @@ Ahora, la variable ``a`` es del tipo ``float``.
   argumentos que se le pasan separados por el string ``sep`` (cuyo valor
   por defecto es un espacio), y termina con el string ``end`` (con valor
   por defecto *newline*).
-  
-  .. code:: python
-  
-      print?
   
   .. code:: python
   
@@ -166,6 +181,18 @@ Ahora, la variable ``a`` es del tipo ``float``.
   
   .. code:: python
   
+      print(3,2,'hola','++++',' -> ')
+      print(4,1,'chau','++++')
+  
+  
+  .. parsed-literal::
+  
+      3 2 hola ++++  -> 
+      4 1 chau ++++
+  
+  
+  .. code:: python
+  
       print(3,2,'hola',sep=',')
   
   
@@ -187,12 +214,13 @@ normalmente
 
     z1 = 3 + 1j
     z2 = 2 + 2.124j
-    print ('z1 =', z1, ', z2 =', z2)
+    z3 = 2j
+    print ('z1 =', z1, ', z2 =', z2,' z3 =', z3)
 
 
 .. parsed-literal::
 
-    z1 = (3+1j) , z2 = (2+2.124j)
+    z1 = (3+1j) , z2 = (2+2.124j)  z3 = 2j
 
 
 .. code:: python
@@ -677,16 +705,13 @@ El módulo ``math`` contiene funciones para trabajar con números reales
     import math
     try:
         math.sqrt(-1)
+    except:
+        print("error")
 
 
-::
+.. parsed-literal::
 
-
-      File "<ipython-input-45-dcf65d789be2>", line 3
-        math.sqrt(-1)
-                     ^
-    SyntaxError: unexpected EOF while parsing
-
+    error
 
 
 y falla con números complejos, para ello existe el módulo
@@ -738,7 +763,7 @@ usar la función phase
 
 .. code:: python
 
-    math.degrees(c.phase(z))    # Resultado en grados
+    m.degrees(c.phase(z))    # Resultado en grados
 
 
 
@@ -778,7 +803,7 @@ ejemplos cotidianos:
     (1+1j) <class 'complex'>
     1.0
     1.0
-    <built-in method conjugate of complex object at 0x7f2873f0bd50>
+    <built-in method conjugate of complex object at 0x7f72fd8ae870>
     (1-1j)
 
 
@@ -809,6 +834,8 @@ métodos:
 
 
 
+:math:`3 = 1 * 2^1 + 1 * 2^0`. Entonces en binario 3 se escribe como 11
+
 .. code:: python
 
     a = 12312
@@ -832,8 +859,8 @@ métodos:
 En estos casos, usamos el método ``bit_length`` de los enteros, que nos
 dice cuántos bits son necesarios para representar el número.
 
-Ejercicios
-----------
+Ejercicios (a)
+--------------
 
 1. Para el número complejo :math:`z= 1 + 0.5 i`
 
@@ -854,7 +881,7 @@ algún tipo. Entre los tipos compuestos más importantes vamos a
 referirnos a:
 
 -  | `Strings <https://docs.python.org/es/3/library/stdtypes.html#text-sequence-type-str>`__
-   | Se pueden definir con comillas dobles ( " ), comillas simples ( ’
+   | Se pueden definir con comillas dobles ( ” ), comillas simples ( ’
      ), o tres comillas (simples o dobles). Comillas (dobles) y comillas
      simples producen el mismo resultado. Sólo debe asegurarse que se
      utiliza el mismo tipo para abrir y para cerrar el *string*
@@ -945,7 +972,7 @@ abrir y para cerrar el *string*
   
   .. code:: python
   
-      label = "σ = λ T/ µ + π · δξ"
+      label = "σ = λ T/ µ + π · δξ."
       print('tipo de label: ', type(label))
       print ('Resultados corresponden a:', label, ' (en m²)')
   
@@ -953,7 +980,7 @@ abrir y para cerrar el *string*
   .. parsed-literal::
   
       tipo de label:  <class 'str'>
-      Resultados corresponden a: σ = λ T/ µ + π · δξ  (en m²)
+      Resultados corresponden a: σ = λ T/ µ + π · δξ.  (en m²)
   
   
   
@@ -1008,6 +1035,19 @@ una nueva cadena, conteniendo la concatenación de los dos sumandos
     Hola Mundo ----> [Él dijo: "hola" y yo no dije nada] <---- chau
 
 
+.. code:: python
+
+    saludo + 'chau'
+
+
+
+
+.. parsed-literal::
+
+    'Hola Mundochau'
+
+
+
 Multiplicación por un entero
 ''''''''''''''''''''''''''''
 
@@ -1052,6 +1092,7 @@ En consecuencia, las operaciones tienen distinto significado:
 
 .. code:: python
 
+    print(a)
     print ( a + a )
     print ( 3*a )
     print ( a*3 )
@@ -1059,6 +1100,7 @@ En consecuencia, las operaciones tienen distinto significado:
 
 .. parsed-literal::
 
+    1
     11
     111
     111
@@ -1066,6 +1108,7 @@ En consecuencia, las operaciones tienen distinto significado:
 
 .. code:: python
 
+    print(b)
     print ( b + b )
     print ( 3*b )
     print ( b*3 )
@@ -1073,6 +1116,7 @@ En consecuencia, las operaciones tienen distinto significado:
 
 .. parsed-literal::
 
+    1
     2
     3
     3
@@ -1083,14 +1127,14 @@ También podemos calcular la longitud de un *string* con la función
 
 .. code:: python
 
-    len(saludo)
+    saludo, len(saludo)
 
 
 
 
 .. parsed-literal::
 
-    10
+    ('Hola Mundo', 10)
 
 
 
@@ -1132,6 +1176,19 @@ mediante su índice. Los índices en **Python** empiezan en 0.
 
 .. code:: python
 
+    saludo, saludo[0], saludo[3]
+
+
+
+
+.. parsed-literal::
+
+    ('Hola Mundo', 'H', 'a')
+
+
+
+.. code:: python
+
     s = "0123456789"
     print ('Primer caracter  :', s[0])
     print ("Segundo caracter :", s[1])
@@ -1147,10 +1204,13 @@ mediante su índice. Los índices en **Python** empiezan en 0.
     El anteúltimo caracter : 8
 
 
-También podemos elegir un subconjunto de caracteres:
+También podemos elegir un subconjunto de caracteres, usando la notación
+``s[i:f:p]``
 
 .. code:: python
 
+    print ('El tercer caracter:         ', s[3])
+    print ('Los tres primeros:          ', s[0:3])
     print ('Los tres primeros:          ', s[:3])
     print ('Todos a partir del tercero: ', s[3:])
     print ('Los últimos dos:            ', s[-2:])
@@ -1159,6 +1219,8 @@ También podemos elegir un subconjunto de caracteres:
 
 .. parsed-literal::
 
+    El tercer caracter:          3
+    Los tres primeros:           012
     Los tres primeros:           012
     Todos a partir del tercero:  3456789
     Los últimos dos:             89
@@ -1196,29 +1258,29 @@ recorriendo con paso ``p``. Casos particulares de esta notación son:
 
 .. code:: python
 
-    print (s[2:4])
-    print (s[:2:1])
+    print (s[:7])
+    print (s[:7:2])
     print (s[::-1])
-    s1 = s[:1:-3]
+    t = s[::-3]
 
 
 .. parsed-literal::
 
-    23
-    01
+    0123456
+    0246
     9876543210
 
 
 .. code:: python
 
-    s1
+    t
 
 
 
 
 .. parsed-literal::
 
-    '963'
+    '9630'
 
 
 
@@ -1236,6 +1298,19 @@ Vamos a ver dos opciones: - Uso del método ``format`` - Uso de
 
 .. code:: python
 
+    "El valor de π es {}".format(pi)
+
+
+
+
+.. parsed-literal::
+
+    'El valor de π es 3.141592653589793'
+
+
+
+.. code:: python
+
     s1
 
 
@@ -1249,11 +1324,7 @@ Vamos a ver dos opciones: - Uso del método ``format`` - Uso de
 
 .. code:: python
 
-    s1 = "El valor de π es {}".format(pi)
-
-.. code:: python
-
-    s1
+    s1.format(pi)
 
 
 
@@ -1280,12 +1351,13 @@ Vamos a ver dos opciones: - Uso del método ``format`` - Uso de
     La temperatura a las 7 horas era 5.2 grados
 
 
-Aquí definimos un *string* llamado ``s1``, donde utilizamos el valor de
+Aquí definimos un *string* llamado ``s3``, donde utilizamos el valor de
 la variable pi (definida en el módulo math) para completar el valor.
 
 .. code:: python
 
-    print(s1)
+    s3 = s1.format(pi)
+    print(s3)
 
 
 .. parsed-literal::
@@ -1336,6 +1408,13 @@ un string. Los ejemplos anteriores pueden escribirse:
 
     print( f"El valor de π es {pi} y su doble es {2*pi}" )
     print( "El valor de π es {} y su doble es {}".format(pi, 2*pi) )
+
+
+.. parsed-literal::
+
+    El valor de π es 3.141592653589793 y su doble es 6.283185307179586
+    El valor de π es 3.141592653589793 y su doble es 6.283185307179586
+
 
 Para controlar el formato de los strings existe una notación específica
 que se puede indicar dentro de las llaves tanto para el `método
@@ -1478,6 +1557,19 @@ Buscar y reemplazar cosas en un string:
 
 
 
+.. code:: python
+
+    b.center(70, "*")
+
+
+
+
+.. parsed-literal::
+
+    '*********Somos los colectiveros que cumplimos nuestro deber!**********'
+
+
+
 Para encontrar información sobre un ``comando`` en las *notebooks*
 podemos usar la notación ``comando?``. Por ejemplo, si queremos saber
 como funciona el método ``find`` de los strings, usamos (recordar que
@@ -1487,46 +1579,16 @@ definimos antes ``b`` como un *string*):
 
     b.find?
 
+Ejercicios (b)
+~~~~~~~~~~~~~~
 
-
-.. parsed-literal::
-
-    [0;31mDocstring:[0m
-    S.find(sub[, start[, end]]) -> int
-    
-    Return the lowest index in S where substring sub is found,
-    such that sub is contained within S[start:end].  Optional
-    arguments start and end are interpreted as in slice notation.
-    
-    Return -1 on failure.
-    [0;31mType:[0m      builtin_function_or_method
-
-
-
-Ejercicios
-~~~~~~~~~~
-
-1. Escribir un programa, utilizando formateo de strings, que escriba las
+2. Escribir un programa, utilizando formateo de strings, que escriba las
    frases:
 
    -  “El conjugado de z=1+0.5j es 1-0.5j”
    -  “El conjugado de z=(1+0.5j)^2 es …” (con el valor correspondiente)
    -  “El conjugado de z=(1+0.5j) :math:`\pi` es …” (con el valor
       correspondiente sólo hasta el tercer decimal incluido)
-
-.. code:: python
-
-    from math import pi
-    
-    z = (1 + 0.5j)
-    zpic = (z * pi).conjugate()
-    print( f"El conjugado de z = {z}π es {zpic:.3f}" )
-
-
-.. parsed-literal::
-
-    El conjugado de z = (1+0.5j)π es 3.142-1.571j
-
 
 Conversión de tipos
 ~~~~~~~~~~~~~~~~~~~
@@ -1548,10 +1610,30 @@ explicitamos.
     print (f"a es de tipo {type(a)}\nb es de tipo {type(b)}\nc es de tipo {type(c)}")
     print (f"'a + b' es de tipo {type(a+b)} y 'a + c' es de tipo {type(a+c)}")
 
+
+.. parsed-literal::
+
+    a es de tipo <class 'int'>
+    b es de tipo <class 'float'>
+    c es de tipo <class 'complex'>
+    'a + b' es de tipo <class 'float'> y 'a + c' es de tipo <class 'complex'>
+
+
 .. code:: python
 
     try:
+        print (1 + '1')
+
+
+::
+
+
+      File "<ipython-input-108-2d83197c9a24>", line 2
         print (1+'1')
+                     ^
+    SyntaxError: incomplete input
+
+
 
 Sin embargo, si le decimos explícitamente qué conversión queremos, todo
 funciona bien
@@ -1564,11 +1646,32 @@ funciona bien
     print ("x=" + str(1.e5))
     print ('x=' + str(1.e-5))
 
+
+.. parsed-literal::
+
+    11
+    2
+    100001.0
+    x=100000.0
+    x=1e-05
+
+
 .. code:: python
 
     # a menos que nosotros **nos equivoquemos explícitamente**
     try:
-        print (1 + int('z'))
+        print (int('z'))
+
+
+::
+
+
+      File "<ipython-input-110-65c36c3c1bde>", line 3
+        print (int('z'))
+                        ^
+    SyntaxError: incomplete input
+
+
 
 Listas
 ~~~~~~
@@ -1751,16 +1854,7 @@ listas), tratar de agregar una lista al final de otra con el método
 
 .. code:: python
 
-    L.pop(-1)  # pop() devuelve el elemento correspondiente y lo saca de la lista 
-
-
-
-
-.. parsed-literal::
-
-    [9, 8, 7]
-
-
+    a=L.pop(-1)  # pop() devuelve el elemento correspondiente y lo saca de la lista 
 
 .. code:: python
 
@@ -1772,6 +1866,19 @@ listas), tratar de agregar una lista al final de otra con el método
 .. parsed-literal::
 
     [0, 1, 2, 3, 4, 5, 8]
+
+
+
+.. code:: python
+
+    a
+
+
+
+
+.. parsed-literal::
+
+    [9, 8, 7]
 
 
 
@@ -1821,6 +1928,17 @@ En las listas podemos sobreescribir uno o más elementos
 
 .. code:: python
 
+    L[0] = -9
+    print(L)
+
+
+.. parsed-literal::
+
+    [-9, 1, 2, 99, 3, 4, 5, 8, 9, 8, 7, 3, 2, 1]
+
+
+.. code:: python
+
     print(L)
     L[0:3] = [-2,-3,-4]
     print(L)
@@ -1828,20 +1946,8 @@ En las listas podemos sobreescribir uno o más elementos
 
 .. parsed-literal::
 
-    [0, 1, 2, 99, 3, 4, 5, 8, 9, 8, 7, 3, 2, 1]
+    [-9, 1, 2, 99, 3, 4, 5, 8, 9, 8, 7, 3, 2, 1]
     [-2, -3, -4, 99, 3, 4, 5, 8, 9, 8, 7, 3, 2, 1]
-
-
-.. code:: python
-
-    L[0] = -9
-    L[-2:]=[0,1]
-    print(L)
-
-
-.. parsed-literal::
-
-    [-9, -3, -4, 99, 3, 4, 5, 8, 9, 8, 7, 3, 0, 1]
 
 
 .. code:: python
@@ -1853,8 +1959,8 @@ En las listas podemos sobreescribir uno o más elementos
 
 .. parsed-literal::
 
-    [-9, -3, -4, 99, 3, 4, 5, 8, 9, 8, 7, 3, 0, 1]
-    [-9, -3, -4, 99, 4, 5, 8, 9, 8, 7, 3, 0, 1]
+    [-2, -3, -4, 99, 3, 4, 5, 8, 9, 8, 7, 3, 2, 1]
+    [-2, -3, -4, 99, 4, 5, 8, 9, 8, 7, 3, 2, 1]
 
 
 Tuplas
@@ -1889,16 +1995,14 @@ intentamos con tuplas
 
     try:
         T1[0] =- 1
+        print(f"{T1[0] = }")
+    except:
+        print('Tuples son inmutables')
 
 
-::
+.. parsed-literal::
 
-
-      File "<ipython-input-22-2d25084c44c9>", line 2
-        T1[0] =- 1
-                  ^
-    SyntaxError: unexpected EOF while parsing
-
+    Tuples son inmutables
 
 
 Las tuplas se usan cuando uno quiere crear una “variable” que no va a
@@ -1909,7 +2013,7 @@ Un uso común de las tuplas es el de asignación a múltiples variables
 
 .. code:: python
 
-    a, b, c = (1, 3, 5)
+    a, b, c = (1, 3, 5.2)
 
 .. code:: python
 
@@ -1918,7 +2022,20 @@ Un uso común de las tuplas es el de asignación a múltiples variables
 
 .. parsed-literal::
 
-    1 3 5
+    1 3 5.2
+
+
+.. code:: python
+
+    a
+
+
+
+
+.. parsed-literal::
+
+    1
+
 
 
 .. code:: python
@@ -1988,10 +2105,10 @@ partir del tipo ``range``
 
 
 
-Ejercicios
-~~~~~~~~~~
+Ejercicios (c)
+~~~~~~~~~~~~~~
 
-1. Manejos de listas **utilizando indexado**:
+3. Manejos de listas **utilizando indexado**:
 
    -  Cree la lista **N** de longitud 50, donde cada elemento es un
       número entero de 1 a 50 inclusive (Ayuda: vea la expresión
@@ -2090,6 +2207,30 @@ elemento es a su vez un diccionario:
 
 .. code:: python
 
+    integrantes
+
+
+
+
+.. parsed-literal::
+
+    {'Juan': {'nombre': 'Juan',
+      'apellido': 'García',
+      'edad': 10,
+      'dirección': ['Av Bustillo', '9500'],
+      'cod': 8400,
+      'ciudad': 'Bariloche'},
+     'Pepe': {'nombre': 'Pepe',
+      'apellido': 'García',
+      'edad': 109,
+      'dirección': ['Av Bustillo', '9500'],
+      'cod': 8400,
+      'ciudad': 'Bariloche'}}
+
+
+
+.. code:: python
+
     integrantes['Pepe']
 
 
@@ -2103,6 +2244,37 @@ elemento es a su vez un diccionario:
      'dirección': ['Av Bustillo', '9500'],
      'cod': 8400,
      'ciudad': 'Bariloche'}
+
+
+
+.. code:: python
+
+    d1
+
+
+
+
+.. parsed-literal::
+
+    {'nombre': 'Juan',
+     'apellido': 'García',
+     'edad': 10,
+     'dirección': ['Av Bustillo', '9500'],
+     'cod': 8400,
+     'ciudad': 'Bariloche'}
+
+
+
+.. code:: python
+
+    d1['cod']
+
+
+
+
+.. parsed-literal::
+
+    8400
 
 
 
@@ -2293,6 +2465,44 @@ Mientras que la suma entre listas está definida (igual que para strings)
 como la concatenación, para arrays la suma (y todas las operaciones) se
 definen elemento a elemento.
 
+Ejercicios (d)
+~~~~~~~~~~~~~~
+
+4. Cree una lista de la forma ``L = [1,3,5,...,17,19,19,17,...,3,1]``
+
+5. Utilizando el string:
+
+.. code:: python
+
+   s1='En un lugar de la Mancha de cuyo nombre no quiero acordarme'
+
+y utilizando funciones y `métodos de
+strings <https://docs.python.org/es/3/library/stdtypes.html#string-methods>`__:
+
+-  Obtenga la cantidad de caracteres.
+
+-  Imprima la frase anterior pero con cada palabra empezando en
+   mayúsculas.
+
+-  Cuente cuantas letras ‘a’ tiene la frase, ¿cuántas vocales tiene?
+
+-  Imprima el string ``s1`` centrado en una línea de 80 caracteres,
+   rodeado de guiones en la forma:
+
+   ``----------En un lugar de la Mancha de cuyo nombre no quiero acordarme-----------``
+
+-  Obtenga una lista **L1** donde cada elemento sea una palabra.
+
+   -  Cuente la cantidad de elementos en ``L1`` (utilizando python).
+   -  Ordene la lista **L1** en orden alfabético.
+   -  Ordene la lista **L1** tal que las palabras más cortas estén
+      primero.
+   -  Ordene la lista **L1** tal que las palabras más largas estén
+      primero.
+   -  Construya un string **s2** con la lista del resultado del punto
+      anterior.
+   -  Encuentre la palabra más larga y la más corta de la frase.
+
 Control de flujo
 ----------------
 
@@ -2336,20 +2546,26 @@ equivalente a la sentencia ``switch`` de otros lenguajes.
 
 .. code:: python
 
-    Nota = 7
+    Nota = 8
     if Nota >= 8:
         print ("Aprobó cómodo, felicidades!")
+        print ("Usted es el mejor!!!")
     elif 6 <= Nota < 8:
         print ("Bueno, al menos aprobó!")
+        print ("Está bien")
     elif (4 <= Nota) and (Nota < 6) :
         print ("Bastante bien, pero no le alcanzó")
     else:
         print("Debe esforzarse más!")
+    
+    print("Sigamos evaluando")
 
 
 .. parsed-literal::
 
-    Bueno, al menos aprobó!
+    Aprobó cómodo, felicidades!
+    Usted es el mejor!!!
+    Sigamos evaluando
 
 
 Iteraciones
@@ -2369,7 +2585,7 @@ forma ordenada
 
     Lista = ['auto', 'casa', "perro", "gato", "árbol", "lechuza", "banana"]
     for L in Lista:
-      print(L)
+        print(L)
 
 
 .. parsed-literal::
@@ -2388,7 +2604,8 @@ Iterando sobre una lista podemos actuar de la manera que necesitemos
 .. code:: python
 
     for L in Lista:
-        print(f'En la palabra {L} hay {L.count("a")} letras "a"')
+        print(f'En la palabra {L}', end="")
+        print(f' hay {L.count("a")} letras "a"')
         
     print(f'\nLa palabra más larga es {max(Lista, key=len)}')
 
@@ -2419,13 +2636,13 @@ Veamos otro ejemplo, donde iteramos sobre un ``range`` actuando como
 .. code:: python
 
     for elemento in range(10):
-        print(elemento, end=', ')
+        print(elemento, end='; ')
 
 
 
 .. parsed-literal::
 
-    0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 
+    0; 1; 2; 3; 4; 5; 6; 7; 8; 9; 
 
 En este ejemplo la función range devuelve en cada iteración un contador
 que se inicia en 0 y termina en 10. Si bien esto nos permite trabajar de
@@ -2467,45 +2684,256 @@ lista para determinar el contador, que a su vez se usa como índice para
 determinar el elemento de la lista. En la primera versión
 (``for L in Lista:``) directamente tenemos el elemento.
 
-Ejercicios
-----------
+.. code:: python
 
-1. Cree una lista de la forma ``L = [1,3,5,...,17,19,19,17,...,3,1]``
+    for L in Lista:
+        print(f'En la palabra {L} hay {L.count("a")} letras "a"')
 
-2. Utilizando el string:
+
+
+.. parsed-literal::
+
+    En la palabra auto hay 1 letras "a"
+    En la palabra casa hay 2 letras "a"
+    En la palabra perro hay 0 letras "a"
+    En la palabra gato hay 1 letras "a"
+    En la palabra árbol hay 0 letras "a"
+    En la palabra lechuza hay 1 letras "a"
+    En la palabra banana hay 3 letras "a"
+
+
+Funciones
+---------
+
+Definición de funciones
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Las funciones en **Python**, como en la mayoría de los lenguajes, usan
+una notación matemática, con un nombre y uno o más argumentos entre
+paréntesis. Por ejemplo, ya usamos varias funciones matemáticas, que
+toman como argumento un número o un *array* de números, y devuelven un
+número o un array (dependiendo del argumento, y de la función). Lo que
+podemos decir es que toman uno o más argumentos y devuelven uno o más
+resultados.
 
 .. code:: python
 
-   s1='En un lugar de la Mancha de cuyo nombre no quiero acordarme'
+    print('cos(1.54) =', math.cos(1.54))
 
-y utilizando funciones y `métodos de
-strings <https://docs.python.org/es/3/library/stdtypes.html#string-methods>`__:
 
--  Obtenga la cantidad de caracteres.
+.. parsed-literal::
 
--  Imprima la frase anterior pero con cada palabra empezando en
-   mayúsculas.
+    cos(1.54) = 0.03079145908246612
 
--  Cuente cuantas letras ‘a’ tiene la frase, ¿cuántas vocales tiene?
 
--  Imprima el string ``s1`` centrado en una línea de 80 caracteres,
-   rodeado de guiones en la forma:
+Para mostrar como definir nuestras propias funciones, vamos a tomar el
+ejercicio de caída libre y encapsulemos el cálculo en una función:
 
-   ``----------En un lugar de la Mancha de cuyo nombre no quiero acordarme-----------``
+.. code:: python
 
--  Obtenga una lista **L1** donde cada elemento sea una palabra.
+    z_0 = 10                         # altura inicial en m
+    g = -9.8                         # aceleración de la gravedad en m/s^2
+    def caida(t, v_0):
+        """
+        Cálculo de velocidad y posición para una partícula en caída libre como función del tiempo
+        El tiempo `t` está en segundos
+        v_0 es la velocidad inicial
+        Devuelve:
+        v,h
+        donde:
+        `v` es la velocidad en m/s
+        `h` es la altura en m
+        """
+        v = v_0 + g * t                     # para aceleración constante
+        h = z_0 + v_0 * t + g * t**2 / 2.   # acorde a Newton
+        return v, h
+    
+    a=1                    # Esto no es parte de la definición de la función
 
-   -  Cuente la cantidad de elementos en ``L1`` (utilizando python).
-   -  Ordene la lista **L1** en orden alfabético.
-   -  Ordene la lista **L1** tal que las palabras más cortas estén
-      primero.
-   -  Ordene la lista **L1** tal que las palabras más largas estén
-      primero.
-   -  Construya un string **s2** con la lista del resultado del punto
-      anterior.
-   -  Encuentre la palabra más larga y la más corta de la frase.
+Elementos de la definición de funciones:
 
-3. Usando estructuras de control, calcule la suma:
+-  La primera línea:
+
+   -  Se define empezando con la palabra ``def``
+   -  Luego se escribe el nombre de la función
+   -  A continuación, entre paréntesis se escriben los argumentos
+      separados por comas. Si no hay argumentos se dejan los paréntesis
+      vacíos
+   -  Se finaliza con los dos puntos (``:``)
+
+-  En la segunda línea empieza un string de documentación (opcional pero
+   **muy** recomendado)
+-  Luego del string de documentación viene el cuerpo de la función (los
+   cálculos en este caso)
+-  Devuelve lo que viene a continuación de la palabra ``return`` (en
+   este caso dos valores)
+
+Si no se escribe explícitamente que devuelve una función, va a devolver
+automáticamente ``None``.
+
+Por ejemplo, la función ``print()`` no devuelve nada, sólo imprime por
+pantalla
+
+.. code:: python
+
+    a = print('hola')
+
+
+.. parsed-literal::
+
+    hola
+
+
+.. code:: python
+
+    print(a)
+
+
+.. parsed-literal::
+
+    None
+
+
+Con esa definición de la función ``caida`` podemos obtener los dos
+valores de velocidad y posición simultáneamente
+
+.. code:: python
+
+    t1 = 1
+    v1, h1 = caida(t1, 10)
+    print(f"A tiempo {t1:.1f} s, la veloc. es {v1:.2f} m/s y la altura es {h1:.2f} m")
+
+
+.. parsed-literal::
+
+    A tiempo 1.0 s, la veloc. es 0.20 m/s y la altura es 15.10 m
+
+
+Documentación (doc strings)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Cuando definimos la función le agregamos un string con una descripción.
+Esta puede utilizarse luego como documentación
+
+.. code:: python
+
+    help(caida)
+
+
+.. parsed-literal::
+
+    Help on function caida in module __main__:
+    
+    caida(t, v_0)
+        Cálculo de velocidad y posición para una partícula en caída libre como función del tiempo
+        El tiempo `t` está en segundos
+        v_0 es la velocidad inicial
+        Devuelve:
+        v,h
+        donde:
+        `v` es la velocidad en m/s
+        `h` es la altura en m
+    
+
+
+.. code:: python
+
+    help(math.cos)
+
+
+.. parsed-literal::
+
+    Help on built-in function cos in module math:
+    
+    cos(x, /)
+        Return the cosine of x (measured in radians).
+    
+
+
+Las funciones son objetos
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Las funciones en **Python**, como en la mayoría de los lenguajes, usan
+una notación similar a la de las funciones matemáticas, con un nombre y
+uno o más argumentos entre paréntesis. Por ejemplo, ya usamos la función
+``sum`` cuyo argumento puede ser un array o lista de números
+
+.. code:: python
+
+    print(sum)
+
+
+.. parsed-literal::
+
+    <built-in function sum>
+
+
+.. code:: python
+
+    f = sum
+    print(f)
+
+
+.. parsed-literal::
+
+    <built-in function sum>
+
+
+.. code:: python
+
+    vec = [1.32, 2, -1]
+
+.. code:: python
+
+    print(sum(vec), f(vec))
+
+
+.. parsed-literal::
+
+    2.3200000000000003 2.3200000000000003
+
+
+.. code:: python
+
+    a1 = caida(1,10)
+    f1 = caida
+    print(a1)
+    print(caida(1.5, 10))
+    print(f1(1.5, 10))
+
+
+.. parsed-literal::
+
+    (0.1999999999999993, 15.1)
+    (-4.700000000000001, 13.975)
+    (-4.700000000000001, 13.975)
+
+
+.. code:: python
+
+    help(f1)
+
+
+.. parsed-literal::
+
+    Help on function caida in module __main__:
+    
+    caida(t, v_0)
+        Cálculo de velocidad y posición para una partícula en caída libre como función del tiempo
+        El tiempo `t` está en segundos
+        v_0 es la velocidad inicial
+        Devuelve:
+        v,h
+        donde:
+        `v` es la velocidad en m/s
+        `h` es la altura en m
+    
+
+
+Ejercicios (e)
+--------------
+
+6. Usando estructuras de control, calcule la suma:
 
    .. math::  s_{1} = \frac{1}{2} \left(\sum_{k=1}^{100}k^{-1} \right)
 

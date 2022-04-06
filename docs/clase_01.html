@@ -1,95 +1,45 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="es" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="es" > <!--<![endif]-->
+<html class="writer-html5" lang="es" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clase 1: Conceptos básicos de Python &mdash; documentación de Curso corto de Python - </title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+      <link rel="stylesheet" href="_static/rtd_overrides.css" type="text/css" />
   
-
-  
-  
-  
-  
-
-  
-  <script type="text/javascript" src="_static/js/modernizr.min.js"></script>
-  
-    
-      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
         <script src="_static/doctools.js"></script>
-        <script src="_static/language_data.js"></script>
         <script src="_static/translations.js"></script>
-        <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    
-    <script type="text/javascript" src="_static/js/theme.js"></script>
-
-    
-
-  
-  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-  <link rel="stylesheet" href="_static/rtd_overrides.css" type="text/css" />
+        <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="_static/js/theme.js"></script>
     <link rel="search" title="Búsqueda" href="search.html" />
     <link rel="next" title="Clase 2: Introducción a Python Científico" href="clase_02.html" />
     <link rel="prev" title="Clase 0: Introducción al lenguaje: Instalación y uso" href="clase_00.html" /> 
 </head>
 
-<body class="wy-body-for-nav">
-
-   
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-          
-
-          
             <a href="index.html" class="icon icon-home"> Curso corto de Python
-          
-
-          
-            
-            <img src="_static/logo.svg" class="logo" alt="Logo"/>
-          
+            <img src="_static/logo.svg" class="logo" alt="Logotipo"/>
           </a>
-
-          
-            
-            
               <div class="version">
-                2021
+                2022
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Buscar documentos" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-              
-            
-            
-              <p class="caption"><span class="caption-text">Dictado de las clases</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Dictado de las clases</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="clase_00.html">Clase 0: Introducción al lenguaje: Instalación y uso</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Clase 1: Conceptos básicos de Python</a><ul>
@@ -111,7 +61,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#disgresion-objetos">Disgresión: Objetos</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#ejercicios">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicios-a">Ejercicios (a)</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#tipos-compuestos">Tipos compuestos</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#strings-secuencias-de-caracteres">Strings: Secuencias de caracteres</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id1">Operaciones</a></li>
@@ -120,7 +70,7 @@
 <li class="toctree-l4"><a class="reference internal" href="#metodos-de-strings">Métodos de Strings</a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id2">Ejercicios</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicios-b">Ejercicios (b)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#conversion-de-tipos">Conversión de tipos</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#listas">Listas</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#operaciones-sobre-listas">Operaciones sobre listas</a></li>
@@ -128,9 +78,10 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#tuplas">Tuplas</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#rangos">Rangos</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3">Ejercicios</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicios-c">Ejercicios (c)</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#diccionarios">Diccionarios</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#arrays-de-numpy">Arrays de Numpy</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ejercicios-d">Ejercicios (d)</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#control-de-flujo">Control de flujo</a><ul>
@@ -141,78 +92,48 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">Ejercicios</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#funciones">Funciones</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#definicion-de-funciones">Definición de funciones</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#documentacion-doc-strings">Documentación (doc strings)</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#las-funciones-son-objetos">Las funciones son objetos</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#ejercicios-e">Ejercicios (e)</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="clase_02.html">Clase 2: Introducción a Python Científico</a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" aria-label="top navigation">
-        
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
           <a href="index.html">Curso corto de Python</a>
-        
       </nav>
 
-
       <div class="wy-nav-content">
-        
         <div class="rst-content">
-        
-          
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
-
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    
-      <li><a href="index.html">Docs</a> &raquo;</li>
-        
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
       <li>Clase 1: Conceptos básicos de Python</li>
-    
-    
       <li class="wy-breadcrumbs-aside">
-        
-            
-            <a href="_sources/clase_01.rst.txt" rel="nofollow"> View page source</a>
-          
-        
+            <a href="_sources/clase_01.rst.txt" rel="nofollow"> Ver código fuente de la página</a>
       </li>
-    
   </ul>
-
-  
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
+             
   <div class="section" id="clase-1-conceptos-basicos-de-python">
-<span id="clase-01"></span><h1>Clase 1: Conceptos básicos de Python<a class="headerlink" href="#clase-1-conceptos-basicos-de-python" title="Enlazar permanentemente con este título">¶</a></h1>
+<span id="clase-01"></span><h1>Clase 1: Conceptos básicos de Python<a class="headerlink" href="#clase-1-conceptos-basicos-de-python" title="Enlazar permanentemente con este título"></a></h1>
 <div class="section" id="caracteristicas-generales-del-lenguaje">
-<h2>Características generales del lenguaje<a class="headerlink" href="#caracteristicas-generales-del-lenguaje" title="Enlazar permanentemente con este título">¶</a></h2>
+<h2>Características generales del lenguaje<a class="headerlink" href="#caracteristicas-generales-del-lenguaje" title="Enlazar permanentemente con este título"></a></h2>
 <p>Python presenta características modernas. Posiblemente su característica
 más visible/notable es que la estructuración del código está fuertemente
 relacionada con su legibilidad:</p>
@@ -289,14 +210,17 @@ pocas palabras reservadas:</p>
 porque inicia un comentario que se continúa hasta el final de la línea.
 Los comentarios son fragmentos que se ignoran completamente en la
 ejecución del código.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">+</span><span class="mi">1</span>  <span class="c1"># Esto es un comentario</span>
 <span class="c1"># 3+3</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span>
 </pre></div>
 </div>
 <p>Como vemos, la segunda línea es ignorada completamente.</p>
 </div>
 <div class="section" id="tipos-simples-de-variables">
-<h2>Tipos simples de variables<a class="headerlink" href="#tipos-simples-de-variables" title="Enlazar permanentemente con este título">¶</a></h2>
+<h2>Tipos simples de variables<a class="headerlink" href="#tipos-simples-de-variables" title="Enlazar permanentemente con este título"></a></h2>
 <p>Python es un lenguaje de muy alto nivel y por lo tanto trae muchos
 <em>tipos</em> de datos ya definidos:</p>
 <ul class="simple">
@@ -310,7 +234,7 @@ ordenadas y son identificadas con una etiqueta</p></li>
 <li><p>Conjuntos, tuples, …</p></li>
 </ul>
 <div class="section" id="numeros">
-<h3>Números<a class="headerlink" href="#numeros" title="Enlazar permanentemente con este título">¶</a></h3>
+<h3>Números<a class="headerlink" href="#numeros" title="Enlazar permanentemente con este título"></a></h3>
 <p>Hay varios tipos de números en Python. Aquí definimos y asignamos valor
 a distintas variables:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">13</span>
@@ -338,13 +262,19 @@ variable en forma dinámica, al asignarle un valor.</p>
 para poder operar. Por ejemplo en el último caso, la variable <code class="docutils literal notranslate"><span class="pre">a</span></code> es
 de tipo <code class="docutils literal notranslate"><span class="pre">int</span></code>, pero para poder sumarla con la variable <code class="docutils literal notranslate"><span class="pre">b</span></code> debe
 convertirse su valor a otra de tipo <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="o">*</span> <span class="n">a</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>19.5 &lt;class &#39;float&#39;&gt;
-29.25 &lt;class &#39;float&#39;&gt;
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>13 &lt;class &#39;int&#39;&gt;
+19.5 &lt;class &#39;float&#39;&gt;
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">19.5</span> <span class="mf">1.235</span> <span class="mf">14.235</span>
 </pre></div>
 </div>
 <p>Ahora, la variable <code class="docutils literal notranslate"><span class="pre">a</span></code> es del tipo <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
@@ -359,9 +289,6 @@ convertirse su valor a otra de tipo <code class="docutils literal notranslate"><
 argumentos que se le pasan separados por el string <code class="docutils literal notranslate"><span class="pre">sep</span></code> (cuyo valor
 por defecto es un espacio), y termina con el string <code class="docutils literal notranslate"><span class="pre">end</span></code> (con valor
 por defecto <em>newline</em>).</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>print?
-</pre></div>
-</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;hola&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;chau&#39;</span><span class="p">)</span>
 </pre></div>
@@ -377,6 +304,14 @@ por defecto <em>newline</em>).</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span><span class="o">++++</span><span class="mi">2</span><span class="o">++++</span><span class="n">hola</span> <span class="o">-&gt;</span> <span class="mi">4</span><span class="o">++++</span><span class="mi">1</span><span class="o">++++</span><span class="n">chau</span>
 </pre></div>
 </div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;hola&#39;</span><span class="p">,</span><span class="s1">&#39;++++&#39;</span><span class="p">,</span><span class="s1">&#39; -&gt; &#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;chau&#39;</span><span class="p">,</span><span class="s1">&#39;++++&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="mi">2</span> <span class="n">hola</span> <span class="o">++++</span>  <span class="o">-&gt;</span>
+<span class="mi">4</span> <span class="mi">1</span> <span class="n">chau</span> <span class="o">++++</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;hola&#39;</span><span class="p">,</span><span class="n">sep</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -385,16 +320,17 @@ por defecto <em>newline</em>).</p>
 </div>
 </div>
 <div class="section" id="numeros-complejos">
-<h4>Números complejos<a class="headerlink" href="#numeros-complejos" title="Enlazar permanentemente con este título">¶</a></h4>
+<h4>Números complejos<a class="headerlink" href="#numeros-complejos" title="Enlazar permanentemente con este título"></a></h4>
 <p>Los números complejos son parte standard del lenguaje, y las operaciones
 básicas que están incorporadas en forma nativa pueden utilizarse
 normalmente</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z1</span> <span class="o">=</span> <span class="mi">3</span> <span class="o">+</span> <span class="mi">1</span><span class="n">j</span>
 <span class="n">z2</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">2.124</span><span class="n">j</span>
-<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;z1 =&#39;</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="s1">&#39;, z2 =&#39;</span><span class="p">,</span> <span class="n">z2</span><span class="p">)</span>
+<span class="n">z3</span> <span class="o">=</span> <span class="mi">2</span><span class="n">j</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;z1 =&#39;</span><span class="p">,</span> <span class="n">z1</span><span class="p">,</span> <span class="s1">&#39;, z2 =&#39;</span><span class="p">,</span> <span class="n">z2</span><span class="p">,</span><span class="s1">&#39; z3 =&#39;</span><span class="p">,</span> <span class="n">z3</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="n">j</span><span class="p">)</span> <span class="p">,</span> <span class="n">z2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mf">2.124</span><span class="n">j</span><span class="p">)</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">z1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">3</span><span class="o">+</span><span class="mi">1</span><span class="n">j</span><span class="p">)</span> <span class="p">,</span> <span class="n">z2</span> <span class="o">=</span> <span class="p">(</span><span class="mi">2</span><span class="o">+</span><span class="mf">2.124</span><span class="n">j</span><span class="p">)</span>  <span class="n">z3</span> <span class="o">=</span> <span class="mi">2</span><span class="n">j</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="n">z1</span><span class="p">)</span>
@@ -425,7 +361,7 @@ conj(z1) =  (3-1j)
 </div>
 </div>
 <div class="section" id="operaciones">
-<h4>Operaciones<a class="headerlink" href="#operaciones" title="Enlazar permanentemente con este título">¶</a></h4>
+<h4>Operaciones<a class="headerlink" href="#operaciones" title="Enlazar permanentemente con este título"></a></h4>
 <p>Las operaciones aritméticas básicas son:</p>
 <ul class="simple">
 <li><p>adición: <code class="docutils literal notranslate"><span class="pre">+</span></code></p></li>
@@ -495,7 +431,7 @@ entera</p>
 </div>
 </div>
 <div class="section" id="tipos-simples-booleanos">
-<h3>Tipos simples: Booleanos<a class="headerlink" href="#tipos-simples-booleanos" title="Enlazar permanentemente con este título">¶</a></h3>
+<h3>Tipos simples: Booleanos<a class="headerlink" href="#tipos-simples-booleanos" title="Enlazar permanentemente con este título"></a></h3>
 <p>Los tipos lógicos o <em>booleanos</em>, pueden tomar los valores <em>Verdadero</em> o
 <em>Falso</em> (<code class="docutils literal notranslate"><span class="pre">True</span></code> o <code class="docutils literal notranslate"><span class="pre">False</span></code>). También hay un tipo <em>especial</em>, el
 elemento <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
@@ -581,7 +517,7 @@ d is c:  True
 </pre></div>
 </div>
 <div class="section" id="operadores-logicos">
-<h4>Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Enlazar permanentemente con este título">¶</a></h4>
+<h4>Operadores lógicos<a class="headerlink" href="#operadores-logicos" title="Enlazar permanentemente con este título"></a></h4>
 <p>Los operadores lógicos en Python son muy explicitos:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="o">==</span> <span class="n">B</span>  <span class="p">(</span><span class="n">A</span> <span class="n">igual</span> <span class="n">que</span> <span class="n">B</span><span class="p">)</span>
 <span class="n">A</span> <span class="o">&gt;</span> <span class="n">B</span>   <span class="p">(</span><span class="n">A</span> <span class="n">mayor</span> <span class="n">que</span> <span class="n">B</span><span class="p">)</span>
@@ -625,7 +561,7 @@ iguales.</p>
 </div>
 </div>
 <div class="section" id="modularizacion-y-reuso">
-<h2>Modularización y reuso<a class="headerlink" href="#modularizacion-y-reuso" title="Enlazar permanentemente con este título">¶</a></h2>
+<h2>Modularización y reuso<a class="headerlink" href="#modularizacion-y-reuso" title="Enlazar permanentemente con este título"></a></h2>
 <p>Los módulos son el mecanismo de Python para reusar código. Una gran
 ventaja del lenguaje es que ya existen muchos módulos que son parte de
 la biblioteca <em>standard</em>. Además, existen numerosas bibliotecas y
@@ -652,7 +588,7 @@ Eso se hace <em>importando</em> el módulo con el simple comando
 <p>Una vez importado, podemos utilizar constantes y funciones definidas en
 el módulo con la notación “de punto”: <code class="docutils literal notranslate"><span class="pre">modulo.funcion()</span></code>.</p>
 <div class="section" id="ejemplos-modulos-math-y-cmath">
-<h3>Ejemplos: Módulos math y cmath<a class="headerlink" href="#ejemplos-modulos-math-y-cmath" title="Enlazar permanentemente con este título">¶</a></h3>
+<h3>Ejemplos: Módulos math y cmath<a class="headerlink" href="#ejemplos-modulos-math-y-cmath" title="Enlazar permanentemente con este título"></a></h3>
 <p>El módulo <a class="reference external" href="https://docs.python.org/es/3/library/math.html">math</a>
 contiene funciones y utilidades para trabajar con números reales
 (enteros y punto flotante). Es parte de la biblioteca standard de Python
@@ -746,12 +682,11 @@ completo</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="k">try</span><span class="p">:</span>
     <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">File</span> <span class="s2">&quot;&lt;ipython-input-45-dcf65d789be2&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span>
-    <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
-                 <span class="o">^</span>
-<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">unexpected</span> <span class="n">EOF</span> <span class="k">while</span> <span class="n">parsing</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">error</span>
 </pre></div>
 </div>
 <p>y falla con números complejos, para ello existe el módulo
@@ -782,7 +717,7 @@ usar la función phase</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">0.7853981633974483</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">math</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">phase</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>    <span class="c1"># Resultado en grados</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">m</span><span class="o">.</span><span class="n">degrees</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">phase</span><span class="p">(</span><span class="n">z</span><span class="p">))</span>    <span class="c1"># Resultado en grados</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">45.0</span>
@@ -791,7 +726,7 @@ usar la función phase</p>
 </div>
 </div>
 <div class="section" id="disgresion-objetos">
-<h2>Disgresión: Objetos<a class="headerlink" href="#disgresion-objetos" title="Enlazar permanentemente con este título">¶</a></h2>
+<h2>Disgresión: Objetos<a class="headerlink" href="#disgresion-objetos" title="Enlazar permanentemente con este título"></a></h2>
 <p>En python, cualquier elemento es un <em>objeto</em>. Todos los objetos tienen,
 al menos:</p>
 <ul class="simple">
@@ -813,7 +748,7 @@ ejemplos cotidianos:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>(1+1j) &lt;class &#39;complex&#39;&gt;
 1.0
 1.0
-&lt;built-in method conjugate of complex object at 0x7f2873f0bd50&gt;
+&lt;built-in method conjugate of complex object at 0x7f72fd8ae870&gt;
 (1-1j)
 </pre></div>
 </div>
@@ -833,6 +768,7 @@ métodos:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span>
 </pre></div>
 </div>
+<p><span class="math notranslate nohighlight">\(3 = 1 * 2^1 + 1 * 2^0\)</span>. Entonces en binario 3 se escribe como 11</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">12312</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
 <span class="n">a</span><span class="o">.</span><span class="n">bit_length</span><span class="p">()</span>
@@ -847,8 +783,8 @@ métodos:</p>
 <p>En estos casos, usamos el método <code class="docutils literal notranslate"><span class="pre">bit_length</span></code> de los enteros, que nos
 dice cuántos bits son necesarios para representar el número.</p>
 </div>
-<div class="section" id="ejercicios">
-<h2>Ejercicios<a class="headerlink" href="#ejercicios" title="Enlazar permanentemente con este título">¶</a></h2>
+<div class="section" id="ejercicios-a">
+<h2>Ejercicios (a)<a class="headerlink" href="#ejercicios-a" title="Enlazar permanentemente con este título"></a></h2>
 <ol class="arabic">
 <li><p>Para el número complejo <span class="math notranslate nohighlight">\(z= 1 + 0.5 i\)</span></p>
 <ul class="simple">
@@ -863,7 +799,7 @@ polares.</p></li>
 </ol>
 </div>
 <div class="section" id="tipos-compuestos">
-<h2>Tipos compuestos<a class="headerlink" href="#tipos-compuestos" title="Enlazar permanentemente con este título">¶</a></h2>
+<h2>Tipos compuestos<a class="headerlink" href="#tipos-compuestos" title="Enlazar permanentemente con este título"></a></h2>
 <p>En Python, además de los tipos simples (números y booleanos, entre
 ellos) existen tipos compuestos, que pueden contener más de un valor de
 algún tipo. Entre los tipos compuestos más importantes vamos a
@@ -871,7 +807,7 @@ referirnos a:</p>
 <ul>
 <li><div class="line-block">
 <div class="line"><a class="reference external" href="https://docs.python.org/es/3/library/stdtypes.html#text-sequence-type-str">Strings</a></div>
-<div class="line">Se pueden definir con comillas dobles ( » ), comillas simples ( ’
+<div class="line">Se pueden definir con comillas dobles ( ” ), comillas simples ( ’
 ), o tres comillas (simples o dobles). Comillas (dobles) y comillas
 simples producen el mismo resultado. Sólo debe asegurarse que se
 utiliza el mismo tipo para abrir y para cerrar el <em>string</em></div>
@@ -921,7 +857,7 @@ igual al número 1).</div>
 </li>
 </ul>
 <div class="section" id="strings-secuencias-de-caracteres">
-<h3>Strings: Secuencias de caracteres<a class="headerlink" href="#strings-secuencias-de-caracteres" title="Enlazar permanentemente con este título">¶</a></h3>
+<h3>Strings: Secuencias de caracteres<a class="headerlink" href="#strings-secuencias-de-caracteres" title="Enlazar permanentemente con este título"></a></h3>
 <p>Una cadena o <em>string</em> es una <strong>secuencia</strong> de caracteres (letras,
 “números”, símbolos).</p>
 <p>Se pueden definir con comillas, comillas simples, o tres comillas
@@ -955,13 +891,13 @@ abrir y para cerrar el <em>string</em></p>
 <p class="admonition-title">Nota</p>
 <p>Python trabaja con una codificación (<em>UTF-8</em>) por lo que
 reconoce nativamente un amplio rango de caracteres</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;σ = λ T/ µ + π · δξ&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">label</span> <span class="o">=</span> <span class="s2">&quot;σ = λ T/ µ + π · δξ.&quot;</span>
 <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;tipo de label: &#39;</span><span class="p">,</span> <span class="nb">type</span><span class="p">(</span><span class="n">label</span><span class="p">))</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Resultados corresponden a:&#39;</span><span class="p">,</span> <span class="n">label</span><span class="p">,</span> <span class="s1">&#39; (en m²)&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>tipo de label:  &lt;class &#39;str&#39;&gt;
-Resultados corresponden a: σ = λ T/ µ + π · δξ  (en m²)
+Resultados corresponden a: σ = λ T/ µ + π · δξ.  (en m²)
 </pre></div>
 </div>
 </div>
@@ -987,11 +923,11 @@ caracteres en forma textual, incluyendo saltos de líneas.</p>
 </pre></div>
 </div>
 <div class="section" id="id1">
-<h4>Operaciones<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título">¶</a></h4>
+<h4>Operaciones<a class="headerlink" href="#id1" title="Enlazar permanentemente con este título"></a></h4>
 <p>En <strong>Python</strong> ya hay definidas algunas operaciones como suma
 (composición o concatenación), producto por enteros (repetición).</p>
 <div class="section" id="suma-de-strings">
-<h5>Suma de <em>strings</em><a class="headerlink" href="#suma-de-strings" title="Enlazar permanentemente con este título">¶</a></h5>
+<h5>Suma de <em>strings</em><a class="headerlink" href="#suma-de-strings" title="Enlazar permanentemente con este título"></a></h5>
 <p>La suma entre dos cadenas de caracteres está definida y el resultado es
 una nueva cadena, conteniendo la concatenación de los dos sumandos</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="n">saludo</span> <span class="o">+</span> <span class="s2">&quot; ----&gt; [&quot;</span> <span class="o">+</span> <span class="n">dijo</span> <span class="o">+</span> <span class="s2">&quot;] &lt;---- chau&quot;</span>
@@ -1001,9 +937,15 @@ una nueva cadena, conteniendo la concatenación de los dos sumandos</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Hola</span> <span class="n">Mundo</span> <span class="o">----&gt;</span> <span class="p">[</span><span class="n">Él</span> <span class="n">dijo</span><span class="p">:</span> <span class="s2">&quot;hola&quot;</span> <span class="n">y</span> <span class="n">yo</span> <span class="n">no</span> <span class="n">dije</span> <span class="n">nada</span><span class="p">]</span> <span class="o">&lt;----</span> <span class="n">chau</span>
 </pre></div>
 </div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">saludo</span> <span class="o">+</span> <span class="s1">&#39;chau&#39;</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;Hola Mundochau&#39;</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="multiplicacion-por-un-entero">
-<h5>Multiplicación por un entero<a class="headerlink" href="#multiplicacion-por-un-entero" title="Enlazar permanentemente con este título">¶</a></h5>
+<h5>Multiplicación por un entero<a class="headerlink" href="#multiplicacion-por-un-entero" title="Enlazar permanentemente con este título"></a></h5>
 <p>La multiplicación de un número entero <code class="docutils literal notranslate"><span class="pre">n</span></code> por un string <code class="docutils literal notranslate"><span class="pre">s</span></code> está
 definida como “n veces s”</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span> <span class="n">saludo</span> <span class="p">)</span>
@@ -1032,32 +974,36 @@ un <em>string</em> y <code class="docutils literal notranslate"><span class="pre
 </pre></div>
 </div>
 <p>En consecuencia, las operaciones tienen distinto significado:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span> <span class="n">a</span> <span class="o">+</span> <span class="n">a</span> <span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span> <span class="n">a</span> <span class="o">+</span> <span class="n">a</span> <span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span> <span class="mi">3</span><span class="o">*</span><span class="n">a</span> <span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span> <span class="n">a</span><span class="o">*</span><span class="mi">3</span> <span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">11</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>
+<span class="mi">11</span>
 <span class="mi">111</span>
 <span class="mi">111</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span> <span class="n">b</span> <span class="o">+</span> <span class="n">b</span> <span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span> <span class="p">(</span> <span class="n">b</span> <span class="o">+</span> <span class="n">b</span> <span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span> <span class="mi">3</span><span class="o">*</span><span class="n">b</span> <span class="p">)</span>
 <span class="nb">print</span> <span class="p">(</span> <span class="n">b</span><span class="o">*</span><span class="mi">3</span> <span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>
+<span class="mi">2</span>
 <span class="mi">3</span>
 <span class="mi">3</span>
 </pre></div>
 </div>
 <p>También podemos calcular la longitud de un <em>string</em> con la función
 <code class="docutils literal notranslate"><span class="pre">len()</span></code></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">len</span><span class="p">(</span><span class="n">saludo</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">saludo</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">saludo</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">10</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s1">&#39;Hola Mundo&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Utilizando esta función podemos hacer un centrado de texto “manual”</p>
@@ -1077,7 +1023,7 @@ un <em>string</em> y <code class="docutils literal notranslate"><span class="pre
 </div>
 </div>
 <div class="section" id="indexado-de-strings">
-<h4>Indexado de <em>strings</em><a class="headerlink" href="#indexado-de-strings" title="Enlazar permanentemente con este título">¶</a></h4>
+<h4>Indexado de <em>strings</em><a class="headerlink" href="#indexado-de-strings" title="Enlazar permanentemente con este título"></a></h4>
 <p>Los <em>strings</em> poseen varias cualidades y funcionalidades. Por ejemplo:</p>
 <ul class="simple">
 <li><p>Se puede iterar sobre ellos, o quedarse con una parte (slicing)</p></li>
@@ -1085,6 +1031,12 @@ un <em>string</em> y <code class="docutils literal notranslate"><span class="pre
 </ul>
 <p>Podemos referirnos a un caracter o una parte de una cadena de caracteres
 mediante su índice. Los índices en <strong>Python</strong> empiezan en 0.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">saludo</span><span class="p">,</span> <span class="n">saludo</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">saludo</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="s1">&#39;Hola Mundo&#39;</span><span class="p">,</span> <span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;0123456789&quot;</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Primer caracter  :&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Segundo caracter :&quot;</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
@@ -1098,14 +1050,19 @@ mediante su índice. Los índices en <strong>Python</strong> empiezan en 0.</p>
 <span class="n">El</span> <span class="n">anteúltimo</span> <span class="n">caracter</span> <span class="p">:</span> <span class="mi">8</span>
 </pre></div>
 </div>
-<p>También podemos elegir un subconjunto de caracteres:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Los tres primeros:          &#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
+<p>También podemos elegir un subconjunto de caracteres, usando la notación
+<code class="docutils literal notranslate"><span class="pre">s[i:f:p]</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;El tercer caracter:         &#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Los tres primeros:          &#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Los tres primeros:          &#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">[:</span><span class="mi">3</span><span class="p">])</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Todos a partir del tercero: &#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="mi">3</span><span class="p">:])</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Los últimos dos:            &#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:])</span>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;Todos menos los últimos dos:&#39;</span><span class="p">,</span> <span class="n">s</span><span class="p">[:</span><span class="o">-</span><span class="mi">2</span><span class="p">])</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Los</span> <span class="n">tres</span> <span class="n">primeros</span><span class="p">:</span>           <span class="mi">012</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">El</span> <span class="n">tercer</span> <span class="n">caracter</span><span class="p">:</span>          <span class="mi">3</span>
+<span class="n">Los</span> <span class="n">tres</span> <span class="n">primeros</span><span class="p">:</span>           <span class="mi">012</span>
+<span class="n">Los</span> <span class="n">tres</span> <span class="n">primeros</span><span class="p">:</span>           <span class="mi">012</span>
 <span class="n">Todos</span> <span class="n">a</span> <span class="n">partir</span> <span class="k">del</span> <span class="n">tercero</span><span class="p">:</span>  <span class="mi">3456789</span>
 <span class="n">Los</span> <span class="n">últimos</span> <span class="n">dos</span><span class="p">:</span>             <span class="mi">89</span>
 <span class="n">Todos</span> <span class="n">menos</span> <span class="n">los</span> <span class="n">últimos</span> <span class="n">dos</span><span class="p">:</span> <span class="mi">01234567</span>
@@ -1135,31 +1092,37 @@ recorriendo con paso <code class="docutils literal notranslate"><span class="pre
 <li><p>Notar que puede omitirse más de un índice. Ejemplo:
 <code class="docutils literal notranslate"><span class="pre">s[::2]</span> <span class="pre">=</span> <span class="pre">s[0:-1:2]</span></code></p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">s</span><span class="p">[</span><span class="mi">2</span><span class="p">:</span><span class="mi">4</span><span class="p">])</span>
-<span class="nb">print</span> <span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="mi">2</span><span class="p">:</span><span class="mi">1</span><span class="p">])</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span> <span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="mi">7</span><span class="p">])</span>
+<span class="nb">print</span> <span class="p">(</span><span class="n">s</span><span class="p">[:</span><span class="mi">7</span><span class="p">:</span><span class="mi">2</span><span class="p">])</span>
 <span class="nb">print</span> <span class="p">(</span><span class="n">s</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
-<span class="n">s1</span> <span class="o">=</span> <span class="n">s</span><span class="p">[:</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">s</span><span class="p">[::</span><span class="o">-</span><span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">23</span>
-<span class="mi">01</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0123456</span>
+<span class="mi">0246</span>
 <span class="mi">9876543210</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;963&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;9630&#39;</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="formato-de-strings">
-<h4>Formato de <em>strings</em><a class="headerlink" href="#formato-de-strings" title="Enlazar permanentemente con este título">¶</a></h4>
+<h4>Formato de <em>strings</em><a class="headerlink" href="#formato-de-strings" title="Enlazar permanentemente con este título"></a></h4>
 <p>Existen varias maneras de aplicar formato a una cadena de caracteres.
 Vamos a ver dos opciones: - Uso del método <code class="docutils literal notranslate"><span class="pre">format</span></code> - Uso de
 “f-strings”</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
 <span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;El valor de π es </span><span class="si">{}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;El valor de π es </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;El valor de π es 3.141592653589793&#39;</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span>
@@ -1168,10 +1131,7 @@ Vamos a ver dos opciones: - Uso del método <code class="docutils literal notran
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;El valor de π es </span><span class="si">{}</span><span class="s1">&#39;</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span> <span class="o">=</span> <span class="s2">&quot;El valor de π es </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;El valor de π es 3.141592653589793&#39;</span>
@@ -1188,9 +1148,10 @@ Vamos a ver dos opciones: - Uso del método <code class="docutils literal notran
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">La</span> <span class="n">temperatura</span> <span class="n">a</span> <span class="n">las</span> <span class="mi">7</span> <span class="n">horas</span> <span class="n">era</span> <span class="mf">5.2</span> <span class="n">grados</span>
 </pre></div>
 </div>
-<p>Aquí definimos un <em>string</em> llamado <code class="docutils literal notranslate"><span class="pre">s1</span></code>, donde utilizamos el valor de
+<p>Aquí definimos un <em>string</em> llamado <code class="docutils literal notranslate"><span class="pre">s3</span></code>, donde utilizamos el valor de
 la variable pi (definida en el módulo math) para completar el valor.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s3</span> <span class="o">=</span> <span class="n">s1</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pi</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">s3</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">El</span> <span class="n">valor</span> <span class="n">de</span> <span class="n">π</span> <span class="n">es</span> <span class="mf">3.141592653589793</span>
@@ -1227,6 +1188,10 @@ un string. Los ejemplos anteriores pueden escribirse:</p>
 <span class="nb">print</span><span class="p">(</span> <span class="s2">&quot;El valor de π es </span><span class="si">{}</span><span class="s2"> y su doble es </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">pi</span><span class="p">,</span> <span class="mi">2</span><span class="o">*</span><span class="n">pi</span><span class="p">)</span> <span class="p">)</span>
 </pre></div>
 </div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">El</span> <span class="n">valor</span> <span class="n">de</span> <span class="n">π</span> <span class="n">es</span> <span class="mf">3.141592653589793</span> <span class="n">y</span> <span class="n">su</span> <span class="n">doble</span> <span class="n">es</span> <span class="mf">6.283185307179586</span>
+<span class="n">El</span> <span class="n">valor</span> <span class="n">de</span> <span class="n">π</span> <span class="n">es</span> <span class="mf">3.141592653589793</span> <span class="n">y</span> <span class="n">su</span> <span class="n">doble</span> <span class="n">es</span> <span class="mf">6.283185307179586</span>
+</pre></div>
+</div>
 <p>Para controlar el formato de los strings existe una notación específica
 que se puede indicar dentro de las llaves tanto para el <a class="reference external" href="https://docs.python.org/es/3/library/string.html#formatstrings">método
 format</a>
@@ -1245,7 +1210,7 @@ podemos escribir:</p>
 </div>
 </div>
 <div class="section" id="metodos-de-strings">
-<h4>Métodos de Strings<a class="headerlink" href="#metodos-de-strings" title="Enlazar permanentemente con este título">¶</a></h4>
+<h4>Métodos de Strings<a class="headerlink" href="#metodos-de-strings" title="Enlazar permanentemente con este título"></a></h4>
 <p>Métodos son “funciones” que actúan sobre el mismo objeto y son parte de
 su definición.</p>
 <p>Por ejemplo, cuando uno define un <em>string</em>, ya está en la definición
@@ -1313,6 +1278,10 @@ Somos los colectiveros y cumplimos nuestro deber!
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s1">&#39;         Somos los colectiveros que cumplimos nuestro deber!          &#39;</span>
 </pre></div>
 </div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="o">.</span><span class="n">center</span><span class="p">(</span><span class="mi">70</span><span class="p">,</span> <span class="s2">&quot;*&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<pre class="literal-block">'<strong>*******Somos los colectiveros que cumplimos nuestro deber!********</strong>'</pre>
 <p>Para encontrar información sobre un <code class="docutils literal notranslate"><span class="pre">comando</span></code> en las <em>notebooks</em>
 podemos usar la notación <code class="docutils literal notranslate"><span class="pre">comando?</span></code>. Por ejemplo, si queremos saber
 como funciona el método <code class="docutils literal notranslate"><span class="pre">find</span></code> de los strings, usamos (recordar que
@@ -1320,22 +1289,11 @@ definimos antes <code class="docutils literal notranslate"><span class="pre">b</
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>b.find?
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[0;31mDocstring:[0m
-S.find(sub[, start[, end]]) -&gt; int
-
-Return the lowest index in S where substring sub is found,
-such that sub is contained within S[start:end].  Optional
-arguments start and end are interpreted as in slice notation.
-
-Return -1 on failure.
-[0;31mType:[0m      builtin_function_or_method
-</pre></div>
 </div>
 </div>
-</div>
-<div class="section" id="id2">
-<h3>Ejercicios<a class="headerlink" href="#id2" title="Enlazar permanentemente con este título">¶</a></h3>
-<ol class="arabic simple">
+<div class="section" id="ejercicios-b">
+<h3>Ejercicios (b)<a class="headerlink" href="#ejercicios-b" title="Enlazar permanentemente con este título"></a></h3>
+<ol class="arabic simple" start="2">
 <li><p>Escribir un programa, utilizando formateo de strings, que escriba las
 frases:</p>
 <ul class="simple">
@@ -1346,19 +1304,9 @@ correspondiente sólo hasta el tercer decimal incluido)</p></li>
 </ul>
 </li>
 </ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">math</span> <span class="kn">import</span> <span class="n">pi</span>
-
-<span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mf">0.5</span><span class="n">j</span><span class="p">)</span>
-<span class="n">zpic</span> <span class="o">=</span> <span class="p">(</span><span class="n">z</span> <span class="o">*</span> <span class="n">pi</span><span class="p">)</span><span class="o">.</span><span class="n">conjugate</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span> <span class="sa">f</span><span class="s2">&quot;El conjugado de z = </span><span class="si">{</span><span class="n">z</span><span class="si">}</span><span class="s2">π es </span><span class="si">{</span><span class="n">zpic</span><span class="si">:</span><span class="s2">.3f</span><span class="si">}</span><span class="s2">&quot;</span> <span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">El</span> <span class="n">conjugado</span> <span class="n">de</span> <span class="n">z</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="mf">0.5</span><span class="n">j</span><span class="p">)</span><span class="n">π</span> <span class="n">es</span> <span class="mf">3.142</span><span class="o">-</span><span class="mf">1.571</span><span class="n">j</span>
-</pre></div>
-</div>
 </div>
 <div class="section" id="conversion-de-tipos">
-<h3>Conversión de tipos<a class="headerlink" href="#conversion-de-tipos" title="Enlazar permanentemente con este título">¶</a></h3>
+<h3>Conversión de tipos<a class="headerlink" href="#conversion-de-tipos" title="Enlazar permanentemente con este título"></a></h3>
 <p>Como comentamos anteriormente, y se ve en los ejemplos anteriores, uno
 no define el tipo de variable <em>a-priori</em> sino que queda definido al
 asignársele un valor (por ejemplo <code class="docutils literal notranslate"><span class="pre">a=3</span></code> define a como una variable del
@@ -1373,8 +1321,20 @@ explicitamos.</p>
 <span class="nb">print</span> <span class="p">(</span><span class="sa">f</span><span class="s2">&quot;&#39;a + b&#39; es de tipo </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">b</span><span class="p">)</span><span class="si">}</span><span class="s2"> y &#39;a + c&#39; es de tipo </span><span class="si">{</span><span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="n">c</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>a es de tipo &lt;class &#39;int&#39;&gt;
+b es de tipo &lt;class &#39;float&#39;&gt;
+c es de tipo &lt;class &#39;complex&#39;&gt;
+&#39;a + b&#39; es de tipo &lt;class &#39;float&#39;&gt; y &#39;a + c&#39; es de tipo &lt;class &#39;complex&#39;&gt;
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="s1">&#39;1&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">File</span> <span class="s2">&quot;&lt;ipython-input-108-2d83197c9a24&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span>
     <span class="nb">print</span> <span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="s1">&#39;1&#39;</span><span class="p">)</span>
+                 <span class="o">^</span>
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">incomplete</span> <span class="nb">input</span>
 </pre></div>
 </div>
 <p>Sin embargo, si le decimos explícitamente qué conversión queremos, todo
@@ -1386,14 +1346,27 @@ funciona bien</p>
 <span class="nb">print</span> <span class="p">(</span><span class="s1">&#39;x=&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="mf">1.e-5</span><span class="p">))</span>
 </pre></div>
 </div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">11</span>
+<span class="mi">2</span>
+<span class="mf">100001.0</span>
+<span class="n">x</span><span class="o">=</span><span class="mf">100000.0</span>
+<span class="n">x</span><span class="o">=</span><span class="mf">1e-05</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># a menos que nosotros **nos equivoquemos explícitamente**</span>
 <span class="k">try</span><span class="p">:</span>
-    <span class="nb">print</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">))</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">File</span> <span class="s2">&quot;&lt;ipython-input-110-65c36c3c1bde&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">3</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;z&#39;</span><span class="p">))</span>
+                    <span class="o">^</span>
+<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">incomplete</span> <span class="nb">input</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="listas">
-<h3>Listas<a class="headerlink" href="#listas" title="Enlazar permanentemente con este título">¶</a></h3>
+<h3>Listas<a class="headerlink" href="#listas" title="Enlazar permanentemente con este título"></a></h3>
 <p>Las listas son tipos compuestos, donde todos sus elementos pueden ser
 del mismo tipo o no. Algunas características de las listas son:</p>
 <ul class="simple">
@@ -1466,7 +1439,7 @@ empezando desde -1.</p>
 </tbody>
 </table>
 <div class="section" id="operaciones-sobre-listas">
-<h4>Operaciones sobre listas<a class="headerlink" href="#operaciones-sobre-listas" title="Enlazar permanentemente con este título">¶</a></h4>
+<h4>Operaciones sobre listas<a class="headerlink" href="#operaciones-sobre-listas" title="Enlazar permanentemente con este título"></a></h4>
 <p>Veamos algunas operaciones que se pueden realizar sobre listas. Por
 ejemplo, se puede fácilmente:</p>
 <ul class="simple">
@@ -1538,16 +1511,19 @@ listas), tratar de agregar una lista al final de otra con el método
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">]]</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">L</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># pop() devuelve el elemento correspondiente y lo saca de la lista</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">=</span><span class="n">L</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># pop() devuelve el elemento correspondiente y lo saca de la lista</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">L</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">]</span>
 </pre></div>
 </div>
 <p>Si queremos agregar más de un elemento a una lista podemos usar
@@ -1578,21 +1554,20 @@ valor 6 en la primera posición:</p>
 </pre></div>
 </div>
 <p>En las listas podemos sobreescribir uno o más elementos</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
 <span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 <span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-</pre></div>
-</div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">L</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="o">-</span><span class="mi">9</span>
-<span class="n">L</span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">:]</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
-</pre></div>
-</div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
@@ -1600,14 +1575,14 @@ valor 6 en la primera posición:</p>
 <span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
-<span class="p">[</span><span class="o">-</span><span class="mi">9</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+<span class="p">[</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="tuplas">
-<h3>Tuplas<a class="headerlink" href="#tuplas" title="Enlazar permanentemente con este título">¶</a></h3>
+<h3>Tuplas<a class="headerlink" href="#tuplas" title="Enlazar permanentemente con este título"></a></h3>
 <p>Las tuplas son objetos similares a las listas, sobre las que se puede
 iterar y seleccionar partes según su índice. La principal diferencia es
 que son inmutables mientras que las listas pueden modificarse. Los
@@ -1628,25 +1603,31 @@ intentamos con tuplas</p>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
     <span class="n">T1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=-</span> <span class="mi">1</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">T1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="si">= }</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Tuples son inmutables&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>  <span class="n">File</span> <span class="s2">&quot;&lt;ipython-input-22-2d25084c44c9&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">2</span>
-    <span class="n">T1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=-</span> <span class="mi">1</span>
-              <span class="o">^</span>
-<span class="ne">SyntaxError</span><span class="p">:</span> <span class="n">unexpected</span> <span class="n">EOF</span> <span class="k">while</span> <span class="n">parsing</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Tuples</span> <span class="n">son</span> <span class="n">inmutables</span>
 </pre></div>
 </div>
 <p>Las tuplas se usan cuando uno quiere crear una “variable” que no va a
 ser modificada. Además códigos similares con tuplas pueden ser un poco
 más rápidos que si usan listas.</p>
 <p>Un uso común de las tuplas es el de asignación a múltiples variables</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mf">5.2</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">,</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="mi">3</span> <span class="mi">5</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="mi">3</span> <span class="mf">5.2</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Los paréntesis son opcionales en este caso</span>
@@ -1669,7 +1650,7 @@ más rápidos que si usan listas.</p>
 </div>
 </div>
 <div class="section" id="rangos">
-<h3>Rangos<a class="headerlink" href="#rangos" title="Enlazar permanentemente con este título">¶</a></h3>
+<h3>Rangos<a class="headerlink" href="#rangos" title="Enlazar permanentemente con este título"></a></h3>
 <p>Los objetos de tipo
 <a class="reference external" href="https://docs.python.org/es/3/library/stdtypes.html#ranges">range</a>
 representan una secuencia inmutable de números y se usan habitualmente
@@ -1692,9 +1673,9 @@ partir del tipo <code class="docutils literal notranslate"><span class="pre">ran
 </pre></div>
 </div>
 </div>
-<div class="section" id="id3">
-<h3>Ejercicios<a class="headerlink" href="#id3" title="Enlazar permanentemente con este título">¶</a></h3>
-<ol class="arabic simple">
+<div class="section" id="ejercicios-c">
+<h3>Ejercicios (c)<a class="headerlink" href="#ejercicios-c" title="Enlazar permanentemente con este título"></a></h3>
+<ol class="arabic simple" start="3">
 <li><p>Manejos de listas <strong>utilizando indexado</strong>:</p>
 <ul class="simple">
 <li><p>Cree la lista <strong>N</strong> de longitud 50, donde cada elemento es un
@@ -1711,7 +1692,7 @@ resultado esperado es: <code class="docutils literal notranslate"><span class="p
 </ol>
 </div>
 <div class="section" id="diccionarios">
-<h3>Diccionarios<a class="headerlink" href="#diccionarios" title="Enlazar permanentemente con este título">¶</a></h3>
+<h3>Diccionarios<a class="headerlink" href="#diccionarios" title="Enlazar permanentemente con este título"></a></h3>
 <p>Los diccionarios son colecciones de objetos <em>en principio heterogéneos</em>
 que no están ordenados y no se refieren por índice (como <code class="docutils literal notranslate"><span class="pre">L1[3]</span></code>) sino
 por una etiqueta o clave (<strong>key</strong>). Las claves pueden ser cualquier
@@ -1765,6 +1746,23 @@ elemento es a su vez un diccionario:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">integrantes</span> <span class="o">=</span> <span class="p">{</span><span class="n">d1</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">]:</span> <span class="n">d1</span><span class="p">,</span> <span class="n">d2</span><span class="p">[</span><span class="s1">&#39;nombre&#39;</span><span class="p">]:</span> <span class="n">d2</span><span class="p">}</span>
 </pre></div>
 </div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">integrantes</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;Juan&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;nombre&#39;</span><span class="p">:</span> <span class="s1">&#39;Juan&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;apellido&#39;</span><span class="p">:</span> <span class="s1">&#39;García&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;edad&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+  <span class="s1">&#39;dirección&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Av Bustillo&#39;</span><span class="p">,</span> <span class="s1">&#39;9500&#39;</span><span class="p">],</span>
+  <span class="s1">&#39;cod&#39;</span><span class="p">:</span> <span class="mi">8400</span><span class="p">,</span>
+  <span class="s1">&#39;ciudad&#39;</span><span class="p">:</span> <span class="s1">&#39;Bariloche&#39;</span><span class="p">},</span>
+ <span class="s1">&#39;Pepe&#39;</span><span class="p">:</span> <span class="p">{</span><span class="s1">&#39;nombre&#39;</span><span class="p">:</span> <span class="s1">&#39;Pepe&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;apellido&#39;</span><span class="p">:</span> <span class="s1">&#39;García&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;edad&#39;</span><span class="p">:</span> <span class="mi">109</span><span class="p">,</span>
+  <span class="s1">&#39;dirección&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Av Bustillo&#39;</span><span class="p">,</span> <span class="s1">&#39;9500&#39;</span><span class="p">],</span>
+  <span class="s1">&#39;cod&#39;</span><span class="p">:</span> <span class="mi">8400</span><span class="p">,</span>
+  <span class="s1">&#39;ciudad&#39;</span><span class="p">:</span> <span class="s1">&#39;Bariloche&#39;</span><span class="p">}}</span>
+</pre></div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">integrantes</span><span class="p">[</span><span class="s1">&#39;Pepe&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -1774,6 +1772,23 @@ elemento es a su vez un diccionario:</p>
  <span class="s1">&#39;dirección&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Av Bustillo&#39;</span><span class="p">,</span> <span class="s1">&#39;9500&#39;</span><span class="p">],</span>
  <span class="s1">&#39;cod&#39;</span><span class="p">:</span> <span class="mi">8400</span><span class="p">,</span>
  <span class="s1">&#39;ciudad&#39;</span><span class="p">:</span> <span class="s1">&#39;Bariloche&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d1</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="s1">&#39;nombre&#39;</span><span class="p">:</span> <span class="s1">&#39;Juan&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;apellido&#39;</span><span class="p">:</span> <span class="s1">&#39;García&#39;</span><span class="p">,</span>
+ <span class="s1">&#39;edad&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+ <span class="s1">&#39;dirección&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Av Bustillo&#39;</span><span class="p">,</span> <span class="s1">&#39;9500&#39;</span><span class="p">],</span>
+ <span class="s1">&#39;cod&#39;</span><span class="p">:</span> <span class="mi">8400</span><span class="p">,</span>
+ <span class="s1">&#39;ciudad&#39;</span><span class="p">:</span> <span class="s1">&#39;Bariloche&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d1</span><span class="p">[</span><span class="s1">&#39;cod&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">8400</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Agregamos un nuevo elemento al diccionario (que es otro diccionario)</span>
@@ -1831,7 +1846,7 @@ todas las claves (<em>keys</em>), valores, o pares (clave, valor) usamos:</p>
 </div>
 </div>
 <div class="section" id="arrays-de-numpy">
-<h3>Arrays de Numpy<a class="headerlink" href="#arrays-de-numpy" title="Enlazar permanentemente con este título">¶</a></h3>
+<h3>Arrays de Numpy<a class="headerlink" href="#arrays-de-numpy" title="Enlazar permanentemente con este título"></a></h3>
 <p>Un paquete (incluyendo varios módulos) que es muy importante en el uso
 de Python para ciencias e ingenierías es <a class="reference external" href="http://numpy.org">Numpy</a>.
 Como con todos los módulos, se carga utilizando la palabra <code class="docutils literal notranslate"><span class="pre">import</span></code>.</p>
@@ -1898,11 +1913,46 @@ encontrarlo usualmente en ejemplos si buscan ayuda <em>online</em>.</p>
 como la concatenación, para arrays la suma (y todas las operaciones) se
 definen elemento a elemento.</p>
 </div>
+<div class="section" id="ejercicios-d">
+<h3>Ejercicios (d)<a class="headerlink" href="#ejercicios-d" title="Enlazar permanentemente con este título"></a></h3>
+<ol class="arabic simple" start="4">
+<li><p>Cree una lista de la forma <code class="docutils literal notranslate"><span class="pre">L</span> <span class="pre">=</span> <span class="pre">[1,3,5,...,17,19,19,17,...,3,1]</span></code></p></li>
+<li><p>Utilizando el string:</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="o">=</span><span class="s1">&#39;En un lugar de la Mancha de cuyo nombre no quiero acordarme&#39;</span>
+</pre></div>
+</div>
+<p>y utilizando funciones y <a class="reference external" href="https://docs.python.org/es/3/library/stdtypes.html#string-methods">métodos de
+strings</a>:</p>
+<ul>
+<li><p>Obtenga la cantidad de caracteres.</p></li>
+<li><p>Imprima la frase anterior pero con cada palabra empezando en
+mayúsculas.</p></li>
+<li><p>Cuente cuantas letras ‘a’ tiene la frase, ¿cuántas vocales tiene?</p></li>
+<li><p>Imprima el string <code class="docutils literal notranslate"><span class="pre">s1</span></code> centrado en una línea de 80 caracteres,
+rodeado de guiones en la forma:</p>
+<p><code class="docutils literal notranslate"><span class="pre">----------En</span> <span class="pre">un</span> <span class="pre">lugar</span> <span class="pre">de</span> <span class="pre">la</span> <span class="pre">Mancha</span> <span class="pre">de</span> <span class="pre">cuyo</span> <span class="pre">nombre</span> <span class="pre">no</span> <span class="pre">quiero</span> <span class="pre">acordarme-----------</span></code></p>
+</li>
+<li><p>Obtenga una lista <strong>L1</strong> donde cada elemento sea una palabra.</p>
+<ul class="simple">
+<li><p>Cuente la cantidad de elementos en <code class="docutils literal notranslate"><span class="pre">L1</span></code> (utilizando python).</p></li>
+<li><p>Ordene la lista <strong>L1</strong> en orden alfabético.</p></li>
+<li><p>Ordene la lista <strong>L1</strong> tal que las palabras más cortas estén
+primero.</p></li>
+<li><p>Ordene la lista <strong>L1</strong> tal que las palabras más largas estén
+primero.</p></li>
+<li><p>Construya un string <strong>s2</strong> con la lista del resultado del punto
+anterior.</p></li>
+<li><p>Encuentre la palabra más larga y la más corta de la frase.</p></li>
+</ul>
+</li>
+</ul>
+</div>
 </div>
 <div class="section" id="control-de-flujo">
-<h2>Control de flujo<a class="headerlink" href="#control-de-flujo" title="Enlazar permanentemente con este título">¶</a></h2>
+<h2>Control de flujo<a class="headerlink" href="#control-de-flujo" title="Enlazar permanentemente con este título"></a></h2>
 <div class="section" id="if-elif-else">
-<h3>if/elif/else<a class="headerlink" href="#if-elif-else" title="Enlazar permanentemente con este título">¶</a></h3>
+<h3>if/elif/else<a class="headerlink" href="#if-elif-else" title="Enlazar permanentemente con este título"></a></h3>
 <p>En todo lenguaje necesitamos controlar el flujo de una ejecución segun
 una condición Verdadero/Falso (booleana). <em>Si (condicion) es verdadero
 hacé (bloque A); Sino hacé (Bloque B)</em>. En pseudo código:</p>
@@ -1932,25 +1982,31 @@ conjunto o diccionario, que ya veremos) vacía siempre evalua a
 <p>Podemos tener multiples condiciones. Se ejecutará el primer bloque cuya
 condición sea verdadera, o en su defecto el bloque <code class="docutils literal notranslate"><span class="pre">else</span></code>. Esto es
 equivalente a la sentencia <code class="docutils literal notranslate"><span class="pre">switch</span></code> de otros lenguajes.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Nota</span> <span class="o">=</span> <span class="mi">7</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Nota</span> <span class="o">=</span> <span class="mi">8</span>
 <span class="k">if</span> <span class="n">Nota</span> <span class="o">&gt;=</span> <span class="mi">8</span><span class="p">:</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Aprobó cómodo, felicidades!&quot;</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Usted es el mejor!!!&quot;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="mi">6</span> <span class="o">&lt;=</span> <span class="n">Nota</span> <span class="o">&lt;</span> <span class="mi">8</span><span class="p">:</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Bueno, al menos aprobó!&quot;</span><span class="p">)</span>
+    <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Está bien&quot;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="p">(</span><span class="mi">4</span> <span class="o">&lt;=</span> <span class="n">Nota</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="n">Nota</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">)</span> <span class="p">:</span>
     <span class="nb">print</span> <span class="p">(</span><span class="s2">&quot;Bastante bien, pero no le alcanzó&quot;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Debe esforzarse más!&quot;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sigamos evaluando&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Bueno, al menos aprobó!
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Aprobó cómodo, felicidades!
+Usted es el mejor!!!
+Sigamos evaluando
 </pre></div>
 </div>
 </div>
 <div class="section" id="iteraciones">
-<h3>Iteraciones<a class="headerlink" href="#iteraciones" title="Enlazar permanentemente con este título">¶</a></h3>
+<h3>Iteraciones<a class="headerlink" href="#iteraciones" title="Enlazar permanentemente con este título"></a></h3>
 <div class="section" id="sentencia-for">
-<h4>Sentencia for<a class="headerlink" href="#sentencia-for" title="Enlazar permanentemente con este título">¶</a></h4>
+<h4>Sentencia for<a class="headerlink" href="#sentencia-for" title="Enlazar permanentemente con este título"></a></h4>
 <p>Otro elemento de control es el que permite <em>iterar</em> sobre una secuencia
 (o <em>“iterador”</em>). Obtener cada elemento para hacer algo. En Python se
 logra con la sentencia <code class="docutils literal notranslate"><span class="pre">for</span></code>. En lugar de iterar sobre una condición
@@ -1959,7 +2015,7 @@ Python la sentencia <code class="docutils literal notranslate"><span class="pre"
 forma ordenada</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Lista</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;auto&#39;</span><span class="p">,</span> <span class="s1">&#39;casa&#39;</span><span class="p">,</span> <span class="s2">&quot;perro&quot;</span><span class="p">,</span> <span class="s2">&quot;gato&quot;</span><span class="p">,</span> <span class="s2">&quot;árbol&quot;</span><span class="p">,</span> <span class="s2">&quot;lechuza&quot;</span><span class="p">,</span> <span class="s2">&quot;banana&quot;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">L</span> <span class="ow">in</span> <span class="n">Lista</span><span class="p">:</span>
-  <span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">auto</span>
@@ -1973,7 +2029,8 @@ forma ordenada</p>
 </div>
 <p>Iterando sobre una lista podemos actuar de la manera que necesitemos</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">L</span> <span class="ow">in</span> <span class="n">Lista</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;En la palabra </span><span class="si">{</span><span class="n">L</span><span class="si">}</span><span class="s1"> hay </span><span class="si">{</span><span class="n">L</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1"> letras &quot;a&quot;&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;En la palabra </span><span class="si">{</span><span class="n">L</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39; hay </span><span class="si">{</span><span class="n">L</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1"> letras &quot;a&quot;&#39;</span><span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">La palabra más larga es </span><span class="si">{</span><span class="nb">max</span><span class="p">(</span><span class="n">Lista</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="nb">len</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
@@ -1998,10 +2055,10 @@ fuera del loop y se ejecuta al terminar todas las iteraciones del
 <p>Veamos otro ejemplo, donde iteramos sobre un <code class="docutils literal notranslate"><span class="pre">range</span></code> actuando como
 “contador”:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">elemento</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">):</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">elemento</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;, &#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">elemento</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s1">&#39;; &#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">0</span><span class="p">;</span> <span class="mi">1</span><span class="p">;</span> <span class="mi">2</span><span class="p">;</span> <span class="mi">3</span><span class="p">;</span> <span class="mi">4</span><span class="p">;</span> <span class="mi">5</span><span class="p">;</span> <span class="mi">6</span><span class="p">;</span> <span class="mi">7</span><span class="p">;</span> <span class="mi">8</span><span class="p">;</span> <span class="mi">9</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>En este ejemplo la función range devuelve en cada iteración un contador
@@ -2037,44 +2094,194 @@ anteriormente. Compare la forma “equivocada” con el ejemplo anterior:</p>
 lista para determinar el contador, que a su vez se usa como índice para
 determinar el elemento de la lista. En la primera versión
 (<code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">L</span> <span class="pre">in</span> <span class="pre">Lista:</span></code>) directamente tenemos el elemento.</p>
-</div>
-</div>
-</div>
-<div class="section" id="id4">
-<h2>Ejercicios<a class="headerlink" href="#id4" title="Enlazar permanentemente con este título">¶</a></h2>
-<ol class="arabic simple">
-<li><p>Cree una lista de la forma <code class="docutils literal notranslate"><span class="pre">L</span> <span class="pre">=</span> <span class="pre">[1,3,5,...,17,19,19,17,...,3,1]</span></code></p></li>
-<li><p>Utilizando el string:</p></li>
-</ol>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">s1</span><span class="o">=</span><span class="s1">&#39;En un lugar de la Mancha de cuyo nombre no quiero acordarme&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">L</span> <span class="ow">in</span> <span class="n">Lista</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;En la palabra </span><span class="si">{</span><span class="n">L</span><span class="si">}</span><span class="s1"> hay </span><span class="si">{</span><span class="n">L</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="s2">&quot;a&quot;</span><span class="p">)</span><span class="si">}</span><span class="s1"> letras &quot;a&quot;&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>y utilizando funciones y <a class="reference external" href="https://docs.python.org/es/3/library/stdtypes.html#string-methods">métodos de
-strings</a>:</p>
-<ul>
-<li><p>Obtenga la cantidad de caracteres.</p></li>
-<li><p>Imprima la frase anterior pero con cada palabra empezando en
-mayúsculas.</p></li>
-<li><p>Cuente cuantas letras ‘a’ tiene la frase, ¿cuántas vocales tiene?</p></li>
-<li><p>Imprima el string <code class="docutils literal notranslate"><span class="pre">s1</span></code> centrado en una línea de 80 caracteres,
-rodeado de guiones en la forma:</p>
-<p><code class="docutils literal notranslate"><span class="pre">----------En</span> <span class="pre">un</span> <span class="pre">lugar</span> <span class="pre">de</span> <span class="pre">la</span> <span class="pre">Mancha</span> <span class="pre">de</span> <span class="pre">cuyo</span> <span class="pre">nombre</span> <span class="pre">no</span> <span class="pre">quiero</span> <span class="pre">acordarme-----------</span></code></p>
-</li>
-<li><p>Obtenga una lista <strong>L1</strong> donde cada elemento sea una palabra.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">En</span> <span class="n">la</span> <span class="n">palabra</span> <span class="n">auto</span> <span class="n">hay</span> <span class="mi">1</span> <span class="n">letras</span> <span class="s2">&quot;a&quot;</span>
+<span class="n">En</span> <span class="n">la</span> <span class="n">palabra</span> <span class="n">casa</span> <span class="n">hay</span> <span class="mi">2</span> <span class="n">letras</span> <span class="s2">&quot;a&quot;</span>
+<span class="n">En</span> <span class="n">la</span> <span class="n">palabra</span> <span class="n">perro</span> <span class="n">hay</span> <span class="mi">0</span> <span class="n">letras</span> <span class="s2">&quot;a&quot;</span>
+<span class="n">En</span> <span class="n">la</span> <span class="n">palabra</span> <span class="n">gato</span> <span class="n">hay</span> <span class="mi">1</span> <span class="n">letras</span> <span class="s2">&quot;a&quot;</span>
+<span class="n">En</span> <span class="n">la</span> <span class="n">palabra</span> <span class="n">árbol</span> <span class="n">hay</span> <span class="mi">0</span> <span class="n">letras</span> <span class="s2">&quot;a&quot;</span>
+<span class="n">En</span> <span class="n">la</span> <span class="n">palabra</span> <span class="n">lechuza</span> <span class="n">hay</span> <span class="mi">1</span> <span class="n">letras</span> <span class="s2">&quot;a&quot;</span>
+<span class="n">En</span> <span class="n">la</span> <span class="n">palabra</span> <span class="n">banana</span> <span class="n">hay</span> <span class="mi">3</span> <span class="n">letras</span> <span class="s2">&quot;a&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="funciones">
+<h2>Funciones<a class="headerlink" href="#funciones" title="Enlazar permanentemente con este título"></a></h2>
+<div class="section" id="definicion-de-funciones">
+<h3>Definición de funciones<a class="headerlink" href="#definicion-de-funciones" title="Enlazar permanentemente con este título"></a></h3>
+<p>Las funciones en <strong>Python</strong>, como en la mayoría de los lenguajes, usan
+una notación matemática, con un nombre y uno o más argumentos entre
+paréntesis. Por ejemplo, ya usamos varias funciones matemáticas, que
+toman como argumento un número o un <em>array</em> de números, y devuelven un
+número o un array (dependiendo del argumento, y de la función). Lo que
+podemos decir es que toman uno o más argumentos y devuelven uno o más
+resultados.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;cos(1.54) =&#39;</span><span class="p">,</span> <span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mf">1.54</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cos</span><span class="p">(</span><span class="mf">1.54</span><span class="p">)</span> <span class="o">=</span> <span class="mf">0.03079145908246612</span>
+</pre></div>
+</div>
+<p>Para mostrar como definir nuestras propias funciones, vamos a tomar el
+ejercicio de caída libre y encapsulemos el cálculo en una función:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">z_0</span> <span class="o">=</span> <span class="mi">10</span>                         <span class="c1"># altura inicial en m</span>
+<span class="n">g</span> <span class="o">=</span> <span class="o">-</span><span class="mf">9.8</span>                         <span class="c1"># aceleración de la gravedad en m/s^2</span>
+<span class="k">def</span> <span class="nf">caida</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v_0</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Cálculo de velocidad y posición para una partícula en caída libre como función del tiempo</span>
+<span class="sd">    El tiempo `t` está en segundos</span>
+<span class="sd">    v_0 es la velocidad inicial</span>
+<span class="sd">    Devuelve:</span>
+<span class="sd">    v,h</span>
+<span class="sd">    donde:</span>
+<span class="sd">    `v` es la velocidad en m/s</span>
+<span class="sd">    `h` es la altura en m</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">v</span> <span class="o">=</span> <span class="n">v_0</span> <span class="o">+</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span>                     <span class="c1"># para aceleración constante</span>
+    <span class="n">h</span> <span class="o">=</span> <span class="n">z_0</span> <span class="o">+</span> <span class="n">v_0</span> <span class="o">*</span> <span class="n">t</span> <span class="o">+</span> <span class="n">g</span> <span class="o">*</span> <span class="n">t</span><span class="o">**</span><span class="mi">2</span> <span class="o">/</span> <span class="mf">2.</span>   <span class="c1"># acorde a Newton</span>
+    <span class="k">return</span> <span class="n">v</span><span class="p">,</span> <span class="n">h</span>
+
+<span class="n">a</span><span class="o">=</span><span class="mi">1</span>                    <span class="c1"># Esto no es parte de la definición de la función</span>
+</pre></div>
+</div>
+<p>Elementos de la definición de funciones:</p>
 <ul class="simple">
-<li><p>Cuente la cantidad de elementos en <code class="docutils literal notranslate"><span class="pre">L1</span></code> (utilizando python).</p></li>
-<li><p>Ordene la lista <strong>L1</strong> en orden alfabético.</p></li>
-<li><p>Ordene la lista <strong>L1</strong> tal que las palabras más cortas estén
-primero.</p></li>
-<li><p>Ordene la lista <strong>L1</strong> tal que las palabras más largas estén
-primero.</p></li>
-<li><p>Construya un string <strong>s2</strong> con la lista del resultado del punto
-anterior.</p></li>
-<li><p>Encuentre la palabra más larga y la más corta de la frase.</p></li>
+<li><p>La primera línea:</p>
+<ul>
+<li><p>Se define empezando con la palabra <code class="docutils literal notranslate"><span class="pre">def</span></code></p></li>
+<li><p>Luego se escribe el nombre de la función</p></li>
+<li><p>A continuación, entre paréntesis se escriben los argumentos
+separados por comas. Si no hay argumentos se dejan los paréntesis
+vacíos</p></li>
+<li><p>Se finaliza con los dos puntos (<code class="docutils literal notranslate"><span class="pre">:</span></code>)</p></li>
 </ul>
 </li>
+<li><p>En la segunda línea empieza un string de documentación (opcional pero
+<strong>muy</strong> recomendado)</p></li>
+<li><p>Luego del string de documentación viene el cuerpo de la función (los
+cálculos en este caso)</p></li>
+<li><p>Devuelve lo que viene a continuación de la palabra <code class="docutils literal notranslate"><span class="pre">return</span></code> (en
+este caso dos valores)</p></li>
 </ul>
-<ol class="arabic" start="3">
+<p>Si no se escribe explícitamente que devuelve una función, va a devolver
+automáticamente <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
+<p>Por ejemplo, la función <code class="docutils literal notranslate"><span class="pre">print()</span></code> no devuelve nada, sólo imprime por
+pantalla</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;hola&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">hola</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kc">None</span>
+</pre></div>
+</div>
+<p>Con esa definición de la función <code class="docutils literal notranslate"><span class="pre">caida</span></code> podemos obtener los dos
+valores de velocidad y posición simultáneamente</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t1</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">v1</span><span class="p">,</span> <span class="n">h1</span> <span class="o">=</span> <span class="n">caida</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;A tiempo </span><span class="si">{</span><span class="n">t1</span><span class="si">:</span><span class="s2">.1f</span><span class="si">}</span><span class="s2"> s, la veloc. es </span><span class="si">{</span><span class="n">v1</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> m/s y la altura es </span><span class="si">{</span><span class="n">h1</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2"> m&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">A</span> <span class="n">tiempo</span> <span class="mf">1.0</span> <span class="n">s</span><span class="p">,</span> <span class="n">la</span> <span class="n">veloc</span><span class="o">.</span> <span class="n">es</span> <span class="mf">0.20</span> <span class="n">m</span><span class="o">/</span><span class="n">s</span> <span class="n">y</span> <span class="n">la</span> <span class="n">altura</span> <span class="n">es</span> <span class="mf">15.10</span> <span class="n">m</span>
+</pre></div>
+</div>
+<div class="section" id="documentacion-doc-strings">
+<h4>Documentación (doc strings)<a class="headerlink" href="#documentacion-doc-strings" title="Enlazar permanentemente con este título"></a></h4>
+<p>Cuando definimos la función le agregamos un string con una descripción.
+Esta puede utilizarse luego como documentación</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">caida</span><span class="p">)</span>
+</pre></div>
+</div>
+<pre class="literal-block">Help on function caida in module __main__:
+
+caida(t, v_0)
+    Cálculo de velocidad y posición para una partícula en caída libre como función del tiempo
+    El tiempo <cite>t</cite> está en segundos
+    v_0 es la velocidad inicial
+    Devuelve:
+    v,h
+    donde:
+    <cite>v</cite> es la velocidad en m/s
+    <cite>h</cite> es la altura en m</pre>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">cos</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Help</span> <span class="n">on</span> <span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="n">cos</span> <span class="ow">in</span> <span class="n">module</span> <span class="n">math</span><span class="p">:</span>
+
+<span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="o">/</span><span class="p">)</span>
+    <span class="n">Return</span> <span class="n">the</span> <span class="n">cosine</span> <span class="n">of</span> <span class="n">x</span> <span class="p">(</span><span class="n">measured</span> <span class="ow">in</span> <span class="n">radians</span><span class="p">)</span><span class="o">.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="las-funciones-son-objetos">
+<h3>Las funciones son objetos<a class="headerlink" href="#las-funciones-son-objetos" title="Enlazar permanentemente con este título"></a></h3>
+<p>Las funciones en <strong>Python</strong>, como en la mayoría de los lenguajes, usan
+una notación similar a la de las funciones matemáticas, con un nombre y
+uno o más argumentos entre paréntesis. Por ejemplo, ya usamos la función
+<code class="docutils literal notranslate"><span class="pre">sum</span></code> cuyo argumento puede ser un array o lista de números</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="nb">sum</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="nb">sum</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&lt;</span><span class="n">built</span><span class="o">-</span><span class="ow">in</span> <span class="n">function</span> <span class="nb">sum</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vec</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.32</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">vec</span><span class="p">),</span> <span class="n">f</span><span class="p">(</span><span class="n">vec</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">2.3200000000000003</span> <span class="mf">2.3200000000000003</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">caida</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">f1</span> <span class="o">=</span> <span class="n">caida</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">caida</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">f1</span><span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">10</span><span class="p">))</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mf">0.1999999999999993</span><span class="p">,</span> <span class="mf">15.1</span><span class="p">)</span>
+<span class="p">(</span><span class="o">-</span><span class="mf">4.700000000000001</span><span class="p">,</span> <span class="mf">13.975</span><span class="p">)</span>
+<span class="p">(</span><span class="o">-</span><span class="mf">4.700000000000001</span><span class="p">,</span> <span class="mf">13.975</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">f1</span><span class="p">)</span>
+</pre></div>
+</div>
+<pre class="literal-block">Help on function caida in module __main__:
+
+caida(t, v_0)
+    Cálculo de velocidad y posición para una partícula en caída libre como función del tiempo
+    El tiempo <cite>t</cite> está en segundos
+    v_0 es la velocidad inicial
+    Devuelve:
+    v,h
+    donde:
+    <cite>v</cite> es la velocidad en m/s
+    <cite>h</cite> es la altura en m</pre>
+</div>
+</div>
+<div class="section" id="ejercicios-e">
+<h2>Ejercicios (e)<a class="headerlink" href="#ejercicios-e" title="Enlazar permanentemente con este título"></a></h2>
+<ol class="arabic" start="6">
 <li><p>Usando estructuras de control, calcule la suma:</p>
 <div class="math notranslate nohighlight">
 \[s_{1} = \frac{1}{2} \left(\sum_{k=1}^{100}k^{-1} \right)\]</div>
@@ -2089,51 +2296,33 @@ anterior.</p></li>
 
 
            </div>
-           
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="clase_02.html" class="btn btn-neutral float-right" title="Clase 2: Introducción a Python Científico" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="clase_00.html" class="btn btn-neutral float-left" title="Clase 0: Introducción al lenguaje: Instalación y uso" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Pie de página">
+        <a href="clase_00.html" class="btn btn-neutral float-left" title="Clase 0: Introducción al lenguaje: Instalación y uso" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="clase_02.html" class="btn btn-neutral float-right" title="Clase 2: Introducción a Python Científico" accesskey="n" rel="next">Siguiente <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2021, Juan Fiol
-
-    </p>
+    <p>&#169; Derechos de autor 2022, Juan Fiol.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    proporcionado por <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
           SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-
-  
-  
-    
-   
+  </script> 
 
 </body>
 </html>

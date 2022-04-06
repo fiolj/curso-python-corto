@@ -504,10 +504,6 @@ significa:
 
 .. image:: figuras/numpy_indexing.png
 
-
-
-
-
 Operaciones entre **arrays**
 ----------------------------
 
@@ -831,73 +827,6 @@ Considere los valores de condición inicial: :math:`v_0=10` (en m/s),
 -  Calcular (no alcanza con ver en el gráfico) un valor aproximado de la
    altura máxima alcanzada, y en que instante ocurre.
 
-.. code:: python
-
-    t = np.linspace(0, 2, 100)
-
-.. code:: python
-
-    v0 = 10   # en m/s
-    g = -9.8  # en m/s^2
-    z0 = 10   # en m
-
-.. code:: python
-
-    v = v0 - g*t
-
-.. code:: python
-
-    import matplotlib.pyplot as plt # Si ya la hice no es necesaria
-    
-    plt.plot(t, v, '-')
-    plt.xlabel('tiempo (s)')
-    plt.ylabel('velocidad (m/s)')
-
-
-
-
-.. parsed-literal::
-
-    Text(0, 0.5, 'velocidad (m/s)')
-
-
-
-
-.. image:: figuras/02_introd_cientif_71_1.png
-
-
-.. code:: python
-
-    v[:10]
-
-
-
-
-.. parsed-literal::
-
-    array([10.        , 10.1979798 , 10.3959596 , 10.59393939, 10.79191919,
-           10.98989899, 11.18787879, 11.38585859, 11.58383838, 11.78181818])
-
-
-
-.. code:: python
-
-    np.set_printoptions(precision=4)
-
-.. code:: python
-
-    v[:10]
-
-
-
-
-.. parsed-literal::
-
-    array([10.    , 10.198 , 10.396 , 10.5939, 10.7919, 10.9899, 11.1879,
-           11.3859, 11.5838, 11.7818])
-
-
-
 Funciones
 ---------
 
@@ -1028,7 +957,7 @@ Como todas las operaciones son simples, si le pasamos a esta función un
 
 
 
-.. image:: figuras/02_introd_cientif_85_1.png
+.. image:: figuras/02_introd_cientif_78_1.png
 
 
 Documentación (doc strings)
@@ -1259,7 +1188,7 @@ editor.
 
 
 
-.. image:: figuras/02_introd_cientif_106_0.png
+.. image:: figuras/02_introd_cientif_99_0.png
 
 
 Ejemplos de graficación
@@ -1290,7 +1219,7 @@ Ejemplos de graficación
 
 
 
-.. image:: figuras/02_introd_cientif_110_1.png
+.. image:: figuras/02_introd_cientif_103_1.png
 
 
 Como ``yexp`` corresponde a datos experimentales, preferimos graficarlos
@@ -1311,7 +1240,7 @@ con símbolos sin líneas:
 
 
 
-.. image:: figuras/02_introd_cientif_112_1.png
+.. image:: figuras/02_introd_cientif_105_1.png
 
 
 Formato de las curvas
@@ -1337,7 +1266,7 @@ legible separar los llamados a la función, una para cada curva.
 
 
 
-.. image:: figuras/02_introd_cientif_114_1.png
+.. image:: figuras/02_introd_cientif_107_1.png
 
 
 Los siguientes caracteres pueden utilizarse para controlar el símbolo de
@@ -1436,7 +1365,7 @@ markevery       número entero
 
 
 
-.. image:: figuras/02_introd_cientif_117_1.png
+.. image:: figuras/02_introd_cientif_110_1.png
 
 
 Leyendas y texto
@@ -1462,7 +1391,7 @@ este caso en el mismo comando ``plot()``, y luego mostrarlo con
 
 
 
-.. image:: figuras/02_introd_cientif_120_0.png
+.. image:: figuras/02_introd_cientif_113_0.png
 
 
 Puntos a notar:
