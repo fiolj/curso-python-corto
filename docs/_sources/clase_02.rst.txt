@@ -8,11 +8,11 @@ Dos paquetes que vamos a utilizar en el curso son **Numpy** y
 **Matplotlib**. Estos módulos definen objetos y funciones útiles para el
 trabajo científico-tecnológico:
 
--  **Numpy** define el tipo **array** y toda la estructura para trabajar
-   con ellos (entre muchas otras cosas)
--  **Matplotlib** define la maquinaria para hacer gráficos,
-   principalmente bidimensionales, con utilidades también para algunos
-   tipos de gráficos en tres dimensiones.
+-  `Numpy <https://numpy.org/doc/stable>`__ define el tipo **array** y
+   toda la estructura para trabajar con ellos (entre muchas otras cosas)
+-  `Matplotlib <https://matplotlib.org/>`__ define la maquinaria para
+   hacer gráficos, principalmente bidimensionales, con utilidades
+   también para algunos tipos de gráficos en tres dimensiones.
 
 De las posibles variantes en la manera de importar los módulos, en este
 caso vamos a utilizar un alias que es la convención utilizada mayormente
