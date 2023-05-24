@@ -45,6 +45,14 @@ porque inicia un comentario que se continúa hasta el final de la línea.
 Los comentarios son fragmentos que se ignoran completamente en la
 ejecución del código.
 
+Comentarios
+~~~~~~~~~~~
+
+::
+
+   Real programmers don't comment their code.
+   It was hard to write, it should be hard to understand.
+
 .. code:: python
 
     1+1  # Esto es un comentario
@@ -87,6 +95,19 @@ a distintas variables:
     a = 13
     b = 1.235
     c = a + b
+
+.. code:: python
+
+    type(a)
+
+
+
+
+.. parsed-literal::
+
+    int
+
+
 
 .. code:: python
 
@@ -408,13 +429,6 @@ El tipo ``None`` no es un número, pero tampoco es Verdadero o Falso
     print ('type(a): ',type(a))
     print (bool(None))
 
-
-.. parsed-literal::
-
-    type(a):  <class 'NoneType'>
-    False
-
-
 Aquí hemos estado preguntando si dos cosas eran iguales o no (igualdad).
 También podemos preguntar si una **es** la otra (identidad). En el
 siguiente ejemplo vemos que dos variables pueden tener el mismo valor
@@ -645,6 +659,24 @@ funciones elementales:
     Combinatorio: C(6,2): 15.0
 
 
+.. code:: python
+
+    # algunas funciones elementales
+    print (math.log(1024,2), math.log(27,3))
+    print (math.factorial(7), math.factorial(9), math.factorial(10))
+    print ('Combinatorio: C(6,2):',math.factorial(6/(math.factorial(4)*math.factorial(2)))
+
+
+::
+
+
+      Cell In [39], line 4
+        print ('Combinatorio: C(6,2):',math.factorial(6/(math.factorial(4)*math.factorial(2)))
+                                                                                              ^
+    SyntaxError: incomplete input
+
+
+
 A veces, sólo necesitamos unas pocas funciones de un módulo. Entonces
 para abreviar la notación combiene importar sólo lo que vamos a usar,
 usando la notación:
@@ -763,6 +795,20 @@ usar la función phase
 
 .. code:: python
 
+    z = -1 - 1j
+    c.phase(z)                  # Resultado en radianes
+
+
+
+
+.. parsed-literal::
+
+    -2.356194490192345
+
+
+
+.. code:: python
+
     m.degrees(c.phase(z))    # Resultado en grados
 
 
@@ -770,7 +816,7 @@ usar la función phase
 
 .. parsed-literal::
 
-    45.0
+    -135.0
 
 
 
@@ -797,16 +843,6 @@ ejemplos cotidianos:
     print( z.conjugate )
     print( z.conjugate() )
 
-
-.. parsed-literal::
-
-    (1+1j) <class 'complex'>
-    1.0
-    1.0
-    <built-in method conjugate of complex object at 0x7f72fd8ae870>
-    (1-1j)
-
-
 Los números complejos tienen un valor (en este caso :math:`1 + i`), pero
 además tienen más información (su parte real, imaginaria) y una función
 que nos da su conjugado.
@@ -820,20 +856,6 @@ métodos:
     print(type(a))
     a.bit_length()
 
-
-.. parsed-literal::
-
-    <class 'int'>
-
-
-
-
-.. parsed-literal::
-
-    2
-
-
-
 :math:`3 = 1 * 2^1 + 1 * 2^0`. Entonces en binario 3 se escribe como 11
 
 .. code:: python
@@ -841,20 +863,6 @@ métodos:
     a = 12312
     print(type(a))
     a.bit_length()
-
-
-.. parsed-literal::
-
-    <class 'int'>
-
-
-
-
-.. parsed-literal::
-
-    14
-
-
 
 En estos casos, usamos el método ``bit_length`` de los enteros, que nos
 dice cuántos bits son necesarios para representar el número.
@@ -941,31 +949,13 @@ abrir y para cerrar el *string*
 
     print(saludo)
 
-
-.. parsed-literal::
-
-    Hola Mundo
-
-
 .. code:: python
 
     print(otro)
 
-
-.. parsed-literal::
-
-    that's all
-
-
 .. code:: python
 
     print(dijo)
-
-
-.. parsed-literal::
-
-    Él dijo: "hola" y yo no dije nada
-
 
 .. note::  Python trabaja con una codificación (*UTF-8*) por lo que
   reconoce nativamente un amplio rango de caracteres
@@ -975,13 +965,6 @@ abrir y para cerrar el *string*
       label = "σ = λ T/ µ + π · δξ."
       print('tipo de label: ', type(label))
       print ('Resultados corresponden a:', label, ' (en m²)')
-  
-  
-  .. parsed-literal::
-  
-      tipo de label:  <class 'str'>
-      Resultados corresponden a: σ = λ T/ µ + π · δξ.  (en m²)
-  
   
   
 
@@ -1001,17 +984,6 @@ caracteres en forma textual, incluyendo saltos de líneas.
 
     print(Texto_largo)
 
-
-.. parsed-literal::
-
-    Aquí me pongo a cantar
-    Al compás de la vigüela,
-    Que el hombre que lo desvela
-    Una pena estraordinaria
-    Como la ave solitaria
-    Con el cantar se consuela.
-
-
 Operaciones
 ^^^^^^^^^^^
 
@@ -1029,24 +1001,9 @@ una nueva cadena, conteniendo la concatenación de los dos sumandos
     s = saludo + " ----> [" + dijo + "] <---- chau"
     print(s)
 
-
-.. parsed-literal::
-
-    Hola Mundo ----> [Él dijo: "hola" y yo no dije nada] <---- chau
-
-
 .. code:: python
 
     saludo + 'chau'
-
-
-
-
-.. parsed-literal::
-
-    'Hola Mundochau'
-
-
 
 Multiplicación por un entero
 ''''''''''''''''''''''''''''
@@ -1060,16 +1017,6 @@ definida como “n veces s”
     print( 2*saludo )
     print( 10*"+" + 2* ( saludo + "," ) + 10*"+" + 2*"\n" + "Chau" )
 
-
-.. parsed-literal::
-
-    Hola Mundo
-    Hola MundoHola Mundo
-    ++++++++++Hola Mundo,Hola Mundo,++++++++++
-    
-    Chau
-
-
 Notar que (obviamente) hay una diferencia entre un número y un string
 cuyo valor podemos interpretar como el número. Acá, la variable ``a`` es
 un *string* y ``b`` en un número entero
@@ -1081,13 +1028,6 @@ un *string* y ``b`` en un número entero
     print(a, type(a))
     print(b, type(b))
 
-
-.. parsed-literal::
-
-    1 <class 'str'>
-    1 <class 'int'>
-
-
 En consecuencia, las operaciones tienen distinto significado:
 
 .. code:: python
@@ -1097,30 +1037,12 @@ En consecuencia, las operaciones tienen distinto significado:
     print ( 3*a )
     print ( a*3 )
 
-
-.. parsed-literal::
-
-    1
-    11
-    111
-    111
-
-
 .. code:: python
 
     print(b)
     print ( b + b )
     print ( 3*b )
     print ( b*3 )
-
-
-.. parsed-literal::
-
-    1
-    2
-    3
-    3
-
 
 También podemos calcular la longitud de un *string* con la función
 ``len()``
@@ -1129,15 +1051,6 @@ También podemos calcular la longitud de un *string* con la función
 
     saludo, len(saludo)
 
-
-
-
-.. parsed-literal::
-
-    ('Hola Mundo', 10)
-
-
-
 Utilizando esta función podemos hacer un centrado de texto “manual”
 
 .. code:: python
@@ -1145,23 +1058,11 @@ Utilizando esta función podemos hacer un centrado de texto “manual”
     n = int((30-len(saludo)//2)) 
     print (n*'*', saludo, n*'*')
 
-
-.. parsed-literal::
-
-    ************************* Hola Mundo *************************
-
-
 .. code:: python
 
     ntext = "Nuevo texto que queremos centrar"
     n = int((30-len(ntext)//2)) 
     print (n*'<', ntext,n*'>')
-
-
-.. parsed-literal::
-
-    <<<<<<<<<<<<<< Nuevo texto que queremos centrar >>>>>>>>>>>>>>
-
 
 Indexado de *strings*
 ^^^^^^^^^^^^^^^^^^^^^
@@ -1178,15 +1079,6 @@ mediante su índice. Los índices en **Python** empiezan en 0.
 
     saludo, saludo[0], saludo[3]
 
-
-
-
-.. parsed-literal::
-
-    ('Hola Mundo', 'H', 'a')
-
-
-
 .. code:: python
 
     s = "0123456789"
@@ -1194,15 +1086,6 @@ mediante su índice. Los índices en **Python** empiezan en 0.
     print ("Segundo caracter :", s[1])
     print ("El último caracter :", s[-1])
     print ("El anteúltimo caracter :", s[-2])
-
-
-.. parsed-literal::
-
-    Primer caracter  : 0
-    Segundo caracter : 1
-    El último caracter : 9
-    El anteúltimo caracter : 8
-
 
 También podemos elegir un subconjunto de caracteres, usando la notación
 ``s[i:f:p]``
@@ -1216,29 +1099,12 @@ También podemos elegir un subconjunto de caracteres, usando la notación
     print ('Los últimos dos:            ', s[-2:])
     print ('Todos menos los últimos dos:', s[:-2])
 
-
-.. parsed-literal::
-
-    El tercer caracter:          3
-    Los tres primeros:           012
-    Los tres primeros:           012
-    Todos a partir del tercero:  3456789
-    Los últimos dos:             89
-    Todos menos los últimos dos: 01234567
-
-
 Estas “subcadenas” son cadenas de caracteres, y por lo tanto pueden
 utilizarse de la misma manera que cualquier otra cadena:
 
 .. code:: python
 
     print (s[:3] + s[-2:])
-
-
-.. parsed-literal::
-
-    01289
-
 
 La selección de elementos y subcadenas de una cadena ``s`` tiene la
 forma ``s[i:f:p]`` donde ``i, f, p`` son enteros. La notación se refiere
@@ -1263,26 +1129,9 @@ recorriendo con paso ``p``. Casos particulares de esta notación son:
     print (s[::-1])
     t = s[::-3]
 
-
-.. parsed-literal::
-
-    0123456
-    0246
-    9876543210
-
-
 .. code:: python
 
     t
-
-
-
-
-.. parsed-literal::
-
-    '9630'
-
-
 
 Formato de *strings*
 ^^^^^^^^^^^^^^^^^^^^
@@ -1300,40 +1149,13 @@ Vamos a ver dos opciones: - Uso del método ``format`` - Uso de
 
     "El valor de π es {}".format(pi)
 
-
-
-
-.. parsed-literal::
-
-    'El valor de π es 3.141592653589793'
-
-
-
 .. code:: python
 
     s1
 
-
-
-
-.. parsed-literal::
-
-    'El valor de π es {}'
-
-
-
 .. code:: python
 
     s1.format(pi)
-
-
-
-
-.. parsed-literal::
-
-    'El valor de π es 3.141592653589793'
-
-
 
 .. code:: python
 
@@ -1345,12 +1167,6 @@ Vamos a ver dos opciones: - Uso del método ``format`` - Uso de
 
     print(s2)
 
-
-.. parsed-literal::
-
-    La temperatura a las 7 horas era 5.2 grados
-
-
 Aquí definimos un *string* llamado ``s3``, donde utilizamos el valor de
 la variable pi (definida en el módulo math) para completar el valor.
 
@@ -1358,12 +1174,6 @@ la variable pi (definida en el módulo math) para completar el valor.
 
     s3 = s1.format(pi)
     print(s3)
-
-
-.. parsed-literal::
-
-    El valor de π es 3.141592653589793
-
 
 En su versión más simple la función ``format`` reemplaza el lugar entre
 llaves por el valor dado, en este caso un número. Esta función permite
@@ -1374,12 +1184,6 @@ el siguiente ejemplo:
 
     s2 = "El valor de π es {} y su doble es {}".format(pi, 2*pi)
     print(s2)
-
-
-.. parsed-literal::
-
-    El valor de π es 3.141592653589793 y su doble es 6.283185307179586
-
 
 El mismo efecto se puede obtener utilizando interpolación literal
 (“f-strings”)
@@ -1394,13 +1198,6 @@ El mismo efecto se puede obtener utilizando interpolación literal
     print(s1)
     print(s2)
 
-
-.. parsed-literal::
-
-    El valor de π es 3.141592653589793
-    El valor de π es 3.141592653589793 y su doble es 6.283185307179586
-
-
 Notar que no es necesario definir una variable previamente para imprimir
 un string. Los ejemplos anteriores pueden escribirse:
 
@@ -1408,13 +1205,6 @@ un string. Los ejemplos anteriores pueden escribirse:
 
     print( f"El valor de π es {pi} y su doble es {2*pi}" )
     print( "El valor de π es {} y su doble es {}".format(pi, 2*pi) )
-
-
-.. parsed-literal::
-
-    El valor de π es 3.141592653589793 y su doble es 6.283185307179586
-    El valor de π es 3.141592653589793 y su doble es 6.283185307179586
-
 
 Para controlar el formato de los strings existe una notación específica
 que se puede indicar dentro de las llaves tanto para el `método
@@ -1429,13 +1219,6 @@ podemos escribir:
 
     print("El valor de π con cuatro decimales es {:.4f}".format(pi))
     print(f"El valor de π con cuatro decimales es {pi:.4f}")
-
-
-.. parsed-literal::
-
-    El valor de π con cuatro decimales es 3.1416
-    El valor de π con cuatro decimales es 3.1416
-
 
 Métodos de Strings
 ^^^^^^^^^^^^^^^^^^
@@ -1453,12 +1236,6 @@ Veamos algunos de los métodos definidos sobre *strings*:
     a = "La mar estaba serena!"
     print(a)
 
-
-.. parsed-literal::
-
-    La mar estaba serena!
-
-
 En python existe un método ``replace()`` que hace que sea muy fácil
 reemplazar una subcadena por otra:
 
@@ -1467,39 +1244,15 @@ reemplazar una subcadena por otra:
     b = a.replace('e','a')
     print(b)
 
-
-.. parsed-literal::
-
-    La mar astaba sarana!
-
-
 Separar las palabras:
 
 .. code:: python
 
     b.split()
 
-
-
-
-.. parsed-literal::
-
-    ['La', 'mar', 'astaba', 'sarana!']
-
-
-
 .. code:: python
 
     b.split('a')
-
-
-
-
-.. parsed-literal::
-
-    ['L', ' m', 'r ', 'st', 'b', ' s', 'r', 'n', '!']
-
-
 
 Estos son métodos que tienen definidos **todos** los *strings*.
 
@@ -1523,52 +1276,18 @@ Buscar y reemplazar cosas en un string:
     # find nos da el índice del lugar en el string donde se encuentra el substring dado
     b.find('le')
 
-
-
-
-.. parsed-literal::
-
-    12
-
-
-
 .. code:: python
 
     print (b)
     print (b.replace('que','y')) # Reemplazamos un substring
 
-
-.. parsed-literal::
-
-    Somos los colectiveros que cumplimos nuestro deber!
-    Somos los colectiveros y cumplimos nuestro deber!
-
-
 .. code:: python
 
     b.center(70,' ')
 
-
-
-
-.. parsed-literal::
-
-    '         Somos los colectiveros que cumplimos nuestro deber!          '
-
-
-
 .. code:: python
 
     b.center(70, "*")
-
-
-
-
-.. parsed-literal::
-
-    '*********Somos los colectiveros que cumplimos nuestro deber!**********'
-
-
 
 Para encontrar información sobre un ``comando`` en las *notebooks*
 podemos usar la notación ``comando?``. Por ejemplo, si queremos saber
@@ -1610,30 +1329,10 @@ explicitamos.
     print (f"a es de tipo {type(a)}\nb es de tipo {type(b)}\nc es de tipo {type(c)}")
     print (f"'a + b' es de tipo {type(a+b)} y 'a + c' es de tipo {type(a+c)}")
 
-
-.. parsed-literal::
-
-    a es de tipo <class 'int'>
-    b es de tipo <class 'float'>
-    c es de tipo <class 'complex'>
-    'a + b' es de tipo <class 'float'> y 'a + c' es de tipo <class 'complex'>
-
-
 .. code:: python
 
     try:
         print (1 + '1')
-
-
-::
-
-
-      File "<ipython-input-108-2d83197c9a24>", line 2
-        print (1+'1')
-                     ^
-    SyntaxError: incomplete input
-
-
 
 Sin embargo, si le decimos explícitamente qué conversión queremos, todo
 funciona bien
@@ -1646,32 +1345,11 @@ funciona bien
     print ("x=" + str(1.e5))
     print ('x=' + str(1.e-5))
 
-
-.. parsed-literal::
-
-    11
-    2
-    100001.0
-    x=100000.0
-    x=1e-05
-
-
 .. code:: python
 
     # a menos que nosotros **nos equivoquemos explícitamente**
     try:
         print (int('z'))
-
-
-::
-
-
-      File "<ipython-input-110-65c36c3c1bde>", line 3
-        print (int('z'))
-                        ^
-    SyntaxError: incomplete input
-
-
 
 Listas
 ~~~~~~
@@ -1757,55 +1435,19 @@ Empecemos concatenando dos listas, usando el operador “suma”
 
     L1
 
-
-
-
-.. parsed-literal::
-
-    [0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5]
-
-
-
 La multiplicación por un entero actúa igual que en el caso de *strings*
 
 .. code:: python
 
     2*L == L + L                     # Igualdad de cada uno de los elementos
 
-
-
-
-.. parsed-literal::
-
-    True
-
-
-
 .. code:: python
 
     L1.index(3)                      # Índice del elemento de valor 3
 
-
-
-
-.. parsed-literal::
-
-    3
-
-
-
 .. code:: python
 
     L1.count(3)                      # Cuenta las veces que aparece el valor "3"
-
-
-
-
-.. parsed-literal::
-
-    2
-
-
 
 Las listas tienen definidos métodos, que podemos ver con la ayuda
 incluida, por ejemplo haciendo ``help(list)``
@@ -1817,12 +1459,6 @@ Si queremos agregar un elemento al final utilizamos el método
 
     print(L)
 
-
-.. parsed-literal::
-
-    [0, 1, 2, 3, 4, 5]
-
-
 .. code:: python
 
     L.append(8)
@@ -1830,12 +1466,6 @@ Si queremos agregar un elemento al final utilizamos el método
 .. code:: python
 
     print(L)
-
-
-.. parsed-literal::
-
-    [0, 1, 2, 3, 4, 5, 8]
-
 
 Notar que, como las listas pueden contener cualquier cosa (incluso otras
 listas), tratar de agregar una lista al final de otra con el método
@@ -1846,12 +1476,6 @@ listas), tratar de agregar una lista al final de otra con el método
     L.append([9, 8, 7])
     print(L)
 
-
-.. parsed-literal::
-
-    [0, 1, 2, 3, 4, 5, 8, [9, 8, 7]]
-
-
 .. code:: python
 
     a=L.pop(-1)  # pop() devuelve el elemento correspondiente y lo saca de la lista 
@@ -1860,27 +1484,9 @@ listas), tratar de agregar una lista al final de otra con el método
 
     L
 
-
-
-
-.. parsed-literal::
-
-    [0, 1, 2, 3, 4, 5, 8]
-
-
-
 .. code:: python
 
     a
-
-
-
-
-.. parsed-literal::
-
-    [9, 8, 7]
-
-
 
 Si queremos agregar más de un elemento a una lista podemos usar
 ``extend``
@@ -1890,24 +1496,12 @@ Si queremos agregar más de un elemento a una lista podemos usar
     L.extend([9,8,7])
     print(L)
 
-
-.. parsed-literal::
-
-    [0, 1, 2, 3, 4, 5, 8, 9, 8, 7]
-
-
 o sumar la nueva lista y asignarla a la misma variable
 
 .. code:: python
 
     L += [3,2,1]         # equivalente a L = L + [3,2,1]
     print(L)
-
-
-.. parsed-literal::
-
-    [0, 1, 2, 3, 4, 5, 8, 9, 8, 7, 3, 2, 1]
-
 
 Si queremos insertar un elemento en una posición que no es el final de
 la lista, usamos el método ``insert()``. Por ejemplo para insertar el
@@ -1918,12 +1512,6 @@ valor 6 en la primera posición:
     L.insert(3,99)
     print(L)
 
-
-.. parsed-literal::
-
-    [0, 1, 2, 99, 3, 4, 5, 8, 9, 8, 7, 3, 2, 1]
-
-
 En las listas podemos sobreescribir uno o más elementos
 
 .. code:: python
@@ -1931,37 +1519,17 @@ En las listas podemos sobreescribir uno o más elementos
     L[0] = -9
     print(L)
 
-
-.. parsed-literal::
-
-    [-9, 1, 2, 99, 3, 4, 5, 8, 9, 8, 7, 3, 2, 1]
-
-
 .. code:: python
 
     print(L)
     L[0:3] = [-2,-3,-4]
     print(L)
 
-
-.. parsed-literal::
-
-    [-9, 1, 2, 99, 3, 4, 5, 8, 9, 8, 7, 3, 2, 1]
-    [-2, -3, -4, 99, 3, 4, 5, 8, 9, 8, 7, 3, 2, 1]
-
-
 .. code:: python
 
     print(L)
     L.remove(3)                     # Remueve la primera ocurrencia de 3
     print(L)
-
-
-.. parsed-literal::
-
-    [-2, -3, -4, 99, 3, 4, 5, 8, 9, 8, 7, 3, 2, 1]
-    [-2, -3, -4, 99, 4, 5, 8, 9, 8, 7, 3, 2, 1]
-
 
 Tuplas
 ~~~~~~
@@ -1980,13 +1548,6 @@ intentamos con tuplas
     print(T1[2], T1[-3:])
 
 
-
-.. parsed-literal::
-
-    2 [3, 4, 5]
-    2 (3, 4, 5)
-
-
 .. code:: python
 
     L1[0] =- 1
@@ -1998,12 +1559,6 @@ intentamos con tuplas
         print(f"{T1[0] = }")
     except:
         print('Tuples son inmutables')
-
-
-.. parsed-literal::
-
-    Tuples son inmutables
-
 
 Las tuplas se usan cuando uno quiere crear una “variable” que no va a
 ser modificada. Además códigos similares con tuplas pueden ser un poco
@@ -2019,36 +1574,15 @@ Un uso común de las tuplas es el de asignación a múltiples variables
 
     print(a,b,c)
 
-
-.. parsed-literal::
-
-    1 3 5.2
-
-
 .. code:: python
 
     a
-
-
-
-
-.. parsed-literal::
-
-    1
-
-
 
 .. code:: python
 
     # Los paréntesis son opcionales en este caso
     a, b, c = 4, 5, 6
     print(a,b,c)
-
-
-.. parsed-literal::
-
-    4 5 6
-
 
 Un uso muy común es el de intercambiar el valor de dos variables
 
@@ -2057,13 +1591,6 @@ Un uso muy común es el de intercambiar el valor de dos variables
     print(a,b)
     a, b = b, a                     # swap 
     print(a,b)
-
-
-.. parsed-literal::
-
-    4 5
-    5 4
-
 
 Rangos
 ~~~~~~
@@ -2079,15 +1606,6 @@ un número determinado de veces.
 
     range(5)
 
-
-
-
-.. parsed-literal::
-
-    range(0, 5)
-
-
-
 Es un tipo que permite fácilmente iterar sobre un “contador”. Veremos
 más adelante su uso. Notar que podemos crear una lista (o una tupla) a
 partir del tipo ``range``
@@ -2095,15 +1613,6 @@ partir del tipo ``range``
 .. code:: python
 
     list(range(5))
-
-
-
-
-.. parsed-literal::
-
-    [0, 1, 2, 3, 4]
-
-
 
 Ejercicios (c)
 ~~~~~~~~~~~~~~
@@ -2138,15 +1647,6 @@ pero los valores sí.
 
     d0['a']
 
-
-
-
-.. parsed-literal::
-
-    123
-
-
-
 Definimos dos diccionarios, con varios elementos
 
 .. code:: python
@@ -2168,15 +1668,6 @@ Definimos dos diccionarios, con varios elementos
 
     len(d1)
 
-
-
-
-.. parsed-literal::
-
-    6
-
-
-
 Vemos que estos diccionarios tienen algunos valores que son *strings*,
 otros son números enteros, y la dirección tiene como valor una lista.
 
@@ -2187,15 +1678,6 @@ diccionarios:
 
     L1 = [d1, d2]
     L1[0]['nombre']
-
-
-
-
-.. parsed-literal::
-
-    'Juan'
-
-
 
 Acá, hemos creado una lista de dos elementos, donde cada uno es un
 diccionario. Similarmente, podemos crear un diccionario donde cada
@@ -2209,74 +1691,17 @@ elemento es a su vez un diccionario:
 
     integrantes
 
-
-
-
-.. parsed-literal::
-
-    {'Juan': {'nombre': 'Juan',
-      'apellido': 'García',
-      'edad': 10,
-      'dirección': ['Av Bustillo', '9500'],
-      'cod': 8400,
-      'ciudad': 'Bariloche'},
-     'Pepe': {'nombre': 'Pepe',
-      'apellido': 'García',
-      'edad': 109,
-      'dirección': ['Av Bustillo', '9500'],
-      'cod': 8400,
-      'ciudad': 'Bariloche'}}
-
-
-
 .. code:: python
 
     integrantes['Pepe']
-
-
-
-
-.. parsed-literal::
-
-    {'nombre': 'Pepe',
-     'apellido': 'García',
-     'edad': 109,
-     'dirección': ['Av Bustillo', '9500'],
-     'cod': 8400,
-     'ciudad': 'Bariloche'}
-
-
 
 .. code:: python
 
     d1
 
-
-
-
-.. parsed-literal::
-
-    {'nombre': 'Juan',
-     'apellido': 'García',
-     'edad': 10,
-     'dirección': ['Av Bustillo', '9500'],
-     'cod': 8400,
-     'ciudad': 'Bariloche'}
-
-
-
 .. code:: python
 
     d1['cod']
-
-
-
-
-.. parsed-literal::
-
-    8400
-
-
 
 .. code:: python
 
@@ -2287,42 +1712,12 @@ elemento es a su vez un diccionario:
 
     d1
 
-
-
-
-.. parsed-literal::
-
-    {'nombre': 'Juan',
-     'apellido': 'García',
-     'edad': 10,
-     'dirección': ['Av Bustillo', '9500'],
-     'cod': 8400,
-     'ciudad': 'Bariloche',
-     'tel': {'cel': 1213, 'fijo': 23848}}
-
-
-
 Como las componentes del diccionario ``integrantes`` eran ``d1`` y
 ``d2``, al modificar ``d1`` también estamos modificando ``integrantes``
 
 .. code:: python
 
     integrantes['Juan']
-
-
-
-
-.. parsed-literal::
-
-    {'nombre': 'Juan',
-     'apellido': 'García',
-     'edad': 10,
-     'dirección': ['Av Bustillo', '9500'],
-     'cod': 8400,
-     'ciudad': 'Bariloche',
-     'tel': {'cel': 1213, 'fijo': 23848}}
-
-
 
 Los diccionarios pueden pensarse como pares *key*, *valor*. Para obtener
 todas las claves (*keys*), valores, o pares (clave, valor) usamos:
@@ -2335,23 +1730,6 @@ todas las claves (*keys*), valores, o pares (clave, valor) usamos:
     print (list(d1.values()))
     print ('\n' + 0*'+'+ '\n\titems:')
     print (list(d1.items()))
-
-
-.. parsed-literal::
-
-    
-    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    	keys:
-    ['nombre', 'apellido', 'edad', 'dirección', 'cod', 'ciudad', 'tel']
-    
-    ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-    	values:
-    ['Juan', 'García', 10, ['Av Bustillo', '9500'], 8400, 'Bariloche', {'cel': 1213, 'fijo': 23848}]
-    
-    
-    	items:
-    [('nombre', 'Juan'), ('apellido', 'García'), ('edad', 10), ('dirección', ['Av Bustillo', '9500']), ('cod', 8400), ('ciudad', 'Bariloche'), ('tel', {'cel': 1213, 'fijo': 23848})]
-
 
 Arrays de Numpy
 ~~~~~~~~~~~~~~~
@@ -2379,53 +1757,17 @@ encontrarlo usualmente en ejemplos si buscan ayuda *online*.
 
     type(L), type(x)
 
-
-
-
-.. parsed-literal::
-
-    (list, numpy.ndarray)
-
-
-
 .. code:: python
 
     L
-
-
-
-
-.. parsed-literal::
-
-    [0, 1, 2, 3, 4, 5]
-
-
 
 .. code:: python
 
     x
 
-
-
-
-.. parsed-literal::
-
-    array([0, 1, 2, 3, 4, 5])
-
-
-
 .. code:: python
 
     L == x
-
-
-
-
-.. parsed-literal::
-
-    array([ True,  True,  True,  True,  True,  True])
-
-
 
 Como vemos, - ``L`` es una **lista** con los números naturales de 0 a 5
 - ``x`` es un **array** con los mismos números.
@@ -2441,25 +1783,11 @@ Veamos cómo se comparan los *arrays* y las *listas*:
     print( 3*x )
     print( 3*L )
 
-
-.. parsed-literal::
-
-    [ 0  3  6  9 12 15]
-    [0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5]
-
-
 .. code:: python
 
     # Suma de dos arrays o dos listas
     print( x + x )
     print( L + L )
-
-
-.. parsed-literal::
-
-    [ 0  2  4  6  8 10]
-    [0, 1, 2, 3, 4, 5, 0, 1, 2, 3, 4, 5]
-
 
 Mientras que la suma entre listas está definida (igual que para strings)
 como la concatenación, para arrays la suma (y todas las operaciones) se
@@ -2560,14 +1888,6 @@ equivalente a la sentencia ``switch`` de otros lenguajes.
     
     print("Sigamos evaluando")
 
-
-.. parsed-literal::
-
-    Aprobó cómodo, felicidades!
-    Usted es el mejor!!!
-    Sigamos evaluando
-
-
 Iteraciones
 ~~~~~~~~~~~
 
@@ -2600,6 +1920,35 @@ forma ordenada
 
 
 Iterando sobre una lista podemos actuar de la manera que necesitemos
+
+.. code:: python
+
+    for n in range(4,6):
+        print(f"{n:3d} {2*n:3d}")
+
+
+.. parsed-literal::
+
+      4   8
+      5  10
+
+
+.. code:: python
+
+    y = 2023
+    m = 5
+    d = 23
+    s = f"datos_{y}{m:02d}{d:02d}.dat"
+
+.. code:: python
+
+    print(s)
+
+
+.. parsed-literal::
+
+    datos_20230523.dat
+
 
 .. code:: python
 
@@ -2718,6 +2067,10 @@ resultados.
 
 .. code:: python
 
+    import math
+
+.. code:: python
+
     print('cos(1.54) =', math.cos(1.54))
 
 
@@ -2728,6 +2081,20 @@ resultados.
 
 Para mostrar como definir nuestras propias funciones, vamos a tomar el
 ejercicio de caída libre y encapsulemos el cálculo en una función:
+
+.. code:: python
+
+    help(math.cos)
+
+
+.. parsed-literal::
+
+    Help on built-in function cos in module math:
+    
+    cos(x, /)
+        Return the cosine of x (measured in radians).
+    
+
 
 .. code:: python
 
@@ -2801,6 +2168,9 @@ valores de velocidad y posición simultáneamente
 
     t1 = 1
     v1, h1 = caida(t1, 10)
+
+.. code:: python
+
     print(f"A tiempo {t1:.1f} s, la veloc. es {v1:.2f} m/s y la altura es {h1:.2f} m")
 
 
@@ -2808,6 +2178,12 @@ valores de velocidad y posición simultáneamente
 
     A tiempo 1.0 s, la veloc. es 0.20 m/s y la altura es 15.10 m
 
+
+.. code:: python
+
+    t1 = 1
+    v1, h1 = caida(t1, 10)
+    print(f"A tiempo {t1:.1f} s, la veloc. es {v1:.2f} m/s y la altura es {h1:.2f} m")
 
 Documentación (doc strings)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -2833,20 +2209,6 @@ Esta puede utilizarse luego como documentación
         donde:
         `v` es la velocidad en m/s
         `h` es la altura en m
-    
-
-
-.. code:: python
-
-    help(math.cos)
-
-
-.. parsed-literal::
-
-    Help on built-in function cos in module math:
-    
-    cos(x, /)
-        Return the cosine of x (measured in radians).
     
 
 

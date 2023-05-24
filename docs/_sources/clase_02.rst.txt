@@ -1133,6 +1133,20 @@ editor.
 
 .. code:: python
 
+    v[:10]
+
+
+
+
+.. parsed-literal::
+
+    array([20.        , 19.94108216, 19.88216433, 19.82324649, 19.76432866,
+           19.70541082, 19.64649299, 19.58757515, 19.52865731, 19.46973948])
+
+
+
+.. code:: python
+
     X = np.vstack([t,h,v])
     Y = np.transpose(X)
 
@@ -1151,7 +1165,7 @@ editor.
 
 .. code:: python
 
-    np.savetxt('caida.txt', Y, fmt='%.3g')
+    np.savetxt('caida.txt', Y, fmt='%.5g')
 
 .. code:: python
 
@@ -1173,11 +1187,49 @@ editor.
 
 .. code:: python
 
-    plt.plot(Y[:,0], Y[:,1], '-', YY[:,0], YY[:,1], '--');
+    plt.plot(Y[:,0], Y[:,1], 'o', YY[:,0], YY[:,1], '--', lw=4);
 
 
 
-.. image:: figuras/02_introd_cientif_98_0.png
+.. image:: figuras/02_introd_cientif_99_0.png
+
+
+.. code:: python
+
+    tiempo, altura, velocidad = np.loadtxt("caida2.txt", unpack=True)
+
+.. code:: python
+
+    plt.plot(tiempo, altura, '-', lw=4)
+
+
+
+
+.. parsed-literal::
+
+    [<matplotlib.lines.Line2D at 0x7f9202de2510>]
+
+
+
+
+.. image:: figuras/02_introd_cientif_101_1.png
+
+
+.. code:: python
+
+    plt.plot(tiempo, velocidad, '--r')
+
+
+
+
+.. parsed-literal::
+
+    [<matplotlib.lines.Line2D at 0x7f9202c28c10>]
+
+
+
+
+.. image:: figuras/02_introd_cientif_102_1.png
 
 
 Ejemplos de graficación
@@ -1208,7 +1260,7 @@ Ejemplos de graficación
 
 
 
-.. image:: figuras/02_introd_cientif_102_1.png
+.. image:: figuras/02_introd_cientif_106_1.png
 
 
 Como ``yexp`` corresponde a datos experimentales, preferimos graficarlos
@@ -1229,7 +1281,7 @@ con símbolos sin líneas:
 
 
 
-.. image:: figuras/02_introd_cientif_104_1.png
+.. image:: figuras/02_introd_cientif_108_1.png
 
 
 Formato de las curvas
@@ -1255,7 +1307,7 @@ legible separar los llamados a la función, una para cada curva.
 
 
 
-.. image:: figuras/02_introd_cientif_106_1.png
+.. image:: figuras/02_introd_cientif_110_1.png
 
 
 Los siguientes caracteres pueden utilizarse para controlar el símbolo de
@@ -1354,7 +1406,7 @@ markevery       número entero
 
 
 
-.. image:: figuras/02_introd_cientif_109_1.png
+.. image:: figuras/02_introd_cientif_113_1.png
 
 
 Leyendas y texto
@@ -1380,7 +1432,7 @@ este caso en el mismo comando ``plot()``, y luego mostrarlo con
 
 
 
-.. image:: figuras/02_introd_cientif_112_0.png
+.. image:: figuras/02_introd_cientif_116_0.png
 
 
 Puntos a notar:

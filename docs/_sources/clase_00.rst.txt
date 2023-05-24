@@ -105,24 +105,16 @@ como la siguiente:
 
 .. image:: figuras/anaconda-start.png
 
-
-
-
-
 En esta pantalla elija la opción “JupyterLab” (preferentemente) o
 “Jupyter Notebook” para iniciar una nueva *notebook* de Python3, que
 inicialmente está vacía
 
 .. image:: figuras/notebook-empty.png
 
-
-
 En la celda puede escribir sus comandos y ejecutarlo con [Ctrl]+[Enter],
 o simplemente apretar el botón “Run”.
 
 Como se ve en el siguiente (corto) video:
-
-
 
 .. raw:: html
 

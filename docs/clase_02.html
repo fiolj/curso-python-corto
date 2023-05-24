@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="es" >
 <head>
-  <meta charset="utf-8" />
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Clase 2: Introducción a Python Científico &mdash; documentación de Curso corto de Python - </title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -11,6 +12,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
         <script src="_static/translations.js"></script>
         <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -28,7 +30,7 @@
             <img src="_static/logo.svg" class="logo" alt="Logotipo"/>
           </a>
               <div class="version">
-                2022
+                f{today}
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -98,8 +100,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
              
-  <div class="section" id="clase-2-introduccion-a-python-cientifico">
-<span id="clase-02"></span><h1>Clase 2: Introducción a Python Científico<a class="headerlink" href="#clase-2-introduccion-a-python-cientifico" title="Enlazar permanentemente con este título"></a></h1>
+  <section id="clase-2-introduccion-a-python-cientifico">
+<span id="clase-02"></span><h1>Clase 2: Introducción a Python Científico<a class="headerlink" href="#clase-2-introduccion-a-python-cientifico" title="Permalink to this heading"></a></h1>
 <p>Dos paquetes que vamos a utilizar en el curso son <strong>Numpy</strong> y
 <strong>Matplotlib</strong>. Estos módulos definen objetos y funciones útiles para el
 trabajo científico-tecnológico:</p>
@@ -138,8 +140,8 @@ a elemento”:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span> <span class="mi">1</span><span class="p">,</span>  <span class="mi">2</span><span class="p">,</span>  <span class="mi">3</span><span class="p">,</span>  <span class="mi">4</span><span class="p">,</span>  <span class="mi">5</span><span class="p">,</span>  <span class="mi">6</span><span class="p">,</span>  <span class="mi">7</span><span class="p">,</span>  <span class="mi">8</span><span class="p">,</span>  <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">12</span><span class="p">])</span>
 </pre></div>
 </div>
-<div class="section" id="visualizacion-usando-matplotlib">
-<h2>Visualización usando <strong>Matplotlib</strong><a class="headerlink" href="#visualizacion-usando-matplotlib" title="Enlazar permanentemente con este título"></a></h2>
+<section id="visualizacion-usando-matplotlib">
+<h2>Visualización usando <strong>Matplotlib</strong><a class="headerlink" href="#visualizacion-usando-matplotlib" title="Permalink to this heading"></a></h2>
 <p>Para graficar, utilizamos el comando <code class="docutils literal notranslate"><span class="pre">plot</span></code> definido en el módulo
 <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
@@ -196,14 +198,14 @@ función <code class="docutils literal notranslate"><span class="pre">plot</span
 expresión entre símbolos <code class="docutils literal notranslate"><span class="pre">$</span></code>, utilizando la <a class="reference external" href="https://www.learnlatex.org/es/lesson-10">notación de
 LaTeX</a></p></li>
 </ul>
-</div>
-<div class="section" id="creacion-de-arrays">
-<h2>Creación de <strong>arrays</strong><a class="headerlink" href="#creacion-de-arrays" title="Enlazar permanentemente con este título"></a></h2>
+</section>
+<section id="creacion-de-arrays">
+<h2>Creación de <strong>arrays</strong><a class="headerlink" href="#creacion-de-arrays" title="Permalink to this heading"></a></h2>
 <p>Para crear arrays tenemos varias funciones definidas en el módulo
 <strong>Numpy</strong>. El principal es el constructor <code class="docutils literal notranslate"><span class="pre">array</span></code>, pero existen otros.
 Veamos algunos ejemplos:</p>
-<div class="section" id="constructor-array">
-<h3>Constructor <code class="docutils literal notranslate"><span class="pre">array()</span></code><a class="headerlink" href="#constructor-array" title="Enlazar permanentemente con este título"></a></h3>
+<section id="constructor-array">
+<h3>Constructor <code class="docutils literal notranslate"><span class="pre">array()</span></code><a class="headerlink" href="#constructor-array" title="Permalink to this heading"></a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">L</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">34.4</span><span class="p">,</span> <span class="mf">5.1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">12</span><span class="o">-</span><span class="mi">8</span><span class="p">]</span>
 <span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">L</span><span class="p">)</span>
 <span class="n">a</span>
@@ -266,9 +268,9 @@ ejemplo para dos dimensiones:</p>
 <span class="n">Longitud</span> <span class="n">de</span> <span class="n">A</span>   <span class="p">:</span> <span class="mi">4</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="creacion-de-datos-equiespaciados">
-<h3>Creación de datos equiespaciados<a class="headerlink" href="#creacion-de-datos-equiespaciados" title="Enlazar permanentemente con este título"></a></h3>
+</section>
+<section id="creacion-de-datos-equiespaciados">
+<h3>Creación de datos equiespaciados<a class="headerlink" href="#creacion-de-datos-equiespaciados" title="Permalink to this heading"></a></h3>
 <p>Para obtener datos equiespaciados hay dos funciones complementarias</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">190</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span>
 <span class="n">a2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">180</span><span class="p">,</span><span class="mi">19</span><span class="p">)</span>
@@ -324,9 +326,9 @@ valores, tal que el primer elemento será <code class="docutils literal notransl
         <span class="mf">59.94842503</span><span class="p">,</span> <span class="mf">100.</span>        <span class="p">])</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="otras-maneras-de-crear-arrays">
-<h3>Otras maneras de crear <em>arrays</em><a class="headerlink" href="#otras-maneras-de-crear-arrays" title="Enlazar permanentemente con este título"></a></h3>
+</section>
+<section id="otras-maneras-de-crear-arrays">
+<h3>Otras maneras de crear <em>arrays</em><a class="headerlink" href="#otras-maneras-de-crear-arrays" title="Permalink to this heading"></a></h3>
 <p>Existen otras funciones para crear arrays en forma conveniente:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">e1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>                <span class="c1"># empty, 1D</span>
 <span class="n">e2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">))</span>            <span class="c1"># empty, 2D</span>
@@ -387,10 +389,10 @@ valores, tal que el primer elemento será <code class="docutils literal notransl
  <span class="p">[</span><span class="mf">0.76587354</span> <span class="mf">0.14912593</span><span class="p">]]</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="acceso-a-elementos-de-arrays">
-<h2>Acceso a elementos de <strong>arrays</strong><a class="headerlink" href="#acceso-a-elementos-de-arrays" title="Enlazar permanentemente con este título"></a></h2>
+</section>
+</section>
+<section id="acceso-a-elementos-de-arrays">
+<h2>Acceso a elementos de <strong>arrays</strong><a class="headerlink" href="#acceso-a-elementos-de-arrays" title="Permalink to this heading"></a></h2>
 <p>Para acceder a elementos individuales o <em>subarrays</em> usamos la misma
 notación que para listas o strings:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">vec</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">11</span><span class="p">)</span>
@@ -467,9 +469,9 @@ significa:</p>
 </pre></div>
 </div>
 <img alt="_images/numpy_indexing.png" src="_images/numpy_indexing.png" />
-</div>
-<div class="section" id="operaciones-entre-arrays">
-<h2>Operaciones entre <strong>arrays</strong><a class="headerlink" href="#operaciones-entre-arrays" title="Enlazar permanentemente con este título"></a></h2>
+</section>
+<section id="operaciones-entre-arrays">
+<h2>Operaciones entre <strong>arrays</strong><a class="headerlink" href="#operaciones-entre-arrays" title="Permalink to this heading"></a></h2>
 <p>Todas las operaciones entre arrays (sumas, multiplicaciones, divisiones,
 etc), así como con números se realizan “elemento a elemento”</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>          <span class="c1"># Equiespaciado entre 0 y 1</span>
@@ -544,9 +546,9 @@ etc), así como con números se realizan “elemento a elemento”</p>
 <span class="n">y</span> <span class="o">!=</span> <span class="n">z</span> <span class="o">=</span> <span class="p">[</span><span class="kc">False</span>  <span class="kc">True</span>  <span class="kc">True</span>  <span class="kc">True</span>  <span class="kc">True</span><span class="p">]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="funciones-aplicadas-a-arrays">
-<h2>Funciones aplicadas a <em>arrays</em><a class="headerlink" href="#funciones-aplicadas-a-arrays" title="Enlazar permanentemente con este título"></a></h2>
+</section>
+<section id="funciones-aplicadas-a-arrays">
+<h2>Funciones aplicadas a <em>arrays</em><a class="headerlink" href="#funciones-aplicadas-a-arrays" title="Permalink to this heading"></a></h2>
 <p><strong>Numpy</strong> tiene funciones que están definidas para actuar tanto sobre
 números escalares como sobre <em>arrays</em></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;z=&#39;</span><span class="p">,</span><span class="n">z</span><span class="p">)</span>
@@ -676,9 +678,9 @@ Veamos como funciona con un <em>array</em> unidimensional</p>
        <span class="mf">0.00000000e+00</span><span class="p">])</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="intervalo-1-con-ejercicio">
-<h2>Intervalo 1 con ejercicio<a class="headerlink" href="#intervalo-1-con-ejercicio" title="Enlazar permanentemente con este título"></a></h2>
+</section>
+<section id="intervalo-1-con-ejercicio">
+<h2>Intervalo 1 con ejercicio<a class="headerlink" href="#intervalo-1-con-ejercicio" title="Permalink to this heading"></a></h2>
 <p>Teniendo en cuenta que las ecuaciones de movimiento con aceleración
 constante son:</p>
 <div class="math notranslate nohighlight">
@@ -701,11 +703,11 @@ tiempo (dos gráficos)</p></li>
 <li><p>Calcular (no alcanza con ver en el gráfico) un valor aproximado de la
 altura máxima alcanzada, y en que instante ocurre.</p></li>
 </ul>
-</div>
-<div class="section" id="funciones">
-<h2>Funciones<a class="headerlink" href="#funciones" title="Enlazar permanentemente con este título"></a></h2>
-<div class="section" id="definicion-de-funciones">
-<h3>Definición de funciones<a class="headerlink" href="#definicion-de-funciones" title="Enlazar permanentemente con este título"></a></h3>
+</section>
+<section id="funciones">
+<h2>Funciones<a class="headerlink" href="#funciones" title="Permalink to this heading"></a></h2>
+<section id="definicion-de-funciones">
+<h3>Definición de funciones<a class="headerlink" href="#definicion-de-funciones" title="Permalink to this heading"></a></h3>
 <p>Las funciones en <strong>Python</strong>, como en la mayoría de los lenguajes, usan
 una notación matemática, con un nombre y uno o más argumentos entre
 paréntesis. Por ejemplo, ya usamos varias funciones matemáticas, que
@@ -789,8 +791,8 @@ valores de velocidad y posición simultáneamente</p>
 </pre></div>
 </div>
 <img alt="_images/02_introd_cientif_76_1.png" src="_images/02_introd_cientif_76_1.png" />
-<div class="section" id="documentacion-doc-strings">
-<h4>Documentación (doc strings)<a class="headerlink" href="#documentacion-doc-strings" title="Enlazar permanentemente con este título"></a></h4>
+<section id="documentacion-doc-strings">
+<h4>Documentación (doc strings)<a class="headerlink" href="#documentacion-doc-strings" title="Permalink to this heading"></a></h4>
 <p>Cuando definimos la función le agregamos un string con una descripción.
 Esta puede utilizarse luego como documentación</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">caida</span><span class="p">)</span>
@@ -806,10 +808,10 @@ caida(t)
     donde:
     <cite>v</cite> es la velocidad en m/s
     <cite>h</cite> es la altura en m</pre>
-</div>
-</div>
-<div class="section" id="las-funciones-son-objetos">
-<h3>Las funciones son objetos<a class="headerlink" href="#las-funciones-son-objetos" title="Enlazar permanentemente con este título"></a></h3>
+</section>
+</section>
+<section id="las-funciones-son-objetos">
+<h3>Las funciones son objetos<a class="headerlink" href="#las-funciones-son-objetos" title="Permalink to this heading"></a></h3>
 <p>Las funciones en <strong>Python</strong>, como en la mayoría de los lenguajes, usan
 una notación similar a la de las funciones matemáticas, con un nombre y
 uno o más argumentos entre paréntesis. Por ejemplo, ya usamos la función
@@ -842,9 +844,9 @@ uno o más argumentos entre paréntesis. Por ejemplo, ya usamos la función
 <span class="p">(</span><span class="o">-</span><span class="mf">4.700000000000001</span><span class="p">,</span> <span class="mf">13.975</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="funciones-con-argumentos-opcionales">
-<h3>Funciones con argumentos opcionales<a class="headerlink" href="#funciones-con-argumentos-opcionales" title="Enlazar permanentemente con este título"></a></h3>
+</section>
+<section id="funciones-con-argumentos-opcionales">
+<h3>Funciones con argumentos opcionales<a class="headerlink" href="#funciones-con-argumentos-opcionales" title="Permalink to this heading"></a></h3>
 <p>Las funciones pueden tener muchos argumentos. En <strong>Python</strong> pueden tener
 un número variable de argumentos y pueden tener valores por <em>default</em>
 para algunos de ellos. En el caso de la función de caída libre, vamos a
@@ -903,10 +905,10 @@ libre:</p>
 <span class="p">(</span><span class="mf">5.800000000000001</span><span class="p">,</span> <span class="mf">123.7</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="intervalo-2-con-ejercicio">
-<h2>Intervalo 2 con ejercicio<a class="headerlink" href="#intervalo-2-con-ejercicio" title="Enlazar permanentemente con este título"></a></h2>
+</section>
+</section>
+<section id="intervalo-2-con-ejercicio">
+<h2>Intervalo 2 con ejercicio<a class="headerlink" href="#intervalo-2-con-ejercicio" title="Permalink to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p>Definir una función llamada <code class="docutils literal notranslate"><span class="pre">pdf_norm</span></code> que permita calcular una
 gaussiana normalizada, según la fórmula:</p></li>
@@ -928,15 +930,22 @@ respectivamente.</p></li>
 <li><p>Graficar en la misma figura, la suma de las tres funciones
 anteriores.</p></li>
 </ol>
-</div>
-<div class="section" id="lectura-y-escritura-de-datos-a-archivos">
-<h2>Lectura y escritura de datos a archivos<a class="headerlink" href="#lectura-y-escritura-de-datos-a-archivos" title="Enlazar permanentemente con este título"></a></h2>
+</section>
+<section id="lectura-y-escritura-de-datos-a-archivos">
+<h2>Lectura y escritura de datos a archivos<a class="headerlink" href="#lectura-y-escritura-de-datos-a-archivos" title="Permalink to this heading"></a></h2>
 <p>Numpy tiene funciones que permiten escribir y leer datos de varias
 maneras, tanto en formato <em>texto</em> como en <em>binario</em>. En general el modo
 <em>texto</em> ocupa más espacio pero puede ser leído y modificado con un
 editor.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">500</span><span class="p">)</span>
 <span class="n">v</span><span class="p">,</span> <span class="n">h</span> <span class="o">=</span> <span class="n">caida_libre</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v_0</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">z_0</span><span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">v</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">array</span><span class="p">([</span><span class="mf">20.</span>        <span class="p">,</span> <span class="mf">19.94108216</span><span class="p">,</span> <span class="mf">19.88216433</span><span class="p">,</span> <span class="mf">19.82324649</span><span class="p">,</span> <span class="mf">19.76432866</span><span class="p">,</span>
+       <span class="mf">19.70541082</span><span class="p">,</span> <span class="mf">19.64649299</span><span class="p">,</span> <span class="mf">19.58757515</span><span class="p">,</span> <span class="mf">19.52865731</span><span class="p">,</span> <span class="mf">19.46973948</span><span class="p">])</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">t</span><span class="p">,</span><span class="n">h</span><span class="p">,</span><span class="n">v</span><span class="p">])</span>
@@ -949,7 +958,7 @@ editor.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">((</span><span class="mi">500</span><span class="p">,),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">500</span><span class="p">),</span> <span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="s1">&#39;caida.txt&#39;</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%.3g</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="s1">&#39;caida.txt&#39;</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">fmt</span><span class="o">=</span><span class="s1">&#39;</span><span class="si">%.5g</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">np</span><span class="o">.</span><span class="n">savetxt</span><span class="p">(</span><span class="s1">&#39;caida2.txt&#39;</span><span class="p">,</span> <span class="n">Y</span><span class="p">)</span>
@@ -964,13 +973,30 @@ editor.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> <span class="p">(</span><span class="mi">500</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">Y</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">YY</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">YY</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;--&#39;</span><span class="p">);</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">Y</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">Y</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">YY</span><span class="p">[:,</span><span class="mi">0</span><span class="p">],</span> <span class="n">YY</span><span class="p">[:,</span><span class="mi">1</span><span class="p">],</span> <span class="s1">&#39;--&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">);</span>
 </pre></div>
 </div>
-<img alt="_images/02_introd_cientif_98_0.png" src="_images/02_introd_cientif_98_0.png" />
+<img alt="_images/02_introd_cientif_99_0.png" src="_images/02_introd_cientif_99_0.png" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tiempo</span><span class="p">,</span> <span class="n">altura</span><span class="p">,</span> <span class="n">velocidad</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">loadtxt</span><span class="p">(</span><span class="s2">&quot;caida2.txt&quot;</span><span class="p">,</span> <span class="n">unpack</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="ejemplos-de-graficacion">
-<h2>Ejemplos de graficación<a class="headerlink" href="#ejemplos-de-graficacion" title="Enlazar permanentemente con este título"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tiempo</span><span class="p">,</span> <span class="n">altura</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">Line2D</span> <span class="n">at</span> <span class="mh">0x7f9202de2510</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+<img alt="_images/02_introd_cientif_101_1.png" src="_images/02_introd_cientif_101_1.png" />
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">tiempo</span><span class="p">,</span> <span class="n">velocidad</span><span class="p">,</span> <span class="s1">&#39;--r&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">Line2D</span> <span class="n">at</span> <span class="mh">0x7f9202c28c10</span><span class="o">&gt;</span><span class="p">]</span>
+</pre></div>
+</div>
+<img alt="_images/02_introd_cientif_102_1.png" src="_images/02_introd_cientif_102_1.png" />
+</section>
+<section id="ejemplos-de-graficacion">
+<h2>Ejemplos de graficación<a class="headerlink" href="#ejemplos-de-graficacion" title="Permalink to this heading"></a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">fdatos</span> <span class="o">=</span> <span class="s1">&#39;data/ej_oscil_aten_err.dat&#39;</span>
 </pre></div>
 </div>
@@ -986,7 +1012,7 @@ editor.</p>
  <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">Line2D</span> <span class="n">at</span> <span class="mh">0x7fca2cc663e0</span><span class="o">&gt;</span><span class="p">]</span>
 </pre></div>
 </div>
-<img alt="_images/02_introd_cientif_102_1.png" src="_images/02_introd_cientif_102_1.png" />
+<img alt="_images/02_introd_cientif_106_1.png" src="_images/02_introd_cientif_106_1.png" />
 <p>Como <code class="docutils literal notranslate"><span class="pre">yexp</span></code> corresponde a datos experimentales, preferimos graficarlos
 con símbolos sin líneas:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">yexp</span><span class="p">,</span><span class="s1">&#39;o&#39;</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
@@ -996,9 +1022,9 @@ con símbolos sin líneas:</p>
  <span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">Line2D</span> <span class="n">at</span> <span class="mh">0x7fca2ccdc5b0</span><span class="o">&gt;</span><span class="p">]</span>
 </pre></div>
 </div>
-<img alt="_images/02_introd_cientif_104_1.png" src="_images/02_introd_cientif_104_1.png" />
-<div class="section" id="formato-de-las-curvas">
-<h3>Formato de las curvas<a class="headerlink" href="#formato-de-las-curvas" title="Enlazar permanentemente con este título"></a></h3>
+<img alt="_images/02_introd_cientif_108_1.png" src="_images/02_introd_cientif_108_1.png" />
+<section id="formato-de-las-curvas">
+<h3>Formato de las curvas<a class="headerlink" href="#formato-de-las-curvas" title="Permalink to this heading"></a></h3>
 <p>Para graficar más de una curva, en este formato simple, podemos ponerlo
 todo en la misma función <code class="docutils literal notranslate"><span class="pre">plot()</span></code> en la forma
 <code class="docutils literal notranslate"><span class="pre">plot(x1,</span> <span class="pre">y1,</span> <span class="pre">[formato],</span> <span class="pre">x2,</span> <span class="pre">y2,</span> <span class="pre">[formato2])</span></code> pero muchas veces es más
@@ -1010,14 +1036,10 @@ legible separar los llamados a la función, una para cada curva.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">Line2D</span> <span class="n">at</span> <span class="mh">0x7fca2cd4cca0</span><span class="o">&gt;</span><span class="p">]</span>
 </pre></div>
 </div>
-<img alt="_images/02_introd_cientif_106_1.png" src="_images/02_introd_cientif_106_1.png" />
+<img alt="_images/02_introd_cientif_110_1.png" src="_images/02_introd_cientif_110_1.png" />
 <p>Los siguientes caracteres pueden utilizarse para controlar el símbolo de
 graficación:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 25%" />
-<col style="width: 75%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Símbolo</p></th>
 <th class="head"><p>Descripción</p></th>
@@ -1106,10 +1128,6 @@ graficación:</p>
 </table>
 <p>Los colores también pueden elegirse usando los siguientes caracteres:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 42%" />
-<col style="width: 58%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Letra</p></th>
 <th class="head"><p>Color</p></th>
@@ -1158,10 +1176,6 @@ que dice la documentación</p>
 nombre-valor) para cambiar el modo en que se grafican los datos. Algunos
 de los más comunes son:</p>
 <table class="docutils align-default">
-<colgroup>
-<col style="width: 35%" />
-<col style="width: 65%" />
-</colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Argumento</p></th>
 <th class="head"><p>Valor</p></th>
@@ -1201,10 +1215,10 @@ de los más comunes son:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="o">&lt;</span><span class="n">matplotlib</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">Line2D</span> <span class="n">at</span> <span class="mh">0x7fca2cb97ee0</span><span class="o">&gt;</span><span class="p">]</span>
 </pre></div>
 </div>
-<img alt="_images/02_introd_cientif_109_1.png" src="_images/02_introd_cientif_109_1.png" />
-</div>
-<div class="section" id="leyendas-y-texto">
-<h3>Leyendas y texto<a class="headerlink" href="#leyendas-y-texto" title="Enlazar permanentemente con este título"></a></h3>
+<img alt="_images/02_introd_cientif_113_1.png" src="_images/02_introd_cientif_113_1.png" />
+</section>
+<section id="leyendas-y-texto">
+<h3>Leyendas y texto<a class="headerlink" href="#leyendas-y-texto" title="Permalink to this heading"></a></h3>
 <p>Vamos ahora a agregar nombres a los ejes y a las curvas.</p>
 <p>Para agregar nombres a las curvas, tenemos que agregar un <code class="docutils literal notranslate"><span class="pre">label</span></code>, en
 este caso en el mismo comando <code class="docutils literal notranslate"><span class="pre">plot()</span></code>, y luego mostrarlo con
@@ -1220,7 +1234,7 @@ este caso en el mismo comando <code class="docutils literal notranslate"><span c
 <span class="n">plt</span><span class="o">.</span><span class="n">grid</span><span class="p">();</span>
 </pre></div>
 </div>
-<img alt="_images/02_introd_cientif_112_0.png" src="_images/02_introd_cientif_112_0.png" />
+<img alt="_images/02_introd_cientif_116_0.png" src="_images/02_introd_cientif_116_0.png" />
 <p>Puntos a notar:</p>
 <ul class="simple">
 <li><p>Agregamos un argumento <code class="docutils literal notranslate"><span class="pre">label</span></code> a cada curva, que asocia el formato
@@ -1233,9 +1247,9 @@ vertical, respectivamente</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">axhline</span></code> y <code class="docutils literal notranslate"><span class="pre">axvline</span></code> agregan líneas horizontal y vertical al
 gráfico.</p></li>
 </ul>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
            </div>
@@ -1247,7 +1261,7 @@ gráfico.</p></li>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Derechos de autor 2022, Juan Fiol.</p>
+    <p>&#169; Derechos de autor f{today}, Juan Fiol.</p>
   </div>
 
   Compilado con <a href="https://www.sphinx-doc.org/">Sphinx</a> usando un

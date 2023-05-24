@@ -6,7 +6,7 @@ Curso corto de Introducción a Python
 ####################################
 
 :Institución: UNRN
-:Fecha: Abril de |today|
+:Fecha: Mayo de |today|
 :Docente: Juan Fiol
 
 
